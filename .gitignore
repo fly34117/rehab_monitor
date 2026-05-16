@@ -1,0 +1,103 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+eggs/
+*.whl
+.python-version
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# ============================================================
+# Project specific — large binary model files (>10MB)
+# ============================================================
+model/*.pt
+model/*.pth
+model/*.onnx
+model/*.bin
+model/*.xml
+model/*.xml.bin
+model/*.mapping
+model/*_openvino_model/
+
+# Keep small model files (uncomment if needed)
+# !model/emotion_model.pt       # ~1MB
+# !model/body_emotion.pt        # ~25KB
+# !model/yolo26n-pose.pt        # ~7.9MB
+
+# ============================================================
+# Database (contains user health data — NEVER commit)
+# ============================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# Logs
+# ============================================================
+logs/
+*.log
+
+# ============================================================
+# Sensitive / local config
+# ============================================================
+.env
+.env.local
+*.secret
+config_local.py
+credentials.json
+
+# ============================================================
+# Reports / generated output
+# ============================================================
+analysis/*.png
+runs/
+
+# ============================================================
+# Misc
+# ============================================================
+*.zip
+kernel.errors.txt
+fer2013_data/
+ultralytics-8.4.46/
+
+# ============================================================
+# Face DB (contains biometric embeddings — consider privacy)
+# ============================================================
+model/face_db.json
+
+# ============================================================
+# Claude Code
+# ============================================================
+.claude/
+CLAUDE.md
+PLAN.md
