@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "rehab-gauge": "/components/rehab-gauge/index"
+  },
+  "navigationBarTitleText": "康复监测"
+}

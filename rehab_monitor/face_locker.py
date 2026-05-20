@@ -61,12 +61,15 @@ class FaceNetLocker:
 
         frame_bgr: 原始帧
         x1,y1,x2,y2: COCO关键点给出的人脸区域
+        远距离时自动放大裁剪区域以帮助 MTCNN 检测
         """
         self._ensure_loaded()
         h, w = frame_bgr.shape[:2]
-        # 扩大裁剪区域给 MTCNN 更多空间
-        pad_x = int((x2 - x1) * 1.2) if x2 - x1 > 10 else 40
-        pad_y = int((y2 - y1) * 1.2) if y2 - y1 > 10 else 40
+        face_w = max(x2 - x1, 10)
+        face_h = max(y2 - y1, 10)
+        # 扩大裁剪区域：近距离给 1.5x 边距，远距离用更大比例（至少 80px 边距）
+        pad_x = max(int(face_w * 1.5), 80)
+        pad_y = max(int(face_h * 1.5), 80)
         x1c = max(0, x1 - pad_x)
         y1c = max(0, y1 - pad_y)
         x2c = min(w, x2 + pad_x)
@@ -74,17 +77,26 @@ class FaceNetLocker:
         if x2c <= x1c or y2c <= y1c:
             return None
         crop = frame_bgr[y1c:y2c, x1c:x2c]
-        # 如果裁剪区域太小，用全帧
+        # 如果裁剪区域仍太小（< 80px），用全帧
         if crop.shape[1] < 80 or crop.shape[0] < 80:
             crop = frame_bgr
+
         rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
+        # 对小脸区域放大后再检测（帮助 MTCNN）
+        min_size = 160
+        if rgb.shape[0] < min_size or rgb.shape[1] < min_size:
+            scale = min_size / min(rgb.shape[0], rgb.shape[1])
+            rgb = cv2.resize(rgb, (int(rgb.shape[1] * scale), int(rgb.shape[0] * scale)))
+
         try:
             face_tensor = self.mtcnn(rgb)
-            if face_tensor is None:
-                return None
         except Exception as e:
             logger.debug("MTCNN ROI 检测失败: %s", e)
             return None
+
+        if face_tensor is None:
+            return None
+
         with torch.no_grad():
             emb = self.resnet(face_tensor.unsqueeze(0).to(self.device))
             return emb.cpu().squeeze().numpy()

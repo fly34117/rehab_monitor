@@ -1,0 +1,40 @@
+<scroll-view scroll-y style="height:100vh;" enhanced show-scrollbar="{{false}}">
+  <block wx:if="{{!locked}}">
+    <view class="unlock-msg">
+      <text class="unlock-icon">🔒</text>
+      <text class="unlock-text">请先在首页锁定患者</text>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="container">
+      <view class="period-select">
+        <text class="option {{seconds === 30 ? 'active' : ''}}" data-seconds="30" bindtap="changePeriod">30秒</text>
+        <text class="option {{seconds === 300 ? 'active' : ''}}" data-seconds="300" bindtap="changePeriod">5分钟</text>
+        <text class="option {{seconds === 1800 ? 'active' : ''}}" data-seconds="1800" bindtap="changePeriod">30分钟</text>
+      </view>
+
+      <button class="btn-generate" bindtap="generateReport" loading="{{loading}}" disabled="{{loading}}">
+        {{loading ? 'AI 分析中...' : '生成康复报告'}}
+      </button>
+
+      <view wx:if="{{reportText}}">
+        <view class="card">
+          <text class="section-title">报告摘要</text>
+          <text class="summary-text">{{reportSummary}}</text>
+        </view>
+        <view class="card">
+          <text class="section-title">详细报告</text>
+          <text class="report-text" selectable="true">{{reportText}}</text>
+        </view>
+        <button class="btn-share" open-type="share">分享报告</button>
+      </view>
+
+      <view wx:else class="empty-hint">
+        <text>选择时间范围，点击生成按钮\n获取 AI 康复分析报告</text>
+      </view>
+
+      <view style="height:120rpx;"></view>
+    </view>
+  </block>
+</scroll-view>

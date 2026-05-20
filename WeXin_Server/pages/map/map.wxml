@@ -1,0 +1,41 @@
+<view class="page">
+  <block wx:if="{{!locked}}">
+    <view class="unlock-msg">
+      <text class="unlock-icon">🔒</text>
+      <text class="unlock-text">请先在首页锁定患者</text>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="map-header">
+      <text class="map-title">位置俯视图</text>
+      <text class="map-sub">康复大厅坐标系 (单位: 米)</text>
+    </view>
+
+    <view class="map-container">
+    <canvas type="2d" id="mapCanvas" class="map-canvas"></canvas>
+
+    <!-- 当前位置信息 -->
+    <view class="pos-overlay" wx:if="{{currentPos}}">
+      <text class="pos-label">当前位置</text>
+      <text class="pos-value">X: {{currentPos.x}} m | Y: {{currentPos.y}} m</text>
+    </view>
+  </view>
+
+  <!-- 图例 -->
+  <view class="legend">
+    <view class="legend-item">
+      <view class="legend-dot current"></view>
+      <text>当前位置</text>
+    </view>
+    <view class="legend-item">
+      <view class="legend-line"></view>
+      <text>移动轨迹</text>
+    </view>
+    <view class="legend-item">
+      <view class="legend-dot past"></view>
+      <text>历史位置</text>
+    </view>
+  </view>
+  </block>
+</view>

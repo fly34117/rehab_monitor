@@ -1,4 +1,5 @@
 """主循环 — 三模态康复监测系统入口"""
+import argparse
 import time
 import queue
 import threading
@@ -8,6 +9,7 @@ import numpy as np
 from .config import (
     POSE_MODEL_PATH, POSE_DEVICE, USE_KALMAN, CAMERA_ID,
     REPORT_INTERVAL, EMOTION_INTERVAL,
+    API_PORT,
     SPATIAL_CAMERA_HEIGHT_M, SPATIAL_CAMERA_TILT_DEG,
     SPATIAL_CALIB_POINTS,
     EMOTION_CLASSES,
@@ -108,6 +110,12 @@ def _draw_help_overlay(frame):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="康复监测系统")
+    parser.add_argument('--api-debug', action='store_true', help='启用API调试模式')
+    parser.add_argument('--api-port', type=int, default=API_PORT, help='API服务器端口')
+    parser.add_argument('--camera', type=int, default=CAMERA_ID, help='摄像头ID (默认0)')
+    api_args = parser.parse_args()
+
     # ---- 初始化 ----
     detector = PoseDetector(model_path=POSE_MODEL_PATH, device=POSE_DEVICE,
                             use_kalman=USE_KALMAN)
@@ -145,16 +153,14 @@ def main():
     session_id = db.start_session()
     logger.info("会话 #%d 开始", session_id)
 
-    cap = _open_camera(CAMERA_ID)
-    if cap is None:
-        logger.error("无法打开摄像头 (ID=%d)，尝试回退到 ID=0...", CAMERA_ID)
-        cap = _open_camera(0)
-    if cap is None:
-        logger.critical("所有摄像头尝试失败，退出")
-        return
-
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    # 启动 API 服务器 (后台 daemon 线程)
+    from .api_server import start_api_server
+    api_thread = start_api_server(
+        gait, spatial, db, face_locker, detector, emotion_recognizer,
+        debug=api_args.api_debug, port=api_args.api_port
+    )
+    logger.info("API 服务器已启动 http://0.0.0.0:%d (debug=%s)",
+                api_args.api_port, api_args.api_debug)
 
     # ---- 循环状态 ----
     running = True
@@ -167,6 +173,11 @@ def main():
     show_help = False
     paused = False
 
+    # 跌倒告警去重
+    previous_fall_status = "safe"
+    _last_fall_push_time = 0
+    FALL_PUSH_COOLDOWN = 5  # 冷却时间 (秒)
+
     # 表情状态
     emotion_label = "neutral"
     emotion_scores = {c: 0.0 for c in EMOTION_CLASSES}
@@ -174,7 +185,7 @@ def main():
 
     logger.info("实时康复监测开始...")
     target_enrolled = False
-    target_person_id = 0  # 默认跟踪第一个人
+    target_person_id = -1  # -1 = 未锁定/搜索中
     target_similarity = 0.0
     target_name = ""
     target_match_source = "none"  # 'face' / 'body' / 'none'
@@ -187,14 +198,51 @@ def main():
     LOCK_ENTER_THRESH = 5         # 锁定阈值
     LOCK_MAX = 30
 
-    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置 h=帮助 space=暂停")
+    def _save_lock_state(name):
+        """持久化锁定状态到 lock_state.json（重启后自动恢复）"""
+        import json as _json, os as _os
+        _os.makedirs("model", exist_ok=True)
+        with open("model/lock_state.json", "w") as _f:
+            _json.dump({"target_name": name, "timestamp": time.time()}, _f)
+
+    def _load_lock_state():
+        """读取持久化的锁定状态，返回 target_name 或 None"""
+        import os as _os, json as _json
+        path = _os.path.join(_os.path.dirname(__file__), "..", "model", "lock_state.json")
+        if _os.path.exists(path):
+            with open(path, "r") as _f:
+                data = _json.load(_f)
+            return data.get("target_name")
+        return None
+
+    # 启动时尝试恢复上次的锁定目标（进入搜索模式）
+    _saved_target = _load_lock_state()
+    if _saved_target:
+        target_enrolled = True
+        target_name = _saved_target
+        target_person_id = -1  # 搜索中，等待人脸匹配
+        lock_confidence = LOCK_ENTER_THRESH  # 跳过迟滞，快速锁定
+        logger.info("恢复锁定目标: %s（搜索中...）", _saved_target)
+
+    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置(清除锁定+人脸库) h=帮助 space=暂停")
+
+    # 延迟打开摄像头 — 等 OpenVINO 模型编译完成后再开，避免 MSMF 流超时
+    cap = _open_camera(api_args.camera)
+    if cap is None:
+        logger.error("无法打开摄像头 (ID=%d)，尝试回退到 ID=0...", api_args.camera)
+        cap = _open_camera(0)
+    if cap is None:
+        logger.critical("所有摄像头尝试失败，退出")
+        return
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
     try:
         while running:
             ret, frame = cap.read()
             if not ret:
                 logger.warning("摄像头读取失败，尝试重连...")
-                cap = _reconnect_camera(cap, CAMERA_ID)
+                cap = _reconnect_camera(cap, api_args.camera)
                 if cap is None:
                     logger.error("摄像头重连失败，退出")
                     break
@@ -240,7 +288,47 @@ def main():
                     target_match_source = "none"
                     lock_confidence = max(0, lock_confidence - LOCK_DECREMENT * 3)
 
-            # 1.5b 外观验证（分级频率）：锁定后只验证不搜索，丢失时才搜索所有人
+            # 1.5b API 待处理解锁请求（来自微信小程序）
+            try:
+                from .api_server import consume_pending_unlock
+                if consume_pending_unlock():
+                    target_enrolled = False
+                    target_person_id = -1
+                    target_name = ""
+                    target_similarity = 0.0
+                    target_match_source = "none"
+                    lock_confidence = 0
+                    face_locker.reference_body_feat = None
+                    try:
+                        import os as _os
+                        _os.remove("model/lock_state.json")
+                        _os.remove("model/face_db.json")
+                        face_locker._load_db()
+                    except Exception:
+                        pass
+                    logger.info("API 解锁: 锁定状态和人脸库已清除")
+            except Exception:
+                pass
+
+            # 1.5c API 待处理锁定请求（来自微信小程序拍照）
+            lock_name, lock_emb = None, None
+            try:
+                from .api_server import consume_pending_lock
+                lock_name, lock_emb = consume_pending_lock()
+            except Exception:
+                pass
+
+            if lock_name is not None:
+                # 进入搜索模式：用数据库匹配（同源），不用手机照片跨源匹配
+                target_enrolled = True
+                target_name = lock_name
+                target_person_id = -1  # 搜索中
+                target_match_source = "none"
+                lock_confidence = LOCK_ENTER_THRESH  # 快速锁定
+                _save_lock_state(lock_name)
+                logger.info("API 锁定请求: %s → 搜索模式（等待人脸匹配）", lock_name)
+
+            # 1.5d 外观验证（分级频率）：锁定后只验证不搜索，丢失时才搜索所有人
             if target_enrolled and kpts is not None and kpts.shape[0] > 0:
                 lost = target_person_id < 0
                 do_face = lost or (frame_num % 15 == 0)
@@ -319,37 +407,83 @@ def main():
                                     target_match_source = "none"
                     else:
                         # ---- SEARCHING：检查所有检测找到目标 ----
-                        best = {"pid": -1, "sim": 0.0, "source": "none"}
+                        # 有指定目标名时（API/恢复锁定），用极低阈值匹配（手机照片 vs 远距离摄像头）
+                        _orig_face_th = face_locker.face_threshold
+                        _orig_body_th = face_locker.body_threshold
+                        if target_name:
+                            face_locker.face_threshold = 0.30   # 极宽：远距离跨源匹配
+                            face_locker.body_threshold = 0.55   # 放宽
+
+                        best = {"pid": -1, "sim": 0.0, "source": "none", "emb": None}
                         for pid in range(kpts.shape[0]):
                             person_k = kpts[pid]
                             face_emb = None
+                            matched_name = None
                             if do_face:
                                 face_pts = person_k[[0, 1, 2, 3, 4], :2]
                                 valid_fp = face_pts[(face_pts[:, 0] > 0) & (face_pts[:, 1] > 0)]
-                                if len(valid_fp) >= 2:
+                                if len(valid_fp) >= 1:
+                                    # 单点也尝试（用大边距裁剪）
                                     x1, y1 = valid_fp.min(axis=0).astype(int)
                                     x2, y2 = valid_fp.max(axis=0).astype(int)
+                                    if x1 == x2: x2 = x1 + 40
+                                    if y1 == y2: y2 = y1 + 40
                                     face_emb = face_locker.extract_embedding_from_roi(frame, x1, y1, x2, y2)
                                 if face_emb is None:
                                     face_emb = face_locker.enroll_from_frame(frame)
+                                # 验证匹配的人名
+                                if face_emb is not None and target_name:
+                                    matched_name, _ = face_locker.match(face_emb, threshold=0.30)
 
                             if do_body or face_emb is not None:
                                 is_match, sim, source = face_locker.match_combined(frame, person_k, face_emb)
+                                # 有指定目标名时，优先接受名称匹配的人；也接受无名但相似度够高的
+                                if is_match and target_name and matched_name:
+                                    if matched_name != target_name:
+                                        is_match = False  # 匹配到错误的人
+                                    else:
+                                        sim += 0.10  # 名称匹配加分
                                 if is_match and sim > best["sim"]:
-                                    best = {"pid": pid, "sim": sim, "source": source}
+                                    best = {"pid": pid, "sim": sim, "source": source, "emb": face_emb}
+
+                        # 恢复原始阈值
+                        face_locker.face_threshold = _orig_face_th
+                        face_locker.body_threshold = _orig_body_th
 
                         if best["pid"] >= 0:
                             lock_confidence = min(LOCK_MAX, lock_confidence + LOCK_INCREMENT)
                             if lock_confidence >= LOCK_ENTER_THRESH:
                                 if target_person_id < 0:
-                                    logger.debug("目标已锁定! sim=%.3f source=%s",
+                                    logger.info("目标已锁定! sim=%.3f source=%s (宽阈值搜索)",
                                                 best["sim"], best["source"])
+                                # 先提取目标关键点（过滤前），再缩小 kpts
+                                target_kpts = kpts[best["pid"]]
                                 if kpts.shape[0] > 1:
                                     kpts = kpts[best["pid"]:best["pid"] + 1]
                                 target_person_id = 0
                                 target_similarity = best["sim"]
                                 target_match_source = best["source"]
                                 detector.target_track_id = detector._det_to_track.get(best["pid"])
+                                # 录入人体外观特征（后续帧可用 body 匹配，不需要人脸）
+                                face_locker.enroll_body(frame, target_kpts)
+                                # 用摄像头高质量人脸更新数据库嵌入（同源匹配更可靠）
+                                if best["emb"] is not None and target_name:
+                                    try:
+                                        import json as _json, os as _os
+                                        db_path = _os.path.join(_os.path.dirname(__file__), "..", "model", "face_db.json")
+                                        if _os.path.exists(db_path):
+                                            with open(db_path, "r") as _f:
+                                                _db = _json.load(_f)
+                                            for _e in _db.get("entries", []):
+                                                if _e["name"] == target_name:
+                                                    _e["embedding"] = best["emb"].tolist()
+                                                    break
+                                            with open(db_path, "w") as _f:
+                                                _json.dump(_db, _f)
+                                            face_locker._load_db()
+                                            logger.info("已用摄像头人脸更新 %s 的嵌入", target_name)
+                                    except Exception:
+                                        pass
                         else:
                             lock_confidence = max(0, lock_confidence - LOCK_DECREMENT)
                             if lock_confidence <= 0 and target_person_id >= 0:
@@ -384,8 +518,8 @@ def main():
             world_pos = None
             trajectory = []
 
-            if kpts is not None and kpts.shape[0] > 0 and target_person_id >= 0:
-                pid = target_person_id if target_enrolled else 0
+            if kpts is not None and kpts.shape[0] > 0 and target_enrolled and target_person_id >= 0:
+                pid = target_person_id
                 if pid < kpts.shape[0]:
                     person_kpts = kpts[pid]
 
@@ -401,33 +535,57 @@ def main():
                 cadence = gait.cadence
                 bbox = _keypoints_to_bbox(person_kpts)
 
-            # 3. 跌倒检测
-            frame_h = frame.shape[0]
-            depth_m = spatial._torso_depth if spatial._torso_depth > 0 else 3.0
-            fall_status, fall_score = fall.update(
-                person_kpts if kpts is not None and kpts.shape[0] > 0 else None,
-                bbox, frame_h, depth_m)
-
-            # 躺下回溯分类: 先确认躯干水平, 再回看速度区分跌倒/休息
-            if spatial.is_lying_down:
-                fall._lying_confirmed = True
-                lying_type = fall.classify_lying_down()
-                if lying_type == "fall" and fall_status != "alert":
-                    fall_status = "alert"
-                    fall_score = 0.8
-                # 通知空间定位
-                spatial.set_lying_down(True)
+            # 3. 跌倒检测（仅锁定后运行）
+            if target_enrolled and target_person_id >= 0:
+                frame_h = frame.shape[0]
+                depth_m = spatial._torso_depth if spatial._torso_depth > 0 else 3.0
+                fall_status, fall_score = fall.update(
+                    person_kpts if kpts is not None and kpts.shape[0] > 0 else None,
+                    bbox, frame_h, depth_m)
             else:
-                if fall._lying_confirmed:
-                    fall.reset_lying_state()
-                    if fall_status == "alert":
-                        fall_status = "safe"
-                        fall_score = 0.0
+                fall_status = "safe"
+                fall_score = 0.0
 
-            # 4. 表情识别 — 传递关键点 + 更新共享帧
-            emotion_recognizer.set_keypoints(person_kpts)
-            if frame_num % EMOTION_INTERVAL == 0:
-                frame_ref[0] = frame.copy()
+            # 躺下回溯分类: 先确认躯干水平, 再回看速度区分跌倒/休息（仅锁定后）
+            if target_enrolled and target_person_id >= 0:
+                if spatial.is_lying_down:
+                    fall._lying_confirmed = True
+                    lying_type = fall.classify_lying_down()
+                    if lying_type == "fall" and fall_status != "alert":
+                        fall_status = "alert"
+                        fall_score = 0.8
+                    # 通知空间定位
+                    spatial.set_lying_down(True)
+                else:
+                    if fall._lying_confirmed:
+                        fall.reset_lying_state()
+                        if fall_status == "alert":
+                            fall_status = "safe"
+                            fall_score = 0.0
+
+            # 跌倒告警广播 (5s 冷却去重)
+            if target_enrolled and fall_status == "alert" and previous_fall_status != "alert":
+                now_ts = time.time()
+                if now_ts - _last_fall_push_time > FALL_PUSH_COOLDOWN:
+                    try:
+                        from .api_server import broadcast_fall_alert
+                        loc = spatial.current_pos if spatial else (0, 0)
+                        broadcast_fall_alert(loc, fall_score)
+                        logger.info("跌倒告警已广播 score=%.2f pos=(%.1f,%.1f)",
+                                    fall_score, loc[0], loc[1])
+                    except Exception:
+                        pass
+                    _last_fall_push_time = now_ts
+            previous_fall_status = fall_status
+
+            # 4. 表情识别 — 传递关键点 + 更新共享帧（仅锁定后）
+            if target_enrolled and target_person_id >= 0:
+                emotion_recognizer.set_keypoints(person_kpts)
+                if frame_num % EMOTION_INTERVAL == 0:
+                    frame_ref[0] = frame.copy()
+            else:
+                emotion_label = "neutral"
+                emotion_scores = {c: 0.0 for c in EMOTION_CLASSES}
 
             # 非阻塞读取表情结果 → 多帧投票
             try:
@@ -457,8 +615,8 @@ def main():
                     if x2 > x1 and y2 > y1:
                         face_thumbnail = frame[y1:y2, x1:x2]
 
-            # 5. 异步数据存储（每5帧一次，避免每帧json序列化拖慢主线程）
-            if frame_num % 5 == 0:
+            # 5. 异步数据存储（仅锁定后每5帧写入）
+            if target_enrolled and target_person_id >= 0 and frame_num % 5 == 0:
                 if kpts is not None:
                     db.write_frame_snapshot(frame_num, kpts, angles, fall_status, fall_score)
                 m = gait.get_metrics()
@@ -476,9 +634,9 @@ def main():
                 if emotion_label != "neutral":
                     db.write_emotion(frame_num, emotion_label, emotion_scores, emotion_bbox)
 
-            # 5.5 周期康复报告 (后台线程, 每30s触发)
+            # 5.5 周期康复报告 (后台线程, 仅锁定后每30s触发)
             now = time.time()
-            if now - last_report_time >= REPORT_INTERVAL and db.session_id is not None:
+            if target_enrolled and target_person_id >= 0 and now - last_report_time >= REPORT_INTERVAL and db.session_id is not None:
                 last_report_time = now
                 sid = db.session_id
                 def _do_report():
@@ -536,6 +694,15 @@ def main():
                 "trajectory": trajectory,
                 "spatial_calibrated": spatial.calibrated,
             }
+            # 同步锁定状态到 API 服务器（供微信小程序查询）
+            # 只有真正跟踪到人才报告 locked=true（搜索中不算）
+            try:
+                from .api_server import update_current_lock
+                update_current_lock(target_enrolled and target_person_id >= 0,
+                                    target_name, target_similarity, target_match_source)
+            except Exception:
+                pass
+
             output = overlay.render(annotated, state)
             if show_help:
                 _draw_help_overlay(output)
@@ -583,7 +750,26 @@ def main():
                 detector.reset_tracking()
                 gait = GaitAnalyzer()
                 fall = FallDetector()
-                logger.info("卡尔曼跟踪已重置")
+                target_enrolled = False
+                target_person_id = -1
+                target_name = ""
+                target_similarity = 0.0
+                target_match_source = "none"
+                lock_confidence = 0
+                # 清除持久化的锁定状态和人脸库
+                try:
+                    import os as _os
+                    _os.remove("model/lock_state.json")
+                except Exception:
+                    pass
+                try:
+                    import os as _os
+                    _os.remove("model/face_db.json")
+                    face_locker._load_db()  # 重新加载空库
+                    face_locker.reference_body_feat = None
+                except Exception:
+                    pass
+                logger.info("卡尔曼跟踪已重置，锁定状态和人脸库已清除")
             elif key == ord('t'):
                 # 多模态录入：人脸 + 人体外观
                 emb = face_locker.enroll_from_frame(frame)
@@ -610,6 +796,8 @@ def main():
                     target_person_id = 0
                     target_name = "target"
                     lock_confidence = LOCK_ENTER_THRESH
+                    target_match_source = "face" if emb is not None else "body"
+                    _save_lock_state("target")
                     # 记录目标所在的卡尔曼轨道（多人环境下用于空间定位）
                     if kpts is not None and kpts.shape[0] > 0:
                         detector.target_track_id = detector._det_to_track.get(0)

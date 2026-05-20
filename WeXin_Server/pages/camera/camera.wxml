@@ -1,0 +1,20 @@
+<view class="container">
+  <camera
+    device-position="{{cameraPosition}}"
+    flash="off"
+    binderror="onCameraError"
+    class="camera-preview"
+  ></camera>
+
+  <view class="btn-stack">
+    <view class="btn-square btn-flip" bindtap="flipCamera">
+      <text>翻转摄像头</text>
+    </view>
+    <view class="btn-square btn-capture" bindtap="takePhoto">
+      <text>拍照锁定</text>
+    </view>
+    <view class="btn-square btn-album" bindtap="chooseFromAlbum">
+      <text>从相册选择</text>
+    </view>
+  </view>
+</view>

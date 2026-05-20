@@ -1,0 +1,28 @@
+<scroll-view scroll-y class="scroll-wrap" enhanced show-scrollbar="{{false}}">
+  <block wx:if="{{!locked}}">
+    <view class="unlock-msg">
+      <text class="unlock-icon">🔒</text>
+      <text class="unlock-text">请先在首页锁定患者</text>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="container">
+      <view class="time-tabs">
+        <text class="tab {{timeRange===7?'active':''}}" data-days="7" bindtap="switchRange">近1周</text>
+        <text class="tab {{timeRange===30?'active':''}}" data-days="30" bindtap="switchRange">近1月</text>
+        <text class="tab {{timeRange===90?'active':''}}" data-days="90" bindtap="switchRange">近3月</text>
+      </view>
+
+      <view class="chart-card">
+        <text class="chart-title">康复评分趋势 (GRS)</text>
+        <canvas type="2d" id="trendCanvas" class="chart-canvas"></canvas>
+      </view>
+
+      <view class="chart-card">
+        <text class="chart-title">步速变化趋势</text>
+        <canvas type="2d" id="speedCanvas" class="chart-canvas"></canvas>
+      </view>
+    </view>
+  </block>
+</scroll-view>

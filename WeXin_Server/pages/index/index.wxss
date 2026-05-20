@@ -1,0 +1,214 @@
+page { background: #f0f2f5; font-family: -apple-system, sans-serif; }
+
+.page { padding-bottom: 120rpx; }
+
+/* ===== 顶部 ===== */
+.header {
+  background: linear-gradient(135deg, #1a73e8, #1557b0);
+  padding: 40rpx 30rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title { font-size: 36rpx; font-weight: 700; color: #fff; }
+.header-sub { font-size: 22rpx; color: rgba(255,255,255,0.7); margin-top: 4rpx; display: block; }
+
+.header-right { display: flex; align-items: center; gap: 10rpx; }
+.status-dot { width: 14rpx; height: 14rpx; border-radius: 50%; }
+.status-dot.online { background: #4ade80; }
+.status-dot.offline { background: #f87171; }
+.status-text { font-size: 22rpx; color: rgba(255,255,255,0.8); }
+
+/* ===== 患者卡片 ===== */
+.patient-card {
+  background: #fff;
+  margin: -20rpx 24rpx 0;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.patient-avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #e8f0fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+.avatar-text { font-size: 24rpx; color: #1a73e8; font-weight: 600; }
+
+.patient-info { flex: 1; }
+.patient-name { font-size: 30rpx; color: #1a1a1a; font-weight: 600; }
+.patient-status { font-size: 22rpx; color: #27ae60; margin-top: 4rpx; }
+
+.patient-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16rpx 24rpx;
+  background: #f0f5ff;
+  border-radius: 12rpx;
+}
+.action-icon { font-size: 32rpx; }
+.action-text { font-size: 20rpx; color: #1a73e8; margin-top: 4rpx; }
+
+/* ===== 未锁定引导 ===== */
+.unlock-hero {
+  margin: 30rpx 24rpx;
+  padding: 80rpx 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.06);
+}
+
+.unlock-icon { font-size: 80rpx; margin-bottom: 24rpx; }
+
+.unlock-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12rpx;
+}
+
+.unlock-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+}
+
+.unlock-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 14rpx;
+}
+
+/* ===== GRS 仪表盘 ===== */
+.grs-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 30rpx 24rpx;
+  margin: 20rpx 24rpx 0;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.gauge-canvas { width: 320rpx; height: 200rpx; }
+
+.grs-info { display: flex; align-items: baseline; margin-top: -16rpx; }
+.grs-number { font-size: 64rpx; font-weight: 800; color: #1a73e8; }
+.grs-unit { font-size: 28rpx; color: #888; margin-left: 8rpx; }
+
+.grs-label { font-size: 24rpx; color: #999; margin: 8rpx 0 16rpx; }
+
+.grs-bar-bg { width: 100%; height: 8rpx; background: #e8e8e8; border-radius: 4rpx; overflow: hidden; }
+.grs-bar-fill { height: 100%; background: linear-gradient(90deg, #f39c12, #27ae60); border-radius: 4rpx; }
+
+/* ===== 导航行 ===== */
+.nav-row {
+  display: flex;
+  margin: 16rpx 24rpx;
+  gap: 16rpx;
+}
+
+.nav-item {
+  flex: 1;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.03);
+}
+
+.nav-icon { font-size: 40rpx; margin-bottom: 8rpx; }
+.nav-text { font-size: 24rpx; color: #555; }
+
+/* ===== 指标区 ===== */
+.section { margin: 20rpx 24rpx 0; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.section-title { font-size: 30rpx; font-weight: 700; color: #1a1a1a; }
+.section-hint { font-size: 24rpx; color: #1a73e8; }
+
+.metrics-scroll {
+  display: flex;
+  gap: 12rpx;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 8rpx;
+}
+
+.metric-card {
+  min-width: 140rpx;
+  background: #fff;
+  border-radius: 14rpx;
+  padding: 20rpx 24rpx;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.03);
+  flex-shrink: 0;
+}
+
+.mc-label { font-size: 22rpx; color: #888; margin-bottom: 8rpx; }
+.mc-value { font-size: 36rpx; font-weight: 700; }
+.mc-value.good { color: #27ae60; }
+.mc-value.warn { color: #f39c12; }
+.mc-value.danger { color: #e74c3c; }
+.mc-unit { font-size: 20rpx; color: #bbb; margin-top: 4rpx; }
+
+/* ===== 心情 ===== */
+.emotion-box {
+  background: #fff;
+  border-radius: 14rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.03);
+}
+.emotion-canvas { width: 100%; height: 220rpx; }
+
+/* ===== 快捷操作 ===== */
+.quick-row {
+  display: flex;
+  gap: 16rpx;
+  margin: 20rpx 24rpx 0;
+}
+.q-btn {
+  flex: 1;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 12rpx;
+}
+.q-btn.outline {
+  background: #fff;
+  color: #1a73e8;
+  border: 2rpx solid #1a73e8;
+}
+
+.bottom-safe { height: 40rpx; }

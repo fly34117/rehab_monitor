@@ -1,0 +1,8 @@
+{
+  "name": "rehab-monitor-wechat",
+  "version": "1.0.0",
+  "description": "康复监测微信小程序 — 步态分析 + AI报告",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {}
+}

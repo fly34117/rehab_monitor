@@ -1,0 +1,54 @@
+page { background: #f5f5f5; font-family: -apple-system, sans-serif; }
+
+.container { padding: 12rpx; padding-bottom: 120rpx; }
+
+.card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 12rpx;
+}
+
+.section-title {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-label { font-size: 26rpx; color: #888; }
+
+.info-value {
+  font-size: 26rpx;
+  color: #333;
+  max-width: 320rpx;
+  text-align: right;
+  word-break: break-all;
+}
+
+.info-value.good { color: #27ae60; font-weight: 500; }
+.info-value.danger { color: #e74c3c; font-weight: 500; }
+
+.btn-switch {
+  background: #1a73e8;
+  color: #fff;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+
+.about-text {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}

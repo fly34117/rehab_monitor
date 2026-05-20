@@ -1,0 +1,94 @@
+<view class="page">
+  <!-- 顶部状态栏 -->
+  <view class="header">
+    <view class="header-left">
+      <text class="header-title">康复监测</text>
+      <text class="header-sub">三模态步态分析系统</text>
+    </view>
+    <view class="header-right">
+      <view class="status-dot {{wsConnected ? 'online' : 'offline'}}"></view>
+      <text class="status-text">{{wsConnected ? '在线' : '离线'}}</text>
+    </view>
+  </view>
+
+  <!-- ===== 未锁定状态 ===== -->
+  <block wx:if="{{!locked}}">
+    <view class="unlock-hero">
+      <text class="unlock-icon">🔒</text>
+      <text class="unlock-title">请先锁定患者</text>
+      <text class="unlock-desc">拍照锁定后即可查看实时步态数据</text>
+      <button class="unlock-btn" bindtap="goToCamera">📷 拍照锁定患者</button>
+    </view>
+
+    <view class="nav-row">
+      <view class="nav-item" bindtap="goToTrend"><text class="nav-icon">📈</text><text class="nav-text">趋势</text></view>
+      <view class="nav-item" bindtap="goToMap"><text class="nav-icon">🗺️</text><text class="nav-text">地图</text></view>
+      <view class="nav-item" bindtap="goToCamera"><text class="nav-icon">📷</text><text class="nav-text">拍照</text></view>
+      <view class="nav-item" bindtap="goToReport"><text class="nav-icon">📋</text><text class="nav-text">报告</text></view>
+    </view>
+  </block>
+
+  <!-- ===== 已锁定状态 ===== -->
+  <block wx:else>
+    <view class="patient-card">
+      <view class="patient-avatar"><text class="avatar-text">已</text></view>
+      <view class="patient-info">
+        <text class="patient-name">{{patientName}}</text>
+        <text class="patient-status">● 监测中</text>
+      </view>
+      <view class="patient-action" bindtap="goToCamera">
+        <text class="action-icon">📷</text><text class="action-text">重锁</text>
+      </view>
+      <view class="patient-action" bindtap="unlockPatient">
+        <text class="action-icon">🔓</text><text class="action-text">取消</text>
+      </view>
+    </view>
+
+    <view class="grs-hero">
+      <canvas type="2d" id="gaugeCanvas" class="gauge-canvas"></canvas>
+      <view class="grs-info">
+        <text class="grs-number">{{grsScore}}</text>
+        <text class="grs-unit">分</text>
+      </view>
+      <text class="grs-label">综合康复评分</text>
+      <view class="grs-bar-bg">
+        <view class="grs-bar-fill" style="width:{{grsScore}}%;"></view>
+      </view>
+    </view>
+
+    <view class="nav-row">
+      <view class="nav-item" bindtap="goToTrend"><text class="nav-icon">📈</text><text class="nav-text">趋势</text></view>
+      <view class="nav-item" bindtap="goToMap"><text class="nav-icon">🗺️</text><text class="nav-text">地图</text></view>
+      <view class="nav-item" bindtap="goToCamera"><text class="nav-icon">📷</text><text class="nav-text">拍照</text></view>
+      <view class="nav-item" bindtap="goToReport"><text class="nav-icon">📋</text><text class="nav-text">报告</text></view>
+    </view>
+
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">实时步态指标</text>
+        <text class="section-hint" bindtap="goToTrend">查看趋势 ›</text>
+      </view>
+      <scroll-view class="metrics-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+        <view class="metric-card" wx:for="{{metricsList}}" wx:key="label">
+          <text class="mc-label">{{item.label}}</text>
+          <text class="mc-value {{item.status}}">{{item.value}}</text>
+          <text class="mc-unit">{{item.unit}}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="section">
+      <view class="section-header"><text class="section-title">心情统计 (近7天)</text></view>
+      <view class="emotion-box">
+        <canvas type="2d" id="emotionCanvas" class="emotion-canvas"></canvas>
+      </view>
+    </view>
+
+    <view class="quick-row">
+      <button class="q-btn" bindtap="quickReport">生成报告</button>
+      <button class="q-btn outline" open-type="share">分享</button>
+    </view>
+  </block>
+
+  <view class="bottom-safe"></view>
+</view>

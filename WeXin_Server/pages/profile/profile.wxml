@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="card">
+    <text class="section-title">患者信息</text>
+    <view class="info-row">
+      <text class="info-label">患者 ID</text>
+      <text class="info-value">{{patientId}}</text>
+    </view>
+    <view class="info-row">
+      <text class="info-label">锁定状态</text>
+      <text class="info-value {{locked ? 'good' : 'danger'}}">{{locked ? '已锁定' : '未锁定'}}</text>
+    </view>
+    <button class="btn-switch" size="mini" bindtap="switchPatient">切换患者</button>
+  </view>
+
+  <view class="card">
+    <text class="section-title">设置</text>
+    <view class="info-row">
+      <text class="info-label">推送通知</text>
+      <switch checked="{{notificationsEnabled}}" bindchange="toggleNotification" />
+    </view>
+    <view class="info-row" bindtap="changeApiBase">
+      <text class="info-label">服务器地址</text>
+      <text class="info-value small">{{apiBaseUrl}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="section-title">关于</text>
+    <text class="about-text">康复监测系统 v1.0\n三模态步态分析 + AI 报告</text>
+  </view>
+</view>

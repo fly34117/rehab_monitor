@@ -70,3 +70,22 @@ EMOTION_MODEL_PATH = os.path.join(PROJECT_ROOT, "model", "emotion_model")
 EMOTION_INTERVAL = 5     # 每 N 帧跑一次表情识别
 EMOTION_CLASSES = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprise"]
 EMOTION_INPUT_SIZE = 64  # 分类器输入尺寸 (64x64)
+
+# ===== API 服务器 =====
+API_VERSION = "v1"
+API_HOST = "0.0.0.0"
+API_PORT = 5000
+API_DEBUG = False
+API_CORS_ORIGINS = ["*"]
+API_RATE_LIMIT_PER_SECOND = 10
+WS_PORT = 5001                    # WebSocket 独立端口（websockets 库）
+WEBSOCKET_HEARTBEAT_INTERVAL = 30  # 心跳间隔 (秒)
+WEBSOCKET_PUSH_INTERVAL = 3        # 指标推送间隔 (秒)
+
+# ===== 图片上传 =====
+IMAGE_UPLOAD_QUALITY = 60          # JPEG 压缩质量 1-100
+IMAGE_MAX_SIZE_KB = 100            # 单张图片上限
+IMAGE_MAX_WIDTH = 1024             # 图片最大宽度
+
+# ===== 患者锁定 =====
+LOCK_SIMILARITY_THRESHOLD = 0.55   # 人脸匹配阈值

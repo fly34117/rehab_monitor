@@ -94,6 +94,12 @@ ultralytics-8.4.46/
 # Face DB (contains biometric embeddings — consider privacy)
 # ============================================================
 model/face_db.json
+model/lock_state.json
+
+# ============================================================
+# WeChat Mini-Program local config
+# ============================================================
+WeXin_Server/project.private.config.json
 
 # ============================================================
 # Claude Code

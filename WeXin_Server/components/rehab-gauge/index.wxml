@@ -1,0 +1,3 @@
+<view class="gauge-wrapper">
+  <canvas type="2d" id="{{canvasId}}" class="gauge-canvas"></canvas>
+</view>

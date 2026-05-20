@@ -106,7 +106,22 @@ class RehabDatabase:
             error_message TEXT,
             FOREIGN KEY (session_id) REFERENCES sessions(id)
         )""")
+        self._create_index_if_not_exists(c, "idx_gait_timestamp",
+            "gait_metrics", "timestamp")
+        self._create_index_if_not_exists(c, "idx_gait_session",
+            "gait_metrics", "session_id, timestamp")
+        self._create_index_if_not_exists(c, "idx_emotion_timestamp",
+            "emotion_log", "timestamp")
         self.conn.commit()
+
+    def _create_index_if_not_exists(self, conn_or_cursor, idx_name, table, columns):
+        """仅当索引不存在时才创建，避免每次启动重复执行"""
+        c = conn_or_cursor
+        c.execute(
+            f"SELECT name FROM sqlite_master WHERE type='index' AND name='{idx_name}'"
+        )
+        if not c.fetchone():
+            c.execute(f"CREATE INDEX {idx_name} ON {table}({columns})")
 
     def _migrate(self, conn):
         """自动迁移：为旧数据库添加缺失的列"""
@@ -394,7 +409,8 @@ class RehabDatabase:
         c = self.conn.cursor()
         c.execute(
             "SELECT timestamp, frame_number, joint_angles_json, fall_status, fall_score "
-            "FROM frame_snapshots WHERE session_id=? AND timestamp >= ? ORDER BY timestamp",
+            "FROM frame_snapshots WHERE session_id=? AND timestamp >= ? "
+            "ORDER BY timestamp DESC LIMIT 1000",
             (self.session_id, cutoff))
         snapshots = c.fetchall()
 
@@ -403,13 +419,15 @@ class RehabDatabase:
             "stride_length_m, gait_velocity_mps, step_width_m, stance_percentage, "
             "left_knee_rom, right_knee_rom, step_time_cv, step_length_cv, "
             "foot_clearance_cm, gait_rehab_score, trunk_sway_deg, double_support_ratio "
-            "FROM gait_metrics WHERE session_id=? AND timestamp >= ? ORDER BY timestamp",
+            "FROM gait_metrics WHERE session_id=? AND timestamp >= ? "
+            "ORDER BY timestamp DESC LIMIT 1000",
             (self.session_id, cutoff))
         gait = c.fetchall()
 
         c.execute(
             "SELECT timestamp, emotion_label, emotion_scores_json "
-            "FROM emotion_log WHERE session_id=? AND timestamp >= ? ORDER BY timestamp",
+            "FROM emotion_log WHERE session_id=? AND timestamp >= ? "
+            "ORDER BY timestamp DESC LIMIT 1000",
             (self.session_id, cutoff))
         emotions = c.fetchall()
 
