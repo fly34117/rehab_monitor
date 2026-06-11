@@ -1,0 +1,888 @@
+--- 第 1 页 ---
+REVIEW
+Open Access
+Advancing quantitative techniques to
+improve understanding of the skeletal
+structure-function relationship
+Frances T. Sheehan1*, Elizabeth L. Brainerd2, Karen L. Troy3, Sandra J. Shefelbine4 and Janet L. Ronsky5
+Abstract
+Although all functional movement arises from the interplay between the neurological, skeletal, and muscular systems,
+it is the skeletal system that forms the basic framework for functional movement. Central to understanding human
+neuromuscular development, along with the genesis of musculoskeletal pathologies, is quantifying how the human
+skeletal system adapts and mal-adapts to its mechanical environment. Advancing this understanding is hampered by
+an inability to directly and non-invasively measure in vivo strains, stresses, and forces on bone. Thus, we traditionally
+have turned to animal models to garner such information. These models enable direct in vivo measures that are not
+available for human subjects, providing information in regards to both skeletal adaptation and the interplay between
+the skeletal and muscular systems. Recently, there has been an explosion of new imaging and modeling techniques
+providing non-invasive, in vivo measures and estimates of skeletal form and function that have long been missing.
+Combining multiple modalities and techniques has proven to be one of our most valuable resources in enhancing our
+understanding of the form-function relationship of the human skeletal, muscular, and neurological systems. Thus, to
+continue advancing our knowledge of the structural-functional relationship, validation of current tools is needed, while
+development is required to limit the deficiencies in these tools and develop new ones.
+Background
+Motion in humans and other animals (e.g., walking,
+running, leaping, flying, and swimming) emerges from
+the interaction of skeletal shape, strength, and stiffness;
+musculotendon architecture and mechanics; and neural
+control. Yet, it is the skeletal system that creates the
+overall framework for functional movement. The overall
+shape of bones converts muscle shortening into gross
+motion; and the specific shape of articular surfaces both
+guides and constrains motion. Neuromechanical sys-
+tems, sometimes with surprising self-stabilizing proper-
+ties, emerge from the interaction of this mechanical
+complexity with the intricacies of motor and sensory
+control [1]. Thus, quantifying how the skeletal system
+adapts and mal-adapts to these stresses is central to un-
+derstanding neuromuscular development, along with the
+genesis of musculoskeletal pathologies.
+The internal and external geometry of bones and their
+articular surfaces are the scaffold on which motion is
+built. Bone geometry varies among individuals and
+changes substantially during development. It is also in-
+fluenced by physical activity, injury, and pathology. This
+geometry is also influenced by evolution. Among the
+more than 60,000 species of vertebrate animals, skeletal
+shape varies widely with evolutionary adaptation, such
+as bat and bird wings for flight and long frog legs for
+jumping. Discovering robust form-function relationships
+of the skeletal system in both human and non-human
+animals is required to advance our understanding of
+skeletal remodeling, musculoskeletal pathologies, and
+musculoskeletal function.
+New imaging and modeling methods have the potential
+to advance our knowledge of form-function relationships
+rapidly. Studies evaluating and models including detailed
+musculoskeletal morphology, be it patient-specific or
+species-specific, are an important frontier in the field of
+biomechanics and neural control of movement. Thus, we
+need to exploit the tools we currently have at our disposal
+* Correspondence: gavellif@cc.nih.gov
+1National Institutes of Health, Bethesda, MD, USA
+Full list of author information is available at the end of the article
+© The Author(s). 2018 Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0
+International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and
+reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to
+the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver
+(http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+https://doi.org/10.1186/s12984-018-0368-9
+
+
+--- 第 2 页 ---
+and continue to develop and validate new ones for the ac-
+curate and precise quantification of in vivo musculoskel-
+etal properties and the functional movement they enable.
+The focus of this review is to provide an overview of tech-
+niques for advancing understanding of this relationship
+with specific examples of adaptation and mal-adaptation
+within the developing skeleton, mature skeleton, musculo-
+skeletal interactions at the joint level, and vertebrates.
+The developing skeleton
+It has been known for centuries that altering the load on
+the bone affects bone development and growth. In ancient
+China, small feet were a sign of beauty and girls’ feet were
+bound to prevent growth [2]. In Indian and African tribes,
+the heads of children were bound between planks to elong-
+ate the skull, which was considered a sign of nobility [3].
+Modern research has confirmed that high loads induce
+bone formation and reduced loads result in bone resorp-
+tion, as proposed by Julius Wolff in the 1890s [4]. Growing
+bone is particularly sensitive to its loading environment
+because the ossification process can be altered with mech-
+anical loads. This “mechano-sensitivity” allows deformities
+and dysplasias to develop rapidly when exposed to inappro-
+priate loading. However, it also offers great potential for
+clinical interventions that obtain appropriate bone loading
+to ensure normal growth.
+Time-varying multi-directional bone loading, resulting
+from both muscle and external forces, in concert with
+biochemical factors (e.g., hormones, growth factors,
+nutrients [5]) directly regulates bone growth. Although
+the loading environment is complex, it has three key
+elements: 1) number of loading cycles; 2) magnitude of
+loading; and 3) direction of loading. The number of
+loading cycles is the simplest to measure. The direction
+and magnitude of bone loading are more challenging to
+assess and typically rely on analysis of motion patterns.
+Combining motion analysis with musculoskeletal models
+using inverse kinematics [6], optimization algorithms [7],
+multi-objective optimization functions [8], or computed-
+muscle control methods [9] provides estimations of muscle
+forces, as well as the forces and moments applied to the
+skeleton. It is these loads that determine the mechanical en-
+vironment of the growing bone. When musculoskeletal
+modeling is combined with finite element (FE) bone model-
+ing, tissue-level stresses can be determined. These tissue
+level stresses, in turn, can be used to predict ossification
+patterns and ultimately changes to the overall bone shape,
+such as in developmental dysplasia of the hip [10, 11] or
+bone deformities in cerebral palsy [12, 13].
+As insightful as these combined motion analysis and
+modeling approaches have been, understanding the initial
+skeletal shape is critical to obtaining reliable estimates of
+joint loads and tissue stresses, particularly when evaluating
+the pediatric population. This problem becomes even
+more complicated in the presence of pathology when both
+bone size and shape can be drastically altered from the
+typical adult model [14, 15]. Studies have shown that
+subject-specific musculoskeletal models estimate signifi-
+cantly reduced joint forces and moments, compared to
+using scaled generic models [16–18]. For example, esti-
+mated joint moments during gait in children with cerebral
+palsy are reduced when the generic model is replaced with
+subject-specific morphology [18]. This indicates that the
+gait in children with cerebral palsy may be “optimized” for
+the bone shape; or alternatively, the bone shape may be
+“optimized” for the gait. Likewise, FE models with subject
+specific growth plate shapes have different tissue stresses
+than generic growth plate shapes [19]. Thus, taking into
+account specific geometry is critical in understanding
+mechanical function.
+Another challenge is accurately modeling neuromuscular
+control parameters for children with altered gait patterns.
+Currently, musculoskeletal models can predict quite accur-
+ately muscle firing patterns and joint loads during typical
+walking. Yet, children with disabilities (e.g., cerebral palsy,
+spina bifada) presumably do not use the same optimization
+criteria in their gait. Mathematically capturing the spasti-
+city, affected neuro-motor control, and muscle tone of
+these children is challenging. However, these are the popu-
+lations where altered gait affects bone formation and where
+the prediction of bone growth is of great clinical interest.
+Although limitations still remain in measuring or even
+estimating the loading environment experienced by the
+pediatric skeletal system, studies combining musculoskel-
+etal and FE modeling have shown that altered loading
+affects the progression of the growth front and could result
+in bone deformities [13]. Thus, as our measurement and
+modeling tools improve, we will have an increased capacity
+to predict interventional outcomes, streamlining our ability
+to generate successful patient-specific treatment plans.
+While the relationship between form and function is
+exaggerated in the growing skeleton due to rapid growth,
+the currents tools have been designed to assess normal
+adult function. These tools are not adequate for a growing
+child with bone deformities, yet this is where the clinical
+need for assessment is highest. Thus, a focused effort is
+needed to adapt current experimental and modeling tech-
+niques to the study of pediatric populations.
+The mature skeleton
+After skeletal maturity, bone maintains its capacity to
+adapt to its mechanical loading environment. This adapta-
+tion is driven primarily by strain. Specifically, for a given
+applied force, weak bones experience larger strains,
+whereas strong bones experience lower strains. This elicits
+increased adaptation in the weaker bone, eventually result-
+ing in stronger bone – a phenomenon described by some
+as a “mechanostat” [20], with bone having a mechanical
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 2 of 7
+
+
+--- 第 3 页 ---
+set point, similar to a thermostat. Although the actual
+process is understood to be more complex than the ana-
+logy implies, due to other physiologic factors that influ-
+ence bone adaptation, the basic principle has been upheld
+through both retrospective and prospective observation
+[21–24]. For example, bone adaptation in skeletally
+mature women has been observed to be site specific and
+related to energy equivalent strain, with high strain
+regions experiencing more bone apposition than low
+strain regions [25].
+Although the relationship between mechanical signals
+and bone adaptation has been extensively studied in ani-
+mals [26], this relationship is not well understood in
+humans due to difficulties in noninvasively measuring
+both the stimulus and the change in bone structure.
+Thus, mechanical loading in humans is frequently esti-
+mated through either retrospective physical activity sur-
+veys [27–29] or more directly via measures based on
+ground reaction force or body segment accelerations
+[30].These measures are limited in that they do not con-
+sider how bone structure, which is highly variable even
+among healthy individuals, affects bone strain – the
+driver of bone adaptation. Bone mineral density (BMD)
+is widely used as a surrogate measure of bone strength.
+It is inversely related to strain for a given force, but only
+explains about 50% of the variance in the relationship
+[31]. Furthermore, bone strain is highly variable, while
+BMD is not. For example, in a sample of 23 women with
+fairly homogenous characteristics, the same simulated
+external force (300 N) on the distal radius results in a 6-
+fold variation in mean strains, but only a 2-fold variation
+in BMD [32]. Collectively, this indicates that the under-
+lying bone structure is just as important as the density
+of bone in determining how much strain it will experi-
+ence for a given force. And, since bone adaptation is
+strain-driven, it may also partially explain why exercise-
+based therapies aimed at increasing BMD work for some
+people, but not others, as exercises are generally pre-
+scribed based on force, not bone strain.
+In the past decade, three-dimensional imaging methods
+such as CT and MR imaging have become useful for nonin-
+vasively quantifying bone structure, from the micro to the
+macro scale [33–37]. On the macro-scale, patient-specific
+CT-based FE models have been shown to accurately esti-
+mate bone strain [32, 38, 39] for a variety of physiologic
+loading scenarios. Not only does CT data provide the basis
+for patient-specific geometry, these data can account for
+variations in BMD that are detectable with x-ray, explaining
+approximately 85% of the variance in surface strain. The
+primary limitation to these models is that generally they are
+validated only in specific loading scenarios and include
+assumptions and simplifications that limit their application.
+Furthermore, creating patient-specific FE models is labor-
+intensive. On both the micro- and macroscale, CT data can
+be analyzed quantitatively to calculate parameters such as
+bone mineral content and BMD, which have been related
+to bone tissue elastic modulus [40–43]. High resolution
+peripheral quantitative CT (HR-pQCT) has rapidly become
+a method of choice for noninvasive measurement of bone
+microstructure in living humans. With relatively low radi-
+ation exposure (around 3 micro-Sieverts per scan, or
+roughly half a day’s background exposure), HR-pQCT and
+FE models based on HR-pQCT data have provided useful
+information regarding specific microstructural changes
+associated with bone fragility [44]. However, HRpQCT is
+currently expensive, limited to imaging the extremities,
+and, practically, it cannot acquire data on more than one or
+two centimeters of a limb, due to the long scan time and
+large file sizes associated with very high resolution data.
+Bone structure and physical activity are intimately
+linked, with healthy bones facilitating an active lifestyle
+and an active lifestyle contributing to healthy bones. The
+achievement of high peak bone strength during young
+adulthood imparts lifelong protection against fragility
+fractures [45]. Subject-specific FE models and micro-
+structural measurements are providing useful insights
+into how mechanical loads influence bone structure, and
+how bone structure affects the resulting strain. There is
+a need for high quality, prospective data linking specific
+characteristics of mechanical signals and physiologic traits
+to bone adaptation in healthy and clinical populations.
+Many challenges exist, such as identifying the threshold
+between optimal and damaging mechanical loading on
+both hard and soft tissue, exploiting the natural feedback
+system to safely strengthen bone in vulnerable popula-
+tions, and identifying characteristics of people who might
+respond to such interventions a priori.
+Mal-adaptation at the joint level
+As joints enable articulation, healthy musculoskeletal func-
+tion involves the joint tissues’ (e.g., bone, cartilage, tendon,
+ligaments, etc) ability to continuously adapt their structure
+and biology to their mechanical loading environment. The
+specific factors and conditions required to maintain the
+homeostasis for healthy joint tissues remain poorly under-
+stood. Developing techniques to study conditions that re-
+sult in joint degeneration are shedding light on what is
+required to maintain healthy joint homeostasis [46–54].
+One example of joint degeneration is tibiofemoral
+osteoarthritis (OA), which severely impacts a patient’s
+quality of life. Treatments to date are limited, with the
+primary option being pain and inflammation manage-
+ment and, eventually, joint replacement. Many factors,
+such as trauma, can initiate OA. For example, 12 to
+20 year follow ups of athletes who sustained anterior
+cruciate ligament (ACL) ruptures reveal that 40–50% of
+these athletes have OA by ages 25–54 years. Altered
+joint kinematics and kinetics, associated with ACL
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 3 of 7
+
+
+--- 第 4 页 ---
+deficiency (ACLD) [49, 55–59], are theorized to cause a
+shift in tibiofemoral cartilage contact locations and alter
+cartilage loading patterns [60]. Such an abrupt injury-
+induced change in the joint loading environment may
+increase cartilage susceptibility to damage at regions ill-
+adapted to withstand these altered loads [61–64]. Over
+years, this interaction causes tissue damage and loss, lead-
+ing to clinically symptomatic OA. To date, this proposed
+framework has been difficult to verify directly in humans
+due to limits in our experimental measurement tools.
+Various highly accurate imaging tools can individually
+provide data in regards to OA, but the true power comes
+from leveraging these tools off each other. For example,
+biplanar video-fluoroscopy (BVF) systems, which com-
+bine fluoroscopic imaging with magnetic resonance or
+CT images and use novel calibration approaches, pro-
+vide the opportunity to obtain submillimeter accuracies
+in quantifying in vivo 3D bone movements [65–68]. This
+level of accuracy can likely detect differences between
+healthy and individuals with ACLD or OA. In addition,
+during early OA, cartilage exhibits swelling and soften-
+ing, which can lead to cartilage degeneration [69, 70].
+Magnetic resonance imaging of cartilage based on T2
+relaxometry has been used to study these early structural
+and compositional changes, as the sequence is sensitive
+to collagen architecture, proteoglycan, and water content
+[71, 72]. Specifically, higher T2 values have been re-
+ported in the tibiofemoral cartilage of individuals with
+OA and subjects with ACLD [73, 74]. Finally, high reso-
+lution magnetic resonance images can provide 3D struc-
+tural images for deriving bone and cartilage models,
+along with FE models of cartilage. Combining these tools
+enables the investigation of in vivo cartilage deformation
+associated with the bone movement. Quantifying the cor-
+responding T2 values within contact and non-contact re-
+gions for the tibiofemoral cartilage provides information
+regarding cartilage composition within these regions.
+Lastly, incorporating measures of muscle activations
+allows insights into changes in neuro-muscular control
+associated with the various conditions.
+A recent pilot study using this integrated imaging
+approach, with four healthy and four ACLD individuals,
+found a substantially higher loading rate under static load-
+ing for the ACLD individuals in comparison to the healthy
+controls [51, 52]. Altered regions of tibiofemoral cartilage
+contact, as well as altered T2 values in contact and non-
+contact regions were identified during walking. The aver-
+age T2 values for the ACLD limbs were higher than those
+of the ACL intact limbs, which could be potentially associ-
+ated with early OA. Thus, applying a combination of tools
+has provided preliminary evidence on the link between
+injury, change in cartilage loading, and OA.
+Characterizing
+the
+relationship
+between
+cartilage
+structure and composition (T2 values) with dynamic
+loading will likely provide cartilage mechanical function
+information for early OA detection. The key components
+involve identifying changes in joint: kinematics and kinetics,
+morphology, cartilage structure, and neuromuscular con-
+trol.This integrated structure-function approach provides
+promise for advancing the understanding of mechanisms of
+cartilage homeostasis, as well as mal-adaptations, such as
+cartilage degeneration leading to OA. Further development
+in 3D-2D registration approaches, numerical simulations
+and integration of techniques are required to enable these
+functional dynamic imaging approaches to advance under-
+standing of the in-vivo mechanics of a larger spectrum of
+healthy joints and those afflicted with pathology.
+Skeletal shape and motion across the vertebrates
+As with studies on humans, studies of skeletal shape and
+motion in non-human animals contribute to our under-
+standing of 3D joint function, to the development of
+biologically-inspired devices, and to understanding the
+natural world. Model animal species, such as mice and
+rats, are developed specifically for biomedical research
+and benefit from uniformity. At the other extreme, com-
+parative studies of a wide range of species can yield in-
+sights beyond what can be learned from direct study of
+humans and even other mammals. The more than
+60,000 species of extant vertebrates exhibit a wide
+variety of articular surface shapes that guide the motion
+of joints, permitting some motions and constraining
+others. But to develop general principles for how articu-
+lar shape relates to motion, it is necessary to measure
+both shape and motion simultaneously.
+The shape of articular surfaces can be determined with
+CT or magnetic resonance imaging and combined with
+bone motion from BVF to visualize bone shape and
+motion simultaneously. This combination of techniques
+has now been applied extensively to study joint function
+in both humans and other animals [65–67, 75–78]. In
+most non-human animals, the registration of 3D bone
+models to 2D bi-planar video fluoroscopy images can be
+facilitated by surgical implantation of small (< 1 mm)
+radiopaque beads into the bones [79]. Combining this
+motion with a CT scan of the same individual animal
+yields a precise and accurate (within ±0.1 mm) XROMM
+animation of bone shape and motion [75, 76]. In most
+studies of human joints, marker beads cannot be im-
+planted into the bones, so the 3D to 2D registration
+must be done by markerless matching of bone shape
+data to fluoroscopy images [65–67, 77, 78]. With or
+without markers, and in humans or other animals, these
+techniques are yielding unprecedented insights into the
+relationship between skeletal shape and motion.
+For example, using XROMM to study the biomechan-
+ics of breathing in lizards is yielding general insights into
+lung ventilation in all tetrapods, including humans [80],
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 4 of 7
+
+
+--- 第 5 页 ---
+as well as specific insights into the similarities, differ-
+ences, and evolution of ribs and intercostal muscles in
+various vertebrate groups [81]. Relative to mammals, rib
+motions for breathing in lizards are exaggerated because
+lizards lack a diaphragm muscle to assist with lung
+expansion. Lizards rely entirely on their rib motions for
+breathing, making them good subjects for deriving
+general principles for how rib shape and motion interact
+to expand the thorax [80].
+Historical
+studies
+on
+the
+skeletal
+form-function
+relationship in non-human animal models has greatly
+advanced our understanding of this relationship in
+humans. A challenge going forward will be to develop
+the data management tools needed to synthesize skeletal
+shape and motion data from multiple studies and spe-
+cies. The 3D animations resulting from combining CT
+or MR imaging data with bi-planar video fluoroscopy
+are data rich and could be re-analyzed with new
+methods to answer new questions. But data must be
+managed and shared in a standardized manner to facili-
+tate sharing and reuse, and this is particularly true for
+comparative studies among species [82]. Toward devel-
+oping general principles for how articular shape relates
+to motion, comparative studies of diverse joints from
+many species will be necessary for developing statistical
+models of joint function [83].
+Conclusion
+Although all functional movement is born out of the
+interplay between the neurological, skeletal, and muscu-
+lar systems, it is the skeletal system that forms the basic
+framework from which functional movement is created.
+Not only does it provide the structure to which muscles
+attach, its shape and size affect the overall ability for a
+muscle to generate torque, and the skeletal system
+creates a parameter space for movement. Thus, central
+to understanding human neuromuscular development,
+along with the genesis of musculoskeletal pathologies, is
+an understanding of how the human skeletal system
+adapts and mal-adapts to its mechanical environment.
+Advancing this understanding has been hampered by an
+inability to directly measure the in vivo strains, stresses,
+and forces on bone, non-invasively in humans. Thus, we
+have turned to the animal model to evaluate how the
+skeletal system adapts to long-term stresses through
+evolution. The animal model also enables direct in vivo
+measures that are not available in human subjects, pro-
+viding information in regards to both skeletal adaptation
+and the interplay between the skeletal and muscular
+systems. Recently, there has been an explosion of new
+imaging and modeling techniques that are beginning to
+provide the in vivo measures of human skeletal form
+and function that have long been missing. Combining
+multiple modalities (e.g., a BVF with magnetic resonance
+image based models, gait analysis with dynamic model-
+ing, CT models with FE models, etc.) has proven to be
+one of our most valuable resources in enhancing our
+understanding of the form-function relationship of the
+human skeletal system, along with the muscular and
+neurological systems. Many challenges exist in our
+efforts to fully understand the form-function relationship
+of the skeletal system, yet progress in the development
+and validation of tools to measure or estimate skeletal
+properties has paid high dividends, not only in terms of
+increased general knowledge, but in the prevention and
+treatment of various debilitating musculoskeletal impair-
+ments and pathologies.
+Abbreviations
+ACL: Anterior cruciate ligament; ACLD: ACL deficiency; BVF: Biplanar video-
+fluoroscopy; FE: Finite element; HRpQCT: High resolution peripheral
+quantitative CT; MR: Magnetic resonance; OA: Osteoarthritis; PF: Proteoglycan;
+PTOA: Post-traumatic osteoarthritis; TF: Tibiofemoral; XROMM: X-ray
+reconstruction of moving morphology
+Acknowledgments
+This work was funded, in part, by the Intramural Research Program of the
+National Institutes of Health Clinical Center, Bethesda, MD, USA (author FTS).
+The authors would like to acknowledge support of the National Science
+Foundation (grants 1120967, 1262156, 1655756 and 1661129), author ELB;
+the National Institute for Arthritis and Musculoskeletal and Skin Diseases, NIH,
+(grant R01AR063691), author KLT; and the Natural Sciences and Engineering
+Research Council and Alberta Innovates, author JLR. Lastly, we would like to
+thank the NSF (award CBET 1644835) for financial support in publishing this
+manuscript.
+Funding
+This work was funded by
+1. Intramural Research Program of the National Institutes of Health
+Clinical Center, Bethesda, MD, USA: author FTS;
+2. The National Science Foundation (grants 1120967, 1262156, 1655756
+and 1661129):author ELB;
+3. The National Institute for Arthritis and Musculoskeletal and Skin
+Diseases, NIH, (grant R01AR063691): author KLT;
+4. The Natural Sciences and Engineering Research Council and Alberta
+Innovates: author JLR; and
+5. NSF award CBET 1644835: Conference and Publication support
+Availability of data and materials
+Not applicable.
+Authors’ contribution
+All authors (FTS, ELB, KLT, SJS, and JLR) substantially contributed to the writing
+of this review article. All authors read and approved the final manuscript.
+Ethics approval and consent to participate
+Not Applicable.
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare that they have no competing interests.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in
+published maps and institutional affiliations.
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 5 of 7
+
+
+--- 第 6 页 ---
+Author details
+1National Institutes of Health, Bethesda, MD, USA. 2Brown University,
+Providence, RI, USA. 3Worcester Polytechnic Institute, Worcester, MA, USA.
+4Northeastern University, Boston, MA, USA. 5University of Calgary, Calgary, AB,
+Canada.
+Received: 31 May 2017 Accepted: 7 March 2018
+References
+1.
+Nishikawa K, Biewener AA, Aerts P, Ahn AN, Chiel HJ, Daley MA, Daniel TL,
+Full RJ, Hale ME, Hedrick TL, et al. Neuromechanics: an integrative approach
+for understanding motor control. Integr Comp Biol. 2007;47:16–54.
+2.
+Ko D. Cinderella’s sisters: a revisionist history of Footbinding; 2005. p. 1–332.
+3.
+Tiesler V. Studing cranial vault modifications in ancient Mesoamerica.
+J Anthropol Sci. 2012;90:33–58.
+4.
+Wolff J. The law of bone remodelling. Berline, New York: Springer-Verlag; 1986.
+5.
+Reddi AH. Cell biology and biochemistry of endochondral bone
+development. Coll Relat Res. 1981;1:209–26.
+6.
+Erdemir A, McLean S, Herzog W, van den Bogert AJ. Model-based
+estimation of muscle forces exerted during movements. Clin Biomech. 2007;
+22:131–54.
+7.
+Pandy MG. Computer modeling and simulation of human movement. Annu
+Rev Biomed Eng. 2001;3:245–73.
+8.
+Dumas R, Moissenet F, Lafon Y, Cheze L. Multi-objective optimisation for
+musculoskeletal modelling: application to a planar elbow model. Proc Inst
+Mech Eng Part H-J EngMed. 2014;228:1108–13.
+9.
+Thelen DG, Anderson FC. Using computed muscle control to generate
+forward dynamic simulations of human walking from experimental data.
+J Biomech. 2006;39:1107–15.
+10.
+Giorgi M, Carriero A, Shefelbine SJ, Nowlan NC. Effects of normal and
+abnormal loading conditions on morphogenesis of the prenatal hip joint:
+application to hip dysplasia. J Biomech. 2015;48:3390–7.
+11.
+Shefelbine SJ, Carter DR. Mechanobiological predictions of growth front
+morphology in developmental hip dysplasia. J Orthop Res. 2004;22:346–52.
+12.
+Shefelbine SJ, Carter DR. Mechanobiological predictions of femoral
+anteversion in cerebral palsy. Ann Biomed Eng. 2004;32:297–305.
+13.
+Carriero A, Jonkers I, Shefelbine SJ. Mechanobiological prediction of
+proximal femoral deformities in children with cerebral palsy. Comput
+Methods Biomech Biomed Engin. 2011;14:253–62.
+14.
+Lenaerts G, De Groote F, Demeulenaere B, Mulier M, Van der Perre G,
+Spaepen A, Jonkers I. Subject-specific hip geometry affects predicted hip
+joint contact forces during gait. J Biomech. 2008;41:1243–52.
+15.
+Sheehan FT, Brochard S, Behnam AJ, Alter KE. Three-dimensional humeral
+morphologic alterations and atrophy associated with obstetrical brachial
+plexus palsy. J Shoulder Elb Surg. 2014;23:708–19.
+16.
+Wesseling M, De Groote F, Bosmans L, Bartels W, Meyer C, Desloovere K,
+Jonkers I. Subject-specific geometrical detail rather than cost function
+formulation affects hip loading calculation. Comput Methods Biomech
+Biomed Eng. 2016;19:1475–88.
+17.
+Bartels W, Demol J, Gelaude F, Jonkers I, Vander Sloten J. Computed
+tomography-based joint locations affect calculation of joint moments
+during gait when compared to scaling approaches. Comput Methods
+Biomech Biomed Eng. 2015;18:1238–51.
+18.
+Bosmans L, Wesseling M, Desloovere K, Molenaers G, Scheys L, Jonkers I. Hip
+contact force in presence of aberrant bone geometry during normal and
+pathological gait. J Orthop Res. 2014;32:1406–15.
+19.
+Yadav P, Shefelbine SJ, Gutierrez-Farewik EM. Effect of growth plate
+geometry and growth direction on prediction of proximal femoral
+morphology. J Biomech. 2016;49:1613–9.
+20.
+Frost HM. Bone's mechanostat: a 2003 update. Anat Rec A Discov Mol Cell
+Evol Biol. 2003;275:1081–101.
+21.
+Karlsson MK. Physical activity, skeletal health and fractures in a long term
+perspective. J Musculoskelet Neuronal Interact. 2004;4:12–21.
+22.
+Karlsson MK, Magnusson H, Karlsson C, Seeman E. The duration of exercise
+as a regulator of bone mass. Bone. 2001;28:128–32.
+23.
+Kontulainen S, Sievanen H, Kannus P, Pasanen M, Vuori I. Effect of long-term
+impact-loading on mass, size, and estimated strength of humerus and
+radius of female racquet-sports players: a peripheral quantitative computed
+tomography study between young and old starters and controls. J Bone
+Miner Res. 2003;18:352–9.
+24.
+Troy KL, Edwards WB, Bhatia VA, Bareither ML. In vivo loading model to
+examine bone adaptation in humans: a pilot study. J Orthop Res. 2013;
+31:1406–13.
+25.
+Bhatia VA, Edwards WB, Johnson JE, Troy KL. Short-term bone formation is
+greatest within high strain regions of the human distal radius: a prospective
+pilot study. J Biomech Eng. 2015;137:1–5.
+26.
+Meakin LB, Price JS, Lanyon LE. The contribution of experimental in vivo
+models to understanding the mechanisms of adaptation to mechanical
+loading in bone. Front Endocrinol (Lausanne). 2014;5:154.
+27.
+Bailey CA, Kukuljan S, Daly RM. Effects of lifetime loading history on cortical
+bone density and its distribution in middle-aged and older men. Bone.
+2010;47:673–80.
+28.
+Dolan SH, Williams DP, Ainsworth BE, Shaw JM. Development and
+reproducibility of the bone loading history questionnaire. Med Sci Sports
+Exerc. 2006;38:1121–31.
+29.
+Kemper HC, Bakker I, Twisk JW, van Mechelen W. Validation of a physical
+activity questionnaire to measure the effect of mechanical strain on bone
+mass. Bone. 2002;30:799–804.
+30.
+Turner CH, Robling AG. Designing exercise regimens to increase bone
+strength. Exerc Sport Sci Rev. 2003;31:45–50.
+31.
+Mancuso ME, Johnson JE, Ahmed SS, Butler TA, Troy KL. Distal radius
+microstructure and finite element bone strain are related to site-specific
+mechanical loading and areal bone mineral density in premenopausal
+women. Bone Reports. (in press).
+32.
+Bhatia VA, Edwards WB, Troy KL. Predicting surface strains at the human
+distal radius during an in vivo loading task–finite element model validation
+and application. J Biomech. 2014;47:2759–65.
+33.
+Perilli E, Parkinson IH, Reynolds KJ. Micro-CT examination of human
+bone: from biopsies towards the entire organ. Ann Ist Super Sanita.
+2012;48:75–82.
+34.
+Tjong W, Kazakia GJ, Burghardt AJ, Majumdar S. The effect of voxel size on
+high-resolution peripheral computed tomography measurements of
+trabecular and cortical bone microstructure. Med Phys. 2012;39:1893–903.
+35.
+Kim DG, Christopherson GT, Dong XN, Fyhrie DP, Yeni YN. The effect of
+microcomputed tomography scanning and reconstruction voxel size on the
+accuracy of stereological measurements in human cancellous bone. Bone.
+2004;35:1375–82.
+36.
+Muller R, Koller B, Hildebrand T, Laib A, Gianolini S, Ruegsegger P. Resolution
+dependency of microstructural properties of cancellous bone based on three-
+dimensional mu-tomography. Technol Health Care. 1996;4:113–9.
+37.
+Newitt DC, Majumdar S, van Rietbergen B, von Ingersleben G, Harris ST,
+Genant HK, Chesnut C, Garnero P, MacDonald B. In vivo assessment of
+architecture and micro-finite element analysis derived indices of mechanical
+properties of trabecular bone in the radius. Osteoporos Int. 2002;13:6–17.
+38.
+Edwards WB, Troy KL. Finite element prediction of surface strain and
+fracture strength at the distal radius. Med Eng Phys. 2012;34:290–8.
+39.
+Schileo E, Taddei F, Malandrino A, Cristofolini L, Viceconti M. Subject-specific
+finite element models can accurately predict strain levels in long bones.
+J Biomech. 2007;40:2982–9.
+40.
+Carter DR, Hayes WC. The compressive behavior of bone as a two-phase
+porous structure. J Bone Joint Surg Am. 1977;59:954–62.
+41.
+Dalstra M, Huiskes R, Odgaard A, van Erning L. Mechanical and textural
+properties of pelvic trabecular bone. J Biomech. 1993;26:523–35.
+42.
+Morgan EF, Bayraktar HH, Keaveny TM. Trabecular bone modulus-density
+relationships depend on anatomic site. J Biomech. 2003;36:897–904.
+43.
+Rho JY. Ultrasonic characterisation in determining elastic modulus of
+trabecular bone material. Med Biol Eng Comput. 1998;36:57–9.
+44.
+Heilmeier U, Cheng K, Pasco C, Parrish R, Nirody J, Patsch JM, Zhang CA,
+Joseph GB, Burghardt AJ, Schwartz AV, et al. Cortical bone laminar analysis
+reveals increased midcortical and periosteal porosity in type 2 diabetic
+postmenopausal women with history of fragility fractures compared to
+fracture-free diabetics. Osteoporos Int. 2016;27:2791–802.
+45.
+Weaver CM, Gordon CM, Janz KF, Kalkwarf HJ, Lappe JM, Lewis R, O'Karma M,
+Wallace TC, Zemel BS. The National Osteoporosis Foundation's position statement
+on peak bone mass development and lifestyle factors: a systematic review and
+implementation recommendations. Osteoporos Int. 2016;27:1281–386.
+46.
+Behnam AJ, Herzka DA, Sheehan FT. Assessing the accuracy and precision
+of musculoskeletal motion tracking using cine-PC MRI on a 3.0T platform.
+J Biomech. 2011;44:193–7.
+47.
+Borotikar BS, Sipprell WH 3rd, Wible EE, Sheehan FT. A methodology to
+accurately quantify patellofemoral cartilage contact kinematics by
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 6 of 7
+
+
+--- 第 7 页 ---
+combining 3D image shape registration and cine-PC MRI velocity data.
+J Biomech. 2012;45:1117–22.
+48.
+Cuesta-Vargas AI. Development of a new ultrasound-based system for
+tracking motion of the human lumbar spine: reliability, stability and
+repeatability during forward bending movement trials. Ultrasound Med Biol.
+2015;41:2049–56.
+49.
+Defrate LE, Papannagari R, Gill TJ, Moses JM, Pathare NP, Li G. The 6 degrees
+of freedom kinematics of the knee after anterior cruciate ligament
+deficiency: an in vivo imaging analysis. Am J Sports Med. 2006;34:1240–6.
+50.
+Eckstein F, Lemberger B, Stammberger T, Englmeier K, Reiser M. Patellar
+cartilage deformation in vivo after static versus dynamic loading. J Biomech.
+2000;33:819–25.
+51.
+Sharma GB, Beveridge JE, Kuntze G, Bhatla C, Shank J, Ronsky JL. Structural and
+functional characterization of tibiofemoral cartilage: a dual fluoroscopy and
+magnetic imaging approach. In: Proc Comp Meth Biomech & Biomedical Eng
+& Imaging & Visualization; 9/15/2015. Montreal: Springer International Research;
+2015.
+52.
+Sharma GB, Kuntze G, Beveridge JE, Bhatla C, Frayne R, Ronsky JL. Subject-
+specific 3D T2 relaxation mapping of the tibiofemoral contact regions
+during walking: a dual fluoroscopy and magnetic resonance imaging
+approach. In: Orthopaedic Research Society; 2015.
+53.
+Sheehan FT, Smith RM. 3D musculoskeletal kinematics using dynamic MRI.
+In: Müller B, Wolf SI, Brueggemann G-P, Deng Z, McIntosh A, Miller F, Selbie
+WS, editors. Handbook of human motion. Cham: Springer International
+Publishing; 2017. p. 1–17.
+54.
+Smith RM, Sheehan FT. Cross platform comparison of imaging Technologies
+for Measuring Musculoskeletal Motion. In: Müller B, Wolf SI, Brueggemann
+G-P, Deng Z, McIntosh A, Miller F, Selbie WS, editors. Handbook of human
+motion. Cham: Springer International Publishing; 2017. p. 1–22.
+55.
+Benoit DL, Ramsey DK, Lamontagne M, Xu L, Wretenberg P, Renstrom P. In
+vivo knee kinematics during gait reveals new rotation profiles and smaller
+translations. Clin Orthop Relat Res. 2007;454:81–8.
+56.
+Tashman S, Collon D, Anderson K, Kolowich P, Anderst W. Abnormal
+rotational knee motion during running after anterior cruciate ligament
+reconstruction. Am J Sports Med. 2004;32:975–83.
+57.
+Vergis A, Gillquist J. Sagittal plane translation of the knee during stair
+walking. Comparison of healthy and anterior cruciate ligament–deficient
+subjects. Am J Sports Med. 1998;26:841–6.
+58.
+Georgoulis AD, Papadonikolakis A, Papageorgiou CD, Mitsou A, Stergiou N.
+Three-dimensional tibiofemoral kinematics of the anterior cruciate ligament-
+deficient and reconstructed knee during walking. Am J Sports Med. 2003;31:75–9.
+59.
+Andriacchi TP, Dyrby CO. Interactions between kinematics and loading during
+walking for the normal and ACL deficient knee. J Biomech. 2005;38:293–8.
+60.
+Andriacchi TP, Mundermann A, Smith RL, Alexander EJ, Dyrby CO, Koo S.
+A framework for the in vivo pathomechanics of osteoarthritis at the knee.
+Ann Biomed Eng. 2004;32:447–57.
+61.
+Anderst WJ, Tashman S. The association between velocity of the center of
+closest proximity on subchondral bones and osteoarthritis progression.
+J Orthop Res. 2009;27:71–7.
+62.
+Maniwa S, Nishikori T, Furukawa S, Kajitani K, Ochi M. Alteration of collagen
+network and negative charge of articular cartilage surface in the early stage
+of experimental osteoarthritis. Arch Orthop Trauma Surg. 2001;121:181–5.
+63.
+Akizuki S, Mow VC, Muller F, Pita JC, Howell DS, Manicourt DH. Tensile
+properties of human knee joint cartilage: I. Influence of ionic conditions,
+weight bearing, and fibrillation on the tensile modulus. J Orthop Res. 1986;
+4:379–92.
+64.
+Chaudhari AM, Briant PL, Bevill SL, Koo S, Andriacchi TP. Knee kinematics,
+cartilage morphology, and osteoarthritis after ACL injury. Med Sci Sports
+Exerc. 2008;40:215–22.
+65.
+Sharma GB, Kuntze G, Kukulski D, Ronsky JL. Validating dual fluoroscopy system
+capabilities for determining in-vivo knee joint soft tissue deformation: a
+strategy for registration error management. J Biomech. 2015;48:2181–5.
+66.
+Anderst W, Zauel R, Bishop J, Demps E, Tashman S. Validation of three-
+dimensional model-based tibio-femoral tracking during running. Med Eng
+Phys. 2009;31:10–6.
+67.
+Lichti DD, Sharma GB, Kuntze G, Mund B, Beveridge JE, Ronsky JL. Rigorous
+geometric self-calibrating bundle adjustment for a dual fluoroscopic
+imaging system. IEEE Trans Med Imaging. 2015;34:589–98.
+68.
+Miranda DL, Schwartz JB, Loomis AC, Brainerd EL, Fleming BC, Crisco JJ.
+Static and dynamic error of a biplanar videoradiography system using
+marker-based and markerless tracking techniques. J Biomech Eng. 2011;
+133:121002.
+69.
+Calvo E, Palacios I, Delgado E, Sanchez-Pernaute O, Largo R, Egido J,
+Herrero-Beaumont G. Histopathological correlation of cartilage swelling
+detected by magnetic resonance imaging in early experimental
+osteoarthritis. Osteoarthr Cartil. 2004;12:878–86.
+70.
+Mow VC, Gu WY, Chen FH. Structure and function of articular cartilage and
+meniscus. In: Mow VC, Huiskes R, editors. Basic orthopaedic biomechanics &
+mechano-biology. 3rd ed. Philadelphia, PA: Lippincott Williams & Wilkins;
+2005. p. 181–225.
+71.
+Li X, Cheng J, Lin K, Saadat E, Bolbos RI, Jobke B, Ries MD, Horvai A, Link TM,
+Majumdar S. Quantitative MRI using T1rho and T2 in human osteoarthritic
+cartilage specimens: correlation with biochemical measurements and
+histology. Magn Reson Imaging. 2011;29:324–34.
+72.
+Nishioka H, Hirose J, Nakamura E, Oniki Y, Takada K, Yamashita Y, Mizuta H.
+T1rho and T2 mapping reveal the in vivo extracellular matrix of articular
+cartilage. J Magn Reson Imaging. 2012;35:147–55.
+73.
+Klocke NF, Amendola A, Thedens DR, Williams GN, Luty CM, Martin JA,
+Pedersen DR. Comparison of T1rho, dGEMRIC, and quantitative T2 MRI in
+preoperative ACL rupture patients. Acad Radiol. 2013;20:99–107.
+74.
+Zarins ZA, Bolbos RI, Pialat JB, Link TM, Li X, Souza RB, Majumdar S. Cartilage
+and meniscus assessment using T1rho and T2 measurements in healthy
+subjects and patients with osteoarthritis. Osteoarthr Cartil. 2010;18:1408–16.
+75.
+Brainerd EL, Baier DB, Gatesy SM, Hedrick TL, Metzger KA, Gilbert SL, Crisco
+JJ. X-ray reconstruction of moving morphology (XROMM): precision,
+accuracy and applications in comparative biomechanics research. J Exp
+Zool. 2010;313A:262–79.
+76.
+Knorlein BJ, Baier DB, Gatesy SM, Laurence-Chasen JD, Brainerd EL.
+Validation of XMALab software for marker-based XROMM. J Exp Biol. 2016;
+219:3701–11.
+77.
+Miranda DL, Rainbow MJ, Leventhal EL, Crisco JJ, Fleming BC. Automatic
+determination of anatomical coordinate systems for three-dimensional
+bone models of the isolated human knee. J Biomech. 2010;43:1623–6.
+78.
+You BM, Siy P, Anderst W, Tashman S. In vivo measurement of 3-D skeletal
+kinematics from sequences of biplane radiographs: application to knee
+kinematics. IEEE Trans Med Imaging. 2001;20:514–25.
+79.
+Tashman S, Anderst W. In-vivo measurement of dynamic joint motion using
+high speed biplane radiography and CT: application to canine ACL
+deficiency. J Biomech Eng. 2003;125:238–45.
+80.
+Brainerd EL. Major transformations in vertebrate breathing mechanisms. In:
+Dial KP, Shubin N, Brainerd EL, editors. Great transformations in vertebrate
+evolution. Chicago: Chicago University Press; 2015. p. 47–62.
+81.
+Brainerd EL, Moritz S, Ritter DA. XROMM analysis of rib kinematics during
+lung ventilation in the green iguana, Iguana iguana. J Exp Biol. 2016;219:
+404–11.
+82.
+Brainerd EL, Blob RW, Hedrick TL, Creamer AT, Muller UK. Data management
+rubric for video data in organismal biology. Integr Comp Biol. 2017;57:33–47.
+83.
+Olsen A, Hernandez P, Camp A, Brainerd E. Linking morphology and
+motion: testing multibody simulations against in vivo cranial kinematics in
+suction feeding fishes using XROMM. FASEB J. 2017;31
+•  We accept pre-submission inquiries 
+•  Our selector tool helps you to ﬁnd the most relevant journal
+•  We provide round the clock customer support 
+•  Convenient online submission
+•  Thorough peer review
+•  Inclusion in PubMed and all major indexing services 
+•  Maximum visibility for your research
+Submit your manuscript at
+www.biomedcentral.com/submit
+Submit your next manuscript to BioMed Central 
+and we will help you at every step:
+Sheehan et al. Journal of NeuroEngineering and Rehabilitation  (2018) 15:25 
+Page 7 of 7

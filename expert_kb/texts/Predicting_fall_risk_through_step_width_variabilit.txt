@@ -1,0 +1,1044 @@
+--- 第 1 页 ---
+Predicting fall risk through step 
+width variability at increased gait 
+speed in community dwelling older 
+adults
+Ungbeom Kim1,3, Jeongtaek Lim1,3, Yongnam Park2 & Youngsook Bae1
+We aimed to investigate the relationship of fall risk with spatiotemporal gait variables and variability 
+in community-dwelling older adults and identify the key predictors of fall risk. A total of 303 older 
+adults were classified into the fall-risk and non-fall-risk groups based on their Short Physical 
+Performance Battery scores. The stance phase time, double stance time, stride length, step width, 
+velocity, cadence, and coefficient of variation (CV) for each variable were measured on a treadmill 
+at the preferred speed and 20% increased walking speed. The results showed that the fall-risk 
+group had a significantly increased stance phase and double stance time, while the stride length, 
+velocity, and cadence were significantly reduced compared to the non-fall-risk group at both speeds. 
+Additionally, the CV for most variables was significantly higher in the fall-risk group. Notably, the 
+step width variability was higher in the fall-risk group under both speed conditions and showed 
+greater discriminative power at increased walking speed. Thus, gait variability, particularly step width 
+variability, is a crucial predictor of fall risk. The increased variability observed in the fall-risk group at 
+higher walking speed suggests that it could be a useful early indicator for predicting fall risk.
+Keywords  Fall risk, Gait variability, Spatiotemporal gait parameters, Short physical performance battery, 
+Step width variability
+With the rapid aging of the society, falling has gained prominence as one of the most common and serious 
+issues affecting older adults. Falls are not only a significant cause of physical injury in older adults but also one 
+of the primary factors leading to a loss of independence1, which greatly diminishes the quality of life. In the long 
+term, falls can also contribute to increased healthcare costs2. Injuries resulting from falls are particularly difficult 
+to recover from, and the subsequent complications can drastically reduce an individual’s range of activity, 
+potentially leading to secondary health deterioration.
+In community-dwelling older adults, reduced gait speed3, impaired balance ability4, and decreased lower 
+limb strength have been associated with an increased risk of falls5. Therefore, the fall risk in older adults can be 
+assessed using measures such as gait speed, balance ability (e.g., postural sway), and functional tasks, such as 
+the sit-to-stand test and lower limb strength evaluations. In fact, the Short Physical Performance Battery (SPPB) 
+is an objective tool for measuring the gait speed, balance, and lower extremity strength in older adults, and 
+has been shown to be a quick and useful tool for screening community-dwelling older adults at risk of falls6,7. 
+Furthermore, Most falls occur during movement8; therefore, the current fall prevention guidelines for older adults 
+recommend gait assessment9. The SPPB is a widely used fall prediction tool and was recently recommended as a 
+key risk assessment tool for fall prevention and management of older adult health in the World Falls Guidelines, 
+developed by the World Falls Task Force consisting of 96 multidisciplinary experts representing 36 scientific and 
+academic societies from 39 countries10. A score of 9 or below out of 12 on the SPPB is considered indicative of 
+an increased risk of falling11.
+Previous studies have reported that among the spatiotemporal gait parameters, slower walking speed12, 
+longer stance phase, and increased double stance phase13 are associated with falls in older adults. Spatiotemporal 
+variables are useful for distinguishing prospective fallers from non-fallers among older adults13. In older 
+adults with normal walking speed, both high and low stride variability are associated with a history of falls14. 
+Additionally, fear of falling is closely related to increased gait variability15. Gait variability refers to the stride-to-
+1Department of Physical Therapy, College of Medical Science, Gachon University, Incheon, Republic of Korea. 
+2Department of Physical Therapy, Suwon Women’s University, Suwon-si, Gyeonggi-do, Republic of Korea. 
+3Ungbeom Kim and Jeongtaek Lim contributed equally to this work. email: baeys@gachon.ac.kr
+OPEN
+Scientific Reports |        (2025) 15:16915 
+1
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 2 页 ---
+stride variation of spatiotemporal gait parameters such as stride length, step width, and stance time, and thus 
+reflects the consistency or stability of gait parameters16, and plays an important role in assessing the dynamic 
+balance during walking in healthy older adults17. In addition, an increased variability in stride length, stance 
+phase, and gait speed is associated with mobility disability and falls in older adults18–20. In contrast, low gait 
+variability is indicative of greater gait stability16,21. Among the various gait variabilities, step length and velocity 
+variability primarily reflect anteroposterior control, whereas step width variability is more sensitive to lateral 
+instability22, a factor known to contribute to loss of balance and falls. previous study have highlighted step width 
+variability as a meaningful descriptor of locomotor control, showing stronger associations with balance and fall 
+risk compared to other gait variability measures such as step length23. Therefore, variability of gait parameters 
+can be used as key indicators for assessing the risk of falls. Poujol et al.24 recommended that spatiotemporal 
+gait parameters, as well as gait variability in older adults, should be analyzed at faster walking speeds than the 
+preferred speed (PS). As such, previous studies have assessed fall risk using the averaged values of gait parameters 
+at PS, while the relationship between the variability of these gait parameters and fall risk remains unclear. In 
+addition, research examining gait parameters and variability at faster walking speeds is limited, and the differences 
+in gait characteristics between PS and fast walking conditions have not been fully identified. A previous study 
+compared the gait variability between preferred walking speed and a 20% faster walking speed and reported that the 
+coefficient of variation (CV) increased under the faster speed condition25. Accordingly, identifying the variability of 
+gait parameters at faster walking speeds may serve as a novel indicator for predicting fall risk in older adults.
+This study aimed to identify spatiotemporal gait parameters and variability measures that can predict or 
+distinguish fall risk in community-dwelling older adults. Participants were classified into fall risk and non-fall-
+risk groups based on SPPB scores, and gait characteristics were analyzed at preferred speed and with a 20% 
+increase in walking speed. We hypothesized that gait variability in spatiotemporal parameters would significantly 
+differ between fall-risk and non-fall-risk groups at both preferred speed and 20% increased speed and serve as a 
+stronger predictor of fall risk than average gait values.
+Methods
+Design and ethical considerations
+Between December 2023 and March 2024, we enrolled 303 older adults and assessed the variability in their 
+gait parameters at the PS and 20% faster walking speed. Prior to the start of the study, the participants were 
+thoroughly briefed on the study procedures and safety measures, and signed informed consent was obtained 
+from each participant.
+Participants and procedures
+This study recruited 303 older adults aged 65–92 years from community centers using posters and telephone 
+interviews. The eligibility criteria were as follows: (1) aged ≥ 65 years and capable of performing daily activities 
+independently or with aid; (2) without prior orthopedic surgery involving the lower limbs, no current 
+neurological conditions, such as cerebral infarction; and (3) no surgeries performed on the musculoskeletal 
+system of the lower limbs within the past 6 months. The exclusion criteria were as follows: a score below 24 
+on the Korean version of the Mini-Mental State Examination (K-MMSE), a diagnosis of lower extremity 
+musculoskeletal disorders that significantly affect gait (e.g., symptomatic knee or hip osteoarthritis, history of 
+lower limb fracture), and difficulty walking on a treadmill or inability to complete the required gait assessments. 
+Initially, 364 individuals were considered; however, 14 did not satisfy the inclusion criteria and 47 were unable to 
+complete the required measurements owing to discomfort or difficulty in walking on the treadmill.
+After an initial assessment of the general characteristics and cognitive functions, the fall risk of all participants 
+was evaluated. This was followed by measurement of the gait parameters and variability while the participants 
+walked on a treadmill. To ascertain their preferred walking speed, each participant walked a 14-m stretch before 
+treadmill use. To reduce measurement errors pertaining to the average preferred walking speed due to a 20% 
+acceleration factor, only the time taken to walk the central 10 m was considered, excluding the first and last 
+2 m. Subsequently, the participants were adapted to the treadmill using the walking speed established from the 
+overground trials. Any discrepancies in speed during the treadmill adaptation led to minor adjustments in the 
+PS by ± 0.1 km/h. Once the PS was set, the participants took a 2-min rest before beginning their treadmill walk 
+at the PS. Next, the participants walked for 90 s at both their PS and 20% increased speed, with a 1-min rest 
+between each trial. The gait variables and variability were measured for approximately 60 s, starting at 20 s after 
+the participants began to walk on the treadmill.
+All participants were randomly assigned to one of the two speed sequences (20% faster walking speed > PS 
+or PS > 20% faster walking speed). The order in which the participants walked was assigned randomly using 
+a random number table. To ensure fairness and objectivity, the randomization process was performed by a 
+researcher who was not directly involved in the study. Data collection was performed in university laboratories 
+and community centers. The outcome assessors were blinded to the group allocation.
+Measurement
+Fall risk
+ The fall risk was assessed using the SPPB, which is used for screening the fall risk in older adults6. The inter-rater 
+reliability of the SPPB in community-based older adults has been reported to be excellent (Intraclass Correlation 
+Coefficient [ICC] = 0.81–0.91)26. The SPPB (ranging 0–12 points) evaluates the physical performance using three 
+components: a balance test, 4-m walk, and timed chair stand test. In the balance test, the participants were 
+required to maintain three different positions-feet together, semi-tandem, and tandem—for 10 s each. The 4-m 
+walk test was performed at the participants’ normal walking speed. For the chair stand test, the participants first 
+performed five practice stands, and then their time to complete five consecutive stands from sit to stand was 
+Scientific Reports |        (2025) 15:16915 
+2
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 3 页 ---
+recorded in seconds. As an SPPB score of ≤ 9 is associated with an increased fall risk11, this threshold was used 
+to indicate the fall risk in this study. Therefore, we defined a score of ≤ 9 as indicating a fall risk and a score of 
+≥ 10 as indicating no fall risk.
+Gait parameters and variability 
+The gait parameters and variability were measured using the Zebris FDM–THM–S treadmill system (Zebris 
+Medical GmbH, Max–Eyth–Weg 43, D–88316, Isny, Germany). The system consists of a capacitive pressure 
+platform integrated into a treadmill. The pressure platform has a sensing area of 108.4 × 47.4  cm, which is 
+incorporated with 7,168 sensors, each approximately 0.85 × 0.85 cm in size. The treadmill has a contact surface 
+area of 150 × 50 cm, and the belt speed can be adjusted between 0.2 and 22 km/h in 0.1 km/h increments. 
+The contact surface of the treadmill remains horizontal (0% inclination) throughout the tests. The participants 
+underwent an adaptation session on the treadmill, during which they were briefed on the safety procedures and 
+given approximately 2 min to familiarize themselves with walking at the PS. Most gait parameters, including 
+stride length (ICC = 0.94), step width (ICC = 0.97), and double stance phase time (ICC = 0.86), have shown very 
+high reliability during treadmill walking in community-dwelling older people27. A common measure of the 
+magnitude of variability is the coefficient of variation (CV).
+In this study, we have reported the results using standard deviation (SD) because the SD and CV of the gait 
+variables are highly correlated18. The variability of the measured gait parameters was expressed as a percentage 
+and was calculated by dividing the standard deviation of each gait parameter by the mean (standard deviation/
+mean × 100). CV is a very important tool for quantitatively assessing and understanding gait stability and quality. 
+In fact, gait variability measured by CV has been identified as the most clinically relevant digital biomarker for 
+assessing gait impairment28. Thus, gait variability can be used to assess the fall risk in community-dwelling older 
+adults18.
+To reliably assess gait variability, it is recommended to walk at least 50 steps or for > 1 min29,30. The gait 
+parameters obtained in this study were spatiotemporal parameters, including the following:
+•	 Stance phase time: part of the gait cycle. It refers to the duration when the foot is in contact with the ground 
+and is expressed as a percentage (%).
+•	 Double-stance phase time: part of the gait cycle. It refers to the period when both feet are in contact with the 
+ground simultaneously and is expressed as a percentage (%).
+•	 Stride length: distance between the two heel contacts on the same side of the body, expressed in cm.
+•	 Step width: lateral (side-to-side) distance between the feet during walking. It is measured from the midpoint 
+of one foot to the midpoint of the other foot and is expressed in cm.
+•	 Velocity: refers to the walking speed and is typically measured in kilometers per hour (km/hour).
+•	 Cadence: the number of steps taken per minute, expressed as steps per minute (step/min).
+Statistical analysis
+SPSS 26.0 software (IBM, Armonk, NY, USA) was used for statistical analyses. Frequency and descriptive 
+statistics were used to describe the general characteristics of the participants.
+The participants were divided into the fall-risk and non-fall-risk groups based on their fall risk. The differences 
+in gait parameters and variability between the two groups at the PS and 20% faster speed were compared and 
+analyzed using the independent t-test. To investigate the effect of sex on gait variables and variability in the 
+groups, ANCOVA was performed with age as a covariate. To identify which gait parameters and variability were 
+significantly correlated with the SPPB score in the entire cohort, multiple regression analysis was performed at 
+both the PS and 20% faster walking speed. Additionally, discriminant analysis was conducted to identify the 
+gait parameters and variability that could distinguish between the fall-risk and non-fall-risk groups. All data are 
+expressed as mean ± standard deviation.
+Results
+The fall-risk and non-fall-risk groups comprised 136 (mean age: 80.99 years) and 167 (mean age: 78.87 years) 
+participants, respectively. Table 1 summarizes the characteristics of the participants.
+Comparison of the gait parameters and variability at the PS and 20% faster speed between 
+the fall-risk and non-fall-risk groups
+On comparing the gait parameters and variability at the PS and 20% increased speed between the fall-risk and 
+non-fall-risk groups, no significant differences were noted in the double stance and step width at the PS and step 
+width at 20% increased speed. Compared to the non-fall-risk group, the fall-risk group showed significantly 
+increased stance phase time and double stance time (p < 0.01) at both the PS and 20% increased speed, as well 
+as a significantly shorter stride length (p < 0.01), slower velocity (p < 0.01), and lower cadence (p < 0.01). The 
+variability in gait parameters, excluding the CV of the double-stance time at the PS, was significantly increased 
+for all other CVs in the fall-risk group. In comparisons between the two groups, age affected the stance phase 
+time at PS, and stance phase time %, stride length, velocity, and cadence at 20% increased speed (Table 2).
+Multivariable regression analysis to identify the factors influencing the SPPB score based on 
+age, sex, and gait variables and variability in older adults
+At the PS, age (β = -0.086, p = 0.034), double stance time (β = 0.331, p = 0.014), stride length (β = 0.925, p = 0.002), 
+step width CV (β = -0.265, p < 0.001), velocity (β = -0.810, p = 0.009), cadence (β = 0.505, p < 0.001), and cadence 
+CV (β = -0.224, p = 0.001) were identified as the significant factors influencing the SPPB score. In particular, the 
+step width CV and cadence demonstrated very low p-values, indicating a significant effect on walking speed. 
+Scientific Reports |        (2025) 15:16915 
+3
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 4 页 ---
+When the walking speed was increased by 20%, the double stance time (β = 0.345, p = 0.016), stride length 
+(β = 1.248, p < 0.001), step width CV (β = 0.300, p < 0.001), velocity (β = -1.279, p < 0.001), and cadence (β = 0.646, 
+p < 0.001) showed a significant association with the SPPB score, with the impact of the step width CV increasing 
+at the 20% increased speed. Under both conditions, the stride length, step width CV, velocity, and cadence 
+demonstrated a significant association with the SPPB score (Table 3).
+On performing discriminant analysis, most gait parameters and variability showed statistically significant 
+differences at the PS and 20% increased speed. At the PS, the stance phase time (Wilks’ Lambda = 0.839, p < 0.001), 
+double stance time (Wilks’ Lambda = 0.828, p < 0.001), stride length (Wilks’ Lambda = 0.872, p < 0.001), velocity 
+(Wilks’ Lambda = 0.811, p < 0.001), and cadence (Wilks’ Lambda = 0.921, p < 0.001) differed significantly. In 
+terms of the CV, all variables except the double-stance CV demonstrated significant differences. Notably, the 
+step width CV (Wilks’ Lambda = 0.759, p < 0.001) exhibited a high discriminative power.
+At 20% increased gait speed, the double stance time, stride length, velocity, cadence, and CV of the step 
+width and cadence demonstrated significant differences, with the step width CV showing a particularly high 
+discriminative power (Wilks’ Lambda = 0.697, p < 0.001) (Table 4).
+Discussion
+We examined the differences in gait variables and variability at both the PS and 20% increased speed between 
+the fall-risk (older adults with low SPPB scores) and non-fall-risk groups (older adults with high SPPB scores). 
+We also identified the gait variables and variability that could predict the fall risk in older adults and distinguish 
+individuals at high risk of falling. Treadmill-based gait analysis allows for the collection of multiple consecutive 
+gait cycles, and has been reported to simplify the measurement of gait speed31. Treadmill assessment allows 
+researchers to precisely control the gait speed and monitor the gait at multiple predefined speeds31,32. This is 
+particularly advantageous when studying populations with limited mobility. Additionally, it ensures that all 
+participants are tested under the same conditions, reducing variability due to external factors. These findings 
+support the reliability and objectiveness of the gait analysis data obtained in this study33,34.
+The results showed that the fall-risk group had a significantly increased stance phase time and double stance 
+time at both the PS and 20% increased walking speed compared to the non-fall-risk group. In contrast, the 
+stride length, velocity, and cadence were significantly reduced in the fall-risk group. Additionally, most variables 
+showed significantly increased variability in the fall-risk group. These findings are consistent with the tendency 
+Fall risk group
+≤ 9 SPPB score (n = 136)
+Non-fall risk group
+≥ 10 SPPB score (n = 183)
+t
+p
+Sex (male/female)
+73 (45.6) / 86 (54.4)
+62 (43.7) / 80 (56.3)
+Age (years)
+82.56 ± 6.03
+78.24 ± 6.01
+6.335
+< 0.001
+Weight (Kg)
+60.44 ± 9.79
+61.35 ± 8.88
+-0.866
+0.387
+Height (cm)
+157.57 ± 7.56
+159.10 ± 8.31
+-1.684
+0.093
+SPPB (score)
+7.62 ± 1.84
+11.36 ± 0.75
+-24.731
+< 0.001
+K-MMSE (score)
+25.17 ± 2.74
+26.54 ± 2.63
+-4.493
+< 0.001
+Marital status
+ Married
+43 (31.6)
+102 (61.1)
+ Divorce
+11 (8.1)
+11 (6.6)
+ Widowed
+77 (56.6)
+49 (29.3)
+ Never married
+5 (3.7)
+5 (3.0)
+Current health condition
+ Very good
+40 (30.1)
+79 (47.3)
+ Average
+49 (36)
+58 (34.7)
+ Bad
+46 (33.8)
+30 (18.0)
+Number of exercises in a week
+ 3 or more times
+90 (66.2)
+152 (91.0)
+ 1–2 times
+13 (9.6)
+8 (4.8)
+ no
+33 (24.3)
+7 (4.2)
+Taking medication (multiple response)
+ Hypertension
+74 (54.4)
+87 (52.1)
+ Diabetes
+43 (31.6)
+39 (23.4)
+ Musculoskeletal disease
+5 (3.7)
+4 (2.4)
+ Cardiac disease
+6 (4.4)
+10 (6.0)
+ Digestive system disease
+4 (2.9)
+5 (3.0)
+ Ect (prostate, pain killer…)
+59 (43.4)
+64 (38.3)
+ No
+37 (27.4)
+50 (29.9)
+Table 1.  General characteristics of participants according to SPPB score. anumber of person (%) SPPB, short 
+physical performance battery; K-MMSE, Korean Mini-Mental State Examination.
+ 
+Scientific Reports |        (2025) 15:16915 
+4
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 5 页 ---
+of individuals with a history of falls to exhibit longer stance and double stance phase durations13. A double stance 
+plays a crucial role in maintaining balance and stability, and an increase in the double stance time indicates 
+the need for more time to stabilize the gait, especially at slower walking speeds35. Furthermore, falls are more 
+strongly related to reduced walking speeds and shortened stride lengths than to age itself13. These results suggest 
+that the fall-risk group had slower walking speed and prolonged stance phase time and double stance time to 
+maintain walking stability compared to the non-fall-risk group. In particular, the study found that the variability 
+in the double stance time was significantly increased only at the 20% increased speed in the fall-risk group. 
+This may be due to the greater imbalance caused by walking at a faster speed than at the PS, as it requires more 
+strategic adjustments to stabilize the gait36. Additionally, the step width variability was greater in the fall-risk 
+group at both the PS and 20% increased walking speed. Step width variability reflects the amount of active 
+control required for lateral stabilization during walking22, indicating that the fall-risk group experienced reduced 
+lateral stability during walking. In previous studies, stride length and velocity were reported to decrease with 
+age, while the cadence increased37. Slower speed and longer stance phase may be related to impaired balance 
+ability, which may increase the risk of falls in older individuals38. In our result, under the PS condition, older 
+age was associated with increased stride length variability (CV) and cadence variability (CV). Furthermore, 
+lower variability in stride length and cadence was related to higher SPPB scores, indicating that greater gait 
+consistency is linked to better physical function in older adults. In addition, in PS, SPPB scores decreased with 
+increasing age, step width CV, and cadence CV, and with decreasing step length and cadence. In contrast, under 
+the 20% increased gait speed condition, higher double stance time, step width variability (CV), and gait velocity 
+were associated with lower SPPB scores, while a decrease in cadence also corresponded with reduced physical 
+performance. Additionally, when gait speed increased by 20%, stride length, stance phase time, double stance 
+time, and velocity all increased, whereas cadence showed a decreasing trend. These findings suggest that changes 
+in gait speed influence various spatiotemporal gait characteristics and may affect functional mobility in older 
+adults. These results imply a correlation with increasing age, consistent with the results of previous studies. 
+Therefore, we believe that it is more efficient to confirm changes in the gait variables at high walking speed.
+Guimaraes and Isaacs39 reported that increased variability in step length and double support time was 
+significantly associated with a higher risk of falls, whereas Brach et al.14 found no significant relationship between 
+mean step length or stance time and falls. In the present study, we confirmed that the step-width CV predicted 
+fall risk more accurately than mean stride length and stride length CV under both PS and 20% increased speed 
+conditions. These findings suggest that measures of variability may serve as more sensitive indicators of fall risk than 
+Variables (unit)
+Fall risk group
+Non-fall risk group
+t
+p-value
+Difference (95% CI)
+Preferred gait speed
+ Stance phase (%)
+69.92 ± 5.57
+66.18 ± 2.75
+7.597
+< 0.001
+3.736 (2.768 ~ 4.704)
+ Stance phase CV (%)
+3.84 ± 2.85
+2.86 ± 1.73
+3.645
+< 0.001
+0.974 (0.449 ~ 1.499)
+ Double stance (%)
+38.93 ± 9.86
+32.01 ± 4.98
+7.911
+< 0.001
+6.919 (5.198 ~ 8.641)
+ Double stance CV (%)
+8.53 ± 8.41
+7.01 ± 4.83
+1.848
+0.066
+1.426 (0.092 ~ 2.945)
+ Stride length (cm)
+57.50 ± 19.73
+73.72 ± 22.22
+-6.642
+< 0.001
+-16.220 (-21.026 ~ 11.414)
+ Stride length CV (%)
+9.30 ± 7.55
+5.81 ± 3.81
+5.178
+< 0.001
+3.488 (2.162 ~ 4.813)
+ Step width (cm)
+11.27 ± 3.95
+10.78 ± 3.26
+1.168
+0.244
+0.484 ( -0.331 ~ 1.300)
+ Step width CV (%)
+25.53 ± 15.50
+13.24 ± 4.61
+9.767
+< 0.001
+12.334 (9.849 ~ 14.819)
+ Velocity (km/h)
+1.82 ± 0.72
+2.58 ± 0.84
+-8.384
+< 0.001
+-0.764 (-0.944 ~ -0.585)
+ Velocity CV (%)
+10.04 ± 8.53
+5.36 ± 3.71
+6.381
+< 0.001
+4.680 (3.237 ~ 6.123)
+ Cadence (step/min)
+106.44 ± 22.43
+117.78 ± 16.47
+-5.071
+< 0.001
+-11.346 ( -15.750 ~ -6.943)
+ Cadence CV (%)
+5.65 ± 4.68
+3.31 ± 2.18
+5.730
+< 0.001
+2.338 (1.535 ~ 3.140)
+20% increased walking speed
+ Stance phase (%)
+68.67 ± 4.63
+65.27 ± 2.70
+7.935
+< 0.001
+3.399 (2.556 ~ 4.242)
+ Stance phase CV (%)
+3.42 ± 2.20
+2.58 ± 1.39
+3.861
+< 0.001
+0.808 (0.396 ~ 1.220)
+ Double stance (%)
+36.71 ± 8.96
+30.19 ± 4.94
+8.005
+< 0.001
+6.525 (4.921 ~ 8.129)
+ Double stance CV (%)
+7.71 ± 4.52
+6.29 ± 3.08
+3.234
+0.001
+1.422 (0.556 ~ 2.288)
+ Stride length (cm)
+63.59 ± 21.06
+83.77 ± 24.34
+-7.592
+< 0.001
+-20.177 (-25.408 ~ 14.947)
+ Stride length CV (%)
+7.07 ± 6.07
+4.57 ± 3.06
+5.790
+< 0.001
+3.128 (2.065 ~ 4.192)
+ Step width (cm)
+10.86 ± 3.67
+10.80 ± 3.28
+0.138
+0.890
+0.055 (-0.734 ~ 0.845)
+ Step width CV (%)
+27.22 ± 12.14
+14.61 ± 4.95
+11.410
+< 0.001
+12.615 (10.439 ~ 14.791)
+ Velocity (km/h)
+2.13 ± 0.86
+2.99 ± 0.99
+-7.901
+< 0.001
+-0.858 (-1.072 ~ 0.644)
+ Velocity CV (%)
+8.31 ± 6.76
+4.40 ± 3.40
+6.285
+< 0.001
+3.802 (2.611 ~ 4.992)
+ Cadence (step/min)
+111.68 ± 21.69
+119.20 ± 15.74
+-3.477
+< 0.001
+-7.513 (-11.767 ~ -3.260)
+ Cadence CV (%)
+4.76 ± 3.46
+2.95 ± 2.15
+5.40
+< 0.001
+1.808 (1.166 ~ 2.451)
+Table 2.  Comparison of gait variables and variability between fall risk and Non-Fall risk groups according to 
+Changes in Gait Speed. CV: coefficient of variation, CI: confidence interval.
+ 
+Scientific Reports |        (2025) 15:16915 
+5
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 6 页 ---
+Variable
+Wilks’ Lambda
+Chi-square
+p-value
+Preferred gait speed
+ Stance phase (%)
+0.838
+55.868
+< 0.001
+ Stance phase CV (%)
+0.952
+15.669
+< 0.001
+ Step width (cm)
+0.994
+0.891
+0.169
+ Step width CV (%)
+0.755
+88.882
+< 0.001
+ Velocity (km/h)
+0.797
+71.856
+< 0.001
+ Velocity CV (%)
+0.876
+41.727
+< 0.001
+ Cadence (step/min)
+0.922
+25.859
+< 0.001
+ Cadence CV (%)
+0.905
+31.605
+< 0.001
+20% increased gait speed
+ Stance phase (%)
+0.829
+58.922
+< 0.001
+ Stance phase CV (%)
+0.948
+16.704
+< 0.001
+ Step width (cm)
+0.999
+0.205
+0.651
+ Step width CV (%)
+0.701
+111.821
+< 0.001
+ Velocity (km/h)
+0.820
+62.553
+< 0.001
+ Velocity CV (%)
+0.874
+42.283
+< 0.001
+ Cadence (step/min)
+0.957
+13.716
+< 0.001
+ Cadence CV (%)
+0.906
+31.059
+< 0.001
+Table 4.  Discriminant analysis of gait variables and variability based on SPPB scores.
+ 
+Independent variable
+B
+β
+t
+p-value
+Adj.R2
+Preferred gait speed
+ Age (year)
+-0.034
+-0.086
+-2.127
+0.034
+0.544
+ Sex
+0.290
+0.062
+1.501
+0.134
+ Stance phase time (%)
+-0.008
+-0.016
+-0.135
+0.893
+ Stance phase time CV (%)
+0.023
+0.023
+0.402
+0.688
+ Double stance time (%)
+-0.091
+-0.331
+-2.473
+0.014
+ Double stance time CV (%)
+0.033
+0.097
+1.914
+0.057
+ Stride length (cm)
+0.094
+0.925
+3.171
+0.002
+ Stride length CV (%)
+0.063
+0.168
+1.952
+0.052
+ Step width (cm)
+0.018
+0.028
+0.656
+0.512
+ Step width CV (%)
+-0.048
+-0.265
+-6.495
+< 0.001
+ Velocity (km/hour)
+-2.121
+-0.810
+-2.639
+0.009
+ Velocity CV (%)
+-0.044
+-0.130
+-1.483
+0.139
+ Cadence (step/min)
+0.057
+0.505
+3.434
+< 0.001
+ Cadence CV (%)
+-0.138
+-0.224
+-3.259
+0.001
+20% increased gait speed
+ Age (year)
+-0.005
+-0.014
+-0.332
+0.740
+0.537
+ Sex
+0.238
+0.051
+1.256
+0.210
+ Stance phase time (%)
+0.025
+0.045
+0.334
+0.739
+ Stance phase time CV (%)
+0.054
+0.043
+0.796
+0.427
+ Double stance time (%)
+-0.102
+-0.345
+-2.427
+0.016
+ Double stance time CV (%)
+-0.002
+-0.004
+-0.072
+0.943
+ Stride length (cm)
+0.115
+1.248
+4.415
+< 0.001
+ Stride length CV (%)
+-0.036
+-0.078
+-0.729
+0.467
+ Step width (cm)
+0.030
+0.046
+1.090
+0.277
+ Step width CV (%)
+-0.060
+-0.300
+-7.137
+< 0.001
+ Velocity (km/hour)
+-2.855
+-1.279
+-4.206
+< 0.001
+ Velocity CV (%)
+-0.007
+-0.016
+-0.144
+0.866
+ Cadence (step/min)
+0.078
+0.646
+5.063
+< 0.001
+ Cadence CV (%)
+-0.073
+-0.094
+-1.632
+0.104
+Table 3.  Multivariable regression analysis to identify the factors influencing the SPPB score based on the age, 
+sex, and gait variables and variability in older adults. CV: coefficient of variation.
+ 
+Scientific Reports |        (2025) 15:16915 
+6
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 7 页 ---
+mean values. The findings of this study align was similar to previous studies that found that step width variability 
+is a more meaningful indicator of gait stability than step length variability23.
+Previous biomechanical study shown that lateral foot placement is closely linked to the lateral position and 
+velocity of the center of mass during walking, particularly during the single-limb support phase40. Mediolateral 
+balance such lateral stability requires more active stabilization than anteroposterior balance, which is achieved 
+primarily through lateral foot placement22 and appropriate muscle control41. Thus, lateral stability during gait 
+is maintained through the passive dynamics of the musculoskeletal system and the active control of the central 
+nervous system42,43. A key mechanism that ensures lateral stability during walking is step width44. Step width 
+variability reflects the degree of active control required to maintain this lateral stability22, and instability in lateral 
+foot placement during walking may indicate instability in active motor control. Instability in motor control can 
+reduce balance ability, and balance impairments lead to greater alterations in gait patterns and an increased 
+risk of falling during walking45. Therefore, the observed increase in step width CV at both PS and 20% faster 
+speed suggests greater mediolateral instability, which may reflect not only impaired balance ability but also an 
+increased risk of falls.
+Discriminante analysis was used to determine the gait parameters and variability that could identify older 
+adults at risk of falling. Under the PS condition, step width CV showed the lowest Wilks’ Lambda value, although 
+the difference compared to gait velocity was not significant. However, at 20% increased gait speed, Wilks’ Lambda 
+values for step width CV and velocity were 0.697 and 0.827, respectively, indicating a significant difference in the 
+discriminatory ability between the two variables. When instability is perceived, step width tends to increase22,46, 
+and at increased walking speeds at PS, step width may increase further to ensure medial stability22. This means 
+that when the walking speed increases in the presence of instability, the step width variability may be increased. In 
+the present study, gait speed consistently showed lower discriminative power than step width CV across all walking 
+conditions. While gait speed is widely used as a basic assessment tool in clinical settings due to its simplicity and ease 
+of measurement, its predictive validity for identifying fall risk in community-dwelling older adults has not yet been 
+firmly established47. This suggests that although gait speed may be partially related to fall risk, it has limitations in 
+capturing subtle changes in gait stability. Despite its clinical convenience, gait speed alone may not be sufficient for 
+detecting fall risk, which is often associated with medial-lateral instability. Step width CV provides unique insights 
+into gait variability and lateral stability that are not easily captured by gait speed alone.
+Therefore, the authors suggest that step width CV measured under the condition of a 20% increased walking 
+speed provides unique insights into gait variability and lateral stability—factors that are not easily captured by gait 
+speed alone—and may serve as a more sensitive and meaningful indicator for detecting fall risk in older adults.
+These findings suggest that gait variability-particularly step width variability- can be used to distinguish 
+between older adults at high and low risk of falling, especially under conditions of increased walking speed. 
+Previous studies have reported that gait variability is a key factor for predicting the fall risk48, and present study 
+provides further supporting evidence. Notably, step width variability is a more meaningful indicator of gait 
+control than speed and stride length variability23. Therefore, step width variability can be a useful indicator for 
+predicting the fall risk among older adults.
+Despite these findings, this study has some limitations. First, the data were collected from older adults living 
+in the community, which may limit the generalizability of the results to other populations, particularly older 
+adults residing in care facilities or other demographic groups.
+Second, this study was conducted under treadmill walking conditions, which may differ from natural overground 
+walking. Since treadmill walking can constrain natural gait patterns, caution is needed when generalizing the 
+results to real-world walking. Therefore, future studies should include validation analyses comparing treadmill and 
+overground gait patterns to enhance the ecological validity of the findings. Third, as this study did not evaluate 
+actual fall experiences, a potential discrepancy may exist between those identified as being at risk of falling based 
+on SPPB scores and those who may ultimately experience a fall. To overcome this limitation, future research 
+should include longitudinal data on real fall incidents to further validate the predictive accuracy of the SPPB. 
+Although the SPPB score was used to assess fall risk in this study, the SPPB is mentioned as one of the tools 
+used to assess walking function, and walking function is listed as one of six assessments within the mobility 
+domain of fall risk assessment. This suggests that while the SPPB is an important indicator for assessing fall 
+risk, it may not be sufficient when used alone10. Therefore, when interpreting the results of this study, additional 
+factors other than the SPPB (e.g., demographic characteristics49 and fall risk factors such as muscle strength 
+and neurological factors50 need to be considered in addition to the SPPB. Future studies should also include 
+more diverse populations, such as older adults living in nursing homes, and utilize data collection methods 
+that reflect fall risk factors, such as sarcopenia and psycho-cognitive factors, to allow for more comprehensive 
+analyses. Forth, psychological factors, such as fear of falling51 and anxiety, which are known to influence the 
+fall risk48, were not considered. Future studies should incorporate assessments of fear of falling and anxiety 
+to comprehensively analyze how these psychological factors interact with step width variability. Finally, gait 
+analysis results obtained in experimental settings may not fully reflect daily life gait patterns, and simple tests 
+may not provide sufficiently reliable measurements52. In this regard, using wireless wearable monitoring systems 
+can provide long-term data, and better reflect real daily life gait patterns, increasing the accuracy of the collected 
+data53. Therefore, future studies should aim to replicate these findings in larger, more diverse populations and 
+use a longitudinal design to assess the temporal relationship between gait characteristics and fall risk. Despite 
+these limitations, this study has several strengths. The greater discriminatory power of step width variability as 
+walking speed increases highlights its potential as an early indicator of fall risk, and suggests the possibility that 
+spatiotemporal gait variability may be used as a predictor of fall risk. Therefore, it provides a basis for further 
+studies on spatiotemporal gait variability to predict fall risk.
+Scientific Reports |        (2025) 15:16915 
+7
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 8 页 ---
+Conclusions
+This study found that gait variables and variability play an important role in distinguishing between the fall-risk 
+and non-fall-risk groups. In particular, the step width variability at 20% increased walking speed, compared to 
+that at the PS, was a significant factor for predicting the fall risk. These findings suggest that treadmill-based 
+gait evaluation can serve as a valuable tool for identifying individuals at higher risk of falls. Our results can offer 
+valuable insights for the development of future fall risk prediction models.
+Data availability
+The datasets used and/or analysed during the current study available from the corresponding author on reason-
+able request.
+Received: 9 January 2025; Accepted: 12 May 2025
+References
+	 1.	 Talarska, D. et al. Is independence of older adults safe considering the risk of falls? BMC Geriatr. 17, 1–7 (2017).
+	 2.	 Hill, K., Schwarz, J., Flicker, L. & Carroll, S. Falls among healthy, community-dwelling, older women: A prospective study of 
+frequency, circumstances, consequences and prediction accuracy. Aust. N. Z. J. Public Health. 23, 41–48 (1999).
+	 3.	 Adam, C. E. et al. The association between gait speed and falls in community dwelling older adults with and without mild cognitive 
+impairment. Int. J. Environ. Res. Public Health. 18, 3712 (2021).
+	 4.	 Muir, S. W., Berg, K., Chesworth, B., Klar, N. & Speechley, M. Quantifying the magnitude of risk for balance impairment on falls 
+in community-dwelling older adults: a systematic review and meta-analysis. J. Clin. Epidemiol. 63, 389–406 (2010).
+	 5.	 Lee, Y. C., Chang, S. F., Kao, C. Y. & Tsai, H. C. Muscle strength, physical fitness, balance, and walking ability at risk of fall for 
+prefrail older people. BioMed research international 4581126 (2022). (2022).
+	 6.	 Lauretani, F. et al. Short-Physical performance battery (SPPB) score is associated with falls in older outpatients. Aging Clin. Exp. 
+Res. 31, 1435–1442 (2019).
+	 7.	 Welch, S. A. et al. The short physical performance battery (SPPB): a quick and useful tool for fall risk stratification among older 
+primary care patients. J. Am. Med. Dir. Assoc. 22, 1646–1651 (2021).
+	 8.	 Thaler-Kall, K. et al. Description of spatio-temporal gait parameters in elderly people and their association with history of falls: 
+results of the population-based cross-sectional KORA-Age study. BMC Geriatr. 15, 1–8 (2015).
+	 9.	 Society, A. G., Society, G. & Of, A. A. On falls prevention, O. S. P. Guideline for the prevention of falls in older persons. J. Am. 
+Geriatr. Soc. 49, 664–672 (2001).
+	10.	 Montero-Odasso, M. et al. World guidelines for falls prevention and management for older adults: a global initiative. Age Ageing. 
+51, afac205 (2022).
+	11.	 Veronese, N. et al. Association between short physical performance battery and falls in older people: the progetto Veneto anziani 
+study. Rejuven. Res. 17, 276–284 (2014).
+	12.	 Shimada, H., Makizako, H., Doi, T., Tsutsumimoto, K. & Suzuki, T. Incidence of disability in frail older persons with or without 
+slow walking speed. J. Am. Med. Dir. Assoc. 16, 690–696 (2015).
+	13.	 Kwon, M. S., Kwon, Y. R., Park, Y. S. & Kim, J. W. Comparison of gait patterns in elderly fallers and non-fallers. Technol. Health 
+Care. 26, 427–436 (2018).
+	14.	 Brach, J. S., Berlin, J. E., VanSwearingen, J. M., Newman, A. B. & Studenski, S. A. Too much or too little step width variability is 
+associated with a fall history in older persons who walk at or near normal gait speed. J. Neuroeng. Rehabil. 2, 1–8 (2005).
+	15.	 Ayoubi, F., Launay, C. P., Annweiler, C. & Beauchet, O. Fear of falling and gait variability in older adults: A systematic review and 
+meta-analysis. J. Am. Med. Dir. Assoc. 16, 14–19 (2015).
+	16.	 Beauchet, O., Allali, G., Launay, C., Herrmann, F. & Annweiler, C. Gait variability at fast-pace walking speed: a biomarker of mild 
+cognitive impairment? J. Nutr. Health Aging. 17, 235–239 (2013).
+	17.	 Tan, K., Li, X. & Li, R. in 2022 International Conference on Wearables, Sports and Lifestyle Management (WSLM). 79–83 (IEEE).
+	18.	 Hausdorff, J. M., Rios, D. A. & Edelberg, H. K. Gait variability and fall risk in community-living older adults: A 1-year prospective 
+study. Arch. Phys. Med. Rehabil. 82, 1050–1056 (2001).
+	19.	 Brach, J. S., Studenski, S. A., Perera, S., VanSwearingen, J. M. & Newman, A. B. Gait variability and the risk of incident mobility 
+disability in community-dwelling older adults. Journals Gerontol. Ser. A: Biol. Sci. Med. Sci. 62, 983–988 (2007).
+	20.	 Almarwani, M., VanSwearingen, J. M., Perera, S., Sparto, P. J. & Brach, J. S. Challenging the motor control of walking: gait variability 
+during slower and faster Pace walking conditions in younger and older adults. Arch. Gerontol. Geriatr. 66, 54–61 (2016).
+	21.	 Beauchet, O. et al. Association between high variability of gait speed and mild cognitive impairment: A cross-sectional pilot study. 
+J. Am. Geriatr. Soc. 59, 1973–1974 (2011).
+	22.	 Bauby, C. E. & Kuo, A. D. Active control of lateral balance in human walking. J. Biomech. 33, 1433–1440 (2000).
+	23.	 Owings, T. M. & Grabiner, M. D. Step width variability, but not step length variability or step time variability, discriminates gait of 
+healthy young and older adults during treadmill locomotion. J. Biomech. 37, 935–938 (2004).
+	24.	 Poujol, L., Annweiler, C., Allali, G., Fantino, B. & Beauchet, O. Effect of psychoactive medication on gait variability in community-
+dwelling older adults: A cross‐sectional study. J. Am. Geriatr. Soc. 58, 1207–1208 (2010).
+	25.	 Kim, B., Youm, C., Park, H., Lee, M. & Noh, B. Characteristics of gait variability in the elderly while walking on a treadmill with 
+gait speed variation. Int. J. Environ. Res. Public Health. 18, 4704 (2021).
+	26.	 Medina-Mirapeix, F. et al. Interobserver reliability of peripheral muscle strength tests and short physical performance battery in 
+patients with chronic obstructive pulmonary disease: a prospective observational study. Arch. Phys. Med. Rehabil. 97, 2002–2005 
+(2016).
+	27.	 Faude, O., Donath, L., Roth, R., Fricker, L. & Zahner, L. Reliability of gait parameters during treadmill walking in community-
+dwelling healthy seniors. Gait Posture. 36, 444–448 (2012).
+	28.	 Gaßner, H. et al. Gait variability as digital biomarker of disease severity in Huntington’s disease. J. Neurol. 267, 1594–1601 (2020).
+	29.	 König, N., Singh, N. B., Von Beckerath, J., Janke, L. & Taylor, W. R. Is gait variability reliable? An assessment of spatio-temporal 
+parameters of gait variability during continuous overground walking. Gait Posture. 39, 615–617 (2014).
+	30.	 Grimpampi, E. et al. Reliability of gait variability assessment in older individuals during a six-minute walk test. J. Biomech. 48, 
+4185–4189 (2015).
+	31.	 Hollman, J. H. et al. A comparison of variability in Spatiotemporal gait parameters between treadmill and overground walking 
+conditions. Gait Posture. 43, 204–209 (2016).
+	32.	 Watt, J. R. et al. A three-dimensional kinematic and kinetic comparison of overground and treadmill walking in healthy elderly 
+subjects. Clin. Biomech. Elsevier Ltd. 25, 444–449 (2010).
+	33.	 Frenkel-Toledo, S. et al. Effect of gait speed on gait rhythmicity in Parkinson’s disease: Variability of Stride time and swing time 
+respond differently. J. Neuroeng. Rehabil. 2, 1–7 (2005).
+Scientific Reports |        (2025) 15:16915 
+8
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 9 页 ---
+	34.	 Lee, M., Youm, C., Noh, B. & Park, H. Gait characteristics based on shoe-type inertial measurement units in healthy young adults 
+during treadmill walking. Sensors 20, 2095 (2020).
+	35.	 Williams, D. S. & Martin, A. E. Gait modification when decreasing double support percentage. J. Biomech. 92, 76–83 (2019).
+	36.	 Larsson, J., Hansson, E. E. & Miller, M. Increased double support variability in elderly female fallers with vestibular asymmetry. 
+Gait Posture. 41, 820–824 (2015).
+	37.	 Rössler, R. et al. Spatiotemporal gait characteristics across the adult lifespan: reference values from a healthy population–Analysis 
+of the complete cohort study. Gait Posture. 109, 101–108 (2024).
+	38.	 Kimura, T., Kobayashi, H., Nakayama, E. & Hanaoka, M. Effects of aging on gait patterns in the healthy elderly. Anthropol. Sci. 115, 
+67–72 (2007).
+	39.	 Guimaraes, R. & Isaacs, B. Characteristics of the gait in old people who fall. Int. Rehabilitation Med. 2, 177–180 (1980).
+	40.	 MacKinnon, C. D. & Winter, D. A. Control of whole body balance in the frontal plane during human walking. J. Biomech. 26, 
+633–644 (1993).
+	41.	 Neptune, R. R. & McGowan, C. P. Muscle contributions to frontal plane angular momentum during walking. J. Biomech. 49, 
+2975–2981 (2016).
+	42.	 Donelan, J. M., Shipman, D. W., Kram, R. & Kuo, A. D. Mechanical and metabolic requirements for active lateral stabilization in 
+human walking. J. Biomech. 37, 827–835 (2004).
+	43.	 Bruijn, S. M. & Van Dieën, J. H. Control of human gait stability through foot placement. J. Royal Soc. Interface. 15, 20170816 
+(2018).
+	44.	 Hof, A. L., Vermerris, S. & Gjaltema, W. Balance responses to lateral perturbations in human treadmill walking. J. Exp. Biol. 213, 
+2655–2664 (2010).
+	45.	 Osoba, M. Y., Rao, A. K., Agrawal, S. K. & Lalwani, A. K. Balance and gait in the elderly: A contemporary review. Laryngoscope 
+Invest. Otolaryngol. 4, 143–153 (2019).
+	46.	 Latt, M. D., Menz, H. B., Fung, V. S. & Lord, S. R. Walking speed, Cadence and step length are selected to optimize the stability of 
+head and pelvis accelerations. Exp. Brain Res. 184, 201–209 (2008).
+	47.	 Samah, Z. A., Nordin, N. A. M., Shahar, S. & Singh, D. K. A. Can gait speed test be used as a falls risk screening tool in community 
+dwelling older adults? A review. Pol. Annals Med. 23, 61–67 (2016).
+	48.	 Pieruccini-Faria, F., Montero-Odasso, M. & Hausdorff, J. M. Gait variability and fall risk in older adults: The role of cognitive 
+function. Falls and cognition in older persons: fundamentals, assessment and therapeutic options, 107–138 (2020).
+	49.	 Pavasini, R. et al. Short physical performance battery and all-cause mortality: Systematic review and meta-analysis. BMC Med. 14, 
+1–9 (2016).
+	50.	 Rodrigues, F., Monteiro, A. M., Forte, P. & Morouço, P. Effects of muscle strength, agility, and fear of falling on risk of falling in 
+older adults. Int. J. Environ. Res. Public Health. 20, 4945 (2023).
+	51.	 Asai, T. et al. The association between fear of falling and occurrence of falls: a one-year cohort study. BMC Geriatr. 22, 393 (2022).
+	52.	 Renggli, D. et al. Wearable inertial measurement units for assessing gait in real-world environments. Front. Physiol. 11, 90 (2020).
+	53.	 Jijesh, J. in 2nd IEEE International Conference on Recent Trends in Electronics, Information & Communication Technology (RTEICT). 
+1265–1270 (IEEE). (2017).
+Acknowledgements
+This research is supported by the National Research Foundation of Korea (NRF) grant funded by the Korea 
+government (MSIT) (No. RS-2023-00246536). The authors wish to thank Park WH, Park JS, and Lee HI, who 
+technically assisted at the Geriatric Health Care and Physical Activity Laboratory at Gachon University.
+Author contributions
+Park and Bae designed the research and contributed to conceptualization and methodology. Kim, Lim, and Bae 
+led the research, managed human resources, and played key roles in data collection, formal analysis, resource 
+management, and data curation. Kim, Lim, Park, and Bae participated in writing the manuscript. All authors 
+have read and approved the final version of the manuscript. Bae supervised the research.
+Declarations
+Competing interests
+The authors declare no competing interests.
+Additional information
+Correspondence and requests for materials should be addressed to Y.B.
+Reprints and permissions information is available at www.nature.com/reprints.
+Publisher’s note  Springer Nature remains neutral with regard to jurisdictional claims in published maps and 
+institutional affiliations.
+Open Access   This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 
+4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in 
+any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide 
+a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have 
+permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated 
+otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence 
+and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to 
+obtain permission directly from the copyright holder. To view a copy of this licence, visit ​h​t​t​p​:​/​/​c​r​e​a​t​i​v​e​c​o​m​m​o​
+n​s​.​o​r​g​/​l​i​c​e​n​s​e​s​/​b​y​-​n​c​-​n​d​/​4​.​0​/​.​
+© The Author(s) 2025 
+Scientific Reports |        (2025) 15:16915 
+9
+| https://doi.org/10.1038/s41598-025-02128-2
+www.nature.com/scientificreports/
+Content courtesy of Springer Nature, terms of use apply. Rights reserved
+
+
+--- 第 10 页 ---
+1.
+2.
+3.
+4.
+5.
+6.
+Terms and Conditions
+ 
+Springer Nature journal content, brought to you courtesy of Springer Nature Customer Service Center GmbH (“Springer Nature”).
+ 
+Springer Nature supports a reasonable amount of sharing of  research papers by authors, subscribers and authorised users (“Users”), for small-
+scale personal, non-commercial use provided that all copyright, trade and service marks and other proprietary notices are maintained. By
+accessing, sharing, receiving or otherwise using the Springer Nature journal content you agree to these terms of use (“Terms”). For these
+purposes, Springer Nature considers academic use (by researchers and students) to be non-commercial.
+ 
+These Terms are supplementary and will apply in addition to any applicable website terms and conditions, a relevant site licence or a personal
+subscription. These Terms will prevail over any conflict or ambiguity with regards to the relevant terms, a site licence or a personal subscription
+(to the extent of the conflict or ambiguity only). For Creative Commons-licensed articles, the terms of the Creative Commons license used will
+apply.
+ 
+We collect and use personal data to provide access to the Springer Nature journal content. We may also use these personal data internally within
+ResearchGate and Springer Nature and as agreed share it, in an anonymised way, for purposes of tracking, analysis and reporting. We will not
+otherwise disclose your personal data outside the ResearchGate or the Springer Nature group of companies unless we have your permission as
+detailed in the Privacy Policy.
+ 
+While Users may use the Springer Nature journal content for small scale, personal non-commercial use, it is important to note that Users may
+not:
+  
+use such content for the purpose of providing other users with access on a regular or large scale basis or as a means to circumvent access
+control;
+use such content where to do so would be considered a criminal or statutory offence in any jurisdiction, or gives rise to civil liability, or is
+otherwise unlawful;
+falsely or misleadingly imply or suggest endorsement, approval , sponsorship, or association unless explicitly agreed to by Springer Nature in
+writing;
+use bots or other automated methods to access the content or redirect messages
+override any security feature or exclusionary protocol; or
+share the content in order to create substitute for Springer Nature products or services or a systematic database of Springer Nature journal
+content.
+ 
+In line with the restriction against commercial use, Springer Nature does not permit the creation of a product or service that creates revenue,
+royalties, rent or income from our content or its inclusion as part of a paid for service or for other commercial gain. Springer Nature journal
+content cannot be used for inter-library loans and librarians may not upload Springer Nature journal content on a large scale into their, or any
+other, institutional repository.
+ 
+These terms of use are reviewed regularly and may be amended at any time. Springer Nature is not obligated to publish any information or
+content on this website and may remove it or features or functionality at our sole discretion, at any time with or without notice. Springer Nature
+may revoke this licence to you at any time and remove access to any copies of the Springer Nature journal content which have been saved.
+ 
+To the fullest extent permitted by law, Springer Nature makes no warranties, representations or guarantees to Users, either express or implied
+with respect to the Springer nature journal content and all parties disclaim and waive any implied warranties or warranties imposed by law,
+including merchantability or fitness for any particular purpose.
+ 
+Please note that these rights do not automatically extend to content, data or other material published by Springer Nature that may be licensed
+from third parties.
+ 
+If you would like to use or distribute our Springer Nature journal content to a wider audience or on a regular basis or in any other manner not
+expressly permitted by these Terms, please contact Springer Nature at
+  
+onlineservice@springernature.com
+ 

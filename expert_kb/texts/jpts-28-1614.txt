@@ -1,0 +1,576 @@
+--- 第 1 页 ---
+Strategies for obstacle crossing in older adults 
+with high and low risk of falling
+Hui-Fen Pan, MS, PT1), Horng-Chaung Hsu, MD2), Wei-Ning Chang, MD1),  
+Jenn-Huei Renn, MD1), Hong-Wen Wu, PhD3)*
+1)	Department of Orthopaedics, Kaohsiung Veterans General Hospital, Taiwan
+2)	Department of Orthopaedics, China Medical University Hospital, Taiwan
+3)	Department of Physical Education, National Taiwan University of Sport: Taichung 404, Taiwan
+Abstract.	
+[Purpose] Tripping is a frequent cause of falls among aging adults. Appropriate limb movements while 
+negotiating obstacles are critical to trip avoidance. The aim of our study was to investigate the mechanics of obstacle 
+crossing in older adults at low or high risk of falling. [Subjects and Methods] Twenty community-dwelling adults 
+aged ≥55 years, were evaluated with the Tinetti Balance and Gait scale and classified as being at high or low risk of 
+falling. Between-group comparisons of kinematics were evaluated for obstacle heights of 10%, 20%, and 30% of 
+leg length. [Results] The high-risk group demonstrated greater toe-obstacle clearance of the leading leg. Increasing 
+obstacle height led to increased maximal toe-obstacle clearance, toe-obstacle distance, and shortened swing phase 
+of the leading limb. Adaptation of clearance height was greater for the trailing leg. Individuals at high risk of falling 
+demonstrated less symmetry between the leading and trailing legs and a narrower step width, features that increase 
+the likelihood of tripping. [Conclusion] Kinematic parameters of obstacle clearance, including the symmetry index 
+described in our study, could provide clinicians with a quick screening tool to identify patients at risk of falling and 
+to evaluate outcomes of training programs.
+Key words:	 Symmetry index, Obstacle negotiation, Foot clearance
+(This article was submitted Dec. 7, 2015, and was accepted Feb. 6, 2016)
+INTRODUCTION
+Falls and the fear of falling are among the most serious and common medical problems experienced by older adults, 
+often leading to disability and morbidity1). Fall-related injuries among older adults are also a significant source of increased 
+health care resource needs and costs2–4). Approximately 30–53% of community-dwelling adults, over the age of 65 years, 
+experience one or more falls each year5–10).
+The increased risk of falling with aging is multifactorial in nature and is influenced by age-related declines in balance and 
+mobility function, as well as by the burden of multiple chronic diseases and disabilities. Factors attributed to an individual’s 
+risk of falling are generally evaluated at three levels: intrinsic factors, occurring at the level of the individual; extrinsic fac-
+tors, occurring at the level of the environment; and activity-related factors5, 8, 11–13). A number of intrinsic factors specifically 
+correspond to the risk of falling, including gross impairments in balance and gait, cardiovascular dysfunction, neurological 
+impairments, musculoskeletal conditions, limitations in general physical functioning, being female, chronic health condi-
+tions, and deconditioning following a prolonged period of bed rest or inactivity.
+The Tinetti Gait and Balance Test (Tinetti test) is one component of the Performance Oriented Mobility Assessment 
+(POMA) that was designed to evaluate gait and balance function in older individuals14, 15). The Tinetti test is a simple tool that 
+can easily be implemented in practice as a way to screen for risk of falling in older individuals. The test integrates an assess-
+ment of both balance function and gait. Balance is assessed by 14 items, which include a series of balance maneuvers such as 
+J. Phys. Ther. Sci. 28: 1614–1620, 2016
+*Corresponding author. Hong-Wen Wu (E-mail: wuh@ntupes.edu.tw)
+©2016 The Society of Physical Therapy Science. Published by IPEC Inc.
+This is an open-access article distributed under the terms of the Creative Commons Attribution Non-Commercial No Derivatives (by-nc-nd) 
+License <http://creativecommons.org/licenses/by-nc-nd/4.0/>.
+Original Article
+ The Journal of Physical Therapy Science
+ The Journal of Physical Therapy Science
+
+
+--- 第 2 页 ---
+1615
+quiet standing, moving from sitting to standing position, and turning 360°, providing a total balance score of 24 points. Gait 
+function is assessed on a 10-item scale, providing a total score of 16 points. The total score on the Tinetti test ranges between 
+0 and 40 and higher scores are indicative of better balance and gait functions. The inter-rater and test-retest reliability of 
+the Tinetti test is high, with agreement values of 95% for the balance and gait subscales14). More importantly, the Tinetti 
+test has high predictive reliability for falls and fall-related injuries among community-dwelling older adults and residents of 
+intermediate care facilities8, 14, 15). Using a cutoff score of 36, the Tinetti test has a sensitivity of 70% and specificity of 52% 
+with the Berg Balance Scale. The time required to administer the balance and gait subscales (approximately 10 minutes) is 
+less than the time required to administer the Berg Balance Scale16).
+Balance impairments during walking and tripping while negotiating obstacles are most likely the two most common 
+causes of falls in older adults14, 17). A loss of balance while maneuvering an obstacle may cause sudden and inappropriate 
+movements of the lower limbs that lead the foot to contact the obstacle rather than clear it. Experimental studies have demon-
+strated that the trajectory of the leading limb (i.e., the limb crossing the obstacle first) is modulated principally by the height 
+of the obstacle, with negligible influence from the width of the obstacle. Obstacle height provokes significant adaptations 
+of the degree of flexion at the hip, knee, and ankle18–20) and also modulates the kinematics of the trailing limb (i.e. the limb 
+crossing the obstacle last), by increasing knee flexion during swing21, 22).
+Temporal variables provide information about the time required to adjust the kinematics of the lower limbs for obstacle 
+clearance. Duration of swing phase, measured from toe-off to foot contact, provides insight into the time required to prepare 
+the limb for clearance and landing. Research has demonstrated a linear association between increasing obstacle height and 
+prolonged swing phase duration17, 21). Individuals who have sustained a stroke show an increased swing phase duration of the 
+affected leading limb, which is indicative of the increased time required to modify trajectories and prepare for the clearance 
+and landing phases23, 24). Walking velocity is also a confounding factor that has been associated with falls in older adult 
+populations18, 23, 25–29). Compared to young adults, older individuals exhibit slower speed while navigating an obstacle18, 30). 
+Reduced walking speed has also been reported in individuals with a history of stroke or Parkinson’s disease23, 31).
+With regard to the design of preventive programs in primary health care, it is important to gain more insight into the 
+relationships between the risk of falling and gait characteristics. In particular, the characterization of age-related changes in 
+lower limb control and balance would provide a basis to understand, and therefore possibly mitigate, the effects of aging on 
+the ability to safely negotiate obstacles. This is important, since difficulty negotiating obstacles is one of the key determinants 
+that leads older adults to refrain from walking and participating within their community. Identifying key features of obstacle 
+crossing may also provide clinicians with the information necessary to guide an assessment of dynamic balance and gait at 
+the person-environment interface. The aim of our study was to investigate the mechanics of obstacle crossing in older adults 
+assessed to be at either low or high risk of falling.
+SUBJECTS AND METHODS
+Twenty individuals over the age of 55 years were randomly selected from a community dwelling in Central Taiwan. All 
+prospective participants walked independently without an assistive device at home and within the community, with no his-
+tory of serious head trauma, cognitive impairment, neurological, orthopedic, cardiovascular, musculoskeletal, or pulmonary 
+disorders, and no uncorrected visual impairment that would affect balance, gait, and overall physical function. None of the 
+participants showed evidence of persistent symptoms of vertigo, lightheadedness, or unsteadiness. A cutoff score of 36 on 
+the Tinetti Balance and Gait subscale of the POMA was used to classify participants as either at high or low risk of falling16). 
+Accordingly, 10 participants with a score below 36 were classified as the high-risk group, while the other 10 participants 
+had scores over 36 and were classified as the low-risk group. The descriptive characteristics of the participants are listed in 
+Table 1. Prior to testing, the purpose and procedures of the study were explained to participants and informed consent was 
+obtained. A brief history was taken, and the participants’ general health problems were recorded. A lower extremity scan was 
+completed by a physical therapist to confirm the absence of lower limb injury or any impairment that could limit performance 
+of the experimental tasks. Necessary demographic and anthropometrical data were recorded. The study protocols had been 
+approved by the KAOHSIUNG V.G.H. Institutional Review Board (IRB No.: VGHKS99-CT1-02).
+The Helen Hayes Marker Set was secured over selected anatomic landmarks to record lower limb motions during level 
+and obstructed walking trials. Two additional markers were placed on the obstacle for the measurement of limb positions 
+relative to the obstacle. Segmental motions were captured using VICON Motion Analysis System (Oxford Metrics Limited, 
+UK) at a 60 Hz sampling rate. Obstructed walking trials were performed with bare feet along a 6 m walkway at a self-selected 
+speed. The obstacle consisted of 2 adjustable upright struts with a padded crossbar that was placed at the midpoint of the 
+walkway, with the height of the obstacle adjusted to 10%, 20%, or 30% of each participant’s leg length (measured from the 
+anterior superior iliac spine to the medial malleolus). Participants were instructed to walk forward in a straight line, step 
+over the obstacle, and continue walking for at least 3 steps. The starting position was adjusted for each participant to ensure 
+a minimum of 3 steps before reaching the crossing stride. Several practice trials were provided prior to data collection, and 
+rest periods were provided, as necessary, throughout the session. Each participant completed 3 trials under each of the 3 
+experimental conditions: obstructed walking at 10%, 20%, and 30% obstacle height. The crossing stride used in the analysis 
+was defined as the interval between the heel strike of the trailing leg before the obstacle to the heel strike of the same leg after 
+
+
+--- 第 3 页 ---
+J. Phys. Ther. Sci. Vol. 28, No. 5, 2016
+1616
+crossing the obstacle.
+The parameters derived from the kinematic data are defined in Fig. 1. Kinematic data were used to estimate the temporal-
+spatial parameters and limb end-point variables used in the analysis. The temporal-spatial parameters calculated were peak 
+approach speed (AS) and crossing speed (CS). The following limb end-point variables were calculated: toe clearance (TC), 
+heel clearance (HC), peak toe clearance (TC peak), peak heel clearance (HC peak), and step width (SW). With the excep-
+tion of SW, all end-point variables were calculated for both the leading and the trailing limbs. Between-group differences 
+(i.e., variability between the high- and low-risk groups) in temporal-spatial parameters and limb end-point variables were 
+evaluated using a two-way analysis of variance (ANOVA) with repeated measures of obstacle height. Differences between 
+the leading and trailing limbs were compared using a paired-t test. The symmetry ratio, which provides a comparison of 
+the clearance profile for both legs, was developed to provide a simple method of screening for risk of trips and falls over 
+obstacles in clinical practice. The symmetry index was calculated as follows:
+	
+lead
+trail
+lead
+trail
+- 
+clearance
+clearance
+Symmetry ratio
+(
+)*0.5
+clearance
+clearance
+=
++
+ 	 Equation (1)
+Specifically, the symmetry index provides an estimate of the difference in clearance height for the leading and the trailing 
+limbs. A ratio of ‘0’ indicates symmetrical clearance for both limbs, a positive ratio indicates greater clearance of the leading 
+foot, and a negative ratio indicates greater clearance of the trailing foot.
+RESULTS
+All participants reduced their gait speed while crossing the obstacle compared to the walking speed during the approach 
+phase (Table 2). Between-group differences were identified for step width, as well as toe and heel clearance for the leading 
+leg (p<0.05). In particular, the low-risk group showed lower clearance of the toe and higher clearance of the heel, compared 
+to the high-risk group; additionally, the higher risk group adopted a narrower step width than the low-risk group (p<0.05). 
+Moreover, the low-risk group had a tendency to have a lower symmetry index (Table 3).
+Obstacle height significantly modulated the swing duration of the leg crossing the obstacle. After normalizing swing 
+phase to total stride duration, the swing phase of the leading leg increased as a function of obstacle height. Limb clearance 
+parameters were also modulated by obstacle height, including increases in both peak heel clearance and toe clearance of the 
+leading and trailing limbs. Even after normalization of the data for leg length, differences in the peak clearance height for the 
+different obstacle heights remained significant (p<0.05). Therefore, with increasing obstacle height, older adults tended to lift 
+their foot higher to clear the top of the obstacle, requiring more time (i.e., a longer swing phase) to clear the higher obstacle, 
+independent of high- or low-risk group assignation.
+Group × obstacle height interaction produced a discrete effect on the toe clearance of the leading limb (p<0.05). Effects 
+of obstacle height on the kinematics of the crossing leg are listed in Table 4. When crossing an obstacle height adjusted to 
+10% of leg length, heel clearance, peak heel clearance, toe clearance, and peak toe clearance of the leading limb were all 
+lower than for the trailing limb (p<0.05). When obstacle height increased to 20% of leg length, between-limb asymmetries 
+emerged, with decreased crossing speed, heel clearance, peak heel clearance, and peak toe clearance for the leading limb as 
+compared to the trailing limb (p<0.05).
+Table 1.  Mean and standard deviation of subject’s characteristics
+Group
+High risk 
+(n=10)
+Low risk 
+(n=10)
+Age (yrs)
+62.5 ± 6.6
+65.6 ± 8.7
+Height (cm)
+157.2 ± 8.7
+159.5 ± 8.0
+Weight (kg)
+56.5 ± 9.0
+57 ± 11.2
+Leg-length (cm)
+80.5 ± 4.8
+81.5 ± 4.0
+Tinetti gait
+13.2/16 (± 2.0)
+16/16 (± 0)
+Tinetti balance
+19.2/24 (± 4.9)
+24/24 (± 0)
+Tinetti scores
+32.4/40 (± 6.4)
+40/40 (± 0)
+Fig. 1.  The parameters derived from the kinematic data
+
+
+--- 第 4 页 ---
+1617
+Table 2.	Temporal-distance gait measurements for the high- and low-risk group while crossing over obstacles heights of 10%, 
+20%, and 30% of subjects’ leg length
+Group
+Obstacle height
+10%
+20%
+30%
+High risk
+Low risk
+High risk
+Low risk
+High risk
+Low risk
+Step length (cm)
+53.9 ± 3.3
+54.1 ± 4.4
+54.2 ± 3.0
+55.0 ± 5.3
+54.9 ± 2.3
+52.9 ± 4.2
+Step width (cm) *
+5.3 ± 2.3
+8.1 ± 2. 5
+6.2 ± 2.7
+9.5 ± 3.7
+5.5 ± 3.2
+8.0 ± 3.6
+Swing time lead (%) †
+51.0 ± 3.5
+51.7 ± 4.4
+53.5 ± 2.6
+53.5 ± 4.5
+56.5 ± 3.6
+56.1 ± 4.3
+Swing time trail (%)
+44.4 ± 5.1
+42.8 ± 2.4
+43.3 ± 2.4
+43.8 ± 2.8
+42.0 ± 3.7
+44.3 ± 3.4
+Crossing speed lead (cm/s)
+65.0 ± 11.7
+59.3 ± 11.5
+56.4 ± 9.9
+57.1 ± 13.5
+46.3 ± 10.6
+51.1  ± 13.5
+Crossing speed trail (cm/s)
+63.7 ± 12.7
+59.2 ± 11.8
+59.7 ± 9.9
+60.1 ± 15.2
+53.5 ± 8.9
+56.1  ± 14.7
+Peak approach speed (cm/s)
+102.3 ± 16.0
+102.8 ± 14.1
+104.0 ± 14.3
+108.5 ± 13.3
+103.0 ± 12.6
+109.1 ±  12.7
+Heel clearance lead (cm)
+10.1 ± 3.2
+13.1 ± 2.5
+10.3 ± 3.1
+13.6 ± 3.1
+8.1 ± 3.1
+11.5  ± 3.3
+Heel clearance trail (cm)
+33.6  ± 5.0
+32.2 ± 3.0
+34.4 ± 6.3
+32.4 ± 4.4
+31.1 ± 6.9
+29.5 ± 4.9
+Peak heel clearance lead (cm) †
+35.9 ± 5.3
+36.2 ± 3.4
+42.4 ± 5.6
+42.8 ± 3.6
+48.6 ± 6.3
+49.3 ± 4.2
+Peak heel clearance trail (cm) †
+45.0 ± 5.6
+43.7 ± 2.4
+52.8 ± 6.6
+51.0 ± 2.9
+60.8 ± 6.3
+61.0 ± 3.7
+Toe clearance lead (cm) *‡
+17.2 ± 4.3
+15.0 ± 2.8
+17.4 ± 5.5
+15.7 ± 3.9
+15.2 ± 5.4
+14.0 ± 3.9
+Toe clearance trail (cm)
+14.1 ± 3.6
+14.8 ± 2.0
+14.1 ± 2.8
+14.0 ± 2.0
+11.7 ± 2.9
+16.1 ± 3.4
+Peak toe clearance lead (cm) †
+25.6  ± 4.3
+25.9  ± 2.3
+32.9 ± 3.4
+33.5 ± 2.2
+40.2 ± 3.6
+42.0 ± 3.5
+Peak toe clearance trail (cm) †
+28.8  ± 5.0
+26.0  ± 2.3
+35.9  ± 6.1
+33.2 ± 2.5
+43.3 ± 6.0
+43.1 ± 3.3
+Toe-obs distance trail (cm) †
+20.7  ± 3.6
+18.8  ± 2.3
+19.4  ± 4.3
+19.7 ± 2.5
+23.1 ± 4.8
+23.0 ± 2.2
+Heel-obs distance lead (cm)
+12.6  ± 2.9
+12.5  ± 3.5
+15.0  ± 4.0
+12.6 ± 2.8
+14.8 ± 3.3
+13.5 ± 3.7
+*p-values (<0.05) for the high/low risk between-group analysis of variance (ANOVA) for all obstacle heights.
+†p-values (<0.05) for the OBS height ANOVA for all groups.  
+‡p-values (<0.05) for the OBS height × groups two-way ANOVA
+Table 3.	The symmetry ratio of foot clearance for both groups while crossing 
+an obstacle height corresponding to 10% of subjects’ leg length
+Group
+High risk
+Low risk
+Heel clearance *
+−1.1 ± 0.2
+−0.9 ± 0.2
+Peak heel clearance*
+−0.2 ± 0.1
+−0.2 ± 0.1
+Toe clearance *
+−0.2 ± 0.2
+0.0 ± 0.2
+Peak toe clearance *
+−0.1 ± 0.1
+0.0 ± 0.1
+*p-values (<0.05) for the between-group variables; student t-test.
+Table 4.  Temporal-distance gait measurements for the leading and trailing leg while crossing over obstacles heights of 10%, 20%, 
+and 30% of subjects’ leg length
+Crossing limb
+Obstacle height
+10%
+20%
+30%
+Lead
+Trail
+Lead
+Trail
+Lead
+Trail
+Crossing speed †‡
+61.2 ± 12.0
+61.0 ± 12.7
+55.3 ± 10.8
+58.7 ± 12.3
+47.5 ± 11.8
+53.6 ± 11.9
+Step length
+105.5 ± 7.5
+106.6 ± 9.2
+106.0 ± 9.5
+106.2 ± 9.8
+105.0 ± 8.7
+107.1 ± 8.0
+Heel clearance *†‡
+11.7 ± 3.0
+32.9 ± 4.4
+11.4 ± 2.9
+32.1 ± 5.6
+11.5 ± 3.7
+31.5 ± 5.6
+Peak heel clearance *†‡
+36.3 ± 4.5
+44.7 ± 4.4
+43.5 ± 4.6
+52.7 ± 5.0
+48.6 ± 5.2
+60.5 ± 5.3
+Toe clearance *
+14.5 ± 3.1
+16.2 ± 3.9
+14.2 ± 2.6
+15.8 ± 5.1
+14.0 ± 3.1
+15.8 ± 4.5
+Peak toe clearance *‡
+25.9 ± 3.5
+27.6 ± 4.2
+33.7 ± 3.0
+35.3 ± 5.1
+41.1 ± 3.1
+43.0 ± 4.8
+*p-values (<0.05) for the variables of leading and trailing leg while negotiating an obstacle height adjusted to 10% of leg length; 
+paired sample t-test.
+†p-values (<0.05) for the variables of leading and trailing leg while negotiating an obstacle height adjusted to 20% of leg length, 
+paired sample t-test.
+‡p-values (<0.05) for the variables of leading and trailing leg while negotiating an obstacle height adjusted to 30% of leg length, 
+paired sample t-test.
+
+
+--- 第 5 页 ---
+J. Phys. Ther. Sci. Vol. 28, No. 5, 2016
+1618
+DISCUSSION
+The body of research regarding the risk of falling in older adults has expanded considerably over the past decade, with 
+a focus on understanding age-related changes in balance and gait while negotiating obstacles. A shared limitation of this 
+research, however, can be seen in the selection bias of older adults recruited solely from among university staff, clinical 
+research centers, or institutions. A novel aspect of our study is our random selection of community-dwelling older adults, 
+including a direct comparison of the performance of individuals at high-risk of falling to the performance of healthy, age-
+matched controls. In addition, risk of falling was screened using the Tinetti component of the POMA test, which has been 
+shown to have marked sensitivity in detecting minor impairments in gait and balance functionality in older adults and 
+predictive reliability for falls and fall-related injuries in community-dwelling older adults8, 15, 32).
+Our study focused specifically on lower limb kinematics while crossing obstacles of different heights, and compared the 
+profiles of older adults at either high or low risk of falling. Previous studies reported that the individuals generally chose their 
+dominant foot as the leading foot and that this selection bias increased while negotiating higher obstacles18, 33). We observed 
+a similar leading limb selection bias in our study. Our outcomes also indicated that older adults used a more conservative 
+strategy to negotiate obstacles, compared to young adults, including a slower crossing speed, increased crossing time, and 
+higher foot clearance while crossing over the obstacles. Previous studies18, 34–40) also reported that older adults adopted a 
+slower and shorter step length, more conservative strategy that provides older adults with more time to adjust their limbs 
+in order to reduce the risk of tripping. A similar finding was reported in individuals with gait and balance issues, while 
+individuals with Parkinson’s disease demonstrated shorter stride length and greater stride duration31, 41). However, Muir et 
+al. considered this strategy to be detrimental for obstacle crossing due to the increased risk of inappropriate limb contact42).
+Overall, minimal toe clearance and greater variability of foot clearance may increase the risk of trips and associated 
+falls43, 44) and we found that the high-risk group had more variability in toe and heel clearance. However, because the chosen 
+point of reference on the foot, heel or toe may vary in location, relevant comparisons of kinematic measurements between 
+studies are limited. Chen et al. reported similar heights of heel and toe clearance of the leading foot for healthy young and 
+older adults stepping over an obstacle of fixed height, with the sole of the leading foot appearing virtually horizontal as it 
+crossed the obstacle and the heel at the lowest height in 82% of trial18). Sparrow et al. reported a modulation in the clearance 
+height of the heel of the leading limb by the height of the obstacle, with a lower clearance height used when negotiating 
+lower obstacles, compared to obstacles of medium and high heights33). In our study, the lowest point of clearance for the 
+leading limb was at the level of the heel and toe of the trailing limb. The absence of obstacle height standardization further 
+limits comparison of outcomes between studies. To address this specific issue, we adjusted the height of the obstacles to a 
+percentage of leg length for each participant, with the 10–30% height proportions used corresponding to a range of heights 
+that are navigated in activities of daily living, from the threshold of a door (5 cm) to the height of the standard step (25 cm).
+Previous studies reported that as obstacle heights increased, older adults modified their strategy to decrease crossing speed, 
+increase toe and heel clearance, and increase the crossing time of the leading limb18, 33, 45). In our study, we revealed that as 
+the obstacle height increased, a longer swing time of the leading leg was required for the crossing procedure, accompanied 
+by significantly higher peak clearance for both the leading and trailing limbs. Interestingly, older adults at high-risk of falling 
+used much greater toe clearance than those with a low risk of falling. We further demonstrated the peak heel clearance of the 
+trailing limb to be greater than that of the leading limb in individuals with a low risk of falling. In contrast, individuals at high 
+risk of falling adopted a narrower step width and greater toe clearance of the leading limb. A similar finding was reported 
+by Chen et al. who observed greater toe clearance in healthy elderly male subjects negotiating obstacles when compared to 
+young male subjects18). They also concluded that improved gait ability reduced the risk of falls for the older adults. Recently 
+published studies reported that exercise could help to improve the strategies (increased toe clearance, heel clearance and 
+maximum vertical heel clearance) used by the older adults to negotiate obstacles46, 47).
+Older adults at high risk for falls generally have an asymmetry in foot clearance48). According to our findings, individuals 
+in the high-risk group showed significantly asymmetrical foot lift while crossing obstacles of height adjusted to 10% of their 
+leg length. Moreover, they had a greater asymmetry of the foot lift ratio, using a higher foot clearance of the trailing leg 
+compared to the leading leg. Additional research is needed to determine whether the mechanism causing these differences 
+might influence balance function and, thereby, the risk of falling when negotiating obstacles.
+In our view, the results of our study have important clinical implications for physical therapists and nursing staff. A 
+leading cause of falls in older individuals is tripping while negotiating obstacles. Understanding the characteristics of the 
+adaptive strategies used for obstacle negotiation provides a basis for implementing relevant reeducation protocols to improve 
+performance. Key parameters of such a program should include increasing step width and normalizing the symmetry index.
+The limitations of our study should be noted when evaluating the applicability of our findings to clinical practice. Our 
+analysis is based on the findings from a small study group whose participants were all able to walk independently in their 
+community without physical aid or assistance. Future studies with a larger sample size would allow further analysis and 
+provide insight into specific deficits in the performance of obstacle crossing which could be predictive of falls both at home 
+and in the community.
+
+
+--- 第 6 页 ---
+1619
+REFERENCES
+1)	
+Tinetti ME: Instability and falling in elderly patients. Semin Neurol, 1989, 9: 39–45. [Medline]  [CrossRef]
+2)	
+Bagalà F, Becker C, Cappello A, et al.: Evaluation of accelerometer-based fall detection algorithms on real-world falls. PLoS ONE, 2012, 7: e37062. [Medline] 
+[CrossRef]
+3)	
+Heinrich S, Rapp K, Rissmann U, et al.: Cost of falls in old age: a systematic review. Osteoporos Int, 2010, 21: 891–902. [Medline]  [CrossRef]
+4)	
+Alexander BH, Rivara FP, Wolf ME: The cost and frequency of hospitalization for fall-related injuries in older adults. Am J Public Health, 1992, 82: 1020–
+1023. [Medline]  [CrossRef]
+5)	
+Leslie M, Pierre RW: An integrated risk assessment approach to fall prevention among community-dwelling elderly. Am J Health Stud, 1999, 15: 57–62.
+6)	
+Berg WP, Alessio HM, Mills EM, et al.: Circumstances and consequences of falls in independent community-dwelling older adults. Age Ageing, 1997, 26: 
+261–268. [Medline]  [CrossRef]
+7)	
+Blake AJ, Morgan K, Bendall MJ, et al.: Falls by elderly people at home: prevalence and associated factors. Age Ageing, 1988, 17: 365–372. [Medline]  [Cross-
+Ref]
+8)	
+Tinetti ME, Speechley M, Ginter SF: Risk factors for falls among elderly persons living in the community. N Engl J Med, 1988, 319: 1701–1707. [Medline] 
+[CrossRef]
+9)	
+Tinetti ME, Doucette J, Claus E, et al.: Risk factors for serious injury during falls by older persons in the community. J Am Geriatr Soc, 1995, 43: 1214–1221. 
+[Medline]  [CrossRef]
+10)	 Graafmans WC, Ooms ME, Hofstee HM, et al.: Falls in the elderly: a prospective study of risk factors and risk profiles. Am J Epidemiol, 1996, 143: 1129–1136. 
+[Medline]  [CrossRef]
+11)	
+Fortinsky RH, Iannuzzi-Sucich M, Baker DI, et al.: Fall-risk assessment and management in clinical practice: views from healthcare providers. J Am Geriatr 
+Soc, 2004, 52: 1522–1526. [Medline]  [CrossRef]
+12)	 Guideline for the prevention of falls in older persons. American Geriatrics Society, British Geriatrics Society, and American Academy of Orthopaedic Sur-
+geons Panel on Falls Prevention. J Am Geriatr Soc, 2001, 49: 664–672. [Medline]
+13)	 Ikezoe T, Asakawa T, Tsutou A: The relationship between quadriceps strength and balance to fall of elderly admitted to a nursing home. J Phys Ther Sci, 2003, 
+15: 75–79.  [CrossRef]
+14)	 Tinetti ME, Speechley M: Prevention of falls among the elderly. N Engl J Med, 1989, 320: 1055–1059. [Medline]  [CrossRef]
+15)	 Tinetti ME: Performance-oriented assessment of mobility problems in elderly patients. J Am Geriatr Soc, 1986, 34: 119–126. [Medline]  [CrossRef]
+16)	 Raîche M, Hébert R, Prince F, et al.: Screening older adults at risk of falling with the Tinetti balance scale. Lancet, 2000, 356: 1001–1002. [Medline]  [Cross-
+Ref]
+17)	 Chou LS, Kaufman KR, Brey RH, et al.: Motion of the whole body’s center of mass when stepping over obstacles of different heights. Gait Posture, 2001, 13: 
+17–26. [Medline]  [CrossRef]
+18)	 Chen HC, Ashton-Miller JA, Alexander NB, et al.: Stepping over obstacles: gait patterns of healthy young and old adults. J Gerontol, 1991, 46: M196–M203. 
+[Medline]  [CrossRef]
+19)	 Patla AE, Rietdyk S: Visual control of limb trajectory over obstacles during locomotion: effect of obstacle height and width. Gait Posture, 1993, 1: 45–60. 
+[CrossRef]
+20)	 Winter DA: The Biomechanics and Motor Control of Human Gait: Normal, Elderly and Pathological. Waterloo: University of Waterloo Press, 1991.
+21)	 Chou LS, Draganich LF: Placing the trailing foot closer to an obstacle reduces flexion of the hip, knee, and ankle to increase the risk of tripping. J Biomech, 
+1998, 31: 685–691. [Medline]  [CrossRef]
+22)	 Chou LS, Draganich LF: Stepping over an obstacle increases the motions and moments of the joints of the trailing limb in young adults. J Biomech, 1997, 30: 
+331–337. [Medline]  [CrossRef]
+23)	 Said CM, Goldie PA, Culham E, et al.: Control of lead and trail limbs during obstacle crossing following stroke. Phys Ther, 2005, 85: 413–427. [Medline]
+24)	 Lee M, Shim J, Park M, et al.: A study of the stance limb during the crossing of obstacles of different heights by hemiplegic stroke patients. J Phys Ther Sci, 
+2010, 22: 317–321.  [CrossRef]
+25)	 Pavol MJ, Owings TM, Foley KT, et al.: Gait characteristics as risk factors for falling from trips induced in older adults. J Gerontol A Biol Sci Med Sci, 1999, 
+54: M583–M590. [Medline]  [CrossRef]
+26)	 Pavol MJ, Owings TM, Foley KT, et al.: The sex and age of older adults influence the outcome of induced trips. J Gerontol A Biol Sci Med Sci, 1999, 54: 
+M103–M108. [Medline]  [CrossRef]
+27)	 Hu M, Maruyama H, Akiyama S: An approach to assessment of the fall risk for the elderly by probe reaction time during walking. J Phys Ther Sci, 2009, 21: 
+311–316.  [CrossRef]
+28)	 Shimada H, Kim H, Yoshida H, et al.: Relationship between age-associated changes of gait and falls and life-space in elderly people. J Phys Ther Sci, 2010, 22: 
+419–424.  [CrossRef]
+29)	 Soma M, Nakae H, Abiko T, et al.: Influence of a dual task while stepping over an obstacle in the fall-experienced elderly people. J Phys Ther Sci, 2011, 23: 
+369–372.  [CrossRef]
+30)	 Paquette MR, Vallis LA: Age-related kinematic changes in late visual-cueing during obstacle circumvention. Exp Brain Res, 2010, 203: 563–574. [Medline] 
+[CrossRef]
+31)	
+Galna B, Murphy AT, Morris ME: Obstacle crossing in people with Parkinson’s disease: foot clearance and spatiotemporal deficits. Hum Mov Sci, 2010, 29: 
+843–852. [Medline]  [CrossRef]
+32)	 Tinetti ME: Prevention of falls and fall injuries in elderly persons: a research agenda. Prev Med, 1994, 23: 756–762. [Medline]  [CrossRef]
+33)	 Sparrow WA, Shinkfielda AJ, Chowa S, et al.: Characteristics of gait in stepping over obstacles. Hum Mov Sci, 1996, 15: 605–622.  [CrossRef]
+34)	 Di Fabio RP, Greany JF, Zampieri C: Saccade-stepping interactions revise the motor plan for obstacle avoidance. J Mot Behav, 2003, 35: 383–397. [Medline] 
+[CrossRef]
+
+
+--- 第 7 页 ---
+J. Phys. Ther. Sci. Vol. 28, No. 5, 2016
+1620
+35)	 McFadyen BJ, Prince F: Avoidance and accommodation of surface height changes by healthy, community-dwelling, young, and elderly men. J Gerontol A Biol 
+Sci Med Sci, 2002, 57: B166–B174. [Medline]  [CrossRef]
+36)	 Chapman GJ, Hollands MA: Evidence that older adult fallers prioritise the planning of future stepping actions over the accurate execution of ongoing steps 
+during complex locomotor tasks. Gait Posture, 2007, 26: 59–67. [Medline]  [CrossRef]
+37)	 Lowrey CR, Watson A, Vallis LA: Age-related changes in avoidance strategies when negotiating single and multiple obstacles. Exp Brain Res, 2007, 182: 
+289–299. [Medline]  [CrossRef]
+38)	 Hahn ME, Lee HJ, Chou LS: Increased muscular challenge in older adults during obstructed gait. Gait Posture, 2005, 22: 356–361. [Medline]  [CrossRef]
+39)	 Soma M, Masuda T, Shimamura R, et al.: Influence of a dual-task on toe clearance of the young and elderly while stepping over an obstacle. J Phys Ther Sci, 
+2010, 22: 75–79.  [CrossRef]
+40)	 Park SY, Lee YS: Kinematics of the lower limbs during obstacle crossings performed by young adults and the elderly. J Phys Ther Sci, 2012, 24: 941–944. 
+[CrossRef]
+41)	
+Vitório R, Pieruccini-Faria F, Stella F, et al.: Effects of obstacle height on obstacle crossing in mild Parkinson’s disease. Gait Posture, 2010, 31: 143–146. [Med-
+line]  [CrossRef]
+42)	 Muir BC, Haddad JM, Heijnen MJ, et al.: Proactive gait strategies to mitigate risk of obstacle contact are more prevalent with advancing age. Gait Posture, 
+2015, 41: 233–239. [Medline]  [CrossRef]
+43)	 Barrett RS, Mills PM, Begg RK: A systematic review of the effect of ageing and falls history on minimum foot clearance characteristics during level walking. 
+Gait Posture, 2010, 32: 429–435. [Medline]  [CrossRef]
+44)	 Begg RK, Best R, Dell’Oro L, et al.: Minimum foot clearance during walking: strategies for the minimisation of trip-related falls. Gait Posture, 2007, 25: 
+191–198. [Medline]  [CrossRef]
+45)	 Austin GP, Garrett GE, Bohannon RW: Kinematic analysis of obstacle clearance during locomotion. Gait Posture, 1999, 10: 109–120. [Medline]  [CrossRef]
+46)	 Lim HS, Yoon S: The training and detraining effects of 8 weeks of water exercise on obstacle avoidance in gait by the elderly. J Phys Ther Sci, 2014, 26: 
+1215–1218. [Medline]  [CrossRef]
+47)	 Lim HS, Yoon S: The influence of short-term aquatic training on obstacle crossing in gait by the elderly. J Phys Ther Sci, 2014, 26: 1219–1222. [Medline] 
+[CrossRef]
+48)	 Di Fabio RP, Kurszewski WM, Jorgenson EE, et al.: Footlift asymmetry during obstacle avoidance in high-risk elderly. J Am Geriatr Soc, 2004, 52: 2088–2093. 
+[Medline]  [CrossRef]

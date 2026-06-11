@@ -1,0 +1,119 @@
+{
+  "summary": "患者步态严重异常，表现为极低步速、显著缩短的跨步长、极度增高的步态变异性以及异常高的双支撑比，提示严重的行走功能障碍和极高的跌倒风险。",
+  "gait_assessment": {
+    "overall": "严重异常",
+    "grs_score": "GRS评分均值29.33/100，远低于40分阈值，提示步态功能需重点关注，康复潜力大但当前状态极差。",
+    "key_findings": [
+      "步速极低（0.30 m/s），远低于正常下限1.0 m/s，符合严重异常标准。",
+      "步长变异系数（CV）和步时CV极高（>15%），提示步态极度不稳定。",
+      "双支撑比异常高（0.98），远超正常范围20-30%，表明患者几乎处于持续双支撑状态，平衡能力严重受损。",
+      "膝关节ROM显著受限（左膝均值25.89°，右膝均值10.23°），低于正常行走所需范围。",
+      "步宽异常增大（0.74 m），可能为代偿性策略，但增加跌倒风险。"
+    ]
+  },
+  "literature_comparison": [
+    {
+      "metric": "步速 (gait velocity)",
+      "patient_value": "0.30 m/s",
+      "normal_range": ">1.0 m/s (Rssler 2024)",
+      "paper_reference": "Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf",
+      "assessment": "偏低"
+    },
+    {
+      "metric": "对称性 (symmetry)",
+      "patient_value": "0.93",
+      "normal_range": ">0.90 正常 (Gait Variability Review)",
+      "paper_reference": "Predicting_fall_risk_through_step_width_variabilit.pdf",
+      "assessment": "正常"
+    },
+    {
+      "metric": "步长变异系数 (step length CV)",
+      "patient_value": "51.03%",
+      "normal_range": "<5% 正常, 5-15% 轻度变异, >15% 高度变异 (Gait Variability Older Adults)",
+      "paper_reference": "nihms285593.pdf",
+      "assessment": "偏高"
+    },
+    {
+      "metric": "步时变异系数 (step time CV)",
+      "patient_value": "161.99%",
+      "normal_range": "<5% 正常, 5-15% 轻度变异, >15% 高度变异 (Gait Variability Older Adults)",
+      "paper_reference": "nihms285593.pdf",
+      "assessment": "偏高"
+    },
+    {
+      "metric": "双支撑比 (double support ratio)",
+      "patient_value": "0.98",
+      "normal_range": "20-30% (Gait Parameters)",
+      "paper_reference": "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+      "assessment": "偏高"
+    },
+    {
+      "metric": "左膝 ROM (left knee ROM)",
+      "patient_value": "25.89°",
+      "normal_range": "50-65° 正常, <30° 受限 (Gait Kinematic Parameters)",
+      "paper_reference": "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+      "assessment": "偏低"
+    },
+    {
+      "metric": "右膝 ROM (right knee ROM)",
+      "patient_value": "10.23°",
+      "normal_range": "50-65° 正常, <30° 受限 (Gait Kinematic Parameters)",
+      "paper_reference": "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+      "assessment": "偏低"
+    },
+    {
+      "metric": "足廓清 (foot clearance)",
+      "patient_value": "1.34 cm",
+      "normal_range": "1.5-2.5 cm 正常, <0.5 cm 绊倒风险显著增加 (Foot Clearance Fall Risk)",
+      "paper_reference": "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+      "assessment": "需关注"
+    },
+    {
+      "metric": "步宽 (step width)",
+      "patient_value": "0.74 m",
+      "normal_range": "步宽增加与跌倒风险正相关 (Predicting fall risk through step width variability)",
+      "paper_reference": "Predicting_fall_risk_through_step_width_variabilit.pdf",
+      "assessment": "偏高"
+    }
+  ],
+  "fall_risk_assessment": {
+    "level": "high",
+    "risk_factors": [
+      "极低步速 (<0.6 m/s)",
+      "步长和步时CV极度增高 (>15%)",
+      "双支撑比异常高 (>40%)",
+      "膝关节ROM严重受限",
+      "步宽异常增大",
+      "足廓清接近临界值"
+    ],
+    "literature_evidence": "文献指出，步速降低、步态变异性增加、双支撑时间延长和步宽增大均是跌倒风险的独立预测因子 (Predicting_fall_risk_through_step_width_variabilit.pdf; nihms285593.pdf)。"
+  },
+  "recommendations": [
+    {
+      "action": "立即进行全面的物理治疗评估，重点关注下肢肌力、关节活动度和平衡训练。",
+      "priority": "high",
+      "basis": "极低步速和膝关节ROM受限提示肌力和关节灵活性不足，是康复干预的核心 (Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf)。"
+    },
+    {
+      "action": "实施针对性的步态训练，如减重步行训练和节律性听觉刺激，以提高步速和步态稳定性。",
+      "priority": "high",
+      "basis": "步速和步态变异性是跌倒风险的关键指标，改善这些参数可降低跌倒风险 (Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf)。"
+    },
+    {
+      "action": "评估并优化辅助器具（如助行器）的使用，确保其提供足够支撑且不限制正常步态。",
+      "priority": "medium",
+      "basis": "异常增大的步宽和双支撑比提示患者可能依赖代偿策略，辅助器具调整可改善步态效率。"
+    },
+    {
+      "action": "监测足廓清高度，考虑进行踝关节背屈训练或使用足踝矫形器，以降低绊倒风险。",
+      "priority": "medium",
+      "basis": "足廓清接近临界值，增加绊倒风险 (Foot Clearance Fall Risk)。"
+    }
+  ],
+  "literature_cited": [
+    "Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf",
+    "Predicting_fall_risk_through_step_width_variabilit.pdf",
+    "nihms285593.pdf",
+    "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf"
+  ]
+}

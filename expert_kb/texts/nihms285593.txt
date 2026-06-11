@@ -1,0 +1,1039 @@
+--- 第 1 页 ---
+Normative Spatiotemporal Gait Parameters in Older Adults
+John H. Hollman1, Eric M. McDade2, and Ronald C. Petersen3
+1 Department of Physical Medicine & Rehabilitation, Program in Physical Therapy, College of
+Medicine, Mayo Clinic, Rochester, MN
+2 Department of Neurology, University of Pittsburgh, Pittsburgh, PA
+3 Department of Neurology, College of Medicine, Mayo Clinic, Rochester, MN
+Abstract
+While factor analyses have characterized pace, rhythm and variability as factors that explain
+variance in gait performance in older adults, comprehensive analyses incorporating many gait
+parameters have not been undertaken and normative data for many of those parameters are
+lacking. The purposes of this study were to conduct a factor analysis on nearly two dozen
+spatiotemporal gait parameters and to contribute to the normative database of gait parameters from
+healthy, able-bodied men and women over the age of 70. Data were extracted from 294
+participants enrolled in the Mayo Clinic Study of Aging. Spatiotemporal gait data were obtained
+as participants completed two walks across a 5.6-m electronic walkway (GAITRite®). Five
+primary domains of spatiotemporal gait performance were identified: a “rhythm” domain was
+characterized by cadence and temporal parameters such as stride time; a “phase” domain was
+characterized by temporophasic parameters that constitute distinct divisions of the gait cycle; a
+“variability” domain encompassed gait cycle and step variability parameters; a “pace” domain was
+characterized by parameters that included gait speed, step length and stride length; and a “base of
+support” domain was characterized by step width and step width variability. Several domains
+differed between men and women and differed across age groups. Reference values of 23 gait
+parameters are presented which researchers or clinicians can use for assessing and interpreting gait
+dysfunction in aging persons.
+Keywords
+Gait; Aging; Sex Characteristics; Reference Values
+1. Introduction
+Gait may be used to assess quality of life [1], health status [2], and physical function [3] in
+older adults. Specific parameters may be used to assess risk of dementia [4], risk of falling
+© 2011 Elsevier B.V. All rights reserved.
+Corresponding author is John H. Hollman, Program in Physical Therapy, Mayo School of Health Sciences, Siebens 11, 200 First
+Street SW, Rochester, MN, 55905, USA; telephone 507-284-9547; fax 507-284-0656; hollman.john@mayo.edu.
+Conflict of Interest Statement
+None of the authors has a financial or personal relationship with people or organizations that could inappropriately influence this
+work.
+Publisher's Disclaimer: This is a PDF file of an unedited manuscript that has been accepted for publication. As a service to our
+customers we are providing this early version of the manuscript. The manuscript will undergo copyediting, typesetting, and review of
+the resulting proof before it is published in its final citable form. Please note that during the production process errors may be
+discovered which could affect the content, and all legal disclaimers that apply to the journal pertain.
+NIH Public Access
+Author Manuscript
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+Published in final edited form as:
+Gait Posture. 2011 May ; 34(1): 111–118. doi:10.1016/j.gaitpost.2011.03.024.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 2 页 ---
+[5], and even risk of early mortality [6]. Understanding how gait is associated with these
+clinical phenomena is challenging, in part because dozens of gait parameters can be
+measured and consensus on which are most relevant is lacking. Moreover, normative data
+for many parameters are lacking and in studies that report reference values, there is a great
+deal of variability among the data reported [2,7–11].
+Verghese et al, [4] while studying the relationship between gait and risk of dementia,
+identified three domains that characterize gait performance in older adults. Pace differences
+characterized by gait speed and stride length were associated with reduced executive
+function; rhythm differences characterized by cadence, swing time and stance time were
+associated with memory decline; and variability differences characterized by stride length
+variability distinguished subtypes of mild cognitive impairment. The variability domain may
+also best predict falls in older adults [5]. Those three domains of gait, however, constitute
+only a small proportion of gait parameters that can be quantified. Additional parameters may
+yield greater insight into how gait is associated with other clinical phenomena.
+In addition to understanding which parameters characterize gait performance, classifying
+gait as being dysfunctional necessitates that a clinician understands what “normal” gait is.
+While normal gait is not readily defined, normative and population-based data provide
+insight about what one might expect the magnitude of certain gait parameters to be.
+Normative data represent descriptive or prescriptive measurements as they ought to be;
+hence normative studies examine parameters in healthy participants. In contrast, population-
+based data represent measures as they are in a population; hence population-based studies
+examine parameters in participants oftentimes regardless of health status. Gait speed is the
+most often reported reference value for gait performance. Reported values of mean gait
+speed in adults aged 70–79 range from approximately 90 to 130 cm/s [2,7–11]. Normative
+studies [2,9–11] typically report higher values than population-based studies [7,8],
+presumably because the normative studies describe gait in healthy individuals whereas
+population-based studies include participants who may have pathological conditions
+affecting their gait performance. While reference values for other spatiotemporal parameters
+have been reported, the magnitudes of those measurements, similar to gait speed, are quite
+variable. Normative data for many parameters—particularly those quantifying variability—
+are lacking.
+The purpose of this study was twofold. First, we conducted a factor analysis on nearly two
+dozen gait parameters to examine the spatiotemporal domains of gait that researchers and
+clinicians may consider measuring to enhance their understanding of gait performance.
+Factor analysis organizes multiple observations into communalities that correlate with a
+lesser number of unobserved thematic constructs, thus allowing an investigator to partition a
+large number of parameters into a lesser number that characterize distinct domains of the
+parameters being measured. Second, we sought to contribute to the normative database of
+gait parameters in older, able-bodied adults. Establishing normative data may provide
+clinicians and researchers values against which measurements can be compared for
+assessing and interpreting gait dysfunction.
+2. Methods
+2.1 Participants
+Data were extracted from 1,750 ambulatory participants aged 70+ who were enrolled in the
+Mayo Clinic Study of Aging, a population-based study of aging [12]. Participants were
+recruited via stratified sampling in which Olmsted County, Minnesota, residents from within
+four strata (men aged 70–79 and 80–89, and women aged 70–79 and 80–89) were randomly
+selected and invited to participate in the study. Most participants were Caucasian (93%),
+Hollman et al.
+Page 2
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 3 页 ---
+retired (94%), lived in their own dwelling (85%) and were married (59%). Data from
+participants who presented with morbidities that affect gait were excluded from the analysis
+(Figure 1). After exclusion, 108 male participants and 186 female participants remained,
+each of whom rated their health status as good to excellent on a 5-point ordinal scale. The
+study was approved by the Mayo Foundation Institutional Review Board and all subjects
+provided informed consent prior to participating in the study.
+2.2 Instrumentation
+Gait performance was measured with GAITRite® instrumentation (CIR Systems Inc.,
+Havertown, PA) consisting of an electronic walkway 5.6 meters in length and 0.9 meters in
+width. The walkway encapsulated multiple sensor pads placed on 1.27 cm centers that were
+activated under pressure at footfall and deactivated at toe-off, enabling the system to capture
+the relative arrangement of footfalls as a function of time. Data were sampled at 80 Hz and
+processed using GAITRite® Platinum software.
+2.3 Procedures
+Subjects completed two walks across the walkway, initiating and terminating their walks
+one meter fore and aft of the walkway to minimize acceleration effects. Data from both
+walks were combined and considered as a single test. Subjects were instructed to walk at
+their normal pace and were not permitted to use gait aids during testing. Testing was
+conducted within a clinical research center.
+We collected data from 16 spatiotemporal and temporophasic parameters that quantify mean
+values (Table 1). Additionally, we quantified variability in step length, stride length, step
+width, step time, stride time, stance time, swing time, stride speed and step width. We used
+the coefficient of variation (%CV) to reflect variability for each of the parameters with the
+exception of step width, for which we used the SD. Step width variability was expressed as
+the SD because the mean step width is relatively small in magnitude and therefore the %CV
+(the SD normalized to the magnitude of the mean) was excessively large in several cases and
+skewed the data, making parametric statistical analyses difficult to interpret.
+2.4 Data Analysis
+Data were analyzed with SPSS 15.0 software (SPSS Inc., Chicago, IL). Principal
+components factor analysis with varimax rotation was used to examine factors with
+eigenvalues exceeding 1.0 that characterized gait performance. Parameters with correlation
+loadings of 0.5 or higher were interpreted as being significant contributors to the factor.
+Once the factor analysis was completed, then data under each domain were analyzed with
+two-way multivariate analysis of variance (MANOVA), comparing gender and age group
+(ages 70–74, 75–79, 80–84, and 85+) as independent variables (α = 0.05), and post-hoc
+Bonferroni corrections for multiple comparisons for significant MANOVAs.
+3. Results
+3.1 Factor Analysis
+Five factors accounted for 83.3% of the variance in gait performance (Table 2). The first
+factor accounted for 25.8% of the variance in gait performance and loaded highly on
+temporal parameters quantifying cadence, step time, stride time, swing time, stance time and
+single limb support time. We labeled this factor a “rhythm” factor. The second factor
+accounted for 20.0% of the variance and loaded highly on temporophasic divisions of the
+gait cycle comprising swing, stance, single limb support, and double limb support as well as
+double limb support time. We labeled this factor a “phase” factor. The third factor accounted
+for 19.1% of the variance and loaded highly on the variability parameters, excluding step
+Hollman et al.
+Page 3
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 4 页 ---
+width variability. We labeled this factor a “variability” factor. The fourth factor accounted
+for 11.6% of the variance and loaded highly on gait speed, step length and stride length. We
+labeled this factor a “pace” factor. The last factor accounted for 6.9% of the variance in gait
+performance and loaded highly on step width and step width variability. We labeled this
+factor a “base of support” factor.
+3.2 Gender and Age Group Comparisons
+Descriptive data for parameters constituting the five domains of gait performance, by gender
+and age, are presented in Table 3.
+3.2.1 Rhythm—The gender main effect was significant (F6,281=7.030, p<0.001), though
+neither the age group main effect (F18,849=1.612, p=0.051) nor gender × age group
+interaction (F18,849=0.749, p=0.783) were statistically significant. Men walked at a lower
+cadence and with greater step times, stride times, swing times, stance times, and single limb
+support times than did women. Men walked at approximately 103 steps/min and had mean
+step and stride times of 0.58 and 1.16 s, respectively; mean swing and stance times of 0.42
+and 0.74 s, respectively; and mean single limb support times of 0.43 s. Women, in contrast,
+walked at approximately 112 steps/min and had shorter mean step and stride times of 0.54 s
+and 1.08 s, respectively; shorter mean swing and stance times of 0.39 s and 0.69 s,
+respectively; and shorter mean single limb support times of 0.39 s.
+3.2.2 Gait Cycle Phases—In contrast to the rhythm domain, for the phasic parameters
+both the gender (F5,282=4.981, p<0.001) and age group main effects (F15,852=1.750,
+p=0.037) were significant, though the gender × age group interaction was not
+(F15,852=0.956, p=0.500). On further analysis, only double limb support time differed
+between genders (F1,286=4.796, p=0.029). Double support time was approximately 0.32 s in
+men and 0.30 s in women. Age group effects (Figure 2) were only present in the double limb
+support phase (F3,286=3.199, p=0.024) and double limb support time parameters
+(F3,286=6.334, p<0.001). Participants in the 85+ age group spent longer periods in double
+limb support.
+3.2.3 Variability—Neither the gender (F7,278=0.651, p=0.713) nor age group main effects
+(F21,840=1.466, p=0.081) were statistically significant for the variability measurements, nor
+was the gender × age group interaction (F21,840=1.010, p=0.448).
+3.2.4 Pace—For the pace domain of gait performance, the gender (F3,284=34.937,
+p<0.001) and age group main effects (F9,858=4.798, p<0.001) were statistically significant,
+though the gender × age group interaction was not (F9,858=1.076, p=0.378). Men walked
+faster and with longer step and stride lengths than did women. Men walked at approximately
+115 cm/s and had mean step lengths of 66 cm and stride lengths of 133 cm. Women walked
+at approximately 108 cm/s and had mean step lengths of 57 cm and stride lengths of 115 cm.
+When normalized to height, however, the gender difference in gait speed was negated
+(F1,286=1.516, p=0.219). Gait speed, step lengths and stride lengths were greater in the 70–
+74 and 75–79 than in the 80–84 and 85+ age groups (Figure 2).
+3.2.5 Base of Support—Similar to the rhythm domain analysis, the gender main effect
+was statistically significant in the base of support domain (F2,284=8.669, p<0.001), though
+neither the age group main effect (F6,570=1.897, p=0.079) nor gender × age group
+interaction (F6,570=0.940, p=0.466) were significant. Mean step width in men was
+approximately 10.0 cm whereas mean step width in women was approximately 7.9 cm. Step
+width variability did not differ between men and women.
+Hollman et al.
+Page 4
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 5 页 ---
+4. Discussion
+While several studies have provided reference values for gait [2,7–11], we believe the
+present study represents one of the most comprehensive analyses of normative
+spatiotemporal gait data in older adults. The breadth of gait parameters analyzed exceeds
+that of previous studies and, secondarily, the extent to which morbidities were controlled
+and participants excluded assured that data represent gait performance in able-bodied
+participants. Normative data for nearly two dozen spatiotemporal gait parameters
+comprising five domains of gait performance in older adults are provided from which results
+of other studies or clinical measures can be compared.
+The findings expand on the factors that Verghese et al described [4]. First, while Verghese et
+al identified a rhythm factor characterized by cadence and swing time, our study suggests
+that several additional temporal parameters including step time, stride time, stance time and
+single limb support time also load highly on the factor. Second, while Verghese et al
+identified a variability factor that loaded highly on stride length variability, our study
+suggests several parameters contribute to a variability domain of gait performance. Gait
+cycle variability parameters including variability in stride length, stride time, stance time,
+swing time and stride speed all load highly on the factor, as do step variability parameters
+including step length and step time variability. Third, both studies identified a pace factor
+characterized by gait speed, step length and stride length. We believe two additional factors,
+however, also characterize gait performance: a phasic factor characterized by temporophasic
+proportions of the gait cycle spent in stance, swing and single and double limb support; and
+a base of support factor characterized by step width and step width variability.
+Parameters in the pace domain have been studied most extensively among the domains
+identified in the present study and provide for readily available comparisons. Gait speed, for
+example, has been recommended as a “vital sign” for physical performance in older persons
+[1, 3] and 10 cm/s decreases in gait speed are associated with higher falls risk in older
+persons [13]. It is important that researchers and clinicians understand normative values for
+pace parameters in older adults. Mean gait speed (110±19 cm/s, 95%CI=107.8–112.2 cm/s)
+and stride length measurements (122±19 cm, 95%CI=119.8–124.2 cm) reported in our study
+are largely consistent with other studies reporting reference values for preferred gait speed in
+older adults. For example, Oh-Park et al [10], using similar methods and instrumentation to
+collect gait data and using similarly aged subjects, reported an overall mean gait speed of
+106 cm/s and a mean stride length of 121 cm in 304 robust, healthy older individuals.
+Callisaya et al [8], also using similar methods and instrumentation, reported slightly greater
+mean gait speed (116 cm/s in men and 111 cm/s in women) and stride length measurements
+(approximately 130 cm in men and 115 cm in women) in a population-based sample of 411
+older adults; those differences, however, may be accounted for because they included
+subjects aged 60–69 that were not included in our study or in the Oh-Park study. Given the
+relative similarities between studies, we believe our findings represent valid target values of
+pace parameters in persons over the age of 70 for assessing abnormal gait.
+Regarding gender differences in the pace domain, most studies indicate that gait speed and
+stride length in men exceeds that of women [8,10,11]. Our findings were similar. Gait speed
+in men exceeded that in women by approximately 7 cm/s (95%CI=2.7–11.5 cm/s) and stride
+length in men exceed that in women by approximately 18 cm (95%CI=13.6–21.5 cm). When
+gait speed was normalized to height, however, the difference between genders was no longer
+significant, indicating that gait speed is more a function of height than it is gender.
+Interestingly, when stride length and cadence were also normalized to height, the gender
+differences remained. Men tended to walk with longer strides but with lower cadences.
+Hollman et al.
+Page 5
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 6 页 ---
+In cross-sectional comparisons, most studies indicate that gait speed and stride length
+decrease with age. Himann et al [14] reported that gait speed decreases 12% to 16% per
+decade after the age of 70. Oh-Park et al [10] reported similar reductions in gait speed and
+stride length in a population-based sample of people over the age of 70, although those
+reductions were minimized in a subsample characterized as robust, healthy individuals. Our
+cross-sectional findings suggest that parameters in the pace domain of gait are equivalent
+among persons in the 70–74 and 75–79 year age groups, but decrease significantly past the
+age of 80 (Figure 2). The functional impact becomes evident when one realizes that walking
+at 120 cm/s is necessary to navigate typical urban crosswalks [15]. Among participants aged
+70–79 years, 42% walked at a speed that exceeded 120 cm/s. In the 80–84 and 85+ year age
+groups, however, those proportions dropped to 18% and 15%, respectively. These data
+suggest that, even in good health, some decline in gait performance is inevitable in older
+persons and that decline is likely to produce functional deficits.
+A rhythm factor accounted for 25.8% of the variance in gait performance. It loaded highly
+on cadence and temporal parameters including step, stride, swing, stance and single limb
+support time. Rhythm measurements reported in the present study are largely consistent with
+other studies reporting reference values in older adults. The mean cadence (109±13 steps/
+min), for example, is slightly greater but similar to the cadence of 105.2 steps/min that Oh-
+Park et al reported [10]. Mean cadences for men (103 steps/min) and women (112 steps/min)
+are similar to values (107.2 and 114.6 steps/min, respectively) that Callisaya et al reported
+[8]. Likewise, the mean swing time (0.40±0.05 s) is similar to the 0.43-s swing time that Oh-
+Park et al reported [10]; and step times (0.58±0.05 s in men, 0.54±0.06 s in women) are
+similar to step times (0.56 and 0.53 s, respectively) that Callisaya et al reported [8].
+Quantifying rhythm and understanding normative values for parameters representing the
+rhythm domain are important because changes in rhythm may be associated with increased
+risk of dementia and memory decline [4].
+A variability factor accounted for 19.1% of the variance in gait performance in our study.
+Comparing variability values with other studies is hindered because of inconsistencies
+between studies that use the CV versus the SD to report variability. When our data are
+expressed as the SD, stride length variability (4.4±4.2 %CV, or 5.0±4.4-cm SD) and swing
+time variability data (6.6±9.3 %CV, or 0.03±0.03-cm SD) are very similar to the 4.6-cm and
+0.03-cm variability values, respectively, that Verghese et al reported [4]. Likewise, stance
+time variability (5.3±4.5 %CV, or 0.037±0.030-s SD) is nearly identical to the 0.038-s
+stance time variability that Brach et al reported [16]. Our step variability data demonstrate
+similar consistencies with other studies. Step length variability (5.9±6.0 %CV, or 3.3±2.7-
+cm SD) is similar in magnitude to the 6.4 %CV step length variability that Brach et al
+reported [17] and to the 2.8-cm variability that Callisaya reported [8]. Step time variability
+(5.6±5.3 %CV, or 0.03±0.02-s SD) is similar in magnitude to the 0.02-s step time variability
+data that Callisaya reported. Given the relative similarities between studies, we believe our
+findings represent valid target variability parameters for assessing abnormal gait.
+Increased variability reflects a loss of automaticity in walking that presumably makes
+persons more susceptible to falling. Variability parameters have been used to quantify falls
+risk, to assess risk of dementia and, under dual task conditions, to examine executive
+functioning in aging adults [4,5,18,19]. Variability parameters used to examine these
+capacities have included variability in stride speed [20,21], stride time [18], stride length [4],
+step time [22], step length [22], swing time [4,23] and step width [22,24]. Few studies have
+examined multiple modes of variability collectively, presumably because investigators
+assumed that each parameter, be it a marker of gait cycle variability, step variability or base
+of support variability, represents a similar construct. Some researchers have challenged that
+assumption, reporting that stride time variability and stride length variability, for example,
+Hollman et al.
+Page 6
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 7 页 ---
+respond differently to speed of walking and to dual task walking [25]. Findings from our
+study suggest that each of the gait cycle and step variability parameters, apart from stride
+width variability, represent one variability construct.
+A phase factor representing temporophasic divisions of the gait cycle was a fourth factor
+identified in our study. While a phase factor was not previously identified in a factor
+analysis [4], considering gait phases is relevant. A 10% decrease in the swing phase
+proportion of the gait cycle, for example, may be associated with higher falls risk in older
+persons [13]. In our study, the stance phase represented 63.9% (95%CI=63.6–64.2 %GC)
+and the swing phase represented 36.1% of the gait cycle (95%CI=35.8–36.4 %GC), values
+that are consistent with the stance (63%) and swing (37%) phase proportions in healthy
+older men established by Murray et al [26]. Double limb support occupied 27.9%
+(95%CI=27.3–28.5 %GC) and single limb support occupied 36.2% of the gait cycle
+(95%CI=35.8–36.6 %GC). To our knowledge, normative values for all of these gait cycle
+phases have not been established for older adults. The values differ slightly from norms
+established by the Rancho Los Amigos (RLA) National Rehabilitation Center (stance phase
+62%, swing phase 38%, double support 24% and single support 38% [27]), but that likely
+represents the fact that older participants in our study walked more slowly (110 cm/s) than
+presumably younger subjects represented in the RLA data, who walked at an average of 136
+cm/s.
+Last, a base of support factor characterized by step width and step width variability
+accounted for 6.9% of the variability in gait performance. Mean step width was 10.0 cm in
+men (95%CI=9.5–10.5 cm) and 7.9 cm in women (95%CI=7.5–8.3 cm), magnitudes similar
+to population-based step width data reported elsewhere [8]. Mean step width variability,
+which did not differ between genders, was 3.2 cm (95%CI=2.9–3.5 cm), approximately 1
+cm greater than that reported elsewhere [8]. The influence of the base of support factor
+associated with aging is equivocal. Step width variability may distinguish older from
+younger adults [22] and may be associated with peripheral sensory impairments that
+contribute to gait dysfunction [28]. Others have characterized increased step width as an
+adaptation by aging persons who are fearful of falling, but reported that step width itself is
+not a predictor of falling [29]. In contrast, reduced and increased step width variability have
+been associated with falls histories [24]. While the association of step width and step width
+variability with aging and fall risk is not certain, findings of the present study indicate that
+examining a base of support factor is warranted.
+Several limitations in the study should be considered. First, subjects walked at self-selected
+speeds, not at maximum speeds. Interpretations of the findings should not be generalized to
+one’s ability to walk faster than at self-selected speeds. Second, this study represents a
+secondary analysis of a population-based cohort study designed to investigate the
+prevalence, incidence and risk factors for dementia [12]. The primary study screened a
+variety of cardiovascular, neurological and other medical conditions like diabetes and
+cancer, but data on specific orthopedic or rheumatologic conditions that might influence gait
+were not collected. While the findings represent normative data for able-bodied older adults,
+the results may misrepresent gait parameters in older adults in whom specific orthopedic or
+rheumatologic conditions are definitively absent. Last, data for the study were collected
+from an average of 14±4 steps (7 strides) per participant. While there is evidence that
+measuring pace and rhythm parameters is highly reliable with even small numbers of strides,
+reliability for other gait domains, particularly variability, may be enhanced by collecting
+data from hundreds of strides [30]. Validity of that data may be questioned.
+Hollman et al.
+Page 7
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 8 页 ---
+5. Conclusion
+Data for 23 spatiotemporal gait parameters were collected from subjects aged 70+.
+Normative values are presented which researchers or clinicians can use for assessing and
+interpreting gait dysfunction. Based on factor analysis, five domains of gait performance
+were identified. A rhythm domain was characterized by cadence and temporal parameters
+(e.g., stride time). A phase domain was characterized by temporophasic divisions of the gait
+cycle. A variability domain encompassed gait cycle variability characterized by variability
+in stride measurements, and step variability characterized by variability in step
+measurements. A pace domain was characterized by gait speed, step length and stride
+length. A base of support domain was characterized by step width and step width variability.
+Several gender and age group differences were present among the domains. We recommend
+that data representing each of these domains be collected when gait analyses are conducted.
+Acknowledgments
+This work was supported by grants from the National Institute on Aging (P50 AG16574 and U01 AG06786), the
+National Institute of Arthritis and Musculoskeletal and Skin Diseases (R01 AR30582), and by the Robert H. and
+Clarice Smith and Abigail Van Buren Alzheimer’s Disease Research Program. Study sponsors had no involvement
+in the study design; in the collection, analysis or interpretation of data; in the writing of the manuscript; nor in the
+decision to submit the manuscript for publication. The authors thank Matthew R. Miller for his assistance with data
+collection and organization.
+References
+1. Ferrucci L, Baldasseroni S, Bandinelli S, de Alfieri W, Cartei A, Calvani D, Baldini A, Masotti G,
+Marchionni N. Disease severity and health-related quality of life across different chronic conditions.
+J Am Geriatr Soc. 2000; 48:1490–1495. [PubMed: 11083330]
+2. Cesari M, Kritchevsky SB, Penninx BWHJ, Nicklas BJ, Simonsick EM, Newman AB, Tylavsky
+FA, Brach JS, Satterfield S, Bauer DC, Visser M, Rubin SM, Harris TB, Pahor M. Prognostic value
+of usual gait speed in well-functioning older people--results from the Health, Aging and Body
+Composition Study. J Am Geriatr Soc. 2005; 53:1675–1680. [PubMed: 16181165]
+3. Studenski S, Perera S, Wallace D, Chandler JM, Duncan PW, Rooney E, Fox M, Guralnik JM.
+Physical performance measures in the clinical setting. J Am Geriatr Soc. 2003; 51:314–322.
+[PubMed: 12588574]
+4. Verghese J, Wang C, Lipton RB, Holtzer R, Xue X. Quantitative gait dysfunction and risk of
+cognitive decline and dementia. J Neurol Neurosurg Psychiatr. 2007; 78:929–935. [PubMed:
+17237140]
+5. Maki BE. Gait changes in older adults: predictors of falls or indicators of fear. J Am Geriatr Soc.
+1997; 45:313–320. [PubMed: 9063277]
+6. Studenski S, Perera S, Patel K, Rosano C, Faulkner K, Inzitari M, Brach J, Chandler J, Cawthon P,
+Connor EB, Nevitt M, Visser M, Kritchevsky S, Badinelli S, Harris T, Newman AB, Cauley J,
+Ferrucci L, Guralnik J. Gait speed and survival in older adults. JAMA. 2011; 305:50–58. [PubMed:
+21205966]
+7. Bohannon RW. Population representative gait speed and its determinants. J Geriatr Phys Ther. 2008;
+31:49–52. [PubMed: 19856549]
+8. Callisaya ML, Blizzard L, Schmidt MD, McGinley JL, Srikanth VK. Ageing and gait variability--a
+population-based study of older people. Age Ageing. 2010; 39:191–197. [PubMed: 20083617]
+9. Oberg T, Karsznia A, Oberg K. Basic gait parameters: reference data for normal subjects, 10–79
+years of age. J Rehabil Res Dev. 1993; 30:210–223. [PubMed: 8035350]
+10. Oh-Park M, Holtzer R, Xue X, Verghese J. Conventional and robust quantitative gait norms in
+community-dwelling older adults. J Am Geriatr Soc. 2010; 58:1512–1518. [PubMed: 20646103]
+11. Samson MM, Crowe A, de Vreede PL, Dessens JA, Duursma SA, Verhaar HJ. Differences in gait
+parameters at a preferred walking speed in healthy subjects due to age, height and body weight.
+Aging Clin Exp Res. 2001; 13:16–21.
+Hollman et al.
+Page 8
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 9 页 ---
+12. Roberts RO, Geda YE, Knopman DS, Cha RH, Pankratz VS, Boeve BF, Ivnik RJ, Tangalos EG,
+Petersen RC, Rocca WA. The Mayo Clinic Study of Aging: design and sampling, participation,
+baseline measures and sample characteristics. Neuroepidemiology. 2008; 30:58–69. [PubMed:
+18259084]
+13. Verghese J, Holtzer R, Lipton RB, Wang C. Quantitative gait markers and incident fall risk in
+older adults. J Gerontol A Biol Sci Med Sci. 2009; 64:896–901. [PubMed: 19349593]
+14. Himann JE, Cunningham DA, Rechnitzer PA, Paterson DH. Age-related changes in speed of
+walking. Med Sci Sports Exerc. 1988; 20:161–166. [PubMed: 3367751]
+15. Langlois JA, Keyl PM, Guralnik JM, Foley DJ, Marottoli RA, Wallace RB. Characteristics of older
+pedestrians who have difficulty crossing the street. Am J Public Health. 1997; 87:393–397.
+[PubMed: 9096539]
+16. Brach JS, Perera S, Studenski S, Katz M, Hall C, Verghese J. Meaningful change in measures of
+gait variability in older adults. Gait Posture. 2010; 31:175–179. [PubMed: 19889543]
+17. Brach JS, Berthold R, Craik R, VanSwearingen JM, Newman AB. Gait variability in community-
+dwelling older adults. J Am Geriatr Soc. 2001; 49:1646–1650. [PubMed: 11843998]
+18. Hausdorff JM, Rios DA, Edelberg HK. Gait variability and fall risk in community-living older
+adults: a 1-year prospective study. Arch Phys Med Rehabil. 2001; 82:1050–1056. [PubMed:
+11494184]
+19. Sheridan PL, Solomont J, Kowall N, Hausdorff JM. Influence of executive function on locomotor
+function: divided attention increases gait variability in Alzheimer’s disease. J Am Geriatr Soc.
+2003; 51:1633–1637. [PubMed: 14687395]
+20. Beauchet O, Kressig RW, Najafi B, Aminian K, Dubost V, Mourey F. Age-related decline of gait
+control under a dual-task condition. J Am Geriatr Soc. 2003; 51:1187–1188. [PubMed: 12890096]
+21. Hollman JH, Kovash FM, Kubik JJ, Linbo RA. Age-related differences in spatiotemporal markers
+of gait stability during dual task walking. Gait Posture. 2007; 26:113–119. [PubMed: 16959488]
+22. Owings TM, Grabiner MD. Step width variability, but not step length variability or step time
+variability, discriminates gait of healthy young and older adults during treadmill locomotion. J
+Biomech. 2004; 37:935–938. [PubMed: 15111081]
+23. Hausdorff JM, Schweiger A, Herman T, Yogev-Seligmann G, Giladi N. Dual-task decrements in
+gait: contributing factors among healthy older adults. J Gerontol A Biol Sci Med Sci. 2008;
+63:1335–1343. [PubMed: 19126846]
+24. Brach JS, Berlin JE, VanSwearingen JM, Newman AB, Studenski SA. Too much or too little step
+width variability is associated with a fall history in older persons who walk at or near normal gait
+speed. J Neuroeng Rehabil. 2005; 2:21. [PubMed: 16042812]
+25. Beauchet O, Dubost V, Gonthier R, Kressig RW. Dual-task-related gait changes in transitionally
+frail older adults: the type of the walking-associated cognitive task matters. Gerontology. 2005;
+51:48–52. [PubMed: 15591756]
+26. Murray MP, Kory RC, Clarkson BH. Walking patterns in healthy old men. J Gerontol. 1969;
+24:169–178. [PubMed: 5789252]
+27. Department of Pathokinesiology and Physical Therapy. Observational Gait Analysis Handbook.
+Downey, CA: Los Amigos Research and Education Institute, Inc., Rancho Los Amigos National
+Rehabilitation Center; 2001.
+28. Brach JS, Studenski S, Perera S, VanSwearingen JM, Newman AB. Stance time and step width
+variability have unique contributing impairments in older persons. Gait Posture. 2008; 27:431–
+439. [PubMed: 17632004]
+29. Chamberlin ME, Fulwider BD, Sanders SL, Medeiros JM. Does fear of falling influence spatial
+and temporal gait parameters in elderly persons beyond changes associated with normal aging? J
+Gerontol A Biol Sci Med Sci. 2005; 60:1163–1167. [PubMed: 16183957]
+30. Hollman JH, Childs KB, McNeil ML, Mueller AC, Quilter CM, Youdas JW. Number of strides
+required for reliable measurements of pace, rhythm and variability parameters of gait during
+normal and dual task walking in older individuals. Gait Posture. 2010; 32:23–28. [PubMed:
+20363136]
+Hollman et al.
+Page 9
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 10 页 ---
+Figure 1.
+The flow sheet describes participant selection, with exclusion criteria.
+Hollman et al.
+Page 10
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 11 页 ---
+Figure 2.
+The phase and pace domains of gait performance had significant age group effects. The
+proportion of the gait cycle spent in double limb support (A) was greater in the 85+ year age
+group than in the 70–74 year age group. Double limb support time (B) was greater in the
+85+ year age group than in the 70–74 year age group and in the 75–79 year age group. Gait
+speed (C) in the 80–84 and 85+ year age groups was slower than in the 70–74 and 75–79
+year age groups. Stride lengths (D) and step lengths (not illustrated because step length data
+are one-half the length of stride length data but show identical statistical comparisons) in the
+85+ year age group were shorter than in the 70–74, 75–79 and 80–84 year age groups, and
+were shorter in the 80–84 year age group than in the 70–74 year age group. Note: * denotes
+Bonferroni-adjusted p<0.05, ** denotes Bonferroni-adjusted p<0.01, *** denotes
+Bonferroni-adjusted p<0.001.
+Hollman et al.
+Page 11
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+
+
+--- 第 12 页 ---
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+Hollman et al.
+Page 12
+Table 1
+Operational Definitions of Gait Parameters
+Gait Parameter
+Operational Definition
+Spatial Parameters
+Step Length (cm)
+• Anterior-posterior distance from the heel of one footprint to the heel of the opposite footprint
+Stride Length (cm)
+• Anterior-posterior distance between heels of two consecutive footprints of the same foot (left to left, right to
+right); two steps (e.g., a right step followed by a left step) comprise one stride or one gait cycle
+Step Width (cm)
+• Lateral distance from heel center of one footprint to the line of progression formed by two consecutive
+footprints of the opposite foot
+Temporal Parameters
+Cadence (steps/min)
+• Number of steps per minute, sometimes referred to as step rate
+Step Time (s)
+• Time elapsed from initial contact of one foot to initial contact of the opposite foot
+Stride Time (s)
+• Time elapsed between the initial contacts of two consecutive footfalls of the same foot
+Stance Time (s)
+• The stance phase is the weight bearing portion of each gait cycle initiated at heel contact and ending at toe off
+of the same foot; stance time is the time elapsed between the initial contact and the last contact of a single
+footfall
+Swing Time (s)
+• The swing phase is initiated with toe off and ends with initial contact of the same foot; swing time is the time
+elapsed between the last contact of the current footfall to the initial contact of the next footfall of the same foot
+Single Support Time (s)
+• Single support occurs when only one foot is in contact with the ground; single support time is the time elapsed
+between the last contact of the opposite footfall to the initial contact of the next footfall of the same foot
+Double Support Time (s)
+• Double support occurs when both feet are in contact with the ground simultaneously; double support time is
+the sum of the time elapsed during two periods of double support in the gait cycle
+Temporophasic Parameters
+Stance Time (%GC)
+• Stance time normalized to stride time
+Swing Time (%GC)
+• Swing time normalized to stride time
+Single Support Time (%GC)
+• Single support time normalized to stride time
+Double Support Time
+(%GC)
+• Double support time normalized to stride time
+Spatiotemporal Parameters
+Gait Speed (cm/s)
+• Calculated by dividing the distance walked by the ambulation time
+Stride Speed (cm/s)
+• Calculated by dividing stride length by the stride time
+Note: cm = centimeters; s = seconds; %GC = % gait cycle
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+
+
+--- 第 13 页 ---
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+Hollman et al.
+Page 13
+Table 2
+Factor Loadings of Gait Parameters on Five Factors Rotated and Extracted by Factor Analysis
+Gait Parameter
+Rhythm
+Phases
+Variability
+Pace
+Base of Support
+Gait Speed (cm/s)
+−0.463
+0.368
+−0.087
+0.779
+0.088
+Cadence (steps/min)
+−0.940
+0.021
+0.228
+0.016
+0.009
+Mean Step Time (s)
+0.955
+−0.080
+−0.093
+−0.027
+−0.091
+Mean Step Length
+0.135
+0.335
+−0.173
+0.900
+0.055
+Mean Stride Time (s)
+0.970
+−0.063
+−0.143
+−0.035
+−0.116
+Mean Stride Length (cm)
+0.123
+0.380
+−0.211
+0.874
+0.022
+Mean Step Width (cm)
+0.202
+−0.012
+−0.080
+−0.123
+−0.841
+Mean Swing (%GC)
+−0.015
+0.910
+−0.007
+0.245
+0.043
+Mean Swing Time (s)
+0.838
+0.447
+−0.120
+0.123
+−0.067
+Mean Stance (%GC)
+0.028
+−0.894
+0.010
+−0.199
+0.032
+Mean Stance Time (s)
+0.898
+−0.356
+−0.135
+−0.109
+−0.100
+Single Support (%GC)
+0.159
+0.759
+−0.339
+0.145
+0.101
+Single Support Time (s)
+0.826
+0.397
+−0.263
+0.094
+−0.018
+Double Support (%GC)
+−0.088
+−0.921
+0.217
+−0.233
+−0.068
+Double Support Time (s)
+0.541
+−0.756
+0.037
+−0.243
+−0.140
+Step Length Variability (%CV)
+−0.374
+−0.112
+0.593
+−0.213
+−0.084
+Step Time Variability (%CV)
+−0.322
+−0.024
+0.695
+−0.108
+−0.055
+Stride Length Variability (%CV)
+−0.100
+−0.036
+0.883
+−0.093
+0.041
+Stride Time Variability (%CV)
+−0.130
+−0.117
+0.921
+−0.018
+0.136
+Swing Time Variability (%CV)
+−0.273
+−0.167
+0.832
+0.009
+0.079
+Stance Time Variability (%CV)
+0.008
+−0.059
+0.702
+−0.042
+0.379
+Stride Speed Variability (%CV)
+0.188
+−0.113
+0.526
+−0.036
+0.058
+Step Width Variability SD (cm)
+−0.035
+0.136
+0.166
+−0.027
+0.778
+% of Variance
+25.8
+20.0
+19.1
+11.6
+6.9
+Note: Bolded correlation coefficients are interpreted as significant contributors to the identified factor.
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+
+
+--- 第 14 页 ---
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+Hollman et al.
+Page 14
+Table 3
+Normative Data (Mean±SD) for Parameters Constituting Rhythm, Phases, Variability, Pace and Base of Support Domains of Gait Performance by Gender
+and Age
+Parameter
+Men (N=108)
+Women (N=186)
+70–74
+75–79
+80–84
+85+
+70–74
+75–79
+80–84
+85+
+N=27
+N=30
+N=37
+N=14
+N=33
+N=77
+N=43
+N=33
+Rhythm
+Cadence (steps/min)*
+102±8
+106±10
+103±8
+102±11
+113±20
+114±13
+110±9
+108±10
+Step Time (s)†
+0.59±.05
+0.56±.05
+0.59±.04
+0.59±.08
+0.53±.06
+0.53±.06
+0.55±.05
+0.56±.05
+Stride Time (s)‡
+1.18±.08
+1.13±.09
+1.16±.08
+1.19±.14
+1.06±.13
+1.06±.12
+1.10±.09
+1.12±.11
+Swing Time (s)§
+0.43±.03
+0.41±.03
+0.42±.04
+0.42±.05
+0.39±.05
+0.38±.05
+0.39±.04
+0.40±.04
+Stance Time (s)¶
+0.75±.07
+0.72±.06
+0.74±.06
+0.78±.11
+0.68±.10
+0.67±.08
+0.71±.07
+0.72±.09
+Single Support Time (s)#
+0.44±.03
+0.42±.03
+0.42±.04
+0.42±.04
+0.39±.06
+0.38±.06
+0.39±.04
+0.40±.04
+Phases
+Swing (%GC)
+36.6± 1.5
+36.7±1.5
+36.6±2.8
+35.1±2.69
+36.6±2.6
+36.1±3.0
+35.5±2.5
+35.7±2.6
+Stance (%GC)
+63.2±2.1
+64.0±2.5
+63.8±2.7
+64.9±2.7
+63.3±3.1
+63.9±3.0
+64.5±2.6
+64.5±2.5
+Single Support (%GC)
+37.1±1.8
+37.0±1.7
+36.5±2.2
+35.2±2.1
+37.0±3.20
+35.8±4.8
+35.6±2.4
+35.7±2.8
+Double Support (%GC)
+26.3±3.0
+26.5±2.3
+27.4±4.7
+30.3±3.5
+27.14±4.0
+28.4±6.4
+29.0±4.6
+28.7±4.8
+Double Support Time (s)**
+0.31±.05
+0.30±.04
+0.32±.06
+0.36±.08
+0.29±.06
+0.30±.06
+0.32±.06
+0.32±.08
+Variability
+Step Length (%CV)
+4.6±6.7
+5.4±2.7
+5.1±2.8
+5.8±3.4
+7.7±11.6
+5.7±7.2
+5.9±2.7
+6.2±2.4
+Step Time (%CV)
+5.2±6.9
+4.1±2.9
+4.7±2.0
+5.0±1.7
+7.1±8.6
+5.9±6.4
+5.5±2.6
+5.5±2.6
+Stride Length (%CV)
+2.9±1.1
+4.2±4.6
+3.8±2.0
+5.7±3.2
+4.1±4.7
+4.7±5.6
+4.3±2.1
+5.2±5.2
+Stride Time (%CV)
+3.5±2.2
+3.8±4.4
+3.3±1.9
+5.3±3.7
+3.9±3.9
+5.2±6.9
+4.4±1.9
+4.9±5.3
+Swing Time (%CV)
+4.5±2.2
+4.5±7.8
+5.1±2.2
+8.6±11.4
+6.2±10.5
+8.5±9.5
+6.2±2.2
+8.0±9.7
+Stance Time (%CV)
+4.9±4.6
+5.9±7.0
+4.7±3.0
+5.3±2.9
+5.7±4.4
+5.3±5.1
+5.3±2.9
+5.6±4.1
+Stride Speed (%CV)
+5.0±2.9
+5.5±4.4
+5.5±3.2
+7.3±3.8
+5.6±3.4
+5.5±2.7
+6.8±3.2
+6.9±3.3
+Pace
+Gait Speed (cm/s)††
+117±16
+122±15
+112±17
+101±22
+116±20
+112±17
+101±15
+98±20
+Step Length (cm)‡‡
+69±8
+68±7
+65±8
+59±10
+61±9
+59±7
+55±7
+54±9
+Gait Posture. Author manuscript; available in PMC 2012 May 1.
+
+
+--- 第 15 页 ---
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+NIH-PA Author Manuscript
+Hollman et al.
+Page 15
+Parameter
+Men (N=108)
+Women (N=186)
+70–74
+75–79
+80–84
+85+
+70–74
+75–79
+80–84
+85+
+N=27
+N=30
+N=37
+N=14
+N=33
+N=77
+N=43
+N=33
+Stride Length (cm)§§
+139±14
+137±12
+131±17
+119±21
+123±17
+118±15
+111±14
+109±18
+Base of Support
+Step Width (cm)¶¶
+9.7±3.0
+8.9±5.2
+11.2±4.0
+9.9±4.8
+7.0±3.5
+7.7±4.0
+7.9±4.1
+9.1±2.6
+Step Width SD (cm)
+3.1±2.2
+2.9±1.9
+3.3±2.3
+2.8±1.2
+3.4±2.4
+3.2±2.5
+3.6±3.1
+3.0±1.1
+*mean difference in cadence between genders is 8.3 steps/min (p<0.001, 95%CI=5.4–11.1 steps/min);
+†mean difference in step time between genders is 0.04 s (p<0.001, 95%CI=0.03–0.06 s);
+‡mean difference in stride time between genders is 0.09 s (p<0.001, 95%CI=0.06–0.11 s);
+§mean difference in swing time between genders is 0.03 s (p<0.001, 95% CI=0.02–0.04 s);
+¶mean difference in stance time between genders is 0.05 s (p=0.004, 95%CI=0.03–0.07 s);
+#mean difference in single limb support time between genders is 0.04 s (p<0.001, 95%CI=0.03–0.05 s);
+**mean difference in double support time between genders is 0.02 s (p=0.05, 95%CI=0.00–0.03 s);
+††mean difference in gait speed between genders is 7 cm/s (p=0.002, 95%CI=2.7–11.5 cm/s);
+‡‡mean difference in step length between genders is 9.0 cm (p<0.001, 95%CI=7.0–11.0 cm); mean difference in stride length between genders is 17.5 cm (p<0.001, 95%CI=13.6–21.5 cm);
+¶¶mean difference in step width between genders is 2.2 cm (p<0.001, 95%CI=1.2–3.1 cm).
+Gait Posture. Author manuscript; available in PMC 2012 May 1.

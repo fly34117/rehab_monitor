@@ -6,7 +6,7 @@
 // 根据 PC 实际局域网 IP 修改
 // 从本地存储读取服务器地址，默认使用当前 PC 局域网 IP
 const getApiBase = () => {
-  const addr = wx.getStorageSync('apiBaseUrl') || '192.168.249.179:5000';
+  const addr = wx.getStorageSync('apiBaseUrl') || '192.168.46.21:5000';
   return 'http://' + addr + '/api/v1';
 };
 const SESSION_ID = 'wx_' + Date.now();
@@ -57,9 +57,16 @@ function unlockPatient() {
   return request('POST', '/patient/unlock');
 }
 
-/** 生成康复报告 */
+/** 生成康复报告 (快速模式) */
 function generateReport(seconds = 30) {
   return request('POST', '/report/generate?seconds=' + seconds);
+}
+
+/** 生成专家知识库报告 (权威论文 + DeepSeek) */
+function generateExpertReport(seconds = 60, trendDays = 0) {
+  let path = '/report/expert?seconds=' + seconds;
+  if (trendDays > 0) path += '&trend_days=' + trendDays;
+  return request('POST', path);
 }
 
 /** 获取心情统计 (按天+情绪聚合) */
@@ -78,6 +85,7 @@ module.exports = {
   lockPatient,
   unlockPatient,
   generateReport,
+  generateExpertReport,
   getEmotionStats,
   getTrajectory
 };

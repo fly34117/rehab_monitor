@@ -463,6 +463,79 @@ def create_app():
             logger.error("生成报告失败: %s", e)
             return jsonify({"code": -1, "message": str(e)})
 
+    @app.route(f'/api/{API_VERSION}/report/expert', methods=['POST'])
+    @rate_limit(per_second=1)
+    def report_expert():
+        """专家知识库分析报告 — 结合 13 篇权威论文 + DeepSeek API"""
+        if database is None:
+            return jsonify({"code": -1, "message": "数据库未就绪"})
+
+        seconds = request.args.get('seconds', 60, type=int)
+        trend_days = request.args.get('trend_days', 0, type=int)
+
+        try:
+            # 1. 获取步态统计数据
+            sid = database.session_id
+            if sid is None:
+                # 取最近一次会话
+                c = database.conn.cursor()
+                c.execute("SELECT MAX(id) FROM sessions")
+                row = c.fetchone()
+                if row and row[0]:
+                    sid = row[0]
+                else:
+                    return jsonify({"code": -1, "message": "无会话数据"})
+
+            gait_stats = database.get_gait_stats(session_id=sid, seconds=seconds)
+            if gait_stats is None:
+                return jsonify({"code": -1, "message": f"最近 {seconds}s 内无步态数据"})
+
+            # 2. 获取趋势数据（可选）
+            trend_data = None
+            if trend_days > 0:
+                trend_data = database.get_monthly_gait_trend(days=trend_days)
+
+            # 3. 调用专家知识库分析
+            from .expert_report import ExpertReportGenerator
+            expert = ExpertReportGenerator()
+            report_json, cited_papers, raw, err = expert.generate(
+                gait_stats, trend_data
+            )
+
+            if err:
+                return jsonify({
+                    "code": -1,
+                    "message": f"专家分析失败: {err[:100]}"
+                })
+
+            # 4. 格式化报告文本
+            formatted = expert.format_report(report_json, cited_papers)
+
+            # 5. 保存到数据库
+            if raw:
+                database.write_report(
+                    formatted,
+                    report_json if isinstance(report_json, dict) else {"raw": str(report_json)},
+                )
+
+            return jsonify({
+                "code": 0,
+                "data": {
+                    "text": formatted,
+                    "summary": report_json.get("summary", "") if isinstance(report_json, dict) else "",
+                    "report_json": report_json,
+                    "cited_papers": [p["filename"] for p in cited_papers],
+                    "cited_count": len(cited_papers),
+                    "period_seconds": seconds,
+                    "trend_days": trend_days,
+                    "timestamp": time.time()
+                }
+            })
+
+        except Exception as e:
+            logger.error("专家报告生成失败: %s", e)
+            return jsonify({"code": -1, "message": str(e)[:200]})
+
     return app
 
 

@@ -1,0 +1,2428 @@
+--- 第 1 页 ---
+REVIEW ARTICLE
+published: 05 November 2014
+doi: 10.3389/fneur.2014.00218
+Mapping epileptic activity: sources or networks for the
+clinicians?
+Francesca Pittau1, Pierre Mégevand 2, Laurent Sheybani 3, Eugenio Abela4, Frédéric Grouiller 5,
+Laurent Spinelli 1, Christoph M. Michel 3, Margitta Seeck 1 and Serge Vulliemoz 1*
+1 EEG and Epilepsy Unit, Neurology Department, University Hospitals and Faculty of Medicine of Geneva, Geneva, Switzerland
+2 Laboratory for Multimodal Human Brain Mapping, Hofstra North Shore LIJ School of Medicine, Manhasset, NY, USA
+3 Functional Brain Mapping Laboratory, Department of Fundamental Neurosciences, University of Geneva, Geneva, Switzerland
+4 Support Center of Advanced Neuroimaging (SCAN), Institute for Diagnostic and Interventional Neuroradiology, University Hospital Inselspital, Bern, Switzerland
+5 Radiology Department, University Hospitals and Faculty of Medicine of Geneva, Geneva, Switzerland
+Edited by:
+Patrick William Carney, The Florey
+Institute of Neuroscience and Mental
+Health, Australia
+Reviewed by:
+Mario Alonso, Instituto Nacional de
+Neurología y Neurocirugía, Mexico
+Christine T. Ekdahl, Lund University,
+Sweden
+*Correspondence:
+Serge Vulliemoz, EEG and Epilepsy
+Unit, Neurology Department,
+University Hospitals of Geneva, 4 rue
+Gabrielle-Perret-Gentil, Geneva 4
+1211, Switzerland
+e-mail: serge.vulliemoz@hcuge.ch
+Epileptic seizures of focal origin are classically considered to arise from a focal epileptogenic
+zone and then spread to other brain regions.This is a key concept for semiological electro-
+clinical correlations, localization of relevant structural lesions, and selection of patients for
+epilepsy surgery. Recent development in neuro-imaging and electro-physiology and combi-
+nations, thereof, have been validated as contributory tools for focus localization. In parallel,
+these techniques have revealed that widespread networks of brain regions, rather than a
+single epileptogenic region, are implicated in focal epileptic activity. Sophisticated multi-
+modal imaging and analysis strategies of brain connectivity patterns have been developed
+to characterize the spatio-temporal relationships within these networks by combining the
+strength of both techniques to optimize spatial and temporal resolution with whole-brain
+coverage and directional connectivity. In this paper, we review the potential clinical con-
+tribution of these functional mapping techniques as well as invasive electrophysiology in
+human beings and animal models for characterizing network connectivity.
+Keywords: connectivity, resting-state network, epilepsy, animal model, EEG, fMRI, MEG, intracranial EEG
+INTRODUCTION
+Epilepsy is one of the most frequent chronic neurological dis-
+order, with an incidence of 50/100,000/year and a prevalence of
+0.5–1% (1, 2). One third of these patients are drug resistant (3).
+Focal seizures are classically considered to be caused by an abnor-
+mal neuro-electrical activity of a focal epileptogenic zone and a
+subsequent spreading to other brain regions. This concept is inti-
+mately linked to the correlation between ictal signs and symptoms,
+electro-physiological activity, and structural lesion [anatomo-
+electro-clinical correlation (4)]. Furthermore, this hypothesis is
+crucial to select drug-resistant focal epilepsy patients for surgery,
+a widely accepted effective therapy (5, 6). The aim of epilepsy
+surgery is to remove the epileptogenic zone with the preservation
+of the eloquent areas (7).
+Recent progress in neuro-imaging and electro-physiology sug-
+gests that focal seizures and focal epilepsies are actually related
+to an abnormal function of a network of cortical and subcorti-
+cal brain structures rather than to a single epileptogenic region
+(8–14). The occurrence of epileptic activity is due to the abnor-
+mal neuronal activity of these connected regions and abnormal
+interactions between them (epileptic network). This conceptual
+shift is reﬂected in the new terminology proposal for seizures
+and epilepsies of the International League against Epilepsy, which
+proposes “focal” as indicating seizures arising primarily “within
+networks limited to one hemisphere and that may be discrete or
+more widely distributed”(15). Generalized seizures are considered
+as “originating within and rapidly engaging, bilaterally distrib-
+uted networks” of cortical and subcortical regions. Inside these
+networks, some brain regions are responsible for seizure initia-
+tion and propagation, whereas other nodes are more remotely
+involved, their activity modulating, or being modulated by the
+epileptic discharge.
+There is increasing evidence that epileptic activity strongly
+interacts with physiological brain networks, notably the so-called
+“resting-state networks” (RSNs) (8, 16). A RSN is a set of brain
+regions that shows temporal correlations in their activity (as mea-
+sured by hemodynamic or electrical signals) and that are function-
+ally related. They are observed during rest but correspond to the
+networks revealed in different behavioral and cognitive task (e.g.,
+attention, vision, etc.). This has led to the new concept that the
+apparently resting spontaneous brain activity shows continuous
+interaction among brain networks responsible for various classes
+of sensory/behavioral functions (17). RSNs are highly organized in
+space, reproducible from subject to subject, and differ with aging
+and between genders (18).
+In this paper, we review the converging evidence from dif-
+ferent brain mapping techniques in human and animal models
+that epilepsy is related to the dysfunction of a large-scale brain
+networks, with alterations of physiological brain networks. We
+will particularly focus on the clinical impact of this new view of
+epilepsy as a network disease.
+METHODS
+An electronic literature search was conducted for articles on this
+topic regarding human and animal subjects. Sources searched
+included PubMed and relevant books. Words used in the search
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 1
+
+
+--- 第 2 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+included the text words and subject headings of epilep*,functional
+connect*, resting-state functional network*, temporal epilepsy,
+extra-temporal epilepsy, electroencephalogram (or EEG), simul-
+taneous functional MRI (fMRI) and EEG (or EEG-fMRI), electric
+and magnetic source imaging (or MSI, ESI), intracranial EEG (or
+iEEG or sEEG), cortico-cortical evoked potential, and single-pulse
+electrical stimulation. The words were searched independently and
+in combination. For each citation considered,the abstract was read
+(when available), and articles were excluded if they were outside
+the scope of the review. Studies published only in abstract form,
+letters, and technical reports were excluded. The bibliography of
+each of the retrieved papers was examined to identify relevant
+references that could have been missed by electronic search. The
+ﬁndings were described taking into account the limit of words and
+the critical insight of the authors.
+HOW TO MEASURE RESTING-STATE NETWORKS?
+FUNCTIONAL CONNECTIVITY
+Functional interactions between brain regions activity, can be
+characterized in several ways. On the one hand, functional con-
+nectivity (FC), the most widely used metrics,measures the statisti-
+cal dependency between different signals obtained by correlation
+analysis. However, such strategy does not account for the direc-
+tion of the information ﬂow and cannot therefore infer causality
+relationships. On the other hand, effective or directed connec-
+tivity investigates directional relationships and aims at describ-
+ing causal inﬂuences. Effective connectivity can be investigated
+using model-driven techniques such as structural equation mod-
+eling (19) and dynamic causal modeling (DCM) (20), data-driven
+techniques such as Granger-causal modeling (21), or by record-
+ing the response of remote areas to focal stimulation of a given
+brain region [cortico-cortical evoked potentials (22)]. Connec-
+tivity studies can be applied among a set of predeﬁned relevant
+brain regions selected by the investigator, between one seed region
+and the rest of the brain or at the whole-brain scale, using the
+spatial resolution of the recording technique. A detailed descrip-
+tion of the various approaches used for measuring connectivity is
+beyond the scope of this review and the reader is referred to studies
+comparing various approaches to better understand the speciﬁc
+limitations of each technique (23–25). The results obtained by
+such connectivity analysis between all pairs of brain regions can
+be represented in so-called connectivity matrices. Graph topo-
+logical analysis is then increasingly applied to reduce the com-
+plexity of the data and extract meaningful characteristics of the
+networks (26).
+BLOOD OXYGEN LEVEL DEPENDENT SIGNAL AND PHYSIOLOGICAL
+RESTING-STATE NETWORKS
+The concept of brain networks originated, and has largely ben-
+eﬁted, from the use of resting-state fMRI. fMRI detects blood
+oxygen level dependent (BOLD) signal change reﬂecting metabol-
+ically active brain areas not only in relation to a speciﬁc physiologic
+or pathologic event (27) but also in resting-state (RS) condition
+(resting-state-fMRI or RS-fMRI).
+Biswal and colleagues demonstrated for the ﬁrst time (1995)
+that brain regions that are functionally related,show temporal cor-
+relations in the low frequency component of the BOLD signal. In
+other words, fMRI FC detects zones that exhibit correlated BOLD
+ﬂuctuations and,as a result,belong to the same functional network
+(28). Studies in monkeys (29) and in human beings (30) suggest
+that FC is related to neuronal processes.
+Functional connectivity can be measured while the subject is
+performing a behavioral and cognitive task (task-related FC), or
+while the subject is not performing any speciﬁc task (RS-FC).
+The RSN that is mainly activated in condition of resting wake-
+fulness and deactivated in task performing is called default-mode
+network (DMN) (31). This physiological RSN is involved in self-
+referential thoughts and consciousness (32, 33). The concept of
+“resting” is debatable. Usually, subjects are instructed to lie down
+in the scanner with the eyes closed, and are invited to not sleep.
+Different methods have been developed to extract RSNs, some
+requiring an “a priori hypothesis,” like seed-based approach (34),
+other do not [i.e., independent component analysis (35), or boot-
+strap analysis (36)]. The description of the methodological aspects
+is outside the scope of this review. Other papers can be consulted
+(14, 37, 38).
+EEG/MEG AND PHYSIOLOGICAL RESTING-STATE NETWORKS
+Functional connectivity algorithms similar to those used for fMRI
+BOLD signals can be applied to MEG or EEG current-density
+estimations in the source space, revealing brain areas that are syn-
+chronized in speciﬁc frequency bands. As with fMRI, such analysis
+can be applied to task-related (39), as well as to spontaneous
+resting-state activity (40, 41). The unique advantage of EEG/MEG
+connectivity analysis is the high temporal resolution that allows
+studying fast ﬂuctuations within large-scale network interactions
+and fast switches between resting-state networks.
+FC analysis of EEG/MEG considers the time-course of electro-
+magnetic signals and looks at correlations of oscillating networks
+(42). Beyond this view of temporal oscillations, EEG record-
+ings can be considered as time-series of scalp potential maps
+that vary across time with the temporal resolution in the order
+of milliseconds (43). Several studies have shown that sponta-
+neous EEG signals can be explained by the alternation of periods
+of stable topography, lasting almost 100 ms, very reproducible
+across subjects, and modiﬁable by neurological (44) or psychi-
+atric impairment (45). These periods are called microstates and
+can be identiﬁed throughout an individual’s life (46) suggesting
+that they might be mediated by predetermined anatomical con-
+nections. During rest, four different microstates are consistently
+observed, and they can be considered as “basic building blocks” of
+spontaneous mental activities (47). A recent review on this topic
+is available (48).
+It has been shown (49) that the temporal dynamic of EEG
+microstates have hemodynamic correlates that can be measured
+with EEG-fMRI and that each physiological microstate map corre-
+sponds to one of the well-described BOLD RS network. Such clear
+correlates between EEG and BOLD are less well found when look-
+ing at classical power ﬂuctuations in speciﬁc EEG frequency bands
+(50). This ﬁnding strongly suggests that the EEG microstates can
+be the candidates for the electro-physiological signatures of fMRI
+RSNs. Scale-invariance of the alternation between microstates has
+been demonstrated to be the base of this coupling over such a wide
+temporal scale (51).
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 2
+
+
+--- 第 3 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+EVIDENCE FOR BRAIN NETWORKS INVOLVED IN EPILEPTIC
+ACTIVITY
+As described above, FC at the whole-brain level can be stud-
+ied with EEG, MEG, fMRI, iEEG, or the combination of these
+techniques. They have been applied to patients with focal or gen-
+eralized epilepsy to characterize spatial and temporal properties of
+epileptic networks.
+EEG AND MEG-BASED CONNECTIVITY IN EPILEPSY
+EEG and MEG are appealing non-invasive techniques for estimat-
+ing brain connectivity in epilepsy because they measure neuro-
+electrical activity more directly than fMRI and can potentially
+offer a higher temporal resolution.
+Several studies using concordance with intracranial record-
+ings or post-operative outcome have established that electric and
+magnetic source imaging (ESI, MSI) are reliable techniques for
+estimating the localization of the cortical generators of epileptic
+activity (52–55) and these techniques now offer a much more con-
+vincing strategy to investigate connectivity directly between the
+activity of cortical regions. Therefore, both ESI and MSI studies
+will be discussed together hereunder. Studies using connectiv-
+ity analysis in the sensor space are not discussed here because
+of their severe limitations of interpretation due to important
+caveats related to sensor cross-talk, volume conduction, and refer-
+ence choice of the electromagnetic signals (56). The projection of
+the signal in source space requires the selection of a head model
+describing the propagation of the electromagnetic signal (forward
+problem) and an inverse solution (estimating the cortical activ-
+ity from the EEG/MEG recording, inverse problem) (48, 57, 58).
+A variety of head models exists, from template averaged normal
+brain to highly sophisticated realistic models based on individual
+anatomy, and they have been used in epilepsy imaging and cog-
+nitive neurosciences. Validation in patients with invasive EEG or
+surgical resection showed that the individual anatomy was impor-
+tant for the localization accuracy (54), but that the performance
+of highly sophisticated models did not outperform less computer-
+intensive models also based on individual anatomy, as these were
+disturbed by the presence of brain lesions in patients with epilepsy
+(59). Regarding inverse solutions, dipole models consider a sin-
+gle or a few equivalent dipole(s) as sources of the EEG/MEG
+signals of sources distributed in the whole cortex (48). While
+both approaches might yield complimentary results for localiz-
+ing epileptic sources (60), distributed sources are best suited to the
+studyof connectivitybetweencorticalpatchesatalargebrainscale.
+The analysis of interictal epileptic discharges has principally
+aimed at localizing epileptic generators in the context of pre-
+surgical evaluations rather than studying large brain networks.
+Case reports or small MEG series showed promising results for
+the localizing value of the regions with high information outﬂow,
+estimated by connectivity analysis (61–63). In addition, based on
+development in cognitive neurosciences, the background activity
+measured by MEG and EEG in the classical frequency bands has
+also been used as a substrate to estimate abnormal connectivity
+in patients with epilepsy and correlate it with clinical variables.
+In patients with brain tumors, increased theta-band connectiv-
+ity and more profound network alterations were associated with
+a higher number of epileptic seizures (64) and there is higher
+post-operative network improvement in patients who become
+seizure free (65).
+In generalized epilepsies, connectivity studies have highlighted
+a network of hyperconnected anterior regions in photosensitive
+patients (66). Network analysis using graph theory in ﬁve patients
+with absence epilepsy showed a build-up of connectivity changes
+occurring before the onset of generalized spike-wave discharges
+(67). This shows the potential of such a technique for our under-
+standing of the large-scale brain networks underlying hyperex-
+citability and interictal to ictal transition. A similar approach has
+been applied to iEEG recordings of interictal to ictal transition in
+patients with focal cortical dysplasia (12).
+Another study used co-occurrence of MEG interictal spikes
+to build graphs of connectivity between the estimated sources of
+these spikes. In seven patients also investigated with stereotac-
+tic iEEG, the connections revealed by MEG were conﬁrmed by
+iEEG (68).
+Similarly to fMRI studies, future work will need to distinguish
+between transient connectivity alterations related to interictal dis-
+charges, that are known to be associated with subtle cognitive
+impairment (69), and deeper connectivity changes based on back-
+ground activity alterations. The tools are now available to beneﬁt
+from the high temporal resolution of EEG/MEG to further inves-
+tigate these issues and this ﬁeld has recently attracted an intense
+interest. While MEG offers advantages over EEG for longitudi-
+nal studies of post-operative cases, due to its insensitivity to skull
+defects, the development of long-term high-density EEG system,
+its greater versatility compared to MEG and its potential com-
+bination with fMRI will be precious for recording seizures and
+exploring network changes leading to their initiation, spread, and
+termination.
+EEG-fMRI CONNECTIVITY IN EPILEPSY
+Simultaneous EEG and fMRI (EEG-fMRI) detects hemodynamic
+changes in the brain related to events of interest identiﬁed in
+the EEG (70). Combining high temporal resolution of EEG sig-
+nal with high spatial resolution of BOLD images, EEG-fMRI has
+been shown to be useful to characterize various forms of focal
+and generalized epileptic abnormalities (hereunder called“spikes”
+for practical reasons) (71). EEG-fMRI helps to localize epileptic
+focus in patients with drug-resistant focal epilepsy candidate for
+surgery (72, 73). From the ﬁrst publications (74, 75), EEG-fMRI
+has demonstrated that BOLD responses to a focal spike can be
+multifocal, also present at a distance from the presumed focus
+(Figure 1), corroborating the concept of epileptic network (9).
+Studying such networks can inform about patients’prognosis after
+surgery. While focal responses predict a good post-operative out-
+come, diffuse results are associated with a poor outcome, probably
+reﬂecting that a larger network is involved in the epileptogenic
+zone (76, 77). Epileptic activity can also be detected in the absence
+of spikes and fMRI analysis based on EEG topography can reveal
+epileptogenic networks (78).
+BOLD responses to a neural event are usually detected with
+a delay of 4–6 s (79). Nevertheless, hemodynamic changes to
+spikes can have different peak times (80), and can occur before
+the spike is visible on the scalp (81). Dynamic analysis of BOLD
+response (82, 83) can tell us which brain areas are ﬁrst activated,
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 3
+
+
+--- 第 4 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+FIGURE 1 | Interictal network revealed by EEG-fMRI. Patients with
+non-lesional right frontal epilepsy. Marked events inside the EEG-fMRI
+session: right frontal spikes with phase reversal at F4 (on the left:
+longitudinal bipolar montage from 204 channels EEG). On the middle:
+scalp voltage map of the spike (204 electrodes, viewed from the top)
+with the maximal right frontal negativity (blue). BOLD response
+(t-value = 4; p < 0.05 corrected for family-wise-error) has maximal
+activation in the spike topography but other clusters with inferior
+statistical values are present in the contra-lateral homologous region and
+in the thalamus.
+by comparing early BOLD response vs. late BOLD response. How-
+ever, this analysis does not address the concept of causality and the
+sluggishness and variability of BOLD responses prevent a more
+accurate investigationinto the temporal dynamics and directional-
+ity of the connections (24). Causality within epileptic network can
+be addressed by effective connectivity approaches like Dynamic
+Causal Modeling (DCM) (37, 84).
+The combination of ESI with EEG-fMRI can offer complemen-
+tary information for improving each single technique (Figure 2).
+Although EEG-fMRI and ESI measure different signals (hemody-
+namic the ﬁrst, electrical the second), the concordance between
+ESI performed during fMRI recordings can allow distinguishing
+between hemodynamic changes related to spike onset vs. propaga-
+tion, adding important temporal information to the limited fMRI
+temporal resolution (85, 86).
+EEG-fMRI studies can give insights about epileptogenesis.
+Interictal spikes of different types of epilepsy (frontal, temporal,
+and posterior quadrant), are associated with deactivation in the
+precuneus and posterior cingulate cortex (10), regions involved in
+the DMN (Figure 3). Other physiological RSNs could be affected
+by spikes: this interaction and its clinical consequences need to be
+clariﬁed in future studies. A common involvement of the cingulate
+gyri in temporal lobe and frontal lobe epilepsy was reported (10),
+probably resulting from rapid spread of epileptic activity originat-
+ing from the temporal and frontal areas, which both involve the
+limbic system.
+FIGURE 2 |Techniques using different types of signal are concordant in
+localizing the epileptic focus in a patient with right orbito-frontal focal
+cortical dysplasia. On the top-line: ESI (256 electrodes, simpliﬁed realistic
+head model lSMAC, distributed inverse solution LORETA) performed on
+right frontal spikes (FP2-F8). On the bottom-line: EEG-fMRI performed on
+the same type of events recorded inside the scanner.
+A speciﬁc area, localized in the medial orbito-frontal gyrus
+(piriform cortex), called “area tempestas”, seems to be involved
+in the genesis or propagation of epileptic activity (87, 88) in focal
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 4
+
+
+--- 第 5 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+FIGURE 3 | Interictal involvement of DMN in focal epilepsy. Patients
+with right hemispheric extended periventricular nodular heterotopia.
+Marked epileptic events inside the scanner: right posterior temporal spikes
+with phase reversal at P8 (on the left: 256 channel EEG; referential montage
+Fz-Cz). BOLD increase is concordant with the spike topography
+(topographic map on the middle), whereas BOLD decrease is present in the
+regions of default-mode network (DMN).
+epilepsies. A DCM study supported the hypothesis of a causal link
+between hemodynamic changes in this structure and a speciﬁc
+type of reﬂex epilepsy, although in a single patient (89). Sev-
+eral other ﬁndings seem to corroborate the important role of the
+area tempestas: (i) its decrease in benzodiazepine receptor (87),
+(ii) its epileptogenic role in animal kindling models of temporal
+lobe epilepsy (TLE) (90–92), and (iii) its increase in gray matter
+volume in patient with frontal lobe epilepsy when compared to
+controls (93).
+From a methodological point of view,multimodal combination
+between EEG/ESI, fMRI, and diffusion imaging tractography will
+allow exploring functional and structural connectivity at a ﬁner
+spatio-temporal scale. Some initial small studies have highlighted
+the potential of these combinations (94–96).
+fMRI and EEG-fMRI studies in focal epilepsy
+Unfortunately, only few of the many studies on RS-FC have been
+done with the simultaneous recording of EEG. Spikes cause a tran-
+sient cognitive impairment, by affecting, e.g., memory retrieval in
+rats (97),and memory maintenance and retrieval in human beings
+(69). Therefore, a more consistent use of simultaneous EEG while
+performingfMRIforRSortask-relatedstudiesinepilepticpatients
+is needed to determine the inﬂuence of spikes on the determined
+BOLD networks. Indeed a study where EEG activity was moni-
+tored during a working memory-fMRI session (98) has shown that
+the task-related BOLD dramatically changes when spikes occur.
+Another advantage of the simultaneous recording of EEG in the
+scanner is that it allows monitoring the transition between differ-
+ent alertness states in order to assure that the subject is in RS and
+not in drowsiness/sleep state. A very recent review (99) has accu-
+rately discussed this issue and summarized the relevant studies.
+Temporal lobe epilepsy. The majority of RS-fMRI studies in focal
+epilepsieshavefocusedonTLE,whichisthemostcommonformof
+focal epilepsy in adults and offers the advantage of being one of the
+most homogeneous groups within the focal epilepsy syndromes.
+Temporal lobe epilepsy has been the ﬁrst epileptic syndrome to
+be considered as epileptogenic network (100) with relatively well
+characterized components encompassing different structures in
+the mesial temporal lobe (amygdala and hippocampus), adjacent
+cortex including enthorhinal cortex and lateral temporal cortex,
+and extra-temporal structures (i.e., thalamus and orbito-frontal
+cortex). fMRI connectivity studies (some with simultaneous EEG
+recording, others without) conducted by seeding the principal
+nodes of the mesial temporal network showed impaired connec-
+tivity with the other nodes of the network (101–103). Decreased
+connectivity is the most common ﬁnding among those studies.
+Nevertheless, there are reports of increased function of the unaf-
+fected hippocampus in patients with unilateral MTLE, both in the
+RS (104) and during task-related (105, 106) acquisitions. Mor-
+gan et al. (107) have shown that RS cross-hippocampal FC is
+disrupted at the beginning of the disease and then increases lin-
+early with epilepsy duration after 10 years, suggesting that length
+of disease inﬂuences FC patterns. Bettus et al. (108) studied the
+electro-physiological correlates of BOLD signal ﬂuctuations in
+structures exhibiting epileptiform discharges, by measuring cor-
+relations between intracerebral EEG and resting-state fMRI in ﬁve
+patients with TLE. They found an increase in connectivity mea-
+sured from the intracerebral EEG but a decrease of connectivity
+measured from the BOLD signal in regions with epileptiform
+abnormalities relative to non-affected areas. This discrepancy,
+obtained by measuring connectivity of two signals of different
+nature (electrical and hemodynamic), demonstrates the challenge
+in interpreting connectivity changes. It could also suggest an
+alteration of neurovascular coupling in TLE.
+In unilateral mesial TLE (MTLE), the affected amygdala and
+hippocampus (and to a lesser extent on the contra-lateral side)
+are less connected between them and also with other consis-
+tent RSNs, such as the mesolimbic and the DMN, suggesting
+that these functional interictal changes explain cognitive and psy-
+chiatric impairments often found in patients with this type of
+epilepsy (109). Several fMRI studies, with and without EEG, have
+shown an abnormal FC between physiological consistent RSNs
+[i.e., language (110)] and MTL structures.
+Default-mode network.
+Laufs and colleagues (8) have shown that
+deactivation in DMN, involved in consciousness, is more frequent
+for spikes in patients with TLE than extra-TLE. Deactivation in
+the same regions in response to temporal spikes was also demon-
+strated by Kobayashi et al. (111) and by Fahoum et al. (10). Frings
+et al. (112) showed decreased DMN-hippocampus FC in MTLE
+patients compared to controls during an object-location memory
+task, underlying the importance of the intact connection between
+these structures to preserve memory. This concept was validated in
+post-surgical follow-up studies (see below). An impairment of the
+connections between DMN and MTL structures has been demon-
+strated also in RS with a seed-based fMRI analysis (113). The same
+group (114) combined fMRI RS-FC and diffusion tensor imaging,
+andshowedthatthedecreasedFCwithintheDMNinMTLEiscor-
+related to abnormal structural connectivity. Although functional
+DMN connectivity is generally decreased in MTLE, few nodes can
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 5
+
+
+--- 第 6 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+be hyperconnected and this may play a compensatory role for the
+loss of functional connections in other regions of the network
+(115). The same study, performed with an independent compo-
+nent analysis, has also shown distinct patterns of FC impairment
+with DMN between the left and right MTLE. The same difference
+has been further reported (116), suggesting that impaired cogni-
+tion and memory in TLE may be different in right vs. left TLE.
+Morgan and colleagues (117) have identiﬁed a region in the ven-
+tral lateral nucleus of the right thalamus whose connectivity to the
+hippocampi separates left from right TLE subjects, suggesting that
+quantifying resting-state FC across this network may be a potential
+indicator of lateralization of TLE (useful step in the pre-surgical
+assessments).
+Functional connectivity ﬁndings are related with clinical data:
+McCormick et al. (118) shows that MTLE patients with respect
+to controls have reduced connectivity from the posterior DMN to
+the epileptogenic hippocampus and increased DMN connectivity
+to the contra-lateral hippocampus. Stronger DMN connectivity
+to the epileptogenic hippocampus was associated with better pre-
+surgical memory and with greater postsurgical memory decline,
+whereas stronger DMN connectivity to the contra-lateral hip-
+pocampus was associated with less postsurgical memory decline.
+Followingsurgery,DMNconnectivitytotheremaininghippocam-
+pus increased from pre-surgical values and showed enhanced
+correlation with postsurgical memory function.
+Hippocampi are considered by some authors as nodes of the
+DMN (119), but there is not unanimity on this interpretation (32,
+120, 121). It is important to remember that all the regions of the
+brain can be functionally connected: a region belonging to a spe-
+ciﬁc network (like the mesial temporal network) can belong also
+to a less speciﬁc network encompassing the previous one. This
+classiﬁcation depends on how many different physiological RSNs
+are extracted from speciﬁc analyses: for instance, by extracting
+four physiological RSNs, the probability that the mesial temporal
+regions will be included in the DMN is higher than if the number
+of extracted network is higher (122).
+Mesolimbic network.
+Patients with unilateral MTLE have impor-
+tant decreases of FC with the ventromesial limbic prefrontal
+regions and with the nucleus accumbens (109). These regions
+belong to a dopaminergic mesolimbic network, involved in long-
+term memory for novel events and reward (123). Hippocampus
+and amygdala have been often described as part of this net-
+work (124, 125), and several ﬁndings suggest that this network
+is affected in MTLE. The preferential seizure spread from mesial
+temporal lobes to mesial frontal lobes,especially the orbito-frontal
+cortex, has been demonstrated by ictal iEEG in patients with
+MTLE, suggesting that mesial orbito-frontal cortex is strongly
+affected by mesial temporal activity (126). On the other hand,
+dopaminergic alterations have been demonstrated in the patho-
+physiology of major depression, and dysfunctional activity of the
+mesolimbic dopaminergic system plays a crucial role in depres-
+sive behavior (127, 128). Structures belonging to mesolimbic
+network are functionally (129) and structurally (130) impaired
+in MTLE patients who have psychiatric impairments, such as
+anxiety/depression. A recent study (131) showed that the sub-
+genual anterior cingulate cortex (mesolimbic network key-node)
+is affected only in MTLE patients that have primary affective dis-
+orders and not in those without such disorders and neither in
+controls. The same study conﬁrms these FC ﬁndings with voxel-
+based morphometry and diffusion tensor imaging, corroborating
+the concept that the affective psychopathology often diagnosed
+in patients with MTLE has a neurobiological correlate. Antide-
+pressant drugs, when effective, could modulate these connectivity
+impairments.
+The amygdala has often been described as part of mesolimbic
+network and it is also involved in emotional processing of stimuli.
+Facial emotion recognition, particularly for “fear,” is impaired in
+patients with TLE, especially on the right hemisphere (132–135).
+Broicher and colleagues (136) showed through fearful-face fMRI-
+paradigm that the altered amygdala FC in TLE patients is strongly
+related to the poor performance in behavioral tests evaluating the
+theory of mind abilities (ability of decoding thoughts and behavior
+of other human beings). Another study with the same paradigm
+showed that, in right TLE patients, pre-operative right amygdala
+activation correlates with post-operative change of anxiety and
+depression scores [i.e., greater increases in anxiety and depression
+in patients with greater preoperative activation (137)]. This con-
+ﬁrms that pre-surgical study of FC between TLE and other brain
+structures can help to predict post-surgery neuropsychological
+consequences.
+Attention network.
+Several studies have shown that dorsal and
+ventral attention networks are functionally altered in MTLE,
+explaining why patients with this type of epilepsy have often
+worse performances than healthy controls (HC) in attention tasks.
+Cataldi et al. (138) have recently reviewed this topic.
+Extra-temporal lobe epilepsy.
+Extra-temporal lobe epilepsies
+are characterized by a wide range of focus localization and eti-
+ology. For this reason, group studies with homogeneous clini-
+cal phenotype are difﬁcult to achieve. This contrasts with the
+large body of group studies in MTLE, which take advantage
+from the frequent uniform pathology of atrophy and cell-loss in
+amygdala-hippocampus structures. A group-analysis EEG-fMRI
+study in different types of epilepsy (frontal, temporal, and pos-
+terior quadrant) showed that focal spikes are associated with
+networks of widespread metabolic changes, speciﬁc for each type
+of epilepsy (10).
+Negishi et al. (139) revealed higher lateral pre-surgery FC maps
+indrug-resistantpatientswithgoodsurgicaloutcome(seizure-free
+at 1-year) compared to those with poor outcome. A recent study
+on 23 patients with frontal lobe epilepsy used the same seed-FC
+approach (seed at maximal BOLD value of the spike-related acti-
+vation map) (140),ﬁnding an increased FC in the neighborhood of
+the seed and a decrease in regions remote to the seed compared to
+controls.Patient-speciﬁcconnectivitypatternwasnotsigniﬁcantly
+changed when comparing fMRI runs with spikes vs. fMRI without
+any spike detectable on the simultaneous EEG. Patients with drug-
+resistant frontal lobe epilepsy (141) recruit wider areas compared
+to controls when performing an fMRI memory encoding task par-
+adigm, particularly in the contra-lateral frontal lobe, suggesting
+the presence of compensatory mechanisms to maintain memory
+function.
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 6
+
+
+--- 第 7 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+Generalized epilepsy
+Different theories have been proposed about the patho-physiology
+of “generalized seizures”. Meeren et al. (142) reviewed this topic.
+All these theories consider cortex and thalamus as being involved
+in the generation of the typical 2.5–4 Hz generalized spike-wave
+discharges (GSWD) detected on scalp EEG, but it is still unclear,
+which of them is the“primum movens”(143). As discussed below,
+animal studies in genetic models of absence epilepsy are crucial
+to gain understanding of these conditions because no invasive
+validation can be contemplated in human beings. These animal
+studies suggest that GSWDs are triggered in a restricted cortical
+region (144–147).
+Several EEG-fMRI studies showed that during short GSWD
+(16, 148–150) and absence (151–154), there is a characteristic pat-
+tern of subcortical (medio-dorsal thalamic and striatus) activation
+and cortical deactivation, especially in areas of the DMN. It has
+been hypothesized that the DMN deactivation is linked to reduced
+consciousness (i.e., absences) (16, 155, 156). A dynamic analysis
+study on 17 absences from nine patients with absence epilepsy
+and classical pattern of 3–4 Hz GSWDs (83) showed that BOLD
+responses were remarkably consistent in space and time across dif-
+ferent absences of one patient, but were different from patient to
+patient. Furthermore, this study shows early frontal BOLD acti-
+vations (speciﬁc for each patient), supporting the cortical focus
+theory. Another EEG-fMRI study on 11 children with absence
+seizures (157) revealed that the ﬁrst brain zone showing BOLD
+increase was the parietal cortex, this activity starting 10 s before
+the onset of the discharge. Additionally, this study demonstrated
+thehemodynamic involvement of subcortical structures in GSWD,
+including the reticular structures of the brainstem. Focal cortical
+involvement before the onset of GSWD has been demonstrated
+also by a magnetoencephalography study in human beings (158)
+and a near-infrared spectroscopy study applied on the frontal
+cortex (159). An exhaustive review on focal abnormalities in idio-
+pathic generalized epilepsy (IGE) has been recently published
+(160). All these ﬁndings support the conceptual transition from
+“primarily generalized epilepsy,” (implying that all brain regions
+simultaneously would generate GSWD) to seizures “originating
+within and rapidly engaging, bilaterally distributed networks” of
+cortical and subcortical regions (15).
+Concerning the role of subcortical structures, in patients
+with IGE, it has been shown that both the anterior nucleus of
+thalamus (ANT) and the centromedian/parafascicular (Cm/Pf)
+nucleus (which provides diffuse inputs to the cortex) are acti-
+vated during GSWD; the activity of the cortico-reticular Cm/Pf
+preceded that of the ANT, suggesting that the Cm/Pf is involved
+in GSWD initiation or early propagation, while the ANT in its
+maintenance (161).
+Recent studies have used fMRI to investigate whether resting-
+state FC between thalamus,basal ganglia,and DMN areas is altered
+in patients with IGE, even during GSWD-free periods of brain
+activity (Figure 4). Wang et al. (162) used ICA to map RSNs
+in 16 patients with IGE and 16 HC. They found that the DMN
+had simultaneously reduced FC within the anterior cingulate
+cortex,butincreasedconnectivityintheprecuneus.Moreover,they
+found widespread connectivity reductions in prefrontal, sensori-
+motor, and even auditory cortices (162). Reduced resting-state FC
+FIGURE 4 |This diagram summarizes the functional connectivity (FC)
+changes in patients with idiopathic generalized epilepsy compared to
+healthy controls. The color map shows the default-mode network
+(z-scores) derived from independent component analysis or RS-fMRI data
+overlaid on a standard single-subject anatomy (Montreal Neurological
+Institute space). Widespread FC reductions were found within the DMN
+(dashed lines), as well as between anterior DMN and the thalamus.
+Increased FC related to increased disease duration has been observed
+between posterior DMN regions and the parahippocampal gyrus (solid line).
+ACC, anterior cingulate cortex, IPL, inferior parietal lobule, PRE, precuneus,
+PHG, parahippocampal gyrus, TH, thalamus.
+between frontal areas and the rest of the DMN was later conﬁrmed
+(163). An important question is whether these changes in DMN
+connectivity are meaningfully related to clinical information, e.g.,
+disease duration or responsiveness to medication. Of note, in
+both aforementioned studies, there were signiﬁcant correlations
+between RS-FC and disease duration: the reduction in connec-
+tivity was inversely correlated to disease duration, indicating that
+long-standing epilepsy leads to progressive disruption of DMN
+integration. Interestingly, a study of structural and FC in 26 IGE
+patients and HC, showed that the degree of coupling between
+functional and structural connectivity networks is decreased,
+and exhibited a negative correlation with epilepsy duration in
+patients (164).
+Other RSNs can be affected in patients with IGE, reﬂect-
+ing speciﬁc cognitive impairment when compared to controls.
+A seed-based RS-FC study in 14 patients with IGE showed that
+attention network is impaired even in interictal periods, and that
+this impairment is related with the disease duration (165).
+One study in 60 IGE patients speciﬁcally addressed the question
+whether pharmacoresistance was correlated with RS-FC changes
+in the DMN (166). DMN connectivity was reduced in the IGE
+group compared to HC, and the strongest decrease was found
+in those patients that were resistant to valproate. Finally, a recent
+study directly addressed RS-FC within the thalamo-cortical system
+(167), ﬁnding decreased RS-FC between thalamus and anterior
+DMN. Collectively, these studies suggest that there is a loss of
+functional integration in the thalamocortical and default-mode
+system of the brain in IGE, even outside the GSWD. Although
+small sample size and heterogeneous methodology limit “gen-
+eralization,” the abnormal RS-FC patterns found in IGE so far
+could serve as endophenotypes of different IGE syndromes, and
+thus inform clinical diagnostics. Importantly, the confounding
+effect of anti-epileptic drug on dysconnectivity needs to be further
+elucidated.
+ThemostfrequentIGEsyndromeisjuvenilemyoclonicepilepsy
+(JME), where seizures are characterized by myoclonic jerks of
+the upper limbs, often triggered by cognitive inputs. Several RS
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 7
+
+
+--- 第 8 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+and task-related functional studies have shown an impairment
+of connectivity among supplementary motor area and the rest
+of the brain (168–170), suggesting that this structure may rep-
+resent the anatomic basis for triggering motor seizures in JME.
+JME patients have often personality characteristics suggestive of
+a frontal lobe dysfunction (e.g., risk-taking behavior, dysexecu-
+tive syndrome). A task-related FC study in JME patients (171)
+shows that patients with ongoing seizures learn less from previous
+experiences compared to seizure-free patients and to controls.
+Pediatric syndromes
+Numerous EEG-fMRI studies have been conducted on pedi-
+atric syndromes [for review, see in Ref. (172)]. Several studies
+in Lennox–Gastaut syndrome (173–175) have shown hemody-
+namic involvement of brainstem, thalamus, and basal ganglia dur-
+ing paroxysmal fast activity and slow spike-and-wave discharges,
+underlying the importance of cortical–subcortical networks in
+Lennox–Gastaut syndrome. A group-analysis study in patients
+with myoclonic-astatic-epilepsy (176) showed that GSWD are
+related not only to a thalamo-cortical network (commonly found
+in IGE), but also to brain areas associated with motor function,
+suggesting that the involvement of these structures may predispose
+to the typical myoclonic jerks observed in this syndrome.
+Concerningidiopathic focalepilepsiesof childhood,thesecom-
+prise a broad spectrum of phenotypes showing an overlap with
+each other, from benign childhood epilepsy with centro-temporal
+spikes (BECTS) to more severe seizure and cognitive disorders,like
+atypical benign partial epilepsy (ABPE), continuous spikes and
+waves during slow sleep (CSWS), and Landau-Kleffner syndrome.
+In patients with BECTS, EEG-fMRI studies have revealed focal
+spike-associated BOLD signal changes in the sensorimotor cor-
+tex, well corresponding to spikes localization, and typical seizure
+semiology (177–180). In patients with CSWS, a consistent neu-
+ronal network including both cortical and subcortical structures
+was described with positive BOLD signal changes in the perisyl-
+vian region, insula, cingulated cortex, and thalamus, and negative
+BOLD signal changes in the DMN areas and caudate nucleus
+(181). Source analysis of the simultaneously recorded EEG in
+these patients allowed differentiating initiation from propagation
+of epileptic activity in these common networks. The importance
+of assessing sleep state when studying networks is given by the
+report of a patient, whose centro-temporal spikes were recorded
+during wakefulness and sleep. BOLD response during wakefulness
+showed a focal activation concordant with the spike topography,
+whereas BOLD response to the same event during sleep showed
+the involvement of a thalamic–perisylvian neural network similar
+to the one previously observed in patients with CSWS, suggesting
+a common sleep-related network dysfunction even in cases with
+milder phenotypes (182).
+A single-subject and group-analysis study (183) on patients
+with ABPE demonstrated that this syndrome is characterized by
+patterns similar to studies in rolandic epilepsy (focal BOLD sig-
+nal changes in the spike ﬁeld) as well as patterns observed in
+CSWS (distant BOLD signal changes in cortical and subcortical
+structures), thereby corroborating the concept that idiopathic
+focal epilepsies of childhood form a spectrum of overlapping
+syndromes.
+An EEG-fMRI study in thirteen patients with ring 20 chro-
+mosome syndrome (184) shows speciﬁc networks involved by
+different interictal and ictal events of interest,suggesting that some
+hemodynamic networks are the expression of epilepsy-related
+cognitive and behavioral deﬁcits typical of ring 20 chromosome
+syndrome, whereas others can be common to other syndromes
+with neurobehavioral regression.
+INTRACRANIAL EEG STUDIES
+The indication for video-iEEG monitoring is the absence of a
+unique focal hypothesis regarding the source of the patient’s
+seizures (obtained with non-invasive investigation), or the need
+for cortical mapping of the epileptogenic cortex vs. eloquent cor-
+tex (7). Therefore, intracranial electrodes often sample from more
+than one lobe,although their spatial sampling remains limited and
+needs to be targeted using all available clinical and paraclinical
+information. Subdural grids allow dense sampling of the corti-
+cal convexity while intracerebral depth electrodes are able to reach
+deeper structures (e.g.,medial temporal structures); combinations
+of both techniques are feasible. Therefore, iEEG studies represent
+a unique opportunity to investigate seizure networks in human
+beings with optimal temporal and excellent spatial resolution.
+The concept of the seizure-onset zone as a single,circumscribed
+brain region implies that, assuming that intracranial electrodes
+sample this region,ictal iEEG activity should invariably start there.
+Careful observation of ictal iEEG recordings, however, reveals that
+this is not always the case. Rather, there are patients in whom
+clinically indistinguishable seizures seem to start at any of two or
+more distinct brain areas (100). Observations such as this were one
+of the major factors spurring the interest in considering seizure-
+generating brain regions as distributed networks. Therefore, the
+seizure-onset zone could be seen as the particular regions with the
+lowest seizure threshold while other regions could also give rise to
+independent seizure onsets, which explains the need to consider
+more than the sole seizure-onset zone for estimating the epilepto-
+genic zone. In an attempt to quantitatively analyze seizure-onset
+patterns, Bartolomei and colleagues (185) developed the epilepto-
+genicity index (EI),which takes into account the transition of iEEG
+activity toward higher frequencies (a general observation of ictal
+iEEG patterns) together with the delay in which the transition is
+observed compared to the ictal onset. This approach has revealed
+that in a signiﬁcant portion of TLE patients, the medial and lateral
+temporal lobe display similar EI, implying that both structures
+could equally subtend seizure generation. Also of interest, some
+patients with what seemed like TLE before implantation actually
+displayed the highest values of EI in the fronto-orbital, opercular,
+or insular cortex rather than the temporal lobe, and these patients
+had poorer outcomes after resective surgery, suggesting that they
+harbored more distributed seizure-generating networks not easily
+amenable to full resection (186). The number of brain regions with
+a high EI increases with the duration of epilepsy, suggesting that
+epilepsy networks may extend over time as a result of plasticity
+triggered by pathological activity (185, 186).
+The same authors analyzed the neurophysiological correlates
+of alterations of consciousness in TLE (187). They found that
+alteration of consciousness was associated with increased broad-
+band synchronization in a network of structures, which were
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 8
+
+
+--- 第 9 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+mainly extra-temporal, including the thalamus, cingulate cortex,
+and parieto-temporal association cortex. Consciousness was pre-
+served as long as excessive synchrony was conﬁned to the temporal
+lobe.Similarly,lossof consciousnessinparietalseizureswasassoci-
+ated with widespread parietal and frontal synchronization (188).
+The authors framed these observations into the context of the
+global workspace theory, in which the sustained synchronization
+of neuronal activity in widely distributed modules renders percep-
+tions, memories, and intentions available to consciousness (189).
+This work rejoins observations made with single photon emis-
+sion computed tomography that temporal lobe seizures causing
+altered consciousness were associated with widespread cortical
+and subcortical blood-ﬂow alterations (190). That group later
+showed increases in the power of delta oscillations in the frontal
+and parietal association cortices during seizure-related loss of con-
+sciousness (191). Results from studies in a rat model of complex
+partialseizuressuggestthatthesewidespreadchangesarecausedby
+transientalterationof activityinthesubcorticalseptalnuclei(192),
+implying that the widespread effects of temporal lobe seizures on
+cortical networks could be mediated indirectly via the midline
+arousal structures (193).
+Measures of directed connectivity in seizure networks are start-
+ing to reveal the internal organization of the individual nodes that
+make up the network. To date, most iEEG studies use mathemat-
+ical approaches to determine the direction of connections. For
+instance, using focal cortical dysplasia as a model of a circum-
+scribed seizure-onset zone and applying partial directed coherence
+analysis, Varotto et al. (12) found that the focal dysplasia indeed
+acted as the initial generator of ictal activity, as evidenced by its
+greater out-degree both interictally, pre-ictally, and during ictal
+onsets [the out-degree is a summary measure of the inﬂuence of
+one network node on all the others (194)]. Cortical-areas remote
+from the morphological lesion could also be involved in the onset
+orearlypropagationof ictalhigh-frequencyactivityandcouldthus
+represent secondary foci. Wilke et al. (195) used frequency-band-
+speciﬁc betweenness centrality, a graph theoretical measure of the
+“importance”of a node in network pathways,to demonstrate a sig-
+niﬁcant overlap between the intracranial electrodes showing the
+highest betweenness centrality and the seizure-onset zone delin-
+eated visually by clinical neurophysiologists, as well as the resected
+cortical area. That correspondence was present both during ictal
+and interictal recordings and was highest for gamma-band fre-
+quencies. In addition, the analysis also revealed nodes with high
+betweenness centrality that had not been clinically identiﬁed as
+part of the seizure-onset zone. Van Mierlo et al. (196) showed
+that the single intracranial electrode with the highest out-degree
+during seizure onsets was included in the clinically deﬁned seizure-
+onset zone as well as the resection area in all of eight patients.
+These ﬁrst ﬁndings suggest that analyzing epileptic networks in
+the framework of graph theory, taking into account the direction
+of connections between nodes in the network, can help clinicians
+delineate the primary drivers from secondary nodes in seizure
+nodes [see also in Ref. (197) for a review]. In the near future, we
+expect that the tools of graph theory will be applied more generally
+to iEEG data to describe more fully the spatio-temporal dynamics
+of seizure networks. Another unique perspective could be offered
+by the analysis of simultaneous recordings of iEEG and fMRI (198,
+199)tocombinethespatialresolutionof iEEGwiththemappingof
+whole-brain BOLD changes related to epileptic activity. This could
+allow bridging the poorly understood gap between increased iEEG
+connectivity and reduced BOLD connectivity within epileptic
+networks (108).
+Micro-electrode studies in human beings
+Another potential breakthrough in the investigation of epileptic
+networks could stem, in a somewhat paradoxical fashion, from
+micro-electrode array recordings, which revealed new insights on
+the pathophysiology of epilepsy. Schevon et al. (200) inserted
+arrays comprising of 96 electrodes arranged in a 4-by-4-mm
+square pattern in the putative seizure-onset zone allowing to
+record single unit activity in cortical layers 4 and 5 as well as
+recording the local-ﬁeld potentials. They showed that there is a
+sharp delineation (at a sub-millimetric scale) between cortical-
+areas involved in intense hypersynchronous ﬁring (the hallmark of
+ictal activity,based on animal studies) and adjacent areas with only
+mildlyincreasedﬁringrateandsynchrony.Crucially,visualinspec-
+tion of the iEEG alone did not allow distinguishing between what
+theauthorstermedtheseizurecoreandits(presumably)inhibitory
+penumbra. The same investigators further proposed that ictal
+high-frequency oscillations phase-locked to the lower-frequency,
+high-amplitude ictal iEEG recorded by standard intracranial elec-
+trodes might represent a signature of increased ﬁring in the seizure
+core (201). These new ﬁndings open the possibility of investigating
+neuronal ﬁring in distributed seizure networks using conventional
+iEEG electrodes, without the need for micro-electrode arrays.
+Future work building on these exciting ﬁndings will likely increase
+our understanding of the ways in which seizures alter normal
+neuronal ﬁring across the nodes of the involved networks.
+Direct electrical stimulation studies
+Direct electrical stimulation (DES) in epileptic patients consists
+of administering electrical currents to the brain tissue in order to
+transiently inﬂuence or perturb its function. A technique almost
+as old as epilepsy surgery, it has mostly been used to probe the
+function of the cortex directly underlying or surrounding the stim-
+ulation site (202–205). In that context,DES is generally delivered at
+high frequencies (e.g., 50–60 Hz) for a few seconds with the aim of
+inducing clinical changes in the patient (206). More recently, DES
+has also been used to investigate FC; in that case,single stimulation
+pulses are delivered at low frequencies (e.g., 1 Hz) and the readout
+consists of time-locked perturbations in the activity of points dis-
+tant from the stimulation site (cortico-cortical evoked potentials,
+CCEPs) (207). An interesting aspect of DES-based FC assessments
+is that they are directed, i.e., the effect of stimulation at site A on
+site B is not necessarily symmetrical with the effect of stimulating
+B on A (Figure 5). There is an intuitive appeal to this “hands-on”
+interventional approach to reveal directional connectivity. Evoked
+effective connectivity was found to correlate with FC measured
+by resting-state fMRI (22) as well as with anatomical connectiv-
+ity probed by diffusion tensor imaging (208). It has been pointed
+out, however, that DES can activate axons in the antidromic as
+well as the orthodromic direction, and could also stimulate ﬁbers
+de passage, an important caveat to keep in mind when interpret-
+ing the directionality information provided by these data (209).
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 9
+
+
+--- 第 10 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+FIGURE 5 | Evoked effective connectivity reveals the directionality of
+neural connections in the human brain. In this example, subdural
+electrodes are represented by circles, and CCEP responses as lines linking
+bipolar electrode pairs. Missing (e.g., artifacted) data are indicated by light
+gray lines, sub-threshold (non-signiﬁcant) responses by black lines, and
+signiﬁcant responses by progressively lighter shades of blue.
+(A) Stimulation of the middle frontal gyrus (electrode pair colored in pink)
+triggers widespread responses in the frontal and temporal lobes, including
+the middle temporal gyrus (inset: CCEP waveform from 50 ms before to
+250 ms after stimulation; the arrow indicates the time of stimulation). By
+contrast, stimulation of the middle temporal gyrus (B) does not evoke any
+signiﬁcant response in the frontal lobe, illustrating that effective
+connectivity between remote brain structures is not necessarily reciprocal.
+This highlights the importance of aiming at obtaining multimodal
+functional and structural information to better understand brain
+connectivity and dynamics.
+Evoked effective connectivity has revealed strong intralobar
+connectivity in the temporal and frontal lobes, as well as connec-
+tions between the frontal and temporal lobes that are more promi-
+nent in the frontal-to-temporal than in the temporal-to-frontal
+direction (210, 211). An intriguing aspect of these studies is the
+observation that, whereas interhemispheric connections between
+the frontal lobes are relatively common, temporal-temporal con-
+nections appear sparse, being observed in <20% of patients (211).
+This begs the question of which neuronal pathways are responsible
+for bitemporal synchronized spiking as well as the propagation of
+seizures from one temporal lobe to the other one (212). Recently,
+David et al. (213) generalized this approach offering to develop an
+atlas of evoked effective connectivity that would eventually allow,
+through data sharing,sampling most of the human brain’s volume.
+Direct electrical stimulation has also been used to speciﬁ-
+cally evaluate epileptic networks, the general idea being that the
+responses of remote sites to stimulation of epileptogenic cortex
+(214) or the responses of epileptogenic cortex to stimulation of
+remote sites (215) differ from those involving only normal brain
+tissue. Interestingly, the network of brain areas that respond to
+DESof theseizure-onsetzoneoverlapspartiallybutnotcompletely
+with the areas of ictal propagation, suggesting both that seizures
+propagate sequentially through multiple nodes in the network and
+that some existing connections between the seizure-onset zone
+and distant brain areas“shut down”during seizures (216). Further
+research combining iEEG and DES, as well as integrating these
+techniques with fMRI and high-density non-invasive electromag-
+neticrecordings,willimproveourunderstandingof thephysiology
+of seizure networks.
+WHAT WE CAN LEARN FROM ANIMAL MODELS
+Recording the activity of any node suspected to be determinant in
+the disease is not feasible in human beings, contrarily to animal
+research. Moreover,animal-related technologies offer the possibil-
+itytodesiccateandmanipulatecellularandmolecularcomponents
+of such networks, as well as scrutinizing the associated structural
+and functional alterations. A great perspective in pathological
+networks study is detecting features associated with the risk of
+recurrence after a ﬁrst seizure as well as predicting the evolution
+toward pharmaco-resistance.
+Animal models allow studying networks connectivity and
+recording the underlying brain activity with high spatial coverage
+and resolution (217), and addressing the process of epilepto-
+genesis and ictogenesis, including their molecular and genetic
+mechanisms at cellular and subcellular levels (218–222). Imbal-
+ance between excitation and inhibition might not only occur at the
+local microscopic level (223, 224), but could also reﬂect dysregula-
+tion of excitatory and inhibitory neuronal interactions at a larger
+(network) scale. Recent evidence emphasizes the modiﬁcations of
+the network dynamic, or network conﬁguration that character-
+izes, and sometimes precedes or even predicts a seizure. Network
+analysis could be a powerful tool to more precisely deﬁne the dif-
+ferent epilepsies and develop new treatments that target networks,
+instead of focal activity (11, 100).
+In animals and human beings, focal onsets have been identiﬁed
+in generalized epilepsy, and complex large-scale network involve-
+ment has been shown in focal epilepsies (8, 11, 14). Spontaneous
+epileptic disease occurs in animals, as in the case of the genetic
+absence epileptic rats of Strasbourg (GAERS) or in the WAG/Rij
+rats (225–227); other models studied are epileptic conditions
+induced by – mainly – chemical or electrical interventions (220).
+A major animal model of TLE is the kainate, or pilocarpine, model
+of hippocampal sclerosis (HS) (228–232). Kainate,a glutamatergic
+agonist, is injected either in the hippocampus or intraperitoneally.
+It is suspected that the kainate has a tropism for the hippocam-
+pus, which led several authors to consider that the kainate induces
+speciﬁcally a HS. Yet, the mechanisms by which kainate induces
+an epileptic activity is still debated; the immune system and leak-
+age of the blood–brain barrier have been cited as critical for the
+expression of the disease (233, 234). Hence, it is not excluded that
+systemic kainate may have diffuse effects on the brain.
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 10
+
+
+--- 第 11 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+Models of focally induced epileptic disorders might avoid this
+limitation. One of them, electrical kindling, triggers focal epilep-
+tic activity using focal electrical stimulation in accordance with
+standard stimulation parameters,e.g.,duration of the stimulation,
+frequency, and intensity of the stimulus (220, 235, 236). The emer-
+gence of a distant pathological activity can be related to remote
+effects of the focally induced epilepsy, and not to the direct diffuse
+effects of the electrical or chemical triggers. Electrical stimulation,
+in particular of the performant-path, has also been described as a
+model of induced status epilepticus (237, 238).
+CONNECTIVITY STUDIES IN ANIMALS
+Electrophysiology can assess connectivity and RS networks in ani-
+mal models of epilepsy by recording several brain regions simul-
+taneously. The great advantage is that the signal can be directly
+linked to neuronal activity. Using intrahippocampal recording
+in a rat model of induced TLE, Wang et al. (239) showed that
+neuronal pairs presented a decreased FC prior to the status epilep-
+ticus induced by an intraperitoneal injection of pilocarpine. Using
+Graph Theory measures in an in vitro Mg2+-free model of hip-
+pocampal epilepsy, Gong et al. (240) reported the modiﬁcations
+in network conﬁguration that appear in parallel to epileptiform
+discharges. More interestingly, they revealed that the changes in
+network conﬁguration appeared before and lasted longer than the
+epileptiform discharges (240). These two observations suggest that
+the classical ictal activity, i.e., the presence of spikes in the EEG,
+could be the resultant of network reconﬁguration, i.e., it could
+even be an epiphenomenon of a more profound alteration in brain
+connectivity, indicating that it could be possible to identify certain
+network alterations as a biomarker of epilepsy. Such studies aimed
+at identifying markers of an upcoming ictal activity and have
+mainly looked at the local activity changes (241). Knowledge on
+remote involvement is sparse. Recent works (224) showed struc-
+tural alterations remote from the focus, but only a few evidence of
+distant, abnormal neuronal activity exists (242). Major advance-
+ment has been made to record as many neurons or neuronal
+populations as possible at the same time (145,243–248);this shows
+the feasibility to investigate large-scale networks in animal models
+with high temporal and spatial resolution (Figure 6). Their combi-
+nation with effective connectivity measures (25) will help to better
+understand the hierarchical organization of epileptic networks.
+Gong et al. (240) demonstrated the leading activity of pyramidal
+cells over granular cells in an in vitro model of TLE, illustrating
+the utility of effective connectivity in the ﬁeld of epilepsy.
+Research on animal models of epilepsy has been dominated by
+invasive electro-physiology technique. Recently, the combination
+of EEG and fMRI has emerged with interesting results, such as
+those reported by Englot et al. (192), where they describe how a
+partial limbic seizure lead to neocortical slow-wave activity; yet,
+technical issues makes difﬁcult to obtain combined EEG-fMRI in
+awake animals. As in Englot et al. (192), fMRI could possibly be
+a powerful in vivo screening method for anatomical regions that
+could then be more deeply investigated with EEG.
+Using fMRI, Mishra et al. (249) showed that rats submitted
+to traumatic brain injury through left parietal ﬂuid percussion
+presented a decreased correlation coefﬁcient between the left pari-
+etal cortex and other brain regions. Dysfunctional activity in the
+FIGURE 6 | Dynamic of somato-sensory network mapped with
+high-density EEG. Somato-sensory evoked potential (SEP) from left
+whisker stimulation. Top left: each black dot represents the position of one
+recording electrode; the most anterior one is ground.Top right: 31 electrode
+traces displaying the SEP with sub-milliseconds resolution. Bottom left: the
+same electrode traces represented over the mouse brain. In the
+lissencephalic mouse brain, dipoles are estimated to be generated below
+the recording electrodes. Bottom right: segmentation of the SEP in six
+stable conﬁgurations of potential maps. The technique’s high spatial and
+temporal resolutions identify the ﬁrst component, somato-sensory barrel
+ﬁeld activity, followed by motor cortex and contra-lateral somato-sensory
+areas recruitment within a few milliseconds. Adapted from Megevand et al.
+(243) with permission.
+left parietal cortex, as highlighted by the decreased correlation
+coefﬁcient could have been expected, yet the pattern of resting
+BOLD-fMRI connectivity showed that only certain regions were
+speciﬁcally affected, namely the left hippocampus and the contra-
+lateral parietal cortex. This illustrates that BOLD-fMRI can be
+used to identify secondary dysfunctional brain regions in rodents
+following a proepileptogenic injury (249). The same group inves-
+tigated with fMRI the FC in WAG/Rij rats (250) and found an
+increased correlation between brain areas suspected to be involved
+in seizures when compared to non-epileptic rats; more impor-
+tantly, this increase was observed outside of the ictal periods. Choi
+et al. (251) performed a FC study using the 18ﬂuorodeoxyglucose
+positron emission tomography (PET) signal in a rat model of
+TLE. They revealed the decreased correlation of several pairs of
+brain structures, most of them included left amygdala and left
+entorhinal cortex (251). Hence, despite the systemic injection of
+pilocarpine, the affected network appeared to be mainly restricted
+to the left hemisphere (251). It would have been very interesting
+to see if the electro-physiological counterpart of such functional
+deﬁcit was also restricted to one hemisphere, yet no EEG record-
+ing was reported. Asymmetry in the central nervous system is well
+recognized, e.g., asymmetry of the temporal lobes, but the reason
+why the left hemisphere appears to be more functionally altered
+in this rat model of TLE is unclear, although electro-physiological
+experiments suggest that the left hemisphere is indeed more prone
+to develop epileptic discharges (252). The authors claimed that
+the PET images were acquired in the interictal period, but no
+EEG recording was used (251); yet, if true, this would suggest that
+epileptic animals can be identiﬁed as such on the basis of the FC
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 11
+
+
+--- 第 12 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+of particular networks outside of any ictal activity. These studies
+(249–251) indicate that the pathological process in these rats is
+ongoing: the epileptic brain is not suffering from epilepsy only
+during seizures.
+The anatomical basis of FC is largely unclear. Zhou et al. (253)
+nicely investigated the anatomical substrate and plasticity of such
+connections. They observed that after partial posterior calloso-
+tomy of wild-type rats, the FC of the auditory and visual cortices
+decreased at day 7 and returned to baseline at day 28, whereas
+this decrease was still present in rats submitted to complete cal-
+losotomy (253). The authors concluded that it could be possible
+to identify the anatomical basis of FC, and that these functional
+connections were also capable of plasticity. This is an important
+proof-of-concept: it is possible to identify morphological substrate
+of functional connections and manipulate them.
+DIFFERENTIAL INVOLVEMENT OF SPECIFIC BRAIN REGIONS IN ANIMAL
+MODELS OF GENERALIZED EPILEPSY
+Different rat models of generalized absence epilepsy have been
+studied and all share the presence of the characteristic SWDs (254,
+255). Using combined EEG-fMRI in WAG/Rij rats, Mishra et al.
+(250) demonstrated that during SWDs,the associated ﬂuctuations
+in the BOLD signal were speciﬁc to certain brain regions. Indeed,
+the somato-sensory barrel ﬁeld showed an increase, whereas the
+striatumshowedadecreaseintheBOLDsignalandcerebralblood-
+ﬂow (225, 250). On the other hand, the local-ﬁeld potential (LFP)
+and the multi-unit activity (MUA) were increased in both regions
+(225). Vascular steal or dopamine-regulated blood volume could
+account, at least in part, for this lack of matching between BOLD
+signal and CBF on the one hand and LFP and MUA on the other
+hand (225). An earlier study using surface and deep EEG record-
+ings in the same rat-model showed that these rats shared a similar
+focuslocatedintheventrolateralpartof thesomato-sensorycortex
+(SC) (145). More importantly, the authors observed that the ictal
+activity of the cortical focus preceded the one in the thalamus,sug-
+gesting that the cortex was leading the thalamus (145). Nersesyan
+et al. (256) investigated the relation between SWDs and CBF in the
+same animal model. They showed that regions involved in SWDs,
+i.e.,SC,presenteda1-to2-sdelayedincreaseinCBFduringaSWD,
+whereas this increase did not appear in regions not involved in the
+SWDs,such as primary visual cortex (256). In a parallel work using
+the same animal model of absence epilepsy, they observed that the
+BOLD signal was not equally modiﬁed across brain regions during
+a SWD (257): the somato-sensory and motor cortices, as well as
+subcortical regions, i.e., thalamus, basal ganglia, and brainstem,
+showed an increased BOLD signal, whereas other regions such as
+the occipital cortex did not show such a modulation of the sig-
+nal (257). Again, the increase in the BOLD signal appeared with
+a lag of a few seconds after the electro-physiological SWDs (257).
+This ﬁnding is in contrast with a work by Desalvo et al. (258), in
+which they used a rat model of generalized tonico-clonic seizures
+induced by injection of iv bicuculline, and observed that BOLD
+increased signiﬁcantly in primary and secondary somato-sensory
+cortices, as well as in primary auditory cortex and thalamus before
+the onset of electro-physiological seizures. The role of the SC in
+initiating GSWDs was further investigated through inactivation
+of this cortical region in GAERS animals (259). The pharmaco-
+logical inactivation of the SC with the sodium channel blocker
+tetrodotoxine prevented the spike-and-wave activity; yet unilateral
+application of the drug did not completely abolish the abnormal
+contra-lateral oscillations. On the whole, these studies highlight
+the importance of abnormal focal brain activity as a potential trig-
+ger of generalized seizures (258). The identiﬁcation of interacting
+yet independent nodes within a network of suspected generalized
+epilepsy is a major advance in epilepsy research. Indeed,it will per-
+mit to reﬁne the therapeutic intervention toward the manipulation
+of one particular and decisive node.
+SHORT-RANGE AND LONG-RANGE NETWORK MODULATIONS IN
+ANIMAL MODELS OF FOCAL EPILEPSY
+Different animal models of focal epilepsy exist (220), such as the
+kainate- or pilocarpine-models of MTLE (228,229,260),posttrau-
+matic epilepsy (261, 262), or electrical kindling (227, 263). Despite
+an initially focal insult, recent evidence (e.g., 242) shows that
+remote brain areas become affected by the pathological activity
+of the epileptic focus.
+The induction of a focal epileptic syndrome in a rat model
+of generalized epilepsy allows better understanding how these
+two entities interact. Carcak et al. (227) took advantage of the
+fact that absence epilepsy may increase the resistance to limbic
+seizures. They investigated the role of the cortico-thalamo-cortical
+circuitry, involved in SWDs, in the development of limbic seizures
+induced by unilateral electrical stimulation of the rat amygdala.
+Whereas control rats, i.e., those without absence epilepsy, pre-
+sented all convulsive epileptic seizures following amygdala elec-
+trical stimulation, rats suffering from absence epilepsy did not
+(227). In order to understand how the circuit involved in absence
+epilepsy could affect the one of TLE, the authors investigated
+the spontaneous activity in the reticular thalamic nucleus (RTN),
+known to be involved in the slow-waves discharges that character-
+ize absence epilepsy (227). Remarkably, the electrical stimulation
+of the amygdala had a different effect on the mean ﬁring fre-
+quency of neurons of the RTN: in not-stimulated animals, there
+was no signiﬁcant difference between epileptic and non-epileptic
+rats, whereas the increase after stimulation was higher in epilep-
+tic rats when compared to non-epileptic rats (227). This suggests
+ﬁrst that the development of an epileptic focus alters the activity
+of neurons in the RTN and second that this alteration depends
+on the activity before the induction of the epilepsy. The use of
+Wistar rats as controls for GAERS rats in that study is commonly
+accepted, but could still be questioned; yet the conclusion would
+still remains the same: the effects of an epileptic focus seem to
+depend on the brain state in which it is being established. It
+would hence be interesting to investigate how an epileptic focus
+affects a given network, but also how a particular network con-
+ﬁguration can modulate the effects of an epileptic focus. The
+involvement of the thalamus in propagation of temporal lobe
+seizures has already been the scope of several studies (156, 264).
+If the thalamus has a major role in the generation of SWDs
+(227), this could highlight the relevance of studying the interac-
+tion between hippocampus and thalamus, in the context of focal
+epilepsies.
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 12
+
+
+--- 第 13 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+Hippocampal sclerosis is a frequent lesion that has been
+deeply investigated, although, most of the works conducted local,
+intrahippocampal recordings. Yet, recent publications have shown
+the involvement of remote brain areas. Using 16 bipolar deep elec-
+trodes in the pilocarpine rat-model of HS, Toyoda et al. (247)
+showed that the initial focus varied from one seizure to another
+in each individual rat. The subiculum, the dorsal and ventral
+hippocampus, and the amygdala were the regions where seizure
+onsets were most often recorded. All regions could be considered
+as belonging to the same network; indeed, an interesting obser-
+vation is that most seizures were convulsive, and this did not
+depend upon where the seizure started (247). This suggests that the
+involved network is more determining than the seizure-onset zone
+for the clinical expression of a seizure. Long-range modiﬁcations
+in the kainate mouse-model of TLE were also observed. It has been
+shown that non-injected hippocampus presented indeed morpho-
+logicalalterations,notablyintheexpressionof theneuropeptide-Y,
+which is known to modulate neuronal activity (265, 266), and
+electro-physiological changes, such as signiﬁcant decrease in the
+power of the theta frequency band (265). In vitro, Khalilov et al.
+(267) demonstrated that a mirror focus in the contra-lateral hip-
+pocampus appears after 10–15 successive applications of kainate
+in the ipsilateral hippocampus. These ﬁndings are in line with
+the hypothesis that an epileptic focus leads to permanent electro-
+physiological and morphological modiﬁcations in remote brain
+areas (268–270). Other works have also stressed the possibility that
+subcortical brain regions,such as the basal ganglia,could inﬂuence
+or even inhibit the progression of an ictal activity originating from
+the temporal lobe (271, 272).
+Evidence of distant brain involvement arises also from electri-
+cally induced epilepsy. For instance, during hippocampal seizures
+induced by electrical stimulation in rats, the frontal neocortex
+presented a parallel modiﬁcation in spontaneous activity, i.e., fast
+polyspike activity when the seizure was generalized and slow oscil-
+lations when it was partial (242). This example illustrates that
+distant brain areas are affected even after a few or only one focal
+epileptic seizure. It would be extremely interesting to study how
+this involvement evolves in a chronic disease.
+On the whole, evidence exists that other brain areas are
+recruited in propagation or in inhibition of the seizure spread.
+Hence, the epileptic threshold does not seem to depend only on
+the imbalance between excitation and inhibition within the focus,
+but could also be determined by the intricate interactions between
+the components of a given network.
+EXPERIMENTAL THERAPEUTIC INTERVENTIONS ON THE EPILEPTIC
+NETWORK
+Conceiving epilepsy as a network disease has therapeutic con-
+sequences. The classical view is to modulate the activity of the
+so-called epileptic focus, or seizure-onset zone, in order to con-
+trol the disease. Yet, any node of an epileptic network could
+possibly be a target. In this sense, open-loop or closed-loop
+devices, either through electrical or optogenetic stimulation, are
+promising tools for generalized (217) as well as for focal epilepsy
+(273, 274). Major work has shown that it is possible to iden-
+tify critical nodes in a given epileptic network: the modiﬁcation
+of their activation – mainly inhibition – could help to control,
+or even stop an ictal activity. Paz et al. (274) showed in a rat
+model of cortical epilepsy that the inactivation through optoge-
+netics of the thalamic ventrobasal nucleus could stop an ongoing
+seizure. In the same line, Langlois et al. (264) showed in an
+in vivo model of TLE that DBS of the ipsilateral parafascicular
+nucleus of the thalamus (PF) stopped the ongoing hippocam-
+pal paroxysmal discharges (HPD), while higher current intensities
+were needed to stop the HPD if DBS was applied to neighbor-
+ing areas (264), illustrating the speciﬁcity of PF in controlling
+HPDs. The anterior thalamic nucleus (ANT) appears also to be
+involved in control or spread of epileptic activity of mesial tempo-
+ral onset (156).Ablation or electrical stimulation of ANT increases
+the epileptic threshold (263, 275–277); yet, opposite results have
+also been observed (278). On the whole, ANT is a recognized
+target for refractory epilepsy, although mechanisms by which
+manipulation of the ANT increases epileptic threshold are poorly
+understood. Use of animal research and the possibility to iden-
+tify how the activity of ANT may modulate epileptic activity
+at remote sites, e.g., with the use of effective connectivity mea-
+sures, is crucial to tailor therapeutic interventions. Such recent
+evidence shows that the manipulation of the primary epilep-
+tic focus does not seem to be the only possibility to achieve
+the control of an epileptic disease. The thalamus in particular,
+and other subcortical regions as well (272) have been identiﬁed
+as major targets for epileptic network modulation culminating
+in clinical applications in the form of DBS of ANT in focal
+epilepsies (279).
+CONCLUSION
+With increasingly complex methodological strategies and an ever-
+increasing wealth of possible approaches, the study of brain con-
+nectivity and its neuroscientiﬁc and clinical correlates are very
+promising. Nevertheless, the application of connectivity tech-
+niques for diagnostic or prognostic purposes requires further
+studies to be ﬁrmly grounded by invasive studies and sufﬁcient
+follow-up investigations before it can be reliably applied to the
+clinical management of individual patients. Combining func-
+tional techniques can lead to the achievement of complementary
+information for improving each single technique.
+Focal epilepsies, despite focal epileptogenic zone, are dis-
+eases affecting the whole brain: altered large-scale FC is reﬂected
+in neuropsychological features of individual speciﬁc syndrome.
+Hippocrates (400 years b.c.) considered epilepsy as a systemic
+disease, centered in the brain, due to an altered “deﬂuxion of
+cold phlegm” through the body. In more recent times, the con-
+cept of epilepsy as “focus disease” has been largely developed
+(280–282), whereas in the last decade it has shifted to a “brain-
+network disease” (15). In parallel to the “brain-network” concept
+of epilepsy, psychiatric and neurological co-morbidities, such as
+strokes, dementia, and migraine are more and more deﬁned.
+Interestingly, somatic co-morbidities have also come to light,
+since several medical conditions, such as cardiac, gastrointesti-
+nal, and respiratory disorders, are often associated with epilepsy
+(283). These ﬁndings may lead to re-consider epilepsy as a “sys-
+temic disease,” this time with the diagnostic and therapeutic
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 13
+
+
+--- 第 14 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+knowledge obtained recently by ground-breaking work on net-
+work analysis.
+Concerning “generalized” epilepsy, neuro-imaging, and espe-
+cially connectivity studies have allowed considering them as focal
+brain disorders with fast bilateral discharge propagation. This
+concept leads to the idea that focal and generalized epilepsies
+are the two extremes of a single spectrum and to a possible
+new way of studying mechanisms of AED: do they have an
+effect on particular nodes of a network where receptors are more
+expressed? Is it possible to detect an anatomical target to avoid
+generation/propagation of seizures, using disconnection or stim-
+ulation? For all these reasons, translational research in light of
+network analysis, based on fundamental science through animal
+experiments and clinical perspectives through human research,
+opens new opportunities to better understand the complexity
+of epilepsy and deﬁne new and more effective treatments for
+patients.
+ACKNOWLEDGMENTS
+Francesca Pittau is supported by the Swiss National Science Foun-
+dation (FNS SPUM grant 140332). Serge Vulliemoz is supported
+by grant FNS 141165 and the Gertrude von Meissner Foundation.
+Laurent Sheybani is supported by grant FNS 323530_158125).
+Frédéric Grouiller is supported by the Center for Biomedical Imag-
+ing of the Universities and Hospitals of Geneva and Lausanne,
+and EPFL. We thank Dr. Gaetano Cantalupo (Verona) for the
+thoughtful comments during the manuscript preparation.
+REFERENCES
+1. Hauser WA, Annegers JF, Kurland LT. Incidence of epilepsy and unprovoked
+seizures in Rochester, Minnesota: 1935-1984. Epilepsia (1993) 34:453–68.
+2. Sander JW. The epidemiology of epilepsy revisited. Curr Opin Neurol (2003)
+16:165–70. doi:10.1097/00019052-200304000-00008
+3. Schuele SU, Luders HO. Intractable epilepsy: management and therapeu-
+tic alternatives. Lancet Neurol (2008) 7:514–24. doi:10.1016/S1474-4422(08)
+70108-X
+4. Bancaud J. Surgery of epilepsy based on stereotactic investigations – the plan
+of the SEEG investigation. Acta Neurochir Suppl (Wien) (1980) 30:25–34.
+doi:10.1007/978-3-7091-8592-6_4
+5. Spencer S, Huh L. Outcomes of epilepsy surgery in adults and children. Lancet
+Neurol (2008) 7:525–37. doi:10.1016/S1474-4422(08)70109-1
+6. De Tisi J, Bell GS, Peacock JL, McEvoy AW, Harkness WF, Sander JW, et al. The
+long-term outcome of adult epilepsy surgery, patterns of seizure remission,
+and relapse: a cohort study. Lancet (2011) 378:1388–95. doi:10.1016/S0140-
+6736(11)60890-8
+7. Rosenow F, Luders H. Presurgical evaluation of epilepsy. Brain (2001)
+124:1683–700. doi:10.1093/brain/124.9.1683
+8. Laufs H, Hamandi K, Salek-Haddadi A, Kleinschmidt AK, Duncan JS, Lemieux
+L. Temporal lobe interictal epileptic discharges affect cerebral activity in
+“default mode” brain regions. Hum Brain Mapp (2007) 28:1023–32. doi:10.
+1002/hbm.20323
+9. Gotman J. Epileptic networks studied with EEG-fMRI. Epilepsia (2008)
+49(Suppl 3):42–51. doi:10.1111/j.1528-1167.2008.01509.x
+10. Fahoum F, Lopes R, Pittau F, Dubeau F, Gotman J. Widespread epileptic
+networks in focal epilepsies-EEG-fMRI study. Epilepsia (2012) 53:1618–27.
+doi:10.1111/j.1528-1167.2012.03533.x
+11. Richardson MP. Large scale brain models of epilepsy: dynamics meets connec-
+tomics. J Neurol Neurosurg Psychiatry (2012) 83:1238–48. doi:10.1136/jnnp-
+2011-301944
+12. Varotto G, Tassi L, Franceschetti S, Spreaﬁco R, Panzica F. Epileptogenic net-
+works of type II focal cortical dysplasia: a stereo-EEG study. Neuroimage (2012)
+61:591–8. doi:10.1016/j.neuroimage.2012.03.090
+13. Engel J Jr, Thompson PM, Stern JM, Staba RJ, Bragin A, Mody I. Connec-
+tomics and epilepsy. Curr Opin Neurol (2013) 26:186–94. doi:10.1097/WCO.
+0b013e32835ee5b8
+14. Stefan H, Lopes da Silva FH. Epileptic neuronal networks: methods of identiﬁ-
+cation and clinical relevance. Front Neurol (2013) 4:8. doi:10.3389/fneur.2013.
+00008
+15. BergAT,Berkovic SF,Brodie MJ,Buchhalter J,Cross JH,Van Emde BoasW,et al.
+Revised terminology and concepts for organization of seizures and epilepsies:
+report of the ILAE commission on classiﬁcation and terminology, 2005-2009.
+Epilepsia (2010) 51:676–85. doi:10.1111/j.1528-1167.2010.02522.x
+16. Gotman J, Grova C, Bagshaw A, Kobayashi E, Aghakhani Y, Dubeau F. Gener-
+alized epileptic discharges show thalamocortical activation and suspension of
+the default state of the brain. Proc Natl Acad Sci U S A (2005) 102:15236–40.
+doi:10.1073/pnas.0504935102
+17. Smith SM, Fox PT, Miller KL, Glahn DC, Fox PM, MacKay CE, et al.
+Correspondence of the brain’s functional architecture during activation
+and rest. Proc Natl Acad Sci U S A (2009) 106:13040–5. doi:10.1073/pnas.
+0905267106
+18. Biswal BB, Mennes M, Zuo XN, Gohel S, Kelly C, Smith SM, et al. Toward
+discovery science of human brain function. Proc Natl Acad Sci U S A (2010)
+107:4734–9. doi:10.1073/pnas.0911855107
+19. Tomarken AJ, Waller NG. Structural equation modeling: strengths, limita-
+tions,and misconceptions. Annu Rev Clin Psychol (2005) 1:31–65. doi:10.1146/
+annurev.clinpsy.1.102803.144239
+20. Friston KJ, Harrison L, Penny W. Dynamic causal modelling. Neuroimage
+(2003) 19:1273–302. doi:10.1016/S1053-8119(03)00202-7
+21. Granger CWJ. Investigating causal relations by econometric models and cross-
+spectral methods. Econometrica (1969) 37:424–38. doi:10.2307/1912791
+22. Keller CJ, Bickel S, Entz L, Ulbert I, Milham MP, Kelly C, et al. Intrinsic func-
+tional architecture predicts electrically evoked responses in the human brain.
+Proc Natl Acad Sci U S A (2011) 108:10308–13. doi:10.1073/pnas.1019750108
+23. AstolﬁL, Cincotti F, Mattia D, De Vico Fallani F, Lai M, Baccala L, et al. Com-
+parison of different multivariate methods for the estimation of cortical con-
+nectivity: simulations and applications to EEG data. Conf Proc IEEE Eng Med
+Biol Soc (2005) 5:4484–7. doi:10.1109/IEMBS.2005.1615463
+24. Smith SM, Miller KL, Salimi-Khorshidi G, Webster M, Beckmann CF,
+Nichols TE, et al. Network modelling methods for FMRI. Neuroimage (2011)
+54:875–91. doi:10.1016/j.neuroimage.2010.08.063
+25. Plomp G, Quairiaux C, Michel CM, AstolﬁL. The physiological plausibility of
+time-varying Granger-causal modeling: normalization and weighting by spec-
+tral power. Neuroimage (2014) 97C:206–16. doi:10.1016/j.neuroimage.2014.
+04.016
+26. Bullmore E, Sporns O. Complex brain networks: graph theoretical analysis
+of structural and functional systems. Nat Rev Neurosci (2009) 10:186–98.
+doi:10.1038/nrn2575
+27. Ogawa S,Tank DW,Menon R,Ellermann JM,Kim SG,Merkle H,et al. Intrinsic
+signal changes accompanying sensory stimulation: functional brain mapping
+with magnetic resonance imaging. Proc Natl Acad Sci U S A (1992) 89:5951–5.
+doi:10.1073/pnas.89.13.5951
+28. Greicius MD, Krasnow B, Reiss AL, Menon V. Functional connectivity in the
+resting brain: a network analysis of the default mode hypothesis. Proc Natl Acad
+Sci U S A (2003) 100:253–8. doi:10.1073/pnas.0135058100
+29. Shmuel A, Leopold DA. Neuronal correlates of spontaneous ﬂuctuations in
+fMRI signals in monkey visual cortex: implications for functional connectivity
+at rest. Hum Brain Mapp (2008) 29:751–61. doi:10.1002/hbm.20580
+30. Fahoum F, Zelmann R, Tyvaert L, Dubeau F, Gotman J. Epileptic discharges
+affect the default mode network – FMRI and intracerebral EEG evidence. PLoS
+One (2013) 8:e68038. doi:10.1371/journal.pone.0068038
+31. Raichle ME, MacLeod AM, Snyder AZ, Powers WJ, Gusnard DA, Shulman GL.
+A default mode of brain function. Proc Natl Acad Sci U S A (2001) 98:676–82.
+doi:10.1073/pnas.98.2.676
+32. Buckner RL, Andrews-Hanna JR, Schacter DL. The brain’s default network:
+anatomy, function, and relevance to disease. Ann N Y Acad Sci (2008)
+1124:1–38. doi:10.1196/annals.1440.011
+33. Cavanna AE, Trimble MR. The precuneus: a review of its functional anatomy
+and behavioural correlates. Brain (2006) 129:564–83. doi:10.1093/brain/
+awl004
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 14
+
+
+--- 第 15 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+34. Biswal B, Yetkin FZ, Haughton VM, Hyde JS. Functional connectivity in the
+motor cortex of resting human brain using echo-planar MRI. Magn Reson Med
+(1995) 34:537–41. doi:10.1002/mrm.1910340409
+35. McKeown MJ, Makeig S, Brown GG, Jung TP, Kindermann SS, Bell AJ, et al.
+Analysis of fMRI data by blind separation into independent spatial compo-
+nents. Hum Brain Mapp (1998) 6:160–88. doi:10.1002/(SICI)1097-0193(1998)
+6:5/6<368::AID-HBM7>3.3.CO;2-5
+36. Bellec P, Rosa-Neto P, Lyttelton OC, Benali H, Evans AC. Multi-level bootstrap
+analysis of stable clusters in resting-state fMRI. Neuroimage (2010) 51:1126–39.
+doi:10.1016/j.neuroimage.2010.02.082
+37. Lemieux L, Daunizeau J, Walker MC. Concepts of connectivity and human
+epilepticactivity.FrontSystNeurosci (2011)5:12.doi:10.3389/fnsys.2011.00012
+38. Biswal BB. Resting state fMRI: a personal history. Neuroimage (2012)
+62:938–44. doi:10.1016/j.neuroimage.2012.01.090
+39. De Vico Fallani F, AstolﬁL, Cincotti F, Mattia D, Maglione AG, Vecchiato G,
+et al. Large-scale cortical networks estimated from scalp EEG signals during
+performance of goal-directed motor tasks. Conf Proc IEEE Eng Med Biol Soc
+(2010) 2010:1738–41. doi:10.1109/IEMBS.2010.5626710
+40. De Pasquale F, Della Penna S, Snyder AZ, Lewis C, Mantini D, Marzetti L, et al.
+Temporal dynamics of spontaneous MEG activity in brain networks. Proc Natl
+Acad Sci U S A (2010) 107:6040–5. doi:10.1073/pnas.0913863107
+41. Brookes MJ, Woolrich M, Luckhoo H, Price D, Hale JR, Stephenson MC, et al.
+Investigating the electrophysiological basis of resting state networks using
+magnetoencephalography. Proc Natl Acad Sci U S A (2011) 108:16783–8.
+doi:10.1073/pnas.1112685108
+42. Cabral J, Kringelbach ML, Deco G. Exploring the network dynamics underly-
+ing brain activity during rest. Prog Neurobiol (2014) 114:102–31. doi:10.1016/
+j.pneurobio.2013.12.005
+43. Lehmann D. Topography of spontaneous alpha EEG ﬁelds in humans. Elec-
+troencephalogr Clin Neurophysiol (1971) 30:161–2.
+44. Dierks T, Jelic V, Julin P, Maurer K, Wahlund LO, Almkvist O, et al. EEG-
+microstates in mild memory impairment and Alzheimer’s disease: possible
+association with disturbed information processing. J Neural Transm (1997)
+104:483–95. doi:10.1007/BF01277666
+45. Strelets V, Faber PL, Golikova J, Novototsky-Vlasov V, Koenig T, Gian-
+otti LR, et al. Chronic schizophrenics with positive symptomatology have
+shortened EEG microstate durations. Clin Neurophysiol (2003) 114:2043–51.
+doi:10.1016/S1388-2457(03)00211-6
+46. Koenig T, Prichep L, Lehmann D, Sosa PV, Braeker E, Kleinlogel H, et al.
+Millisecond by millisecond, year by year: normative EEG microstates and
+developmental stages. Neuroimage (2002) 16:41–8. doi:10.1006/nimg.2002.
+1070
+47. Lehmann D, Strik WK, Henggeler B, Koenig T, Koukkou M. Brain electric
+microstates and momentary conscious mind states as building blocks of spon-
+taneous thinking: I. Visual imagery and abstract thoughts. Int J Psychophysiol
+(1998) 29:1–11.
+48. Michel CM, Murray MM. Towards the utilization of EEG as a brain imaging
+tool. Neuroimage (2012) 61:371–85. doi:10.1016/j.neuroimage.2011.12.039
+49. Britz J, Van De Ville D, Michel CM. BOLD correlates of EEG topography
+reveal rapid resting-state network dynamics. Neuroimage (2010) 52:1162–70.
+doi:10.1016/j.neuroimage.2010.02.052
+50. Mantini D, Perrucci MG, Del Gratta C, Romani GL, Corbetta M. Electrophys-
+iological signatures of resting state networks in the human brain. Proc Natl
+Acad Sci U S A (2007) 104:13170–5. doi:10.1073/pnas.0700668104
+51. Van De Ville D, Britz J, Michel CM. EEG microstate sequences in healthy
+humans at rest reveal scale-free dynamics. Proc Natl Acad Sci U S A (2010)
+107:18179–84. doi:10.1073/pnas.1007841107
+52. Knowlton RC,Elgavish RA,Limdi N,BartolucciA,Ojha B,Blount J,et al. Func-
+tional imaging: I. relative predictive value of intracranial electroencephalogra-
+phy. Ann Neurol (2008) 64:25–34. doi:10.1002/ana.21389
+53. Knowlton RC, Razdan SN, Limdi N, Elgavish RA, Killen J, Blount J, et al. Effect
+of epilepsy magnetic source imaging on intracranial electrode placement. Ann
+Neurol (2009) 65:716–23. doi:10.1002/ana.21660
+54. BrodbeckV,Spinelli L,LascanoAM,Wissmeier M,Vargas MI,Vulliemoz S,et al.
+Electroencephalographic source imaging: a prospective study of 152 operated
+epileptic patients. Brain (2011) 134:2887–97. doi:10.1093/brain/awr243
+55. Megevand P, Spinelli L, Genetti M, Brodbeck V, Momjian S, Schaller K, et al.
+Electric source imaging of interictal activity accurately localises the seizure
+onset zone. J Neurol Neurosurg Psychiatry (2014) 85:38–43. doi:10.1136/jnnp-
+2013-305515
+56. Schoffelen JM, Gross J. Source connectivity analysis with MEG and EEG. Hum
+Brain Mapp (2009) 30:1857–65. doi:10.1002/hbm.20745
+57. Plummer C, Harvey AS, Cook M. EEG source localization in focal epilepsy:
+where are we now? Epilepsia (2008) 49:201–18. doi:10.1111/j.1528-1167.2007.
+01381.x
+58. Kaiboriboon K, Luders HO, Hamaneh M, Turnbull J, Lhatoo SD. EEG source
+imaging in epilepsy – practicalities and pitfalls. Nat Rev Neurol (2012)
+8:498–507. doi:10.1038/nrneurol.2012.150
+59. Birot G, Spinelli L, Vulliemoz S, Megevand P, Brunet D, Seeck M, et al. Head
+model and electrical source imaging: a study of 38 epileptic patients. Neuroim-
+age Clin (2014) 5:77–83. doi:10.1016/j.nicl.2014.06.005
+60. Plummer C, Wagner M, Fuchs M, Harvey AS, Cook MJ. Dipole versus distrib-
+uted EEG source localization for single versus averaged spikes in focal epilepsy.
+J Clin Neurophysiol (2010) 27:141–62. doi:10.1097/WNP.0b013e3181dd5004
+61. DaiY,Zhang W,Dickens DL,He B. Source connectivity analysis from MEG and
+its application to epilepsy source localization. Brain Topogr (2012) 25:157–66.
+doi:10.1007/s10548-011-0211-0
+62. Jin SH,JeongW,Chung CK. Information source in multiple MEG spike clusters
+can be identiﬁed by effective connectivity in focal cortical dysplasia. Epilepsy
+Res (2013) 105:118–24. doi:10.1016/j.eplepsyres.2013.01.011
+63. Tanaka N, Peters JM, Prohl AK, Takaya S, Madsen JR, Bourgeois BF, et al.
+Clinical value of magnetoencephalographic spike propagation represented by
+spatiotemporal source analysis: correlation with surgical outcome. Epilepsy Res
+(2014) 108:280–8. doi:10.1016/j.eplepsyres.2013.11.006
+64. DouwL,VanDellenE,DeGrootM,HeimansJJ,KleinM,StamCJ,et al.Epilepsy
+is related to theta band brain connectivity and network topology in brain tumor
+patients. BMC Neurosci (2010) 11:103. doi:10.1186/1471-2202-11-103
+65. VanDellenE,DouwL,HillebrandA,DeWittHamerPC,BaayenJC,HeimansJJ,
+et al. Epilepsy surgery outcome and functional network alterations in longitu-
+dinal MEG: a minimum spanning tree analysis. Neuroimage (2014) 86:354–63.
+doi:10.1016/j.neuroimage.2013.10.010
+66. Varotto G, Visani E, Canafoglia L, Franceschetti S, Avanzini G, Panzica
+F. Enhanced frontocentral EEG connectivity in photosensitive generalized
+epilepsies: a partial directed coherence study. Epilepsia (2012) 53:359–67.
+doi:10.1111/j.1528-1167.2011.03352.x
+67. Gupta D, Ossenblok P, Van Luijtelaar G. Space-time network connectivity and
+cortical activations preceding spike wave discharges in human absence epilepsy:
+a MEG study. Med Biol Eng Comput (2011) 49:555–65. doi:10.1007/s11517-
+011-0778-3
+68. Malinowska U, Badier JM, Gavaret M, Bartolomei F, Chauvel P, Benar CG.
+Interictal networks in magnetoencephalography. Hum Brain Mapp (2014)
+35:2789–805. doi:10.1002/hbm.22367
+69. Kleen JK, Scott RC, Holmes GL, Roberts DW, Rundle MM, Testorf M, et al.
+Hippocampal interictal epileptiform activity disrupts cognition in humans.
+Neurology (2013) 81:18–24. doi:10.1212/WNL.0b013e318297ee50
+70. Ives JR, Warach S, Schmitt F, Edelman RR, Schomer DL. Monitoring the
+patient’s EEG during echo planar MRI. Electroencephalogr Clin Neurophysiol
+(1993) 87:417–20. doi:10.1016/0013-4694(93)90156-P
+71. Gotman J,Kobayashi E,BagshawAP,Benar CG,Dubeau F. Combining EEG and
+fMRI: a multimodal tool for epilepsy research. J Magn Reson Imaging (2006)
+23:906–20. doi:10.1002/jmri.20577
+72. Van Houdt PJ,De Munck JC,Leijten FS,Huiskamp GJ,ColonAJ,Boon PA,et al.
+EEG-fMRI correlation patterns in the presurgical evaluation of focal epilepsy:
+a comparison with electrocorticographic data and surgical outcome measures.
+Neuroimage (2013) 75:238–48. doi:10.1016/j.neuroimage.2013.02.033
+73. Pittau F, Grouiller F, Spinelli L, Seeck M, Michel CM, Vulliemoz S. The role
+of functional neuroimaging in pre-surgical epilepsy evaluation. Front Neurol
+(2014) 5:31. doi:10.3389/fneur.2014.00031
+74. Seeck M, Lazeyras F, Michel CM, Blanke O, Gericke CA, Ives J, et al. Non-
+invasive epileptic focus localization using EEG-triggered functional MRI
+and electromagnetic tomography. Electroencephalogr Clin Neurophysiol (1998)
+106:508–12. doi:10.1016/S0013-4694(98)00017-0
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 15
+
+
+--- 第 16 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+75. Benar CG, Gross DW, Wang Y, Petre V, Pike B, Dubeau F, et al. The BOLD
+response to interictal epileptiform discharges. Neuroimage (2002) 17:1182–92.
+doi:10.1006/nimg.2002.1164
+76. Thornton R, Vulliemoz S, Rodionov R, Carmichael DW, Chaudhary UJ,
+Diehl B, et al. Epileptic networks in focal cortical dysplasia revealed using
+electroencephalography-functional magnetic resonance imaging. Ann Neurol
+(2011) 70:822–37. doi:10.1002/ana.22535
+77. An D, Fahoum F, Hall J, Olivier A, Gotman J, Dubeau F. Electroencephalog-
+raphy/functional magnetic resonance imaging responses help predict surgi-
+cal outcome in focal epilepsy. Epilepsia (2013) 54:2184–94. doi:10.1111/epi.
+12434
+78. Grouiller F, Thornton RC, Groening K, Spinelli L, Duncan JS, Schaller K, et al.
+With or without spikes: localization of focal epileptic activity by simultaneous
+electroencephalography and functional magnetic resonance imaging. Brain
+(2011) 134:2867–86. doi:10.1093/brain/awr156
+79. Glover GH. Deconvolution of impulse response in event-related BOLD fMRI.
+Neuroimage (1999) 9:416–29. doi:10.1006/nimg.1998.0419
+80. Bagshaw AP, Aghakhani Y, Benar CG, Kobayashi E, Hawco C, Dubeau F, et al.
+EEG-fMRI of focal epileptic spikes: analysis with multiple haemodynamic
+functions and comparison with gadolinium-enhanced MR angiograms. Hum
+Brain Mapp (2004) 22:179–92. doi:10.1002/hbm.20024
+81. Hawco CS, Bagshaw AP, Lu Y, Dubeau F, Gotman J. BOLD changes occur
+prior to epileptic spikes seen on scalp EEG. Neuroimage (2007) 35:1450–8.
+doi:10.1016/j.neuroimage.2006.12.042
+82. Grouiller F, Vercueil L, Krainik A, Segebarth C, Kahane P, David O. Char-
+acterization of the hemodynamic modes associated with interictal epilep-
+tic activity using a deformable model-based analysis of combined EEG and
+functional MRI recordings. Hum Brain Mapp (2010) 31:1157–73. doi:10.1002/
+hbm.20925
+83. Moeller F, Levan P, Muhle H, Stephani U, Dubeau F, Siniatchkin M, et al.
+Absence seizures: individual patterns revealed by EEG-fMRI. Epilepsia (2010)
+51:2000–10. doi:10.1111/j.1528-1167.2010.02698.x
+84. Vaudano AE, Avanzini P, Tassi L, Ruggieri A, Cantalupo G, Benuzzi F, et al.
+Causality within the epileptic network: an EEG-fMRI study validated by
+intracranial EEG. Front Neurol (2013) 4:185. doi:10.3389/fneur.2013.00185
+85. Groening K, Brodbeck V, Moeller F, Wolff S, Van Baalen A, Michel CM,
+et al. Combination of EEG-fMRI and EEG source analysis improves inter-
+pretation of spike-associated activation networks in paediatric pharmacoresis-
+tant focal epilepsies. Neuroimage (2009) 46:827–33. doi:10.1016/j.neuroimage.
+2009.02.026
+86. Vulliemoz S, Thornton R, Rodionov R, Carmichael DW, Guye M, Lha-
+too S, et al. The spatio-temporal mapping of epileptic networks: combina-
+tion of EEG-fMRI and EEG source imaging. Neuroimage (2009) 46:834–43.
+doi:10.1016/j.neuroimage.2009.01.070
+87. Laufs H, Richardson MP, Salek-Haddadi A, Vollmar C, Duncan JS, Gale
+K, et al. Converging PET and fMRI evidence for a common area involved
+in human focal epilepsies. Neurology (2011) 77:904–10. doi:10.1212/WNL.
+0b013e31822c90f2
+88. Flanagan D, Badawy RA, Jackson GD. EEG-fMRI in focal epilepsy: local activa-
+tion and regional networks. Clin Neurophysiol (2014) 125:21–31. doi:10.1016/
+j.clinph.2013.06.182
+89. Vaudano AE, Carmichael DW, Salek-Haddadi A, Rampp S, Stefan H, Lemieux
+L, et al. Networks involved in seizure initiation. A reading epilepsy case studied
+with EEG-fMRI and MEG. Neurology (2012) 79:249–53. doi:10.1212/WNL.
+0b013e31825fdf3a
+90. Piredda S, Gale K. A crucial epileptogenic site in the deep prepiriform cortex.
+Nature (1985) 317:623–5. doi:10.1038/317623a0
+91. Racine RJ, Mosher M, Kairiss EW. The role of the pyriform cortex in the
+generation of interictal spikes in the kindled preparation. Brain Res (1988)
+454:251–63. doi:10.1016/0006-8993(88)90825-6
+92. Loscher W, Ebert U. The role of the piriform cortex in kindling. Prog Neurobiol
+(1996) 50:427–81. doi:10.1016/S0301-0082(96)00036-6
+93. Centeno M, Vollmar C, Stretton J, Symms MR, Thompson PJ, Richardson
+MP, et al. Structural changes in the temporal lobe and piriform cortex in
+frontal lobe epilepsy. Epilepsy Res (2014) 108:978–81. doi:10.1016/j.eplepsyres.
+2014.03.001
+94. Hamandi K, Powell HW, Laufs H, Symms MR, Barker GJ, Parker GJ, et al.
+Combined EEG-fMRI and tractography to visualise propagation of epileptic
+activity.JNeurolNeurosurgPsychiatry (2008)79:594–7.doi:10.1136/jnnp.2007.
+125401
+95. Bhardwaj RD, Mahmoodabadi SZ, Otsubo H, Snead OC III, Rutka JT,
+Widjaja E. Diffusion tensor tractography detection of functional path-
+way for the spread of epileptiform activity between temporal lobe and
+Rolandic region. Childs Nerv Syst (2010) 26:185–90. doi:10.1007/s00381-009-
+1017-1
+96. Lascano AM, Lemkaddem A, Granziera C, Korff CM, Boex C, Jenny B, et al.
+Tracking the source of cerebellar epilepsy: hemifacial seizures associated with
+cerebellar cortical dysplasia. Epilepsy Res (2013) 105:245–9. doi:10.1016/j.
+eplepsyres.2012.12.010
+97. Kleen JK, Scott RC, Holmes GL, Lenck-Santini PP. Hippocampal interictal
+spikes disrupt cognition in rats. Ann Neurol (2010) 67:250–7. doi:10.1002/ana.
+21896
+98. Chaudhary UJ, Centeno M, Carmichael DW, Vollmar C, Rodionov R,
+Bonelli S, et al. Imaging the interaction: epileptic discharges, working
+memory, and behavior. Hum Brain Mapp (2013) 34:2910–7. doi:10.1002/hbm.
+22115
+99. Centeno M, Carmichael DW. Network connectivity in epilepsy: resting state
+fMRI and EEG-fMRI contributions. Front Neurol (2014) 5:93. doi:10.3389/
+fneur.2014.00093
+100. Spencer SS. Neural networks in human epilepsy: evidence of and implica-
+tions for treatment. Epilepsia (2002) 43:219–27. doi:10.1046/j.1528-1157.2002.
+26901.x
+101. Voets NL, Adcock JE, Stacey R, Hart Y, Carpenter K, Matthews PM, et al.
+Functional and structural changes in the memory network associated with
+left temporal lobe epilepsy. Hum Brain Mapp (2009) 30:4070–81. doi:10.1002/
+hbm.20830
+102. Bettus G, Bartolomei F, Confort-Gouny S, Guedj E, Chauvel P, Cozzone PJ,
+et al. Role of resting state functional connectivity MRI in presurgical investi-
+gation of mesial temporal lobe epilepsy. J Neurol Neurosurg Psychiatry (2010)
+81:1147–54. doi:10.1136/jnnp.2009.191460
+103. Pereira FR, Alessio A, Sercheli MS, Pedro T, Bilevicius E, Rondina JM, et al.
+Asymmetrical hippocampal connectivity in mesial temporal lobe epilepsy: evi-
+dence from resting state fMRI. BMC Neurosci (2010) 11:66. doi:10.1186/1471-
+2202-11-66
+104. Bettus G, Guedj E, Joyeux F, Confort-Gouny S, Soulier E, Laguitton V, et al.
+Decreased basal fMRI functional connectivity in epileptogenic networks and
+contralateralcompensatorymechanisms.HumBrainMapp (2009)30:1580–91.
+doi:10.1002/hbm.20625
+105. Addis DR, Moscovitch M, McAndrews MP. Consequences of hippocampal
+damage across the autobiographical memory network in left temporal lobe
+epilepsy. Brain (2007) 130:2327–42. doi:10.1093/brain/awm166
+106. Powell HW, Richardson MP, Symms MR, Boulby PA, Thompson PJ, Duncan
+JS, et al. Reorganization of verbal and nonverbal memory in temporal lobe
+epilepsy due to unilateral hippocampal sclerosis. Epilepsia (2007) 48:1512–25.
+doi:10.1111/j.1528-1167.2007.01053.x
+107. Morgan VL, Rogers BP, Sonmezturk HH, Gore JC, Abou-Khalil B. Cross hip-
+pocampal inﬂuence in mesial temporal lobe epilepsy measured with high
+temporal resolution functional magnetic resonance imaging. Epilepsia (2011)
+52:1741–9. doi:10.1111/j.1528-1167.2011.03196.x
+108. Bettus G, Ranjeva JP, Wendling F, Benar CG, Confort-Gouny S, Regis J, et al.
+Interictal functional connectivity of human epileptic networks assessed by
+intracerebral EEG and BOLD signal ﬂuctuations. PLoS One (2011) 6:e20071.
+doi:10.1371/journal.pone.0020071
+109. Pittau F,Grova C,Moeller F,Dubeau F,Gotman J. Patterns of altered functional
+connectivity in mesial temporal lobe epilepsy. Epilepsia (2012) 53:1013–23.
+doi:10.1111/j.1528-1167.2012.03464.x
+110. Waites AB, Briellmann RS, Saling MM, Abbott DF, Jackson GD. Functional
+connectivity networks are disrupted in left temporal lobe epilepsy. Ann Neurol
+(2006) 59:335–43. doi:10.1002/ana.20733
+111. Kobayashi E, Grova C, Tyvaert L, Dubeau F, Gotman J. Structures involved at
+the time of temporal lobe spikes revealed by interindividual group analysis of
+EEG/fMRI data. Epilepsia (2009) 50:2549–56. doi:10.1111/j.1528-1167.2009.
+02180.x
+112. Frings L, Schulze-Bonhage A, Spreer J,Wagner K. Remote effects of hippocam-
+pal damage on default network connectivity in the human brain. J Neurol
+(2009) 256:2021–9. doi:10.1007/s00415-009-5233-0
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 16
+
+
+--- 第 17 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+113. Liao W, Zhang Z, Pan Z, Mantini D, Ding J, Duan X, et al. Altered func-
+tional connectivity and small-world in mesial temporal lobe epilepsy. PLoS
+One (2010) 5:e8525. doi:10.1371/journal.pone.0008525
+114. Liao W, Zhang Z, Pan Z, Mantini D, Ding J, Duan X, et al. Default mode
+network abnormalities in mesial temporal lobe epilepsy: a study combin-
+ing fMRI and DTI. Hum Brain Mapp (2011) 32:883–95. doi:10.1002/hbm.
+21076
+115. Zhang Z, Lu G, Zhong Y, Tan Q, Liao W, Wang Z, et al. Altered spontaneous
+neuronalactivityof thedefault-modenetworkinmesialtemporallobeepilepsy.
+Brain Res (2010) 1323:152–60. doi:10.1016/j.brainres.2010.01.042
+116. Haneef Z, Lenartowicz A, Yeh HJ, Engel J Jr, Stern JM. Effect of lateralized
+temporal lobe epilepsy on the default mode network. Epilepsy Behav (2012)
+25:350–7. doi:10.1016/j.yebeh.2012.07.019
+117. Morgan VL, Sonmezturk HH, Gore JC, Abou-Khalil B. Lateralization of
+temporal lobe epilepsy using resting functional magnetic resonance imag-
+ing connectivity of hippocampal networks. Epilepsia (2012) 53:1628–35.
+doi:10.1111/j.1528-1167.2012.03590.x
+118. McCormickC,QuraanM,CohnM,ValianteTA,McAndrewsMP.Defaultmode
+network connectivity indicates episodic memory capacity in mesial temporal
+lobe epilepsy. Epilepsia (2013) 54:809–18. doi:10.1111/epi.12098
+119. Andrews-Hanna JR, Reidler JS, Sepulcre J, Poulin R, Buckner RL. Functional-
+anatomic fractionation of the brain’s default network. Neuron (2010)
+65:550–62. doi:10.1016/j.neuron.2010.02.005
+120. Damoiseaux JS,Rombouts SA,Barkhof F,Scheltens P,Stam CJ,Smith SM,et al.
+Consistent resting-state networks across healthy subjects. Proc Natl Acad Sci U
+S A (2006) 103:13848–53. doi:10.1073/pnas.0601417103
+121. Fransson P, Marrelec G. The precuneus/posterior cingulate cortex plays a piv-
+otal role in the default mode network: evidence from a partial correlation
+network analysis. Neuroimage (2008) 42:1178–84. doi:10.1016/j.neuroimage.
+2008.05.059
+122. Yeo BT, Krienen FM, Chee MW, Buckner RL. Estimates of segregation and
+overlap of functional connectivity networks in the human cerebral cortex.
+Neuroimage (2013) 88C:212–27. doi:10.1016/j.neuroimage.2013.10.046
+123. Heimer L, Alheid GF, De Olmos JS, Groenewegen HJ, Haber SN, Harlan RE,
+et al. The accumbens: beyond the core-shell dichotomy. J Neuropsychiatry Clin
+Neurosci (1997) 9:354–81.
+124. Koob GF, Volkow ND. Neurocircuitry of addiction. Neuropsychopharmacology
+(2010) 35:217–38. doi:10.1038/npp.2009.110
+125. Bunzeck N, Doeller CF, Dolan RJ, Duzel E. Contextual interaction between
+novelty and reward processing within the mesolimbic system. Hum Brain Mapp
+(2012) 33:1309–24. doi:10.1002/hbm.21288
+126. Lieb JP, Dasheiff RM, Engel J Jr. Role of the frontal lobes in the propagation of
+mesial temporal lobe seizures. Epilepsia (1991) 32:822–37. doi:10.1111/j.1528-
+1157.1991.tb05539.x
+127. Yadid G, Friedman A. Dynamics of the dopaminergic system as a key compo-
+nent to the understanding of depression. Prog Brain Res (2008) 172:265–86.
+doi:10.1016/S0079-6123(08)00913-8
+128. Price JL, Drevets WC. Neurocircuitry of mood disorders. Neuropsychopharma-
+cology (2010) 35:192–216. doi:10.1038/npp.2009.104
+129. Chen S, Wu X, Lui S, Wu Q, Yao Z, Li Q, et al. Resting-state fMRI study of
+treatment-naive temporal lobe epilepsy patients with depressive symptoms.
+Neuroimage (2012) 60:299–304. doi:10.1016/j.neuroimage.2011.11.092
+130. Butler T, Blackmon K, McDonald CR, Carlson C, Barr WB, Devinsky O, et al.
+Cortical thickness abnormalities associated with depressive symptoms in tem-
+poral lobe epilepsy. Epilepsy Behav (2012) 23:64–7. doi:10.1016/j.yebeh.2011.
+10.001
+131. Stretton J, Pope RA, Winston GP, Sidhu MK, Symms M, Duncan JS, et al.
+Temporal lobe epilepsy and affective disorders: the role of the subgenual ante-
+rior cingulate cortex. J Neurol Neurosurg Psychiatry (2014). doi:10.1136/jnnp-
+2013-306966
+132. Meletti S, Benuzzi F, Rubboli G, Cantalupo G, Stanzani Maserati M,
+Nichelli P, et al. Impaired facial emotion recognition in early-onset right
+mesial temporal lobe epilepsy. Neurology (2003) 60:426–31. doi:10.1212/WNL.
+60.3.426
+133. Schacher M, Winkler R, Grunwald T, Kraemer G, Kurthen M, Reed V, et al.
+Mesial temporal lobe epilepsy impairs advanced social cognition. Epilepsia
+(2006) 47:2141–6. doi:10.1111/j.1528-1167.2006.00857.x
+134. Hlobil U, Rathore C, Alexander A, Sarma S, Radhakrishnan K. Impaired facial
+emotion recognition in patients with mesial temporal lobe epilepsy associated
+with hippocampal sclerosis (MTLE-HS): side and age at onset matters. Epilepsy
+Res (2008) 80:150–7. doi:10.1016/j.eplepsyres.2008.03.018
+135. Meletti S, Benuzzi F, Cantalupo G, Rubboli G, Tassinari CA, Nichelli P. Facial
+emotion recognition impairment in chronic temporal lobe epilepsy. Epilepsia
+(2009) 50:1547–59. doi:10.1111/j.1528-1167.2008.01978.x
+136. Broicher SD, Frings L, Huppertz HJ, Grunwald T, Kurthen M, Kramer G, et al.
+Alterations in functional connectivity of the amygdala in unilateral mesial tem-
+poral lobe epilepsy. J Neurol (2012) 259:2546–54. doi:10.1007/s00415-012-
+6533-3
+137. Bonelli SB, Powell R, Yogarajah M, Thompson PJ, Symms MR, Koepp MJ,
+et al. Preoperative amygdala fMRI in temporal lobe epilepsy. Epilepsia (2009)
+50:217–27. doi:10.1111/j.1528-1167.2008.01739.x
+138. Cataldi M, Avoli M, De Villers-Sidani E. Resting state networks in temporal
+lobe epilepsy. Epilepsia (2013) 54:2048–59. doi:10.1111/epi.12400
+139. Negishi M, Martuzzi R, Novotny EJ, Spencer DD, Constable RT. Functional
+MRI connectivity as a predictor of the surgical outcome of epilepsy. Epilepsia
+(2011) 52:1733–40. doi:10.1111/j.1528-1167.2011.03191.x
+140. Luo C, An D, Yao D, Gotman J. Patient-speciﬁc connectivity pattern of
+epileptic network in frontal lobe epilepsy. Neuroimage Clin (2014) 4:668–75.
+doi:10.1016/j.nicl.2014.04.006
+141. Centeno M, Vollmar C, O’Muircheartaigh J, Stretton J, Bonelli SB, Symms
+MR, et al. Memory in frontal lobe epilepsy: an fMRI study. Epilepsia (2012)
+53:1756–64. doi:10.1111/j.1528-1167.2012.03570.x
+142. Meeren H, Van Luijtelaar G, Da Silva F, Coenen A. Evolving concepts on the
+pathophysiology of absence seizures: the cortical focus theory. Arch Neurol
+(2005) 62:371–6. doi:10.1001/archneur.62.3.371
+143. Blumenfeld H. Cellular and network mechanisms of spike-wave seizures.
+Epilepsia (2005) 46(Suppl 9):21–33. doi:10.1111/j.1528-1167.2005.00311.x
+144. Gloor P. Generalized cortico-reticular epilepsies. Some considerations on
+the pathophysiology of generalized bilaterally synchronous spike and
+wave discharge. Epilepsia (1968) 9:249–63. doi:10.1111/j.1528-1157.1968.
+tb04624.x
+145. Meeren HK, Pijn JP, Van Luijtelaar EL, Coenen AM, Da Silva FH. Cortical
+focus drives widespread corticothalamic networks during spontaneous absence
+seizures in rats. J Neurosci (2002) 22:1480–95.
+146. Manning JP, Richards DA, Leresche N, Crunelli V, Bowery NG. Cortical-area
+speciﬁcblockof geneticallydeterminedabsenceseizuresbyethosuximide.Neu-
+roscience (2004) 123:5–9. doi:10.1016/j.neuroscience.2003.09.026
+147. Polack PO, Guillemain I, Hu E, Deransart C, Depaulis A, Charpier S. Deep
+layer somatosensory cortical neurons initiate spike-and-wave discharges in a
+genetic model of absence seizures. J Neurosci (2007) 27:6590–9. doi:10.1523/
+JNEUROSCI.0753-07.2007
+148. Archer JS, Abbott DF, Waites AB, Jackson GD. fMRI “deactivation” of the
+posterior cingulate during generalized spike and wave. Neuroimage (2003)
+20:1915–22. doi:10.1016/S1053-8119(03)00294-5
+149. Aghakhani Y, Bagshaw AP, Benar CG, Hawco C, Andermann F, Dubeau F, et al.
+fMRI activation during spike and wave discharges in idiopathic generalized
+epilepsy. Brain (2004) 127:1127–44. doi:10.1093/brain/awh136
+150. Masterton RA, Carney PW, Abbott DF, Jackson GD. Absence epilepsy subnet-
+works revealed by event-related independent components analysis of func-
+tional magnetic resonance imaging. Epilepsia (2013) 54:801–8. doi:10.1111/
+epi.12163
+151. Salek-Haddadi A, Lemieux L, Merschhemke M, Friston KJ, Duncan JS, Fish
+DR. Functional magnetic resonance imaging of human absence seizures. Ann
+Neurol (2003) 53:663–7. doi:10.1002/ana.10586
+152. Labate A, Briellmann RS, Abbott DF, Waites AB, Jackson GD. Typical child-
+hood absence seizures are associated with thalamic activation. Epileptic Disord
+(2005) 7:373–7.
+153. Laufs H, Lengler U, Hamandi K, Kleinschmidt A, Krakow K. Linking gen-
+eralized spike-and-wave discharges and resting state brain activity by using
+EEG/fMRI in a patient with absence seizures. Epilepsia (2006) 47:444–8.
+doi:10.1111/j.1528-1167.2006.00443.x
+154. Moeller F,Siebner HR,Wolff S,Muhle H,Granert O,Jansen O,et al. Simultane-
+ous EEG-fMRI in drug-naive children with newly diagnosed absence epilepsy.
+Epilepsia (2008) 49:1510–9. doi:10.1111/j.1528-1167.2008.01626.x
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 17
+
+
+--- 第 18 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+155. Hamandi K, Salek-Haddadi A, Laufs H, Liston A, Friston K, Fish DR, et al.
+EEG-fMRI of idiopathic and secondarily generalized epilepsies. Neuroimage
+(2006) 31:1700–10. doi:10.1016/j.neuroimage.2006.02.016
+156. Child ND, Benarroch EE. Anterior nucleus of the thalamus: functional orga-
+nization and clinical implications. Neurology (2013) 81:1869–76. doi:10.1212/
+01.wnl.0000436078.95856.56
+157. Carney PW, Masterton RA, Harvey AS, Scheffer IE, Berkovic SF, Jackson
+GD. The core network in absence epilepsy. Differences in cortical and
+thalamic BOLD response. Neurology (2010) 75:904–11. doi:10.1212/WNL.
+0b013e3181f11c06
+158. Westmijse I, Ossenblok P, Gunning B,Van Luijtelaar G. Onset and propagation
+of spike and slow wave discharges in human absence epilepsy: a MEG study.
+Epilepsia (2009) 50:2538–48. doi:10.1111/j.1528-1167.2009.02162.x
+159. Roche-Labarbe N, Zaaimi B, Berquin P, Nehlig A, Grebe R, Wallois F. NIRS-
+measured oxy- and deoxyhemoglobin changes associated with EEG spike-and-
+wave discharges in children. Epilepsia (2008) 49:1871–80. doi:10.1111/j.1528-
+1167.2008.01711.x
+160. Seneviratne U, Cook M, D’Souza W. Focal abnormalities in idiopathic gener-
+alized epilepsy: a critical review of the literature. Epilepsia (2014) 55:1157–69.
+doi:10.1111/epi.12688
+161. Tyvaert L, Chassagnon S, Sadikot A, Levan P, Dubeau F, Gotman J. Thalamic
+nuclei activity in idiopathic generalized epilepsy: an EEG-fMRI study. Neurol-
+ogy (2009) 73:2018–22. doi:10.1212/WNL.0b013e3181c55d02
+162. Wang Z, Lu G, Zhang Z, Zhong Y, Jiao Q, Tan Q, et al. Altered resting state
+networks in epileptic patients with generalized tonic-clonic seizures. Brain Res
+(2011) 1374:134–41. doi:10.1016/j.brainres.2010.12.034
+163. McGill ML, Devinsky O, Kelly C, Milham M, Castellanos FX, Quinn BT,
+et al. Default mode network abnormalities in idiopathic generalized epilepsy.
+Epilepsy Behav (2012) 23:353–9. doi:10.1016/j.yebeh.2012.01.013
+164. Zhang Z, Liao W, Chen H, Mantini D, Ding JR, Xu Q, et al. Altered functional-
+structural coupling of large-scale brain networks in idiopathic generalized
+epilepsy. Brain (2011) 134:2912–28. doi:10.1093/brain/awr223
+165. Maneshi M, Moeller F, Fahoum F, Gotman J, Grova C. Resting-state connectiv-
+ity of the sustained attention network correlates with disease duration in idio-
+pathic generalized epilepsy. PLoS One (2012) 7:e50359. doi:10.1371/journal.
+pone.0050359
+166. Kay BP, Difrancesco MW, Privitera MD, Gotman J, Holland SK, Szaﬂarski
+JP. Reduced default mode network connectivity in treatment-resistant
+idiopathic generalized epilepsy. Epilepsia (2013) 54:461–70. doi:10.1111/epi.
+12057
+167. Kim JB, Suh SI, Seo WK, Oh K, Koh SB, Kim JH. Altered thalamocortical
+functional connectivity in idiopathic generalized epilepsy. Epilepsia (2014)
+55:592–600. doi:10.1111/epi.12580
+168. Vollmar C, O’Muircheartaigh J, Barker GJ, Symms MR, Thompson P, Kumari
+V, et al. Motor system hyperconnectivity in juvenile myoclonic epilepsy: a cog-
+nitive functional magnetic resonance imaging study. Brain (2011) 134:1710–9.
+doi:10.1093/brain/awr098
+169. Vulliemoz S, Vollmar C, Koepp MJ, Yogarajah M, O’Muircheartaigh J,
+Carmichael DW, et al. Connectivity of the supplementary motor area in juve-
+nile myoclonic epilepsy and frontal lobe epilepsy. Epilepsia (2011) 52:507–14.
+doi:10.1111/j.1528-1167.2010.02770.x
+170. Vollmar C, O’Muircheartaigh J, Symms MR, Barker GJ, Thompson P,
+Kumari V, et al. Altered microstructural connectivity in juvenile myoclonic
+epilepsy: the missing link. Neurology (2012) 78:1555–9. doi:10.1212/WNL.
+0b013e3182563b44
+171. Wandschneider B, Centeno M, Vollmar C, Stretton J, O’Muircheartaigh J,
+Thompson PJ, et al. Risk-taking behavior in juvenile myoclonic epilepsy.
+Epilepsia (2013) 54:2158–65. doi:10.1111/epi.12413
+172. Moeller F, Stephani U, Siniatchkin M. Simultaneous EEG and fMRI record-
+ings (EEG-fMRI) in children with epilepsy. Epilepsia (2013) 54:971–82.
+doi:10.1111/epi.12197
+173. Siniatchkin M, Coropceanu D, Moeller F, Boor R, Stephani U. EEG-fMRI
+reveals activation of brainstem and thalamus in patients with Lennox-
+Gastaut syndrome. Epilepsia (2011) 52:766–74. doi:10.1111/j.1528-1167.2010.
+02948.x
+174. Pillay N,Archer JS,Badawy RA,Flanagan DF,Berkovic SF,Jackson G. Networks
+underlying paroxysmal fast activity and slow spike and wave in Lennox-Gastaut
+syndrome. Neurology (2013) 81:665–73. doi:10.1212/WNL.0b013e3182a08f6a
+175. Archer JS, Warren AE, Stagnitti MR, Masterton RA, Abbott DF, Jackson
+GD. Lennox-Gastaut syndrome and phenotype: secondary network epilepsies.
+Epilepsia (2014) 55:1245–54. doi:10.1111/epi.12682
+176. MoellerF,GroeningK,MoehringJ,MuhleH,Wolff S,JansenO,et al.EEG-fMRI
+in myoclonic astaticepilepsy (Doose syndrome). Neurology (2014) 82:1508–13.
+doi:10.1212/WNL.0000000000000359
+177. Archer JS, Briellman RS, Abbott DF, Syngeniotis A, Wellard RM, Jackson
+GD. Benign epilepsy with centro-temporal spikes: spike triggered fMRI shows
+somato-sensory cortex activity. Epilepsia (2003) 44:200–4. doi:10.1046/j.1528-
+1157.2003.02502.x
+178. Boor S, Vucurevic G, Pﬂeiderer C, Stoeter P, Kutschke G, Boor R. EEG-related
+functional MRI in benign childhood epilepsy with centrotemporal spikes.
+Epilepsia (2003) 44:688–92. doi:10.1046/j.1528-1157.2003.27802.x
+179. Lengler U, Kafadar I, Neubauer BA, Krakow K. fMRI correlates of interictal
+epileptic activity in patients with idiopathic benign focal epilepsy of childhood.
+A simultaneous EEG-functional MRI study. Epilepsy Res (2007) 75:29–38.
+doi:10.1016/j.eplepsyres.2007.03.016
+180. Masterton RA, Harvey AS, Archer JS, Lillywhite LM, Abbott DF, Scheffer
+IE, et al. Focal epileptiform spikes do not show a canonical BOLD response
+in patients with benign rolandic epilepsy (BECTS). Neuroimage (2010)
+51:252–60. doi:10.1016/j.neuroimage.2010.01.109
+181. Siniatchkin M, Groening K, Moehring J, Moeller F, Boor R, Brodbeck V, et al.
+Neuronal networks in children with continuous spikes and waves during slow
+sleep. Brain (2010) 133:2798–813. doi:10.1093/brain/awq183
+182. Mirandola L, Cantalupo G, Vaudano AE, Avanzini P, Ruggieri A, Pisani F, et al.
+Centrotemporal spikes during NREM sleep: the promoting action of thalamus
+revealed by simultaneous EEG and fMRI coregistration. Epilepsy Behav Case
+Rep (2013) 1:106–9. doi:10.1016/j.ebcr.2013.06.005
+183. Moeller F,Moehring J,Ick I,Steinmann E,Wolff S,Jansen O,et al. EEG-fMRI in
+atypical benign partial epilepsy. Epilepsia (2013) 54:e103–8. doi:10.1111/epi.
+12243
+184. Vaudano AE, Ruggieri A, Vignoli A, Avanzini P, Benuzzi F, Gessaroli G, et al.
+Epilepsy-related brain networks in ring chromosome 20 syndrome: an EEG-
+fMRI study. Epilepsia (2014) 55:403–13. doi:10.1111/epi.12539
+185. Bartolomei F, Chauvel P, Wendling F. Epileptogenicity of brain structures in
+human temporal lobe epilepsy: a quantiﬁed study from intracerebral EEG.
+Brain (2008) 131:1818–30. doi:10.1093/brain/awn111
+186. Bartolomei F, Cosandier-Rimele D, McGonigal A, Aubert S, Regis J, Gavaret
+M, et al. From mesial temporal lobe to temporoperisylvian seizures: a quan-
+tiﬁed study of temporal lobe seizure networks. Epilepsia (2010) 51:2147–58.
+doi:10.1111/j.1528-1167.2010.02690.x
+187. Arthuis M,Valton L, Regis J, Chauvel P,Wendling F, Naccache L, et al. Impaired
+consciousness during temporal lobe seizures is related to increased long-
+distance cortical-subcortical synchronization. Brain (2009) 132:2091–101.
+doi:10.1093/brain/awp086
+188. Lambert I, Arthuis M, McGonigal A, Wendling F, Bartolomei F. Alteration of
+global workspace during loss of consciousness: a study of parietal seizures.
+Epilepsia (2012) 53:2104–10. doi:10.1111/j.1528-1167.2012.03690.x
+189. Bartolomei F, McGonigal A, Naccache L. Alteration of consciousness in
+focal epilepsy: the global workspace alteration theory. Epilepsy Behav (2014)
+30:17–23. doi:10.1016/j.yebeh.2013.09.012
+190. Blumenfeld H, McNally KA, Vanderhill SD, Paige AL, Chung R, Davis K, et al.
+Positive and negative network correlations in temporal lobe epilepsy. Cereb
+Cortex (2004) 14:892–902. doi:10.1093/cercor/bhh048
+191. Englot DJ, Yang L, Hamid H, Danielson N, Bai X, Marfeo A, et al. Impaired
+consciousness in temporal lobe seizures: role of cortical slow activity. Brain
+(2010) 133:3764–77. doi:10.1093/brain/awq316
+192. Englot DJ, Modi B, Mishra AM, Desalvo M, Hyder F, Blumenfeld H. Cortical
+deactivation induced by subcortical network dysfunction in limbic seizures.
+J Neurosci (2009) 29:13006–18. doi:10.1523/JNEUROSCI.3846-09.2009
+193. Blumenfeld H. Impaired consciousness in epilepsy. Lancet Neurol (2012)
+11:814–26. doi:10.1016/S1474-4422(12)70188-6
+194. Rubinov M, Sporns O. Complex network measures of brain connectiv-
+ity: uses and interpretations. Neuroimage (2010) 52:1059–69. doi:10.1016/j.
+neuroimage.2009.10.003
+195. Wilke C, Worrell G, He B. Graph analysis of epileptogenic networks in
+human partial epilepsy. Epilepsia (2011) 52:84–93. doi:10.1111/j.1528-1167.
+2010.02785.x
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 18
+
+
+--- 第 19 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+196. Van Mierlo P, Carrette E, Hallez H, Raedt R, Meurs A, Vandenberghe S,
+et al. Ictal-onset localization through connectivity analysis of intracranial
+EEG signals in patients with refractory epilepsy. Epilepsia (2013) 54:1409–18.
+doi:10.1111/epi.12206
+197. Panzica F, Varotto G, Rotondi F, Spreaﬁco R, Franceschetti S. Identiﬁcation of
+the epileptogenic zone from stereo-EEG signals: a connectivity-graph theory
+approach. Front Neurol (2013) 4:175. doi:10.3389/fneur.2013.00175
+198. Vulliemoz S, Carmichael DW, Rosenkranz K, Diehl B, Rodionov R, Walker
+MC, et al. Simultaneous intracranial EEG and fMRI of interictal epileptic dis-
+charges in humans. Neuroimage (2011) 54:182–90. doi:10.1016/j.neuroimage.
+2010.08.004
+199. Carmichael DW,Vulliemoz S, Rodionov R, Thornton JS, McEvoy AW, Lemieux
+L. Simultaneous intracranial EEG-fMRI in humans: protocol considerations
+anddataquality.Neuroimage (2012)63:301–9.doi:10.1016/j.neuroimage.2012.
+05.056
+200. Schevon CA, Weiss SA, McKhann G Jr, Goodman RR, Yuste R, Emerson RG,
+et al. Evidence of an inhibitory restraint of seizure activity in humans. Nat
+Commun (2012) 3:1060. doi:10.1038/ncomms2056
+201. Weiss SA, Banks GP, McKhann GM Jr, Goodman RR, Emerson RG,
+Trevelyan AJ, et al. Ictal high frequency oscillations distinguish two types of
+seizure territories in humans. Brain (2013) 136:3796–808. doi:10.1093/brain/
+awt276
+202. Penﬁeld W, Boldrey E. Somatic motor and sensory representation in the
+cerebral cortex of man as studied by electrical stimulation. Brain (1937)
+60:389–443. doi:10.1093/brain/60.4.389
+203. Hamberger MJ. Cortical language mapping in epilepsy: a critical review. Neu-
+ropsychol Rev (2007) 17:477–89. doi:10.1007/s11065-007-9046-6
+204. Selimbeyoglu A, Parvizi J. Electrical stimulation of the human brain: percep-
+tual and behavioral phenomena reported in the old and new literature. Front
+Hum Neurosci (2010) 4:46. doi:10.3389/fnhum.2010.00046
+205. Megevand P,Groppe DM,Goldﬁnger MS,Hwang ST,Kingsley PB,Davidesco I,
+et al.Seeingscenes:topographicvisualhallucinationsevokedbydirectelectrical
+stimulation of the parahippocampal place area. J Neurosci (2014) 34:5399–405.
+doi:10.1523/JNEUROSCI.5202-13.2014
+206. Parvizi J, Rangarajan V, Shirer WR, Desai N, Greicius MD. The will to persevere
+induced by electrical stimulation of the human cingulate gyrus. Neuron (2013)
+80:1359–67. doi:10.1016/j.neuron.2013.10.057
+207. Matsumoto R, Nair DR, Lapresto E, Najm I, Bingaman W, Shibasaki H, et al.
+Functional connectivity in the human language system: a cortico-cortical
+evoked potential study. Brain (2004) 127:2316–30. doi:10.1093/brain/awh246
+208. Conner CR, Ellmore TM, Disano MA, Pieters TA, Potter AW, Tandon N.
+Anatomic and electro-physiologic connectivity of the language system: a com-
+bined DTI-CCEP study. Comput Biol Med (2011) 41:1100–9. doi:10.1016/j.
+compbiomed.2011.07.008
+209. David O, Bastin J, Chabardes S, Minotti L, Kahane P. Studying network mech-
+anisms using intracranial stimulation in epileptic patients. Front Syst Neurosci
+(2010) 4:148. doi:10.3389/fnsys.2010.00148
+210. Wilson CL, Isokawa M, Babb TL, Crandall PH. Functional connections in
+the human temporal lobe. I. analysis of limbic system pathways using neu-
+ronal responses evoked by electrical stimulation. Exp Brain Res (1990) 82:
+279–92.
+211. Lacruz ME,Garcia Seoane JJ,Valentin A,Selway R,Alarcon G. Frontal and tem-
+poral functional connections of the living human brain. Eur J Neurosci (2007)
+26:1357–70. doi:10.1111/j.1460-9568.2007.05730.x
+212. Gloor P, Salanova V, Olivier A, Quesney LF. The human dorsal hippocam-
+pal commissure. An anatomically identiﬁable and functional pathway. Brain
+(1993) 116(Pt 5):1249–73. doi:10.1093/brain/116.5.1249
+213. David O, Job AS, De Palma L, Hoffmann D, Minotti L, Kahane P. Probabilistic
+functional tractography of the human cortex. Neuroimage (2013) 80:307–17.
+doi:10.1016/j.neuroimage.2013.05.075
+214. Iwasaki M, Enatsu R, Matsumoto R, Novak E, Thankappen B, Piao Z,
+et al. Accentuated cortico-cortical evoked potentials in neocortical epilepsy in
+areas of ictal onset. Epileptic Disord (2010) 12:292–302. doi:10.1684/epd.2010.
+0334
+215. Valentin A, Anderson M, Alarcon G, Seoane JJ, Selway R, Binnie CD,
+et al. Responses to single pulse electrical stimulation identify epileptogenesis
+in the human brain in vivo. Brain (2002) 125:1709–18. doi:10.1093/brain/
+awf187
+216. Enatsu R, Jin K, Elwan S, Kubota Y, Piao Z, O’Connor T, et al. Correla-
+tions between ictal propagation and response to electrical cortical stimulation:
+a cortico-cortical evoked potential study. Epilepsy Res (2012) 101:76–87.
+doi:10.1016/j.eplepsyres.2012.03.004
+217. Berenyi A, Belluscio M, Mao D, Buzsaki G. Closed-loop control of epilepsy
+by transcranial electrical stimulation. Science (2012) 337:735–7. doi:10.1126/
+science.1223154
+218. Buckmaster PS. Laboratory animal models of temporal lobe epilepsy. Comp
+Med (2004) 54:473–85.
+219. Mishra AM, Bai H, Gribizis A, Blumenfeld H. Neuroimaging biomarkers of
+epileptogenesis. Neurosci Lett (2011) 497:194–204. doi:10.1016/j.neulet.2011.
+01.076
+220. Coppola A, Moshe SL. Animal models. Handb Clin Neurol (2012) 107:63–98.
+doi:10.1016/B978-0-444-52898-8.00004-5
+221. Guillemain I, Kahane P, Depaulis A. Animal models to study aetiopathology
+of epilepsy: what are the features to model? Epileptic Disord (2012) 14:217–25.
+doi:10.1684/epd.2012.0528
+222. Galanopoulou AS. Basic mechanisms of catastrophic epilepsy – overview
+from animal models. Brain Dev (2013) 35:748–56. doi:10.1016/j.braindev.
+2012.12.005
+223. Cossart R, Dinocourt C, Hirsch JC, Merchan-Perez A, De Felipe J, Ben-Ari Y,
+et al. Dendritic but not somatic GABAergic inhibition is decreased in experi-
+mental epilepsy. Nat Neurosci (2001) 4:52–62. doi:10.1038/82900
+224. Soussi R, Boulland JL, Bassot E, Bras H, Coulon P, Chaudhry FA, et al. Reor-
+ganization of supramammillary-hippocampal pathways in the rat pilocarpine
+model of temporal lobe epilepsy: evidence for axon terminal sprouting. Brain
+Struct Funct (2014). doi:10.1007/s00429-014-0800-2
+225. Mishra AM, Ellens DJ, Schridde U, Motelow JE, Purcaro MJ, Desalvo MN,
+et al. Where fMRI and electrophysiology agree to disagree: corticothalamic and
+striatal activity patterns in the WAG/Rij rat. J Neurosci (2011) 31:15053–64.
+doi:10.1523/JNEUROSCI.0101-11.2011
+226. Elms J, Powell KL, Van Raay L, Dedeurwaerdere S, O’Brien TJ, Morris MJ.
+Long-term valproate treatment increases brain neuropeptide Y expression and
+decreases seizure expression in a genetic rat model of absence epilepsy. PLoS
+One (2013) 8:e73505. doi:10.1371/journal.pone.0073505
+227. Carcak N, Zheng T, Ali I, Abdullah A, French C, Powell KL, et al. The effect of
+amygdala kindling on neuronal ﬁring patterns in the lateral thalamus in the
+GAERS model of absence epilepsy. Epilepsia (2014) 55:654–65. doi:10.1111/
+epi.12592
+228. Bouilleret V, Ridoux V, Depaulis A, Marescaux C, Nehlig A, La Salle G. Recur-
+rent seizures and hippocampal sclerosis following intrahippocampal kainate
+injection in adult mice: electroencephalography, histopathology and synaptic
+reorganization similar to mesial temporal lobe epilepsy. Neuroscience (1999)
+89:717–29. doi:10.1016/S0306-4522(98)00401-1
+229. Leite JP, Garcia-Cairasco N, Cavalheiro EA. New insights from the use of
+pilocarpine and kainate models. Epilepsy Res (2002) 50:93–103. doi:10.1016/
+S0920-1211(02)00072-4
+230. Riban V, Bouilleret V, Pham-Le BT, Fritschy JM, Marescaux C, Depaulis A.
+Evolution of hippocampal epileptic activity during the development of hip-
+pocampal sclerosis in a mouse model of temporal lobe epilepsy. Neuroscience
+(2002) 112:101–11. doi:10.1016/S0306-4522(02)00064-7
+231. Marchi N, Oby E, Batra A, Uva L, De Curtis M, Hernandez N, et al. In vivo
+and in vitro effects of pilocarpine: relevance to ictogenesis. Epilepsia (2007)
+48:1934–46. doi:10.1111/j.1528-1167.2007.01185.x
+232. Curia G, Longo D, Biagini G, Jones RS, Avoli M. The pilocarpine model of
+temporal lobe epilepsy. J Neurosci Methods (2008) 172:143–57. doi:10.1016/j.
+jneumeth.2008.04.019
+233. Deprez F, Zattoni M, Mura ML, Frei K, Fritschy JM. Adoptive transfer of T
+lymphocytes in immunodeﬁcient mice inﬂuences epileptogenesis and neu-
+rodegeneration in a model of temporal lobe epilepsy. Neurobiol Dis (2011)
+44:174–84. doi:10.1016/j.nbd.2011.06.011
+234. Zattoni M, Mura ML, Deprez F, Schwendener RA, Engelhardt B, Frei K, et al.
+Brain inﬁltration of leukocytes contributes to the pathophysiology of temporal
+lobe epilepsy. J Neurosci (2011) 31:4037–50. doi:10.1523/JNEUROSCI.6210-
+10.2011
+235. Lothman EW, Hatlelid JM, Zorumski CF, Conry JA, Moon PF, Perlin JB. Kin-
+dlingwithrapidlyrecurringhippocampalseizures.BrainRes (1985)360:83–91.
+doi:10.1016/0006-8993(85)91223-5
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 19
+
+
+--- 第 20 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+236. Morales JC, Alvarez-Ferradas C, Roncagliolo M, Fuenzalida M, Wellmann
+M, Nualart FJ, et al. A new rapid kindling variant for induction of corti-
+cal epileptogenesis in freely moving rats. Front Cell Neurosci (2014) 8:200.
+doi:10.3389/fncel.2014.00200
+237. Kowski AB, Kanaan H, Schmitt FC, Holtkamp M. Deep hypothermia termi-
+nates status epilepticus – an experimental study. Brain Res (2012) 1446:119–26.
+doi:10.1016/j.brainres.2012.01.022
+238. Reddy DS, Kuruba R. Experimental models of status epilepticus and neu-
+ronal injury for evaluation of therapeutic interventions. Int J Mol Sci (2013)
+14:18284–318. doi:10.3390/ijms140918284
+239. Wang CH, Hung CP, Chen MT, Shih YH, Lin YY. Hippocampal desynchro-
+nization of functional connectivity prior to the onset of status epilepticus in
+pilocarpine-treated rats. PLoS One (2012) 7:e39763. doi:10.1371/journal.pone.
+0039763
+240. Gong XW, Li JB, Lu QC, Liang PJ, Zhang PM. Effective connectivity of hip-
+pocampal neural network and its alteration in Mg2+-free epilepsy model. PLoS
+One (2014) 9:e92961. doi:10.1371/journal.pone.0092961
+241. Cymerblit-SabbaA,SchillerY. Network dynamics during development of phar-
+macologically induced epileptic seizures in rats in vivo. J Neurosci (2010)
+30:1619–30. doi:10.1523/JNEUROSCI.5078-09.2010
+242. Englot DJ, Mishra AM, Mansuripur PK, Herman P, Hyder F, Blumenfeld H.
+Remote effects of focal hippocampal seizures on the rat neocortex. J Neurosci
+(2008) 28:9066–81. doi:10.1523/JNEUROSCI.2014-08.2008
+243. Megevand P, Quairiaux C, Lascano AM, Kiss JZ, Michel CM. A mouse
+model for studying large-scale neuronal networks using EEG mapping
+techniques. Neuroimage (2008) 42:591–602. doi:10.1016/j.neuroimage.2008.
+05.016
+244. Megevand P, Troncoso E, Quairiaux C, Muller D, Michel CM, Kiss JZ.
+Long-term plasticity in mouse sensorimotor circuits after rhythmic whisker
+stimulation. J Neurosci (2009) 29:5326–35. doi:10.1523/JNEUROSCI.5965-08.
+2009
+245. Quairiaux C, Sizonenko SV, Megevand P, Michel CM, Kiss JZ. Functional
+deﬁcit and recovery of developing sensorimotor networks following neona-
+tal hypoxic-ischemic injury in the rat. Cereb Cortex (2010) 20:2080–91.
+doi:10.1093/cercor/bhp281
+246. Quairiaux C, Megevand P, Kiss JZ, Michel CM. Functional development of
+large-scale sensorimotor cortical networks in the brain. J Neurosci (2011)
+31:9574–84. doi:10.1523/JNEUROSCI.5995-10.2011
+247. Toyoda I, Bower MR, Leyva F, Buckmaster PS. Early activation of ventral hip-
+pocampus and subiculum during spontaneous seizures in a rat model of tem-
+poral lobe epilepsy. J Neurosci (2013) 33:11100–15. doi:10.1523/JNEUROSCI.
+0472-13.2013
+248. Berenyi A, Somogyvari Z, Nagy AJ, Roux L, Long JD, Fujisawa S, et al.
+Large-scale, high-density (up to 512 channels) recording of local circuits in
+behaving animals. J Neurophysiol (2014) 111:1132–49. doi:10.1152/jn.00785.
+2013
+249. Mishra AM, Bai X, Sanganahalli BG, Waxman SG, Shatillo O, Grohn O, et al.
+Decreased resting functional connectivity after traumatic brain injury in the
+rat. PLoS One (2014) 9:e95280. doi:10.1371/journal.pone.0095280
+250. Mishra AM, Bai X, Motelow JE, Desalvo MN, Danielson N, Sanganahalli
+BG, et al. Increased resting functional connectivity in spike-wave epilepsy in
+WAG/Rij rats. Epilepsia (2013) 54:1214–22. doi:10.1111/epi.12227
+251. Choi H,KimYK,Kang H,Lee H,Im HJ,Hwang DW,et al. Abnormal metabolic
+connectivity in the pilocarpine-induced epilepsy rat model: a multiscale net-
+work analysis based on persistent homology. Neuroimage (2014) 99C:226–36.
+doi:10.1016/j.neuroimage.2014.05.039
+252. Xia Y, Lai Y, Lei L, Liu Y, Yao D. Left hemisphere predominance of pilocarpine-
+induced rat epileptiform discharges. J Neuroeng Rehabil (2009) 6:42. doi:10.
+1186/1743-0003-6-42
+253. Zhou IY, Liang YX, Chan RW, Gao PP, Cheng JS, Hu Y, et al. Brain resting-
+state functional MRI connectivity: morphological foundation and plasticity.
+Neuroimage (2014) 84:1–10. doi:10.1016/j.neuroimage.2013.08.037
+254. Tenney JR, Duong TQ, King JA, Ludwig R, Ferris CF. Corticothalamic modu-
+lation during absence seizures in rats: a functional MRI assessment. Epilepsia
+(2003) 44:1133–40. doi:10.1046/j.1528-1157.2003.61002.x
+255. Chahboune H, Mishra AM, Desalvo MN, Staib LH, Purcaro M, Scheinost
+D, et al. DTI abnormalities in anterior corpus callosum of rats with spike-
+wave epilepsy. Neuroimage (2009) 47:459–66. doi:10.1016/j.neuroimage.2009.
+04.060
+256. Nersesyan H, Herman P, Erdogan E, Hyder F, Blumenfeld H. Relative changes
+in cerebral blood ﬂow and neuronal activity in local microdomains during gen-
+eralized seizures. J Cereb Blood Flow Metab (2004) 24:1057–68. doi:10.1097/
+01.WCB.0000131669.02027.3E
+257. Nersesyan H, Hyder F, Rothman DL, Blumenfeld H. Dynamic fMRI and EEG
+recordings during spike-wave seizures and generalized tonic-clonic seizures in
+WAG/Rij rats. J Cereb Blood Flow Metab (2004) 24:589–99. doi:10.1097/01.
+WCB.0000117688.98763.23
+258. Desalvo MN, Schridde U, Mishra AM, Motelow JE, Purcaro MJ, Daniel-
+son N, et al. Focal BOLD fMRI changes in bicuculline-induced tonic-clonic
+seizures in the rat. Neuroimage (2010) 50:902–9. doi:10.1016/j.neuroimage.
+2010.01.006
+259. Polack PO, Mahon S, Chavez M, Charpier S. Inactivation of the somatosensory
+cortex prevents paroxysmal oscillations in cortical and related thalamic neu-
+rons in a genetic model of absence epilepsy. Cereb Cortex (2009) 19:2078–91.
+doi:10.1093/cercor/bhn237
+260. Straessle A, Loup F, Arabadzisz D, Ohning GV, Fritschy JM. Rapid and long-
+term alterations of hippocampal GABAB receptors in a mouse model of tempo-
+ral lobe epilepsy. Eur J Neurosci (2003) 18:2213–26. doi:10.1046/j.1460-9568.
+2003.02964.x
+261. Timofeev I, Bazhenov M, Avramescu S, Nita DA. Posttraumatic epilepsy:
+the roles of synaptic plasticity. Neuroscientist (2010) 16:19–27. doi:10.1177/
+1073858409333545
+262. Pitkanen A, Kemppainen S, Ndode-Ekane XE, Huusko N, Huttunen JK, Grohn
+O, et al. Posttraumatic epilepsy – disease or comorbidity? Epilepsy Behav
+(2014). doi:10.1016/j.yebeh.2014.01.013
+263. Zhang Q, Wu ZC, Yu JT, Zhong XL, Xing YY, Tian Y, et al. Anticonvul-
+sant effect of unilateral anterior thalamic high frequency electrical stimula-
+tion on amygdala-kindled seizures in rat. Brain Res Bull (2012) 87:221–6.
+doi:10.1016/j.brainresbull.2011.11.023
+264. Langlois M, Polack PO, Bernard H, David O, Charpier S, Depaulis A,
+et al. Involvement of the thalamic parafascicular nucleus in mesial temporal
+lobe epilepsy. J Neurosci (2010) 30:16523–35. doi:10.1523/JNEUROSCI.1109-
+10.2010
+265. Arabadzisz D, Antal K, Parpan F, Emri Z, Fritschy JM. Epileptogenesis and
+chronic seizures in a mouse model of temporal lobe epilepsy are associ-
+ated with distinct EEG patterns and selective neurochemical alterations in
+the contralateral hippocampus. Exp Neurol (2005) 194:76–90. doi:10.1016/j.
+expneurol.2005.01.029
+266. Marx M, Haas CA, Haussler U. Differential vulnerability of interneurons in the
+epileptic hippocampus. Front Cell Neurosci (2013) 7:167. doi:10.3389/fncel.
+2013.00167
+267. Khalilov I, Holmes GL, Ben-Ari Y. In vitro formation of a secondary epilepto-
+genic mirror focus by interhippocampal propagation of seizures. Nat Neurosci
+(2003) 6:1079–85. doi:10.1038/nn1125
+268. Morrell F. Experimental focal epilepsy in animals. Arch Neurol (1959) 1:141–7.
+doi:10.1001/archneur.1959.03840020015003
+269. Ben-Ari Y, Lagowska J, Tremblay E, La Salle G. A new model of focal sta-
+tus epilepticus: intra-amygdaloid application of kainic acid elicits repeti-
+tive secondarily generalized convulsive seizures. Brain Res (1979) 163:176–9.
+doi:10.1016/0006-8993(79)90163-X
+270. Sobayo T, Mogul DJ. Rapid onset of a kainate-induced mirror focus in rat hip-
+pocampus is mediated by contralateral AMPA receptors. Epilepsy Res (2013)
+106:35–46. doi:10.1016/j.eplepsyres.2013.03.010
+271. Sabatino M,Gravante G,Ferraro G,Vella N,La Grutta G,La GruttaV. Striatoni-
+gralsuppressionof focalhippocampalepilepsy.NeurosciLett (1989)98:285–90.
+doi:10.1016/0304-3940(89)90415-1
+272. Rektor I, Kuba R, Brazdil M, Chrastina J. Do the basal ganglia inhibit
+seizure activity in temporal lobe epilepsy? Epilepsy Behav (2012) 25:56–9.
+doi:10.1016/j.yebeh.2012.04.125
+273. Krook-Magnuson E, Armstrong C, Oijala M, Soltesz I. On-demand optoge-
+netic control of spontaneous seizures in temporal lobe epilepsy. Nat Commun
+(2013) 4:1376. doi:10.1038/ncomms2376
+274. Paz JT,Davidson TJ,Frechette ES,Delord B,Parada I,Peng K,et al. Closed-loop
+optogenetic control of thalamus as a tool for interrupting seizures after cortical
+injury. Nat Neurosci (2013) 16:64–70. doi:10.1038/nn.3269
+275. Mirski MA, Rossell LA, Terry JB, Fisher RS. Anticonvulsant effect of anterior
+thalamic high frequency electrical stimulation in the rat. Epilepsy Res (1997)
+28:89–100. doi:10.1016/S0920-1211(97)00034-X
+Frontiers in Neurology | Epilepsy
+November 2014 | Volume 5 | Article 218 | 20
+
+
+--- 第 21 页 ---
+Pittau et al.
+Functional connectivity in epilepsy
+276. HamaniC,EwertonFI,Bonilha SM,BallesterG,MelloLE,LozanoAM.Bilateral
+anterior thalamic nucleus lesions and high-frequency stimulation are protec-
+tive against pilocarpine-induced seizures and status epilepticus. Neurosurgery
+(2004) 54:191–5. doi:10.1227/01.NEU.0000097552.31763.AE
+277. Takebayashi S, Hashizume K, Tanaka T, Hodozuka A. The effect of elec-
+trical stimulation and lesioning of the anterior thalamic nucleus on kainic
+acid-induced focal cortical seizure status in rats. Epilepsia (2007) 48:348–58.
+doi:10.1111/j.1528-1167.2006.00948.x
+278. Lado FA. Chronic bilateral stimulation of the anterior thalamus of kainate-
+treated rats increases seizure frequency. Epilepsia (2006) 47:27–32. doi:10.1111/
+j.1528-1167.2006.00366.x
+279. Fisher R, Salanova V, Witt T, Worth R, Henry T, Gross R, et al. Electrical stimu-
+lation of the anterior nucleus of thalamus for treatment of refractory epilepsy.
+Epilepsia (2010) 51:899–908. doi:10.1111/j.1528-1167.2010.02536.x
+280. Jackson JH. Lectures on the diagnosis of epilepsy. Br Med J (1879) 1:33–6.
+doi:10.1136/bmj.1.941.33
+281. Jackson JH. Lectures on the diagnosis of epilepsy. Br Med J (1879) 1:141–3.
+doi:10.1136/bmj.1.944.141
+282. Jackson JH. Lectures on the diagnosis of epilepsy. Br Med J (1879) 1:109–12.
+doi:10.1136/bmj.1.943.109
+283. Sander JW. Comorbidity and premature mortality in epilepsy. Lancet (2013)
+382:1618–9. doi:10.1016/S0140-6736(13)61136-8
+Conﬂict of Interest Statement: The authors declare that the research was conducted
+in the absence of any commercial or ﬁnancial relationships that could be construed
+as a potential conﬂict of interest.
+Received: 18 July 2014; accepted: 08 October 2014; published online: 05 November
+2014.
+Citation: Pittau F, Mégevand P, Sheybani L, Abela E, Grouiller F, Spinelli L, Michel
+CM, Seeck M and Vulliemoz S (2014) Mapping epileptic activity: sources or networks
+for the clinicians? Front. Neurol. 5:218. doi: 10.3389/fneur.2014.00218
+This article was submitted to Epilepsy, a section of the journal Frontiers in Neurology.
+Copyright © 2014 Pittau, Mégevand, Sheybani, Abela, Grouiller, Spinelli, Michel,
+Seeck and Vulliemoz. This is an open-access article distributed under the terms of the
+Creative Commons Attribution License (CC BY). The use, distribution or reproduction
+in other forums is permitted, provided the original author(s) or licensor are credited
+and that the original publication in this journal is cited, in accordance with accepted
+academic practice. No use, distribution or reproduction is permitted which does not
+comply with these terms.
+www.frontiersin.org
+November 2014 | Volume 5 | Article 218 | 21

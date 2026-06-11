@@ -218,7 +218,7 @@ Page({
   goToCamera() { wx.navigateTo({ url: '/pages/camera/camera' }); },
   goToTrend() { wx.switchTab({ url: '/pages/trend/trend' }); },
   goToMap() { wx.switchTab({ url: '/pages/map/map' }); },
-  goToReport() { wx.switchTab({ url: '/pages/report/report' }); },
+  goToReport() { wx.navigateTo({ url: '/pages/report/report' }); },
   goToProfile() { wx.switchTab({ url: '/pages/profile/profile' }); },
 
   // ===== 按钮 =====

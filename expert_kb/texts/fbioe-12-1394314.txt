@@ -1,0 +1,1620 @@
+--- 第 1 页 ---
+Knee sleeves improve gait
+symmetry during fast walking in
+older adults
+Takuma Inai, Shoma Kudo, Wakako Tsuchida and
+Masahiro Fujimoto*
+Health and Medical Research Institute, National Institute of Advanced Industrial Science and Technology
+(AIST), Takamatsu, Kagawa, Japan
+Knee sleeves are commonly used to address knee-related concerns, particularly in
+older individuals. Although previous studies have demonstrated their efﬁcacy in
+improving gait and functional outcomes in knees with pathological conditions, the
+effectiveness of knee sleeves for improving gait characteristics in healthy older
+adults remains unclear. The harmonic ratio (HR), an index for assessing gait
+symmetry commonly used to discriminate between individuals with different
+functional levels, can be used to detect alterations in gait characteristics. This
+study investigated the effects of knee sleeves on gait symmetry in healthy older
+adults. Sixteen healthy community-dwelling older adults walked barefoot with and
+without knee sleeves at normal and fast speeds. Gait symmetry indices (HR and
+improved HR [iHR]) and spatiotemporal gait parameters were compared under
+different conditions. A signiﬁcant interaction between knee condition and walking
+speed was observed for mean iHR in the anteroposterior direction (p = 0.006). A
+signiﬁcant simple main effect of knee condition was found during fast walking, with
+a larger iHR with knee sleeves than without (p = 0.002). In the condition without
+knee sleeves, the iHR was signiﬁcantly lower during fast walking than during normal
+walking (p = 0.035). Furthermore, a signiﬁcant main effect of knee condition was
+observed for the variability of iHR in the anteroposterior direction, with a smaller
+variability when walking with knee sleeves than when walking without (p = 0.006).
+These results suggest that knee sleeves may enhance gait symmetry along the
+anteroposterior direction, particularly during fast walking, where symmetry
+disruption is more likely than walking at a comfortable pace. A signiﬁcant
+reduction in gait symmetry variability also suggests a stabilizing effect on gait
+dynamics. These ﬁndings provide the ﬁrst evidence supporting the efﬁcacy of knee
+sleeves for improving gait symmetry. The use of knee sleeves could be a valuable
+option for restoring disrupted gait symmetry during fast walking, with potential
+implications for reducing the risk of falls.
+KEYWORDS
+walking, harmonic ratio, acceleration, inertial measurement unit, motion capture
+1 Introduction
+Knee sleeves are commonly used by individuals experiencing knee-related issues,
+particularly older individuals, in various contexts, including daily activities and clinical
+settings. Previous studies have demonstrated the effectiveness of knee sleeves in
+alleviating knee pain (Bryk et al., 2011; Cudejko et al., 2018; Mohd Sharif et al.,
+2019; Dzidotor et al., 2023) and inﬂuencing gait parameters (Schween et al., 2015;
+OPEN ACCESS
+EDITED BY
+Naomichi Ogihara,
+The University of Tokyo, Japan
+REVIEWED BY
+SungHyek Kim,
+Tokoha University, Japan
+Prasanna Sritharan,
+The University of Melbourne, Australia
+*CORRESPONDENCE
+Masahiro Fujimoto,
+masahiro-fujimoto@aist.go.jp
+RECEIVED 01 March 2024
+ACCEPTED 19 June 2024
+PUBLISHED 17 July 2024
+CITATION
+Inai T, Kudo S, Tsuchida W and Fujimoto M
+(2024), Knee sleeves improve gait symmetry
+during fast walking in older adults.
+Front. Bioeng. Biotechnol. 12:1394314.
+doi: 10.3389/fbioe.2024.1394314
+COPYRIGHT
+© 2024 Inai, Kudo, Tsuchida and Fujimoto. This
+is an open-access article distributed under
+the terms of the Creative Commons
+Attribution License (CC BY). The use,
+distribution or reproduction in other forums is
+permitted, provided the original author(s) and
+the copyright owner(s) are credited and that
+the original publication in this journal is cited,
+in accordance with accepted academic
+practice. No use, distribution or reproduction
+is permitted which does not comply with
+these terms.
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+01
+TYPE Original Research
+PUBLISHED 17 July 2024
+DOI 10.3389/fbioe.2024.1394314
+
+
+--- 第 2 页 ---
+Mohd
+Sharif
+et
+al.,
+2019).
+However,
+most
+observed
+enhancements in gait and functional aspects appear to be
+limited to knees with pathological conditions, such as knee
+osteoarthritis (Bryk et al., 2011; Collins et al., 2011; Collins
+et al., 2014; Schween et al., 2015; Mohd Sharif et al., 2019)
+and anterior cruciate ligament reconstruction (Sole et al., 2022).
+Consequently, the biomechanical effect of knee sleeves during
+gait in healthy populations remains poorly understood (Ko et al.,
+2017). Current research appears to lack sufﬁcient quantitative
+evidence to substantiate the efﬁcacy of knee sleeves with respect
+to gait characteristics, particularly in healthy older adults.
+The harmonic ratio (HR), a quantitative assessment metric for
+evaluating the quality of walking, has been widely used to
+discriminate between populations of different ages and during
+different functions (Menz et al., 2003a; Lowry et al., 2012; Doi
+et al., 2013; 2015; Bisi et al., 2014; Brodie et al., 2015; Bisi and
+Stagni, 2016; Howcroft et al., 2016; Pau et al., 2017; 2020; Iijima
+et al., 2019; Wada et al., 2019; Leban et al., 2020; Conway et al.,
+2021; Castiglia et al., 2022; Igarashi et al., 2023). The HR index is
+calculated based on the harmonic content of the acceleration
+signals, which are generally acquired at a lower trunk level
+through spectral analysis. It assesses the symmetry of the
+body’s acceleration pattern within a gait cycle (a stride)
+(Pasciuto et al., 2017). Since a stride consists of two steps, the
+acceleration pattern should inherently repeat in multiples of two
+within any given stride. Consequently, acceleration patterns in
+both the anteroposterior (AP) and vertical directions are biphasic
+for each stride, primarily dominated by the second harmonic
+(Menz et al., 2003b). On the other hand, mediolateral (ML)
+acceleration differs from AP or vertical accelerations, as the
+fundamental ML pattern is limb-dependent (left or right) and
+thus repeats only once per stride. Therefore, ML accelerations are
+primarily dominated by odd rather than even harmonics (Menz
+et al., 2003b). Hence, a perfectly symmetrical gait exclusively
+results in even harmonics along the AP and vertical directions,
+whereas only odd harmonics are present in the ML direction
+(Roche et al., 2013). HR is deﬁned as the ratio between the sum of
+the amplitudes of these harmonics, which are considered intrinsic
+to gait, and the extrinsic harmonics that lead to deviations from
+the ideal gait (Roche et al., 2013; Pasciuto et al., 2017). Using this
+index, previous studies have reported various factors affecting gait
+symmetry, such as age (Lowry et al., 2012; Bisi et al., 2014; Bisi and
+Stagni, 2016; Leban et al., 2020), fall risk (Menz et al., 2003a; Doi
+et al., 2013; Brodie et al., 2015; Howcroft et al., 2016), cognitive
+impairment (Pau et al., 2020), white matter lesions (Doi et al.,
+2015), total hip arthroplasty (Wada et al., 2019), knee pain and
+disability in knee osteoarthritis (Iijima et al., 2019), multiple
+sclerosis (Pau et al., 2017), malnutrition (Misu et al., 2017), and
+the effectiveness of rehabilitation in Parkinson’s disease (Conway
+et al., 2021; Castiglia et al., 2022) or stroke (Igarashi et al., 2023).
+These studies have clearly demonstrated that the HR index is a
+sensitive measure for identifying individuals with functional
+limitations or pathological conditions, suggesting that gait
+symmetry is altered in these populations. However, to the best
+of our knowledge, no study has investigated the effects of knee
+sleeves on gait symmetry in healthy individuals. Whether the use
+of knee sleeves alters gait symmetry, even in healthy older adults,
+remains unclear.
+The purpose of this study was to examine the effects of knee
+sleeves on gait symmetry in healthy older adults, both at a
+comfortable pace and at a faster pace, to challenge motor and
+postural control. We hypothesized that the application of knee
+sleeves
+would
+improve
+gait
+symmetry,
+particularly
+under
+challenging fast walking conditions.
+2 Methods
+2.1 Participants
+Sixteen community-dwelling healthy older adults participated
+(eight males and eight females, age: 71.8 ± 3.4 years, height: 1.59 ±
+0.09 m, body mass: 55.5 ± 8.5 kg). Participants were excluded if
+they required walking aids, had undergone surgery for trauma or
+orthopedic conditions, had neurological disorders, or were
+professional athletes. All participants reported no history of
+neurological pathology, head trauma, cerebrovascular accident,
+vestibular dysfunction, or visual impairment uncorrectable by
+lenses. This study adhered to the principles of the Declaration of
+Helsinki. The study protocol was approved by the Ethics
+Committee of AIST, Japan (IRB number: hi2023-534). All
+participants
+provided
+written
+informed
+consent
+before
+participation.
+2.2 Instrumentation and data collection
+An inertial measurement unit (IMU) (XsensDOT; Movella
+Inc., Henderson, NV, United States) was placed on the sacrum
+and dorsum of each foot (Figure 1A). Acceleration data were
+collected at 120 Hz. The sacral acceleration was used to
+calculate the index of gait symmetry, whereas the angular
+velocities of the feet were used to determine the timing of the
+heel-strike instant.
+Fifty-seven
+reﬂective
+markers
+were
+placed
+on
+each
+participant’s
+bony
+landmarks
+(Kobayashi
+et
+al.,
+2019)
+(Figure
+1B).
+Three-dimensional
+marker
+trajectories
+were
+collected using a 10-camera motion capture system (MAC3D;
+Motion Analysis Corp., Santa Rosa, CA, United States) at 200 Hz.
+Trajectories were smoothed using a fourth-order Butterworth
+ﬁlter with an 8-Hz cut-off frequency (Chang et al., 2008;
+Schmitz et al., 2014). The center of the hip joint was estimated
+using the method described by Bell et al. (1987), Bell et al. (1990).
+The centers of the knee and ankle joints were deﬁned as the
+midpoints of the femoral epicondyles and malleoli, respectively
+(Inai et al., 2021). Marker trajectories and joint centers were used
+to calculate the gait parameters.
+2.3 Protocol
+Participants walked barefoot back and forth along a 15-m
+straight pathway ﬁve times at two different walking speeds
+(Normal [Norm] and Fast), both with and without knee sleeves
+(KS and CO). They were instructed to walk at their preferred,
+comfortable speed in the Norm speed condition. For the Fast
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+02
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 3 页 ---
+speed condition, they were asked to walk as fast as possible. They
+wore knee sleeves (Actcyc Walk [ACT-80], Kagawa Seamless Inc.,
+Kagawa, Japan; Figure 2) on both sides during the KS condition and
+walked without wearing them during the CO condition. A knee
+sleeve with a standard wraparound design without a hinge was
+selected, considering the need for regular use by the participants.
+Given the potential impact on subsequent comfortable walking
+speeds and patterns when performing fast walking ﬁrst (Zhang
+et al., 2022), the Norm speed condition was followed by the Fast
+speed condition. The order of the CO and KS conditions was
+counterbalanced among the participants.
+2.4 Data analysis
+2.4.1 Gait symmetry
+The HR (no unit) and improved HR (iHR; unit: %) were
+calculated using frequency analysis to evaluate the symmetry of
+the acceleration pattern in the AP, ML, and V directions (Roche
+et al., 2013; Pasciuto et al., 2017). The sacral IMU accelerations were
+used for the calculations. Since ﬁltering can potentially cause
+harmonic distortion (Pasciuto et al., 2017), the raw signals were
+left unﬁltered. Higher values in the HR and iHR indices indicate
+greater symmetry. The harmonic contents of the acceleration signal,
+categorized as “in phase” (intrinsic harmonics), were compared to
+those categorized as “out of phase” (extrinsic harmonics). Since a
+perfectly symmetrical gait exhibits even harmonics along the AP and
+V directions, whereas only odd harmonics are present in the ML
+direction, we considered even harmonics as intrinsic for the AP and
+V accelerations, and odd harmonics as intrinsic for the ML
+acceleration (Roche et al., 2013; Pasciuto et al., 2017). The HR
+was then calculated by dividing the sum of the amplitudes of the
+intrinsic harmonics by the sum of the amplitudes of the extrinsic
+harmonics. Speciﬁcally, a perfectly symmetrical gait would yield
+only even harmonics in the AP and V directions and only odd
+harmonics in the ML direction as “in phase” (intrinsic harmonics)
+(Roche et al., 2013; Pasciuto et al., 2017). The iHR is an improved
+index that demonstrates greater robustness and reliability than the
+traditional HR (Pasciuto et al., 2017). It was proposed to address the
+following limitations of the HR index: (1) its signiﬁcant variability in
+FIGURE 1
+The placements of inertial measurement units (IMUs) and reﬂective markers. (A) Three IMUs were attached to the sacrum and dorsum of the feet. (B)
+Fifty-seven reﬂective markers were attached to various landmarks on the body (see Supplementary Material S1 for abbreviations). This ﬁgure was created
+using OpenSim (Delp et al., 2007; Seth et al., 2018).
+FIGURE 2
+Knee sleeves used in this study. Each participant wore knee
+sleeves on both knees.
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+03
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 4 页 ---
+highly symmetrical gait due to the minor contribution of extrinsic
+harmonics (in the denominator), (2) its unintuitive interpretation,
+and (3) its lack of mathematical rigor. Derived from the power of the
+harmonics involved and expressed as a percentage, the iHR allows
+for a more intuitive understanding and interpretation. The formulas
+for calculating HR and iHR are as follows (Pasciuto et al., 2017):
+HR 
+k
+j1Aj
+I
+k
+j1Aj
+E
+,
+iHR 
+k
+j1 Aj
+I
+
+
+2
+k
+j1 Aj
+I
+
+
+2 + k
+j1 Aj
+E
+
+
+2 · 100,
+where k represents the number of intrinsic (or extrinsic) harmonics
+(k = 10). Therefore, the total number of considered harmonics is 20.
+Aj
+I and Aj
+E indicate the amplitudes of the j th intrinsic and extrinsic
+harmonic, respectively.
+This calculation involved 20 harmonics and 20 strides (four
+strides per straight-path round trip) (Pasciuto et al., 2017). We
+calculated the mean and standard deviation (SD) of the HR and iHR
+in the AP, ML, and vertical directions using the 20 strides for each
+participant. These values were used to represent the mean and
+within-subject variability. To deﬁne a gait cycle (one stride), the
+heel-strike timing was identiﬁed by detecting the zero-crossing point
+using the foot angular velocity measured by the IMU in the sagittal
+plane (Jung et al., 2021; Shi et al., 2023). We utilized our original
+codes
+written
+in
+Scilab
+6.1.1
+(Dassault
+Systèmes,
+Vélizy-
+Villacoublay, France) for data analysis, including the extraction
+of harmonics and calculation of the HR and iHR.
+2.4.2 Gait parameters
+Spatiotemporal gait parameters (walking speed, peak walking
+velocity and acceleration, step length, stride length, walk ratio,
+cadence, step time, stride time, stance time, swing time, and
+minimum toe clearance) and joint angles (peak hip ﬂexion and
+extension angles, peak knee ﬂexion angle, peak ankle dorsiﬂexion,
+and plantarﬂexion angles, and their range of motion) were
+calculated based on three-dimensional motion capture data.
+Walking speed was calculated using stride time and AP
+displacement of the whole-body center of mass (COM). Using
+body parameters, the COM was calculated as the weighted sum
+of 15 body segments, including the head and neck, trunk, pelvis,
+upper arms, forearms, hands, thighs, shanks, and feet (Robertson
+et al., 2008). Walking velocity and acceleration were calculated as the
+ﬁrst and second derivatives of AP COM displacement, respectively.
+Step and stride lengths were calculated as the AP distances between
+the heel markers from the ﬁrst to the second heel strike of the
+contralateral and ipsilateral legs, respectively. Both parameters were
+normalized to body height. The walk ratio was calculated by dividing
+the step length by the cadence (Lindemann et al., 2014; Peng et al.,
+2020). Cadence was calculated using stride time (i.e., 60 × 2/stride
+time). The stride, stance, and swing times were determined using the
+heel-strike and toe-off timings. Heel-strike and toe-off timings were
+detected using midfoot vertical velocity (O’Connor et al., 2007). The
+hip, knee, and ankle joint angles were computed using the local
+coordinate systems of the pelvis, thigh, shank, and foot in the
+ipsilateral leg (Inai et al., 2023). The sagittal plane range of
+motion for these joints during the gait cycle was also calculated.
+Minimum toe clearance was deﬁned as the minimum value of the toe
+marker in the vertical direction during 30%–90% of the swing phase
+(Yamagata et al., 2019). It was then normalized to body height
+(Ullauri et al., 2019; Inai et al., 2023).
+2.5 Statistical analysis
+Two-way repeated-measures analysis of variance (ANOVA)
+with speed (Norm and Fast) and condition (CO and KS) was
+used to examine the main and interaction effects. When an
+interaction was conﬁrmed, a paired t-test was used to determine
+simple main effects. The index of effect size (d for pairwise
+comparison; partial eta-squared, η2
+p for ANOVA) was reported as
+p-values. Small, medium, and large effects for Cohen’s d were
+deﬁned as 0.2–0.5, 0.5–0.8, and >0.8, respectively (Cohen, 1992).
+Small, medium, and large effects for η2
+p were deﬁned as 0.01–0.06,
+0.06–0.14, and >0.14, respectively (Cohen, 1992). Statistical analyses
+were performed using R language 4.3.0 (R Core Team, Vienna,
+Austria). Statistical signiﬁcance was set at p < 0.05 for all
+comparisons.
+3 Results
+3.1 Gait symmetry
+Figure 3 shows mean HR and iHR. A signiﬁcant interaction
+between speed and condition was observed for the mean iHR in the
+AP direction (p = 0.006, η2
+p = 0.40). A simple main effect of condition
+was found for Fast speed. A pairwise comparison revealed that iHR
+was signiﬁcantly larger in the KS condition compared with the CO
+condition (p = 0.002, d = 0.53; CO: 88.9% ± 4.8% vs KS: 91.2% ±
+3.6%). A simple main effect of speed was also observed under the CO
+condition.
+A
+pairwise
+comparison
+revealed
+that
+iHR
+was
+signiﬁcantly smaller in the Fast speed condition compared to the
+Norm speed condition (p = 0.035, d = 0.52; Norm: 91.2% ± 3.9% vs
+Fast: 88.9% ± 4.8%). No signiﬁcant interactions were observed for
+the other gait symmetry indices.
+Signiﬁcant main effects of speed were observed for mean HR and
+iHR in the ML direction (p = 0.019, η2
+p = 0.32, and p = 0.038, η2
+p =
+0.26, respectively). The HR and iHR were both signiﬁcantly larger in
+the Fast speed condition compared to the Norm speed condition
+(Norm: 2.4 ± 0.7 vs Fast: 2.6 ± 0.6 and Norm: 80.7% ± 7.2% vs Fast:
+83.3% ± 7.8%, respectively).
+Figure 4 shows the within-subject variability of the HR and iHR.
+No signiﬁcant interactions were observed for any of the gait
+symmetry indices. A signiﬁcant main effect of condition was
+observed for the variability of iHR in the AP direction (p =
+0.006, η2
+p = 0.41). The variability was smaller in the KS condition
+compared
+with
+the
+CO
+condition
+(CO:
+6.7%
+±
+3.1%
+vs
+KS: 5.9% ± 2.6%).
+3.2 Gait parameters
+Table 1 shows the mean gait parameters of the participants (see
+Supplementary Material S2 for details). No signiﬁcant interactions
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+04
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 5 页 ---
+were observed for any parameters. Signiﬁcant main effects of the
+condition were observed for the mean swing time, peak hip ﬂexion
+angle, range of motion of the hip and knee joints, and minimum
+toe clearance (p ≤0.024). Signiﬁcant main effects of speed were
+observed for the mean walking speed, peak walking speed and
+acceleration, step and stride lengths, cadence, step and stride times,
+stance time, swing time, percentages of stance phase and swing
+phase, and peak hip ﬂexion and ankle plantar ﬂexion angles
+(p ≤0.020).
+Table 2 shows the variability in the gait parameters (see
+Supplementary Material S3 for details). A signiﬁcant interaction
+between the condition and variability of the range of motion of the
+ankle joint was observed (p = 0.046, η2
+p = 0.24). However, no simple
+main effect was observed in the post-analysis. No signiﬁcant
+interactions were observed for any other gait parameters.
+Signiﬁcant main effects of the condition were observed for
+variabilities in peak hip ﬂexion and peak ankle plantar ﬂexion
+angles (p ≤0.032). Signiﬁcant effects of speed were observed for
+variabilities in walking speed, peak walking speed and acceleration,
+stride length, cadence, percentages of stance and swing phases,
+peak hip ﬂexion angle, and range of motion of the knee joint
+(p ≤0.044).
+4 Discussion
+This study examined the effects of knee sleeves on gait
+symmetry.
+Gait
+symmetry
+indices
+(HR
+and
+iHR)
+and
+spatiotemporal gait parameters were compared during walking
+with and without knee sleeves (KS and CO, respectively) under
+normal and fast walking speed conditions. A signiﬁcant interaction
+between knee condition and walking speed was observed for mean
+iHR in the AP direction. A signiﬁcant simple main effect of knee
+condition was found during fast walking, revealing a signiﬁcantly
+larger iHR with knee sleeves than without knee sleeves. In the
+condition without knee sleeves, iHR was signiﬁcantly lower during
+fast walking than during normal walking. Furthermore, a signiﬁcant
+main effect of knee condition was observed for the variability in iHR
+in the AP direction, indicating a signiﬁcantly smaller variability
+when walking with knee sleeves than without. These results suggest
+that knee sleeves may enhance gait symmetry, particularly in the AP
+direction during faster-paced walking, where symmetry might be
+disrupted compared to walking at a comfortable pace.
+Without the use of knee sleeves, the iHR in the AP direction
+signiﬁcantly decreased during fast walking compared with normal
+walking, indicating a reduction in gait symmetry. This ﬁnding aligns
+FIGURE 3
+Means of harmonic ratio (HR) and improved HR (iHR). AP: antero-posterior; ML: medio-lateral; V: vertical. * Signiﬁcant interaction (p < 0.05). ‡
+Signiﬁcant main effect of speed (p < 0.05).
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+05
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 6 页 ---
+with previous studies that demonstrated a lower HR along the AP axis
+at increased walking speeds (Menz et al., 2003b; Latt et al., 2008). This
+reduction in symmetry index may be associated with an elevated risk
+of falls during fast walking in older adults. Previous studies have
+reported an increased likelihood of falls when walking at a faster speed
+(≥1.3 m/s) (Quach et al., 2011). Similarly, it has been reported that the
+HR in the AP direction is the highest at the preferred speed
+(approximately 1.2 m/s) and decreases as the speed increases (Latt
+et al., 2008). Furthermore, a recognized association exists between gait
+symmetry and fall risk, with a low HR along the AP axis indicating a
+higher risk of falls (Menz et al., 2003a; Doi et al., 2015). Walking at a
+pace faster than one’s comfortable speed appears to challenge the
+postural control system, potentially disrupting gait symmetry in the
+AP direction and subsequently increasing the risk of falls.
+Based on our results, knee sleeves may be a viable approach to
+enhance gait symmetry during fast walking. The application of knee
+sleeves resulted in a signiﬁcant increase in the iHR in the AP direction
+during fast walking, reaching a level comparable to that during
+walking at normal speed. Additionally, a signiﬁcant decrease in
+variability in the AP direction was observed with the knee sleeves.
+These ﬁndings suggest that the gait symmetry is enhanced and
+stabilized when walking faster with knee sleeves. Compression
+applied to the thigh and shank by the knee sleeves may have
+contributed to these improvements. Although the underlying
+mechanisms have not been fully elucidated, previous studies have
+reported an enhanced joint position sense using knee sleeves
+(Birmingham et al., 1998; Herrington et al., 2005; Mohd Sharif
+et al., 2017; Dzidotor et al., 2023), elastic bandages (Perlau et al.,
+1995), and knee braces (McNair et al., 1996). The heightened sensory
+input from tactile stimulation as a result of tightness may be a key
+factor in producing these effects (Mohd Sharif et al., 2017; Dzidotor
+et al., 2023). Therefore, knee sleeves may induce proprioceptive
+changes, subsequently modulating gait dynamics and improving
+the disrupted gait symmetry during fast walking.
+The constraint imposed by the knee sleeves may also have
+contributed to stabilizing the gait dynamics. Walking with knee
+sleeves resulted in a signiﬁcant reduction in the range of motion of
+the knee and hip joints, independent of walking speed. The
+variability in both peak hip ﬂexion and peak ankle plantar
+ﬂexion angles also decreased with the knee sleeves. These
+alterations can be attributed to the compressive effect imposed
+on the knees by the sleeves, which restricts knee joint movement
+and inﬂuences other joint motions. This restriction seems to have
+reduced the range and variability of joint motion, which in turn
+FIGURE 4
+Variabilities in the harmonic ratio (HR) and improved HR (iHR). AP: antero-posterior; ML: medio-lateral; V: vertical. † Signiﬁcant main effect of
+condition (p < 0.05).
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+06
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 7 页 ---
+TABLE 1 Gait parameters.
+Variable
+Control
+Knee sleeve
+Factor
+Norm
+Fast
+Norm
+Fast
+Condition
+Speed
+Interaction
+Mean
+(SD)
+Mean
+(SD)
+Mean
+(SD)
+Mean
+(SD)
+p-
+value
+Partial
+η2
+p-
+value
+Partial
+η2
+p-
+value
+Partial
+η2
+Walking speed, m/s
+1.32 (0.17)
+1.69 (0.21)
+1.32 (0.16)
+1.71 (0.24)
+0.530
+0.03
+0.000c
+0.83
+0.639
+0.02
+Peak walking speed, m/s
+1.45 (0.17)
+1.83 (0.22)
+1.45 (0.17)
+1.84 (0.25)
+0.899
+0.00
+0.000c
+0.84
+0.654
+0.01
+Peak walking
+acceleration, m/s2
+1.72 (0.40)
+2.20 (0.53)
+1.67 (0.42)
+2.29 (1.05)
+0.892
+0.00
+0.000c
+0.64
+0.575
+0.02
+Step length, m/HT
+0.40 (0.04)
+0.44 (0.05)
+0.40 (0.04)
+0.44 (0.05)
+0.419
+0.04
+0.000c
+0.63
+0.701
+0.01
+Stride length, m/HT
+0.80 (0.08)
+0.89 (0.10)
+0.80 (0.08)
+0.88 (0.10)
+0.434
+0.04
+0.000c
+0.62
+0.651
+0.01
+Walk ratio, cm/
+(steps/min)
+0.52 (0.06)
+0.49 (0.10)
+0.51 (0.06)
+0.49 (0.10)
+0.102
+0.17
+0.200
+0.11
+0.639
+0.02
+Cadence, steps/min
+123.7 (11.2)
+145.3 (18.6)
+124.6 (10.2)
+146.7 (21.1)
+0.143
+0.14
+0.000c
+0.64
+0.811
+0.00
+Step time, s
+0.489
+(0.046)
+0.420
+(0.054)
+0.484
+(0.043)
+0.417
+(0.058)
+0.113
+0.16
+0.000d
+0.73
+0.846
+0.00
+Stride time, s
+0.978
+(0.092)
+0.839
+(0.107)
+0.970
+(0.086)
+0.834
+(0.116)
+0.143
+0.14
+0.000d
+0.73
+0.826
+0.00
+Stance time, s
+0.572
+(0.067)
+0.470
+(0.079)
+0.568
+(0.065)
+0.469
+(0.087)
+0.542
+0.03
+0.000d
+0.73
+0.802
+0.00
+Swing time, s
+0.406
+(0.026)
+0.369
+(0.030)
+0.401
+(0.023)
+0.365
+(0.031)
+0.002b
+0.47
+0.000d
+0.71
+0.880
+0.00
+Percentage of stance
+phase, %
+58.3 (1.4)
+55.8 (2.6)
+58.5 (1.5)
+55.9 (3.2)
+0.187
+0.11
+0.000d
+0.57
+0.954
+0.00
+Percentage of swing
+phase, %
+41.7 (1.4)
+44.2 (2.6)
+41.5 (1.5)
+44.1 (3.2)
+0.187
+0.11
+0.000c
+0.57
+0.954
+0.00
+Peak hip ﬂexion angle,
+dege
+40.9 (6.7)
+43.8 (6.9)
+40.3 (6.3)
+43.3 (6.6)
+0.024b
+0.30
+0.000c
+0.65
+0.883
+0.00
+Peak hip extension angle,
+dege
+−6.2 (6.1)
+−6.4 (7.6)
+−5.7 (6.2)
+−5.8 (8.0)
+0.071
+0.20
+0.897
+0.00
+0.843
+0.00
+Peak knee ﬂexion
+angle, deg
+64.9 (2.9)
+65.8 (3.5)
+64.4 (3.0)
+65.1 (3.7)
+0.102
+0.17
+0.050
+0.23
+0.607
+0.02
+Peak ankle dorsiﬂexion
+angle, degf
+14.1 (2.3)
+14.0 (2.8)
+13.7 (2.5)
+13.7 (3.1)
+0.121
+0.15
+0.943
+0.00
+0.949
+0.00
+Peak ankle plantar
+ﬂexion angle, degf
+−16.6 (5.7)
+−18.5 (6.0)
+−17.4 (6.5)
+−18.9 (6.5)
+0.165
+0.12
+0.020d
+0.31
+0.566
+0.02
+Range of motion of hip
+joint, deg
+47.2 (5.9)
+50.5 (7.7)
+46.2 (5.8)
+49.3 (8.2)
+0.004b
+0.44
+0.052
+0.23
+0.803
+0.00
+Range of motion of knee
+joint, deg
+62.3 (4.4)
+62.2 (5.5)
+61.4 (4.4)
+61.6 (5.2)
+0.001b
+0.55
+0.946
+0.00
+0.559
+0.02
+Range of motion of ankle
+joint, deg
+30.7 (5.3)
+32.5 (5.3)
+31.1 (6.3)
+32.6 (5.4)
+0.492
+0.03
+0.078
+0.19
+0.592
+0.02
+Minimum toe clearance,
+m/HT
+0.0344
+(0.0032)
+0.0340
+(0.0027)
+0.0337
+(0.0033)
+0.0334
+(0.0025)
+0.006a
+0.40
+0.551
+0.02
+0.686
+0.01
+Note: Bold indicates p < 0.05. HT, height.
+aControl < Knee sleeve.
+bControl > Knee sleeve.
+cNorm < Fast.
+dNorm > Fast.
+ePositive numbers indicate hip ﬂexion and negative numbersindicate hip extension.
+fPositive numbers indicate ankle dorsiﬂexion and negative numbers indicate ankle plantar ﬂexion.
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+07
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 8 页 ---
+TABLE 2 Variabilities in gait parameters.
+Variable
+Control
+Knee sleeve
+Factor
+Norm
+Fast
+Norm
+Fast
+Condition
+Speed
+Interaction
+Mean
+(SD)
+Mean
+(SD)
+Mean
+(SD)
+Mean
+(SD)
+p-
+value
+Partial
+η2
+p-
+value
+Partial
+η2
+p-
+value
+Partial
+η2
+Walking speed, m/s
+0.03 (0.01)
+0.05 (0.01)
+0.03 (0.02)
+0.05 (0.02)
+0.802
+0.00
+0.001c
+0.56
+0.736
+0.01
+Peak walking speed, m/s
+0.03 (0.01)
+0.05 (0.01)
+0.04 (0.02)
+0.05 (0.02)
+0.713
+0.01
+0.003c
+0.45
+0.736
+0.01
+Peak walking
+acceleration, m/s2
+0.17 (0.10)
+0.35 (0.19)
+0.17 (0.04)
+0.47 (0.53)
+0.384
+0.05
+0.008c
+0.39
+0.343
+0.06
+Step length, m/HT
+0.011
+(0.004)
+0.014
+(0.005)
+0.011
+(0.006)
+0.014
+(0.004)
+0.930
+0.00
+0.050
+0.23
+0.950
+0.00
+Stride length, m/HT
+0.015
+(0.005)
+0.019
+(0.005)
+0.017
+(0.010)
+0.020
+(0.006)
+0.401
+0.05
+0.028c
+0.28
+0.633
+0.02
+Walk ratio, cm/
+(steps/min)
+0.02 (0.01)
+0.02 (0.01)
+0.02 (0.01)
+0.02 (0.01)
+0.702
+0.01
+0.541
+0.03
+0.556
+0.02
+Cadence, steps/min
+1.8 (0.6)
+2.7 (1.0)
+1.9 (0.8)
+2.6 (1.1)
+0.991
+0.00
+0.012c
+0.35
+0.488
+0.03
+Step time, s
+0.011
+(0.003)
+0.011
+(0.003)
+0.011
+(0.004)
+0.010
+(0.003)
+0.731
+0.01
+0.631
+0.02
+0.983
+0.00
+Stride time, s
+0.014
+(0.005)
+0.016
+(0.005)
+0.015
+(0.007)
+0.015
+(0.007)
+0.892
+0.00
+0.751
+0.01
+0.466
+0.04
+Stance time, s
+0.012
+(0.003)
+0.013
+(0.004)
+0.012
+(0.006)
+0.012
+(0.005)
+0.948
+0.00
+0.702
+0.01
+0.367
+0.05
+Swing time, s
+0.008
+(0.003)
+0.007
+(0.002)
+0.007
+(0.002)
+0.008
+(0.002)
+0.922
+0.00
+0.956
+0.00
+0.050
+0.23
+Percentage of stance
+phase, %
+0.69 (0.25)
+0.79 (0.18)
+0.63 (0.20)
+0.81 (0.23)
+0.551
+0.02
+0.029c
+0.28
+0.266
+0.08
+Percentage of swing
+phase, %
+0.69 (0.25)
+0.79 (0.18)
+0.63 (0.20)
+0.81 (0.23)
+0.551
+0.02
+0.029c
+0.28
+0.266
+0.08
+Peak hip ﬂexion
+angle, deg
+1.3 (0.5)
+1.6 (0.4)
+1.2 (0.4)
+1.3 (0.4)
+0.003b
+0.45
+0.013c
+0.35
+0.097
+0.17
+Peak hip extension
+angle, deg
+1.4 (0.8)
+1.4 (0.7)
+1.5 (1.0)
+1.5 (0.8)
+0.337
+0.06
+0.888
+0.00
+0.323
+0.07
+Peak knee ﬂexion
+angle, deg
+1.7 (0.6)
+2.2 (1.2)
+1.7 (0.8)
+1.8 (0.8)
+0.305
+0.07
+0.082
+0.19
+0.092
+0.18
+Peak ankle dorsiﬂexion
+angle, deg
+2.0 (1.0)
+1.8 (1.0)
+1.6 (0.7)
+1.7 (0.9)
+0.071
+0.20
+0.959
+0.00
+0.320
+0.07
+Peak ankle plantar
+ﬂexion angle, deg
+3.0 (2.2)
+2.8 (1.1)
+2.8 (2.0)
+2.4 (1.2)
+0.032b
+0.27
+0.309
+0.07
+0.391
+0.05
+Range of motion of hip
+joint, deg
+1.6 (0.8)
+1.8 (0.7)
+1.6 (1.0)
+1.6 (0.7)
+0.552
+0.02
+0.643
+0.01
+0.219
+0.10
+Range of motion of knee
+joint, deg
+2.1 (0.6)
+2.6 (1.3)
+2.0 (0.5)
+2.3 (0.9)
+0.194
+0.11
+0.044c
+0.24
+0.506
+0.03
+Range of motion of ankle
+joint, deg
+2.9 (2.0)
+3.2 (1.5)
+3.0 (2.1)
+3.0 (1.6)
+0.464
+0.04
+0.474
+0.03
+0.046
+0.24
+Minimum toe clearance,
+m/HT
+0.0030
+(0.0012)
+0.0031
+(0.0010)
+0.0029
+(0.0012)
+0.0030
+(0.0011)
+0.426
+0.04
+0.446
+0.04
+0.685
+0.01
+Note: Bold indicates p < 0.05. HT, height.
+aControl < Knee sleeve.
+bControl > Knee sleeve.
+cNorm < Fast.
+dNorm > Fast.
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+08
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 9 页 ---
+resulted in the improvement of disrupted symmetry. Taken
+together,
+knee
+sleeves
+may
+offer
+a
+valuable
+approach
+for
+enhancing gait symmetry, potentially reducing the risk of falls
+during fast walking, possibly owing to their proprioceptive and/
+or constraining effects on the knee joint.
+This study had some limitations. First, the participants were
+exclusively healthy older adults. Gait kinematics in older adults
+differ from those in other groups, such as healthy young adults
+(Chehab et al., 2017; Schloemer et al., 2017) and older adults who
+have experienced falls (Kobayashi et al., 2014; Inai et al., 2023). As the
+effect of knee sleeves on gait symmetry in other populations remains
+unknown, further research is required to investigate their impact
+across diverse demographics. Second, only one type of knee sleeve was
+used. It is crucial to recognize that different designs, materials, and
+tightness characteristics may inﬂuence gait symmetry and parameters.
+Therefore, future studies should explore whether various types of knee
+sleeves have different effects on these variables. Finally, HR and iHR
+are global measures and, therefore, cannot explain in which phase of
+the gait cycle the deviations from symmetry occur or why they
+happen. Further studies investigating time-series three-dimensional
+kinematics and kinetics are warranted to elucidate the underlying
+mechanisms affecting gait symmetry.
+In conclusion, this study examined gait symmetry indices and
+spatiotemporal gait parameters during walking with and without
+knee sleeves at different walking speeds. Our results indicate that the
+use of knee sleeves enhances gait symmetry along the AP direction,
+particularly during fast walking, where symmetry disruption is more
+likely than when walking at a comfortable pace. Additionally, knee
+sleeves were found to reduce the variability in gait symmetry across
+different walking speeds, suggesting a stabilizing effect on gait
+dynamics. To the best of our knowledge, this is the ﬁrst study to
+provide evidence supporting the efﬁcacy of knee sleeves in
+improving gait symmetry. The use of knee sleeves could be a
+valuable option for restoring disrupted gait symmetry during fast
+walking, with potential implications for reducing the risk of falls.
+Data availability statement
+The datasets presented in this article are not readily available
+because our IRB approval does not include data sharing. Requests to
+access the datasets should be directed to TI, takuma.inai@aist.go.jp.
+Ethics statement
+The studies involving humans were approved by the Ethics
+Committee of National Institute of Advanced Industrial Science
+and
+Technology
+(AIST).
+The
+studies
+were
+conducted
+in
+accordance
+with
+the
+local
+legislation
+and
+institutional
+requirements. The participants provided their written informed
+consent to participate in this study.
+Author contributions
+TI: Conceptualization, Data curation, Formal Analysis, Funding
+acquisition, Investigation, Methodology, Resources, Validation,
+Visualization, Writing–original draft, Writing–review and editing.
+SK:
+Conceptualization,
+Funding
+acquisition,
+Investigation,
+Methodology,
+Resources,
+Validation,
+Visualization,
+Writing–original
+draft,
+Writing–review
+and
+editing.
+WT:
+Conceptualization,
+Funding
+acquisition,
+Investigation,
+Methodology,
+Resources,
+Validation,
+Visualization,
+Writing–original
+draft,
+Writing–review
+and
+editing.
+MF:
+Conceptualization,
+Funding
+acquisition,
+Investigation,
+Methodology,
+Project
+administration,
+Resources,
+Supervision,
+Validation, Visualization, Writing–original draft, Writing–review
+and editing.
+Funding
+The author(s) declare that ﬁnancial support was received for the
+research, authorship, and/or publication of this article. This work
+was supported by the collaborative research fund provided by
+Kagawa
+Seamless
+Inc.
+through
+the
+Kagawa
+Prefecture
+AI
+advanced technology research and development support project
+subsidy. The funder was not involved in the study design,
+collection, analysis, interpretation of data, the writing of this
+article, or the decision to submit it for publication.
+Acknowledgments
+The authors thank Yuko Okazaki, Yumi Nakagawa, and Hiromi
+Chujo for their technical assistance with the experiments.
+Conﬂict of interest
+The authors declare that the research was conducted in the
+absence of any commercial or ﬁnancial relationships that could be
+construed as a potential conﬂict of interest.
+The authors declare that this study received funding from
+Kagawa
+Seamless
+Inc.
+through
+the
+Kagawa
+Prefecture
+AI
+advanced technology research and development support project
+subsidy. The authors disclose that knee sleeves were provided
+free of charge by Kagawa Seamless Inc. for the purpose of this study.
+Publisher’s note
+All claims expressed in this article are solely those of the authors
+and
+do
+not
+necessarily
+represent
+those
+of
+their
+afﬁliated
+organizations, or those of the publisher, the editors and the
+reviewers. Any product that may be evaluated in this article, or
+claim that may be made by its manufacturer, is not guaranteed or
+endorsed by the publisher.
+Supplementary material
+The Supplementary Material for this article can be found online
+at: https://www.frontiersin.org/articles/10.3389/fbioe.2024.1394314/
+full#supplementary-material
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+09
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 10 页 ---
+References
+Bell, A. L., Brand, R. A., and Pedersen, D. R. (1987). Prediction of hip joint center
+location from external landmarks. J. Biomech. 20, 913. doi:10.1016/0021-9290(87)
+90226-0
+Bell, A. L., Pedersen, D. R., and Brand, R. A. (1990). A comparison of the accuracy of
+several hip center location prediction methods. J. Biomech. 23, 617–621. doi:10.1016/
+0021-9290(90)90054-7
+Birmingham, T. B., Kramer, J. F., Inglis, J. T., Mooney, C. A., Murray, L. J., Fowler, P.
+J., et al. (1998). Effect of a neoprene sleeve on knee joint position sense during sitting
+open kinetic chain and supine closed kinetic chain tests. Am. J. Sports Med. 26, 562–566.
+doi:10.1177/03635465980260041601
+Bisi, M. C., Riva, F., and Stagni, R. (2014). Measures of gait stability: performance on
+adults and toddlers at the beginning of independent walking. J. Neuroeng Rehabil. 11,
+131. doi:10.1186/1743-0003-11-131
+Bisi, M. C., and Stagni, R. (2016). Complexity of human gait pattern at different ages
+assessed using multiscale entropy: from development to decline. Gait Posture 47, 37–42.
+doi:10.1016/j.gaitpost.2016.04.001
+Brodie, M. A. D., Menz, H. B., Smith, S. T., Delbaere, K., and Lord, S. R. (2015). Good
+lateral harmonic stability combined with adequate gait speed is required for low fall risk
+in older people. Gerontology 61, 69–78. doi:10.1159/000362836
+Bryk, F. F., de Jesus, J. F., Fukuda, T. Y., Moreira, E. G., Marcondes, F. B., and dos
+Santos, M. G. (2011). Efeito imediato da utilização da joelheira elástica em indivíduos
+com
+osteoartrite.
+Rev.
+Bras.
+Reumatol.
+51,
+440–446.
+doi:10.1590/s0482-
+50042011000500004
+Castiglia, S. F., Trabassi, D., De Icco, R., Tatarelli, A., Avenali, M., Corrado, M., et al.
+(2022). Harmonic ratio is the most responsive trunk-acceleration derived gait index to
+rehabilitation in people with Parkinson’s disease at moderate disease stages. Gait
+Posture 97, 152–158. doi:10.1016/j.gaitpost.2022.07.235
+Chang, R., Van Emmerik, R., and Hamill, J. (2008). Quantifying rearfoot-forefoot
+coordination in human walking. J. Biomech. 41, 3101–3105. doi:10.1016/j.jbiomech.
+2008.07.024
+Chehab, E. F., Andriacchi, T. P., and Favre, J. (2017). Speed, age, sex, and body mass
+index provide a rigorous basis for comparing the kinematic and kinetic proﬁles of the lower
+extremity during walking. J. Biomech. 58, 11–20. doi:10.1016/j.jbiomech.2017.04.014
+Cohen, J. (1992). A power primer. Psychol. Bull. 112, 155–159. doi:10.1037//0033-
+2909.112.1.155
+Collins, A., Blackburn, J. T., Olcott, C., Yu, B., and Weinhold, P. (2011). The impact of
+stochastic resonance electrical stimulation and knee sleeve on impulsive loading and
+muscle co-contraction during gait in knee osteoarthritis. Clin. Biomech. (Bristol, Avon)
+26, 853–858. doi:10.1016/j.clinbiomech.2011.04.011
+Collins, A., Blackburn, T., Olcott, C., Jordan, J. M., Yu, B., and Weinhold, P. (2014). A
+kinetic and kinematic analysis of the effect of stochastic resonance electrical stimulation
+and knee sleeve during gait in osteoarthritis of the knee. J. Appl. Biomech. 30, 104–112.
+doi:10.1123/jab.2012-0257
+Conway, Z. J., Silburn, P. A., Perera, T., O’Maley, K., and Cole, M. H. (2021). Low-
+frequency STN-DBS provides acute gait improvements in Parkinson’s disease: a double-
+blinded randomised cross-over feasibility trial. J. Neuroeng Rehabil. 18, 125. doi:10.
+1186/s12984-021-00921-4
+Cudejko, T., van der Esch, M., van der Leeden, M., Roorda, L. D., Pallari, J., Bennell, K.
+L., et al. (2018). Effect of soft braces on pain and physical function in patients with knee
+osteoarthritis: systematic review with meta-analyses. Arch. Phys. Med. Rehabil. 99,
+153–163. doi:10.1016/j.apmr.2017.04.029
+Delp, S. L., Anderson, F. C., Arnold, A. S., Loan, P., Habib, A., John, C. T., et al. (2007).
+Opensim: open-source software to create and analyze dynamic simulations of
+movement. IEEE Trans. Biomed. Eng. 54, 1940–1950. doi:10.1109/TBME.2007.901024
+Doi, T., Hirata, S., Ono, R., Tsutsumimoto, K., Misu, S., and Ando, H. (2013). The
+harmonic ratio of trunk acceleration predicts falling among older people: results of a 1-
+year prospective study. J. Neuroeng Rehabil. 10, 7. doi:10.1186/1743-0003-10-7
+Doi, T., Shimada, H., Makizako, H., Tsutsumimoto, K., Hotta, R., Nakakubo, S., et al.
+(2015). Effects of white matter lesions on trunk stability during dual-task walking
+among older adults with mild cognitive impairment. Age (Dordr) 37, 120. doi:10.1007/
+s11357-015-9858-x
+Dzidotor, G. K., Moorhead, J. B., Ude, C. C., Ogueri, K. S., Ghosh, D., and Laurencin,
+C. T. (2023). Functions and effectiveness of unloader, patellofemoral, and knee sleeve
+orthoses: a review. Regen. Eng. Transl. Med. doi:10.1007/s40883-023-00313-1
+Herrington, L., Simmonds, C., and Hatcher, J. (2005). The effect of a neoprene sleeve
+on
+knee
+joint
+position
+sense.
+Res.
+Sports
+Med.
+13,
+37–46.
+doi:10.1080/
+15438620590922077
+Howcroft, J., Kofman, J., Lemaire, E. D., and McIlroy, W. E. (2016). Analysis of dual-
+task elderly gait in fallers and non-fallers using wearable sensors. J. Biomech. 49,
+992–1001. doi:10.1016/j.jbiomech.2016.01.015
+Igarashi, T., Tani, Y., Takeda, R., and Asakura, T. (2023). Relationship between gait
+regularity and harmony, and gait speed at discharge in inpatients with subacute stroke.
+J. Phys. Ther. Sci. 35, 40–45. doi:10.1589/jpts.35.40
+Iijima, H., Eguchi, R., Aoyama, T., and Takahashi, M. (2019). Trunk movement
+asymmetry associated with pain, disability, and quadriceps strength asymmetry in
+individuals with knee osteoarthritis: a cross-sectional study. Osteoarthr. Cartil. 27,
+248–256. doi:10.1016/j.joca.2018.10.012
+Inai, T., Kobayashi, Y., Huang, C., Fujita, K., Fujimoto, M., Nihey, F., et al. (2023).
+Identiﬁcation of characteristics of foot position and angle during swing phase in fallers
+using principal component analysis. Front. Bioeng. Biotechnol. 11, 1117884. doi:10.
+3389/fbioe.2023.1117884
+Inai, T., Takabayashi, T., Edama, M., and Kubo, M. (2021). Effects of step length and
+cadence on hip moment impulse in the frontal plane during the stance phase. PeerJ 9,
+e11870. doi:10.7717/peerj.11870
+Jung, D., Kim, J., Kim, M., Won, C. W., and Mun, K.-R. (2021). Frailty assessment
+using temporal gait characteristics and a long short-term memory network. IEEE
+J. Biomed. Health Inf. 25, 3649–3658. doi:10.1109/JBHI.2021.3067931
+Ko, C.-Y., Chang, Y., Jeong, B., Kang, S., Ryu, J., and Kim, G. (2017). Effects of knee
+sleeves on coordination of lower-limb segments in healthy adults during level walking
+and one-leg hopping. PeerJ 5, e3340. doi:10.7717/peerj.3340
+Kobayashi, Y., Hida, N., Nakajima, K., Fujimoto, M., and Mochimaru, M. (2019).
+AIST gait database 2019. Available at: https://unit.aist.go.jp/harc/ExPART/GDB2019.
+html.
+Kobayashi, Y., Hobara, H., Matsushita, S., and Mochimaru, M. (2014). Key joint
+kinematic characteristics of the gait of fallers identiﬁed by principal component analysis.
+J. Biomech. 47, 2424–2429. doi:10.1016/j.jbiomech.2014.04.011
+Latt, M. D., Menz, H. B., Fung, V. S., and Lord, S. R. (2008). Walking speed, cadence
+and step length are selected to optimize the stability of head and pelvis accelerations.
+Exp. Brain Res. 184, 201–209. doi:10.1007/s00221-007-1094-x
+Leban, B., Cimolin, V., Porta, M., Arippa, F., Pilloni, G., Galli, M., et al. (2020). Age-
+related changes in smoothness of gait of healthy children and early adolescents. J. Mot.
+Behav. 52, 694–702. doi:10.1080/00222895.2019.1680949
+Lindemann, U., Oksa, J., Skelton, D. A., Beyer, N., Klenk, J., Zscheile, J., et al. (2014).
+Effect of cold indoor environment on physical performance of older women living in the
+community. Age Ageing 43, 571–575. doi:10.1093/ageing/afu057
+Lowry, K. A., Lokenvitz, N., and Smiley-Oyen, A. L. (2012). Age- and speed-related
+differences in harmonic ratios during walking. Gait Posture 35, 272–276. doi:10.1016/j.
+gaitpost.2011.09.019
+McNair, P. J., Stanley, S. N., and Strauss, G. R. (1996). Knee bracing: effects on
+proprioception. Arch. Phys. Med. Rehabil. 77, 287–289. doi:10.1016/s0003-9993(96)
+90114-8
+Menz, H. B., Lord, S. R., and Fitzpatrick, R. C. (2003a). Acceleration patterns of the
+head and pelvis when walking are associated with risk of falling in community-dwelling
+older people. J. Gerontol. A Biol. Sci. Med. Sci. 58, M446–M452. doi:10.1093/gerona/58.
+5.m446
+Menz, H. B., Lord, S. R., and Fitzpatrick, R. C. (2003b). Acceleration patterns of the
+head and pelvis when walking on level and irregular surfaces. Gait Posture 18, 35–46.
+doi:10.1016/s0966-6362(02)00159-5
+Misu, S., Asai, T., Doi, T., Sawa, R., Ueda, Y., Saito, T., et al. (2017). Association
+between gait abnormality and malnutrition in a community-dwelling elderly
+population. Geriatr. Gerontol. Int. 17, 1155–1160. doi:10.1111/ggi.12839
+Mohd Sharif, N. A., Goh, S.-L., Usman, J., and Wan Safwani, W. K. Z. (2017).
+Biomechanical and functional efﬁcacy of knee sleeves: a literature review. Phys. Ther.
+Sport 28, 44–52. doi:10.1016/j.ptsp.2017.05.001
+Mohd Sharif, N. A., Usman, J., Wan Safwani, W. K. Z., Siew Li, G., Abdul Karim, S.,
+Mohamed, N. A., et al. (2019). Effects of simple knee sleeves on pain and knee adduction
+moment in early unilateral knee osteoarthritis. Proc. Inst. Mech. Eng. H. 233, 1132–1140.
+doi:10.1177/0954411919874614
+O’Connor, C. M., Thorpe, S. K., O’Malley, M. J., and Vaughan, C. L. (2007).
+Automatic detection of gait events using kinematic data. Gait Posture 25, 469–474.
+doi:10.1016/j.gaitpost.2006.05.016
+Pasciuto, I., Bergamini, E., Iosa, M., Vannozzi, G., and Cappozzo, A. (2017).
+Overcoming the limitations of the Harmonic Ratio for the reliable assessment of
+gait symmetry. J. Biomech. 53, 84–89. doi:10.1016/j.jbiomech.2017.01.005
+Pau, M., Mandaresu, S., Pilloni, G., Porta, M., Coghe, G., Marrosu, M. G., et al. (2017).
+Smoothness of gait detects early alterations of walking in persons with multiple sclerosis
+without disability. Gait Posture 58, 307–309. doi:10.1016/j.gaitpost.2017.08.023
+Pau, M., Mulas, I., Putzu, V., Asoni, G., Viale, D., Mameli, I., et al. (2020). Smoothness
+of gait in healthy and cognitively impaired individuals: a study on Italian elderly using
+wearable inertial sensor. Sensors (Basel) 20, 3577. doi:10.3390/s20123577
+Peng, H.-T., Lin, C.-H., Kuo, Y.-C., and Song, C.-Y. (2020). Effects of arch support
+insoles on single- and dual-task gait performance among community-dwelling older
+adults. Clin. Interv. Aging 15, 1325–1332. doi:10.2147/CIA.S254474
+Perlau, R., Frank, C., and Fick, G. (1995). The effect of elastic bandages on human
+knee proprioception in the uninjured population. Am. J. Sports Med. 23, 251–255.
+doi:10.1177/036354659502300221
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+10
+Inai et al.
+10.3389/fbioe.2024.1394314
+
+
+--- 第 11 页 ---
+Quach, L., Galica, A. M., Jones, R. N., Procter-Gray, E., Manor, B., Hannan, M. T.,
+et al. (2011). The nonlinear relationship between gait speed and falls: the maintenance of
+balance, independent living, intellect, and zest in the elderly of Boston study: THE
+NON-linear relationship between gait speed and falls. J. Am. Geriatr. Soc. 59,
+1069–1073. doi:10.1111/j.1532-5415.2011.03408.x
+Robertson, D. G. E., Caldwell, G. E., Hamill, J., Kamen, G., and Whittlesey, S. N.
+(2008). Research Methods in Biomechanics. 2nd Edn. Champaign,ill: Human Kinetics.
+Roche, J. L., Lowry, K. A., Vanswearingen, J. M., Brach, J. S., and Redfern, M. S. (2013).
+Harmonic Ratios: a quantiﬁcation of step to step symmetry. J. Biomech. 46, 828–831.
+doi:10.1016/j.jbiomech.2012.12.008
+Schloemer, S. A., Thompson, J. A., Silder, A., Thelen, D. G., and Siston, R. A. (2017).
+Age-related differences in gait kinematics, kinetics, and muscle function: a principal
+component analysis. Ann. Biomed. Eng. 45, 695–710. doi:10.1007/s10439-016-1713-4
+Schmitz, A., Ye, M., Shapiro, R., Yang, R., and Noehren, B. (2014). Accuracy and
+repeatability of joint angles measured using a single camera markerless motion capture
+system. J. Biomech. 47, 587–591. doi:10.1016/j.jbiomech.2013.11.031
+Schween, R., Gehring, D., and Gollhofer, A. (2015). Immediate effects of an elastic
+knee sleeve on frontal plane gait biomechanics in knee osteoarthritis. PLoS One 10,
+e0115782. doi:10.1371/journal.pone.0115782
+Seth, A., Hicks, J. L., Uchida, T. K., Habib, A., Dembia, C. L., Dunne, J. J., et al. (2018).
+OpenSim: simulating musculoskeletal dynamics and neuromuscular control to study human
+and animal movement. PLoS Comput. Biol. 14, e1006223. doi:10.1371/journal.pcbi.1006223
+Shi, X., Wang, Z., Zhao, H., Qiu, S., Liu, R., Lin, F., et al. (2023). Threshold-free
+phase segmentation and zero velocity detection for gait analysis using foot-mounted
+inertial sensors. IEE Trans. Hum. Mach. Syst. 53, 176–186. doi:10.1109/THMS.2022.
+3228515
+Sole, G., Lamb, P., Pataky, T., Pathak, A., Klima, S., Navarre, P., et al. (2022).
+Immediate and six-week effects of wearing a knee sleeve following anterior cruciate
+ligament reconstruction on knee kinematics and kinetics: a cross-over laboratory and
+randomised clinical trial. BMC Musculoskelet. Disord. 23, 560. doi:10.1186/s12891-022-
+05488-2
+Ullauri, J. B., Akiyama, Y., Okamoto, S., and Yamada, Y. (2019). Technique to reduce
+the minimum toe clearance of young adults during walking to simulate the risk of
+tripping of the elderly. PLoS One 14, e0217336. doi:10.1371/journal.pone.0217336
+Wada, O., Asai, T., Hiyama, Y., Nitta, S., and Mizuno, K. (2019). Gait variability in
+women with hip osteoarthritis before and after total hip replacement: a prospective
+cohort
+study.
+Am.
+J.
+Phys.
+Med.
+Rehabil.
+98,
+866–871.
+doi:10.1097/PHM.
+0000000000001206
+Yamagata, M., Tateuchi, H., Shimizu, I., and Ichihashi, N. (2019). The effects of fall
+history on kinematic synergy during walking. J. Biomech. 82, 204–210. doi:10.1016/j.
+jbiomech.2018.10.032
+Zhang, L., Yan, Y., Liu, G., Han, B., Fei, J., and Zhang, Y. (2022). Effect of fatigue on
+kinematics, kinetics and muscle activities of lower limbs during gait. Proc. Inst. Mech.
+Eng. H. 236, 1365–1374. doi:10.1177/09544119221112516
+Frontiers in Bioengineering and Biotechnology
+frontiersin.org
+11
+Inai et al.
+10.3389/fbioe.2024.1394314

@@ -1,0 +1,135 @@
+{
+  "summary": "患者步态严重异常，表现为极慢步速、极短跨步长、极高步长和步时变异、异常高的双支撑比和支撑相占比，提示严重步态障碍和极高跌倒风险。GRS评分持续偏低，但近期有改善趋势。",
+  "gait_assessment": {
+    "overall": "严重异常",
+    "grs_score": "GRS评分均值29.33/100，远低于40分，属于需重点关注范围。最新值26.30/100，提示康复效果有限，但7天趋势显示从0分上升至26.10分，有初步改善。",
+    "key_findings": [
+      "步速极慢（0.30 m/s），远低于正常下限1.0 m/s，符合严重异常标准",
+      "跨步长极短（0.21 m），仅为正常值的约1/5",
+      "步长变异系数（CV）高达51.03%，步时CV高达161.99%，远超正常<5%和高度变异>15%的阈值",
+      "双支撑比0.98（98%），远超正常20-30%，提示步态极度不稳",
+      "支撑相占比91.79%，远高于正常约60%，摆动相极短",
+      "左膝ROM均值25.89°，右膝ROM均值10.23°，均低于正常行走所需50-65°，右膝严重受限",
+      "步宽0.74m，显著增宽，与跌倒风险正相关",
+      "足廓清1.34cm，虽在正常范围（1.5-2.5cm）下限附近，但最新值1.50cm尚可",
+      "对称性0.93，在正常范围（>0.90）内，但趋势显示下降",
+      "躯干侧倾均值5.28°，接近正常上限5°，最新值11.20°已超出正常范围"
+    ]
+  },
+  "literature_comparison": [
+    {
+      "metric": "步速 (gait velocity)",
+      "patient_value": "0.30 m/s",
+      "normal_range": ">1.0 m/s (正常), <0.6 m/s (缓慢), <0.4 m/s (严重异常)",
+      "paper_reference": "Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf",
+      "assessment": "严重偏低"
+    },
+    {
+      "metric": "对称性 (symmetry)",
+      "patient_value": "0.93",
+      "normal_range": ">0.90 正常, 0.70-0.90 轻度不对称, <0.70 显著不对称",
+      "paper_reference": "Gait Variability Review (文献数据库标准)",
+      "assessment": "正常"
+    },
+    {
+      "metric": "步长变异系数 (step length CV)",
+      "patient_value": "51.03%",
+      "normal_range": "<5% 正常, 5-15% 轻度变异, >15% 高度变异",
+      "paper_reference": "Gait Variability Older Adults (文献数据库标准)",
+      "assessment": "严重偏高"
+    },
+    {
+      "metric": "步时变异系数 (step time CV)",
+      "patient_value": "161.99%",
+      "normal_range": "<5% 正常, 5-15% 轻度变异, >15% 高度变异",
+      "paper_reference": "Gait Variability Older Adults (文献数据库标准)",
+      "assessment": "严重偏高"
+    },
+    {
+      "metric": "双支撑比 (double support ratio)",
+      "patient_value": "0.98 (98%)",
+      "normal_range": "20-30% 正常, >40% 提示步态不稳",
+      "paper_reference": "Gait Parameters (文献数据库标准)",
+      "assessment": "严重偏高"
+    },
+    {
+      "metric": "膝关节 ROM (knee ROM)",
+      "patient_value": "左膝25.89°, 右膝10.23°",
+      "normal_range": "50-65° 正常, <30° 受限",
+      "paper_reference": "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+      "assessment": "严重偏低"
+    },
+    {
+      "metric": "足廓清 (foot clearance)",
+      "patient_value": "1.34 cm",
+      "normal_range": "1.5-2.5 cm 正常, <0.5 cm 绊倒风险显著增加",
+      "paper_reference": "Foot Clearance Fall Risk (文献数据库标准)",
+      "assessment": "偏低"
+    },
+    {
+      "metric": "步宽 (step width)",
+      "patient_value": "0.74 m",
+      "normal_range": "步宽变异增加与跌倒风险正相关",
+      "paper_reference": "Predicting_fall_risk_through_step_width_variabilit.pdf",
+      "assessment": "偏高"
+    },
+    {
+      "metric": "躯干侧倾 (trunk lateral tilt)",
+      "patient_value": "均值5.28°, 最新11.20°",
+      "normal_range": "<5° 正常, >15° 异常",
+      "paper_reference": "Trunk Accelerometer Gait (文献数据库标准)",
+      "assessment": "需关注"
+    }
+  ],
+  "fall_risk_assessment": {
+    "level": "high",
+    "risk_factors": [
+      "步速极慢 (<0.4 m/s)",
+      "步长和步时变异极度增高 (>15%)",
+      "双支撑比异常增高 (>40%)",
+      "步宽显著增宽",
+      "膝关节ROM严重受限",
+      "足廓清偏低",
+      "躯干侧倾最新值超出正常范围"
+    ],
+    "literature_evidence": "多项文献指出，步速<0.6 m/s、步长/步时CV>15%、双支撑比>40%、步宽增加均与跌倒风险显著相关。本患者多项指标远超阈值，跌倒风险极高。"
+  },
+  "recommendations": [
+    {
+      "action": "立即进行全面的跌倒风险评估（如SPPB、Berg平衡量表）并采取防跌倒措施（如使用助行器、环境改造）",
+      "priority": "high",
+      "basis": "患者步速极慢、变异极高、双支撑比异常，符合文献中高跌倒风险特征"
+    },
+    {
+      "action": "重点进行膝关节活动度训练，尤其是右膝（ROM仅10.23°），目标恢复至50°以上",
+      "priority": "high",
+      "basis": "膝关节ROM<30°严重影响步态，文献指出正常行走需50-65°"
+    },
+    {
+      "action": "强化下肢肌力、平衡及步态训练，包括负重、单腿站立、跨步练习",
+      "priority": "high",
+      "basis": "极慢步速和短跨步长提示肌力与平衡不足，需针对性训练"
+    },
+    {
+      "action": "监测并改善步长和步时变异性，通过节律性听觉提示或视觉反馈训练",
+      "priority": "medium",
+      "basis": "步长/步时CV>15%与跌倒风险高度相关，需降低变异"
+    },
+    {
+      "action": "评估并处理可能存在的神经肌肉疾病（如帕金森病、卒中后遗症），因步态模式高度异常",
+      "priority": "medium",
+      "basis": "步态参数与帕金森病文献中描述的异常模式相似"
+    },
+    {
+      "action": "定期复查步态参数，关注趋势变化，尤其是GRS评分和步速的改善情况",
+      "priority": "medium",
+      "basis": "近期趋势显示初步改善，需持续监测以调整康复方案"
+    }
+  ],
+  "literature_cited": [
+    "Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf",
+    "Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf",
+    "Predicting_fall_risk_through_step_width_variabilit.pdf",
+    "nihms285593.pdf"
+  ]
+}

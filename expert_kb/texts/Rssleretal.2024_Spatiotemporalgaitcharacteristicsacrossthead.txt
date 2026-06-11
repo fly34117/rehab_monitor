@@ -1,0 +1,1104 @@
+--- 第 1 页 ---
+Gait & Posture 109 (2024) 101–108
+Available online 17 January 2024
+0966-6362/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Spatiotemporal gait characteristics across the adult lifespan: Reference 
+values from a healthy population – Analysis of the COmPLETE cohort study 
+Roland R¨ossler a,b,*,1, Jonathan Wagner b,2, Raphael Knaier b,3, Nikki Rommers c,4, 
+Reto W. Kressig a,5, Arno Schmidt-Trucks¨ass b,c,6, Timo Hinrichs b,7 
+a University Department of Geriatric Medicine FELIX PLATTER, University of Basel, Basel, Switzerland 
+b Department of Sport, Exercise and Health, University of Basel, Basel, Switzerland 
+c Department of Clinical Research, University of Basel, Switzerland   
+A R T I C L E  I N F O   
+Keywords: 
+Aging 
+Sex differences 
+Quantile curves 
+Inertial measurement unit-based gait analysis 
+Normative data 
+A B S T R A C T   
+Background: Gait changes with aging have been investigated, but few studies have examined a wide range of gait 
+parameters across the adult lifespan. This study aimed to investigate gait differences across age groups stratified 
+by sex. 
+Methods: This cross-sectional study included 629 healthy, normal-weight (i.e., BMI < 30 kg/m2) participants 
+from Switzerland of the COmPLETE cohort study, aged 20 to over 90 years. Gait metrics were assessed using an 
+inertial measurement unit (IMU)-based gait analysis system, including speed, cycle duration variability, asym­
+metry, stride length, cycle duration, cadence, double support, stance (time foot is on the ground during a gait 
+cycle), swing (time foot is in the air during a gait cycle), loading (early part of the stance phase), foot-flat (mid- 
+stance phase when foot is flat), and pushing (late stance phase leading to toe-off) phases. Percentile curves were 
+calculated using generalized additive models for location, scale, and shape. 
+Results: Gait data from 545 participants (273 men and 272 women) were analyzed. Participants were equally 
+distributed across the seven age decades, with an average of 40 men and 40 women representing every decade. 
+Both men and women showed a reduction in gait speed and stride length, and an increase in cycle duration 
+variability and asymmetry with aging. Gait speed and stride length declined across the age groups, with a sig­
+nificant difference found in participants aged 80 to 91 compared to younger age groups. 
+Significance: Age-related changes in gait parameters were seen in both men and women. These may be attributed 
+to the typical decline in muscle strength, balance, coordination, and neuromuscular function. The results of this 
+study contribute to the understanding of gait changes throughout the lifespan and can be used for comparison 
+with other populations and as reference values for individual patients.   
+1. Introduction 
+Walking is a complex task learned during childhood and performed 
+almost automatically throughout life. Degenerative changes to the 
+muscles and neuromuscular system related to aging can alter gait pat­
+terns in older adults, leading to decreased gait velocity, stride length, 
+joint movement, and an increased gait stiffness [1]. These changes are 
+associated with an increased risk of falls and fear of falling [1,2], which 
+further affect gait quality [3]. 
+Subtle changes in gait patterns may occur over the lifespan, detect­
+able only through sensitive assessment tools like pressure-sensitive 
+walkways, camera-based or inertial measurement unit (IMU)-based 
+* Corresponding author at: University Department of Geriatric Medicine FELIX PLATTER, University of Basel, Basel, Switzerland. 
+E-mail address: roland.roessler@unibas.ch (R. R¨ossler).   
+1 ORCID: 0000-0002-6763-0694.  
+2 ORCID: 0000-0002-3436-588X.  
+3 ORCID: 0000-0002-0244-7768.  
+4 ORCID: 0000-0003-0311-5009.  
+5 ORCID: 0000-0002-3215-7681.  
+6 ORCID: 0000-0002-4662-3911.  
+7 ORCID: 0000-0001-6200-307X. 
+Contents lists available at ScienceDirect 
+Gait & Posture 
+journal homepage: www.elsevier.com/locate/gaitpost 
+https://doi.org/10.1016/j.gaitpost.2024.01.005 
+Received 2 August 2023; Received in revised form 29 November 2023; Accepted 3 January 2024   
+
+
+--- 第 2 页 ---
+Gait & Posture 109 (2024) 101–108
+102
+gait analysis systems. Reference values for gait parameters across the 
+lifespan help to evaluate an individual’s walking ability, to assess the 
+impact of gait on health outcomes, to screen for intrinsic risk factors for 
+falls or disease indicators, and to evaluate clinical intervention effects. 
+A 2018 systematic review revealed a lack of data on spatiotemporal 
+gait parameters across the entire lifespan, in a healthy population with 
+most studies focusing on either older or younger adults [4]. The authors 
+concluded that data concerning middle-aged adults are lacking (age of 
+30 up to the age of 59) to understand the effects of aging on gait. The 
+only existing study covering a wide age range used the GAITrite 
+walkway system in a healthy Asian population [5]. It has been shown 
+that gait parameters differ between ehnic/racial groups [6,7]. To the 
+best of our knowledge, there are no data available from Europe covering 
+the entire adult lifespan. Comprehensive data are needed for a better 
+understanding of when and how gait changes occur. 
+Sensor-based systems like the GaitUp Physilog®5 have become 
+widely used in gait analysis due to their flexibility and capability to 
+assess longer distances than traditional systems like GAITRite®. A recent 
+study showed substantial agreement between the two systems regarding 
+key gait parameters [8]. For our study, we chose the sensor-based 
+Physilog®5 system for its feasibility, alignment with current gait anal­
+ysis trends, and the ability to assess longer walking distances compared 
+to a carpet-based system. 
+There is a relatively large body of literature focusing on gait in 
+people with specific conditions [9–11]. This is likely because under­
+standing gait changes in people with conditions like Parkinson’s disease, 
+stroke, multiple sclerosis, or osteoarthritis can provide valuable insights 
+into the disease progression, and help identify potential interventions. 
+However, studying gait in healthy individuals is also important, as it 
+helps to establish normative data and reference values for various gait 
+parameters. This can be useful for comparing gait patterns in individuals 
+with and without specific conditions and for identifying early warning 
+signs of potential health issues. Therefore, our study aimed to close this 
+gap by providing an overview of spatiotemporal gait parameters in 
+healthy Swiss adult individuals using a wearable sensor system placed 
+on the shoes. The specific aims were: a) to investigate gait differences 
+across age groups stratified by sex; and b) to illustrate age-related 
+changes by percentile curves. 
+2. Methods 
+2.1. Study population and recruitment 
+We recruited healthy participants from the Basel area, Switzerland, 
+within the COmPLETE cohort study comprising approximately 40 males 
+and 40 females per age category (20–29, 30–39, 40–49, 50–59, 60–69, 
+70–79, and 80 + years). General invitation letters with information on 
+the study aims and procedures were mailed to randomly selected dis­
+tricts in the Basel area. The sample size justification, recruitment scheme 
+and measurements are detailed in the published study protocol [12]. 
+Interested individuals underwent a telephone screening before sched­
+uling tests. Participants’ final eligibility was confirmed onsite on the day 
+of examination. Prior to participation, participants provided written 
+informed consent. Eligible individuals were healthy men and women 
+aged 20 to 100 years with a body mass index of less than 30 kg/m2. 
+Exclusion criteria were any manifest exercise-limiting chronic diseases, 
+such as, among others, stroke, lower-extremity artery disease, orthope­
+dic issues, or any form of dementia. 
+The study was conducted at the Department of Sport, Exercise, and 
+Health at the University of Basel, Switzerland. The Ethics Committee of 
+Northwestern and Central Switzerland (EKNZ 2017–01451) approved 
+the study. 
+2.2. Procedures 
+All measurements were conducted by trained assessors. We 
+instructed the participants to walk at their usual walking speed and 
+specifically pointed out that they do not need to walk at maximum 
+speed. The instruction was as follows: “Please walk at your normal pace 
+for 20 m to the pylon, go around the pylon, and then walk back the 20 m 
+past the line.” 
+The tests took place indoors in a corridor with a smooth and even 
+surface. Height and body mass were measured to the nearest 0.5 cm and 
+0.1 kg, respectively. 
+2.3. Gait Parameters 
+Gait parameters were measured using an IMU-based gait analysis 
+system (Physilog®, Mindmaze, Lausanne, Switzerland), which allows 
+motion analysis based on two lightweight inertial sensors, attached to 
+the dorsum of both feet, at the height of the metatarsal bones. The 
+system has high validity and reliability [8,13,14]. An overview of 
+measured parameters and their definitions is given in Table 1. 
+2.4. Statistical analysis 
+Participant characteristics are presented as either means and stan­
+dard deviations or median and interquartile ranges. 
+In order to evaluate gait differences across age groups stratified by 
+sex, we compared gait parameters between age categories (per decade) 
+for men and women separately using a one-way analysis of variance test 
+(ANOVA). In case of a significant effect of age category, we subsequently 
+performed Tukey post hoc pairwise comparisons with Bonferroni 
+correction of the p-values for multiple testing. All analyses were con­
+ducted in R version 4.3.1 with an alpha level of significance set at 
+p < 0.05. 
+In order to graphically illustrate age-related changes, we provide sex- 
+specific percentile curves generated with generalized additive models 
+(GAMLSS, R package version 5.1–6). The age-trajectories were modeled 
+using P-splines. The Bayesian information criterion selected the condi­
+tional distribution that balanced model complexity and goodness-of-fit. 
+Model fits were inspected using diagnostic residual plots (worm plots 
+and Q-Q plots). 
+Table 1 
+Measured parameters and their definitions as of the Physilog® user manual (9).  
+Gait Parameter 
+Definition and description 
+Speed [m/s] 
+Average forward walking speed, calculated in meters per 
+second. 
+Cycle duration 
+variability [%] 
+Coefficient of variation for cycle duration (discussed below) 
+expressed as a percentage; calculated as SD/mean * 100. 
+Asymmetry [%] 
+Ratio of swing time comparing left and right feet; perfect 
+symmetry yields 0%. Calculation as follows: Asym. =
+√
+(
+Swingl −Swingr
+0.5 ∗
+(
+Swingl + Swingr
+) ∗100%
+)2 
+Stride Length [m] 
+Distance between two successive footprints on the ground, 
+measured from heel to heel of the same foot. 
+Cycle Duration [s] 
+Duration of one cycle, measured from heel strike to heel 
+strike of the same foot. 
+Cadence [steps/ 
+min] 
+Number of cycles per minute. 
+Stance Phase [%] 
+Proportion of cycle duration during which the foot is in 
+contact with the ground; typically around 60% of the gait 
+cycle. 
+Double Support 
+Phase [%] 
+Proportion of cycle duration during which both feet are 
+simultaneously in contact with the ground. 
+Swing Phase [%] 
+Proportion of cycle duration during which the foot is in the 
+air and not touching the ground; usually about 40% of the 
+gait cycle. 
+Loading Phase [%] 
+Proportion of the stance phase between heel strike and the 
+foot being flat on the ground. 
+Foot-Flat Phase [%] 
+Proportion of the stance phase when the foot is fully flat on 
+the ground. 
+Pushing Phase [%] 
+Proportion of the stance phase between the foot being flat on 
+the ground and the toe leaving the ground at take-off.  
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 3 页 ---
+Gait & Posture 109 (2024) 101–108
+103
+3. Results 
+A total of 629 participants performed the walking test. For the 
+analysis, valid gait data from 545 participants (273 men and 272 
+women) were analyzed (see flow chart, Appendix 1). Participants were 
+equally distributed across age groups from 20 to older than 80 years, 
+with a minimum of 21 men and 30 women representing each decade. 
+Participant baseline characteristics are presented in Table 2 by age 
+group (i.e., per decade). 
+3.1. Gait parameters across the adult age range 
+The mean stride count per participant was 25.0 SD 2.9 (min 17, max 
+38). Gait parameters for each age group are presented in Table 3, 
+separated by sex. Standardized mean differences are presented in  
+Table 4. The results of the post-hoc pairwise comparisons of the ANOVA 
+analysis for men and women (when applicable) are presented in Ap­
+pendix 2. 
+The pattern of the different gait parameters over time (i.e. smooth­
+ened percentile curves) for men and women are visualized in Figs. 1 and 
+2, as well as supplementary Figures in the Appendix 3 and 4, providing a 
+graphical representation of the changes across the lifespan. 
+3.1.1. Men 
+In men, we saw a significant effect of age decades for speed, stride 
+length, cadence, cycle duration, the loading phase, and the foot-flat 
+phase, with p-values ranging between 0.007 and < 0.001 (see 
+Table 4). Looking at the post-hoc pairwise comparisons, we saw a sig­
+nificant lower gait speed in men aged 80 and above, compared to men 
+between 30 and 39 (p = 0.04), between 40 and 49 (p = 0.01), between 
+50 and 59 (p = 0.019) and between 60 and 69 (p = 0.006). Cadence was 
+significantly lower in men between 20 and 29 years old compared to 
+men between 60 and 69 (p = 0.004) and between 70 and 79 
+(p < 0.001). Stride length was significantly lower in older men. We 
+found significant differences between men aged 80 and above compared 
+to men in all age categories under 70 years (p < 0.001 for all compari­
+sons). Men aged 70 to 79 years had a significantly lower stride length 
+than men in all younger age categories (p < 0.02). Cycle duration was 
+significantly higher in men aged 20 to 29 and men between 60 and 69, 
+and 70 and 79 (p = 0.004 and p = 0.001, respectively). The loading 
+phase was significantly lower in men aged 80 and above compared to 
+men between 40 and 49 and 60 and 69 (p = 0.007 and p = 0.039, 
+respectively). Finally, the foot-flat phase was significantly higher in men 
+aged 80 and above compared to men between 30 and 39 (p = 0.009), 
+between 40 and 49 (p = 0.004), and between 60 and 69 (p = 0.018). 
+The results of pairwise comparisions are presented in Appendix 4. 
+3.1.2. Women 
+In women, we saw a significant effect of age decade on speed, stride 
+length, cadence, cycle duration, the loading phase, the foot-flat phase, 
+the cycle duration variability, and asymmetry with p-values ranging 
+between 0.034 and < 0.001 (see Table 4). The post-hoc pairwise com­
+parisons showed a significantly lower gait speed in women aged 80 and 
+above compared to women below the age of 70 (p-values < 0.003). 
+Furthermore, women between 70 and 79 years of age had a significantly 
+lower gait speed than 50 to 59 year olds (p = 0.043). Stride length was 
+significantly lower in women aged 80 and above compared to all 
+younger age categories (p < 0.007), and in 70 to 79 year olds compared 
+to women below 60 years of age (p < 0.001). Women between 60 and 69 
+had a lower stride length than women between 30 and 59 years of age 
+(p < 0.036). The loading phase was significantly lower and the foot-flat 
+phase was significantly higher in women aged 80 and above compared 
+to all younger age categories (p < 0.017 and p < 0.030, respectively). 
+The cycle duration variability was higher in women aged 80 and above 
+compared to all age categories until 59 years (p < 0.008) and asym­
+metry was higher in the oldest age category compared to women until 49 
+years of age (p < 0.019). The results of pairwise comparisions are pre­
+sented in Appendix 2. 
+4. Discussion 
+4.1. Main findings 
+In this study, we aimed to provide an overview of spatiotemporal gait 
+parameters in healthy Swiss individuals aged 20 to 91 years, using an 
+IMU-based gait analysis system. Our findings contribute to the under­
+standing of gait patterns over the lifespan and may help identify risk 
+factors for falls or indicators of disease. 
+We found that gait speed, stride length, cycle duration, cadence, 
+loading, and foot-flat phase were significantly different across age cat­
+egories for both men and women. In general, gait speed and stride length 
+decreased with age, while cadence increased. The proportion of the 
+stance phase and double support phase also evolved similarly across age 
+groups. 
+Our results showed that gait patterns are relatively stable during 
+early adulthood, with more pronounced changes occurring after the age 
+of 60. Gait speed and stride length were found to be lower in older in­
+dividuals. It is important to emphasize that the average gait speed for all 
+Table 2  
+Characteristics of participants (mean (SD)).   
+Age group  
+Overall 
+20–29 
+30-39 
+40-49 
+50-59 
+60-69 
+70-79 
+80-91 
+N female 
+272 
+47 
+37 
+44 
+43 
+41 
+30 
+30 
+Age (years) 
+53.0 (19.2) 
+25.6 (3.1) 
+36.0 (3.2) 
+46.3 (2.7) 
+55.4 (2.9) 
+65.9 (2.7) 
+74.2 (2.6) 
+84.3 (2.4) 
+Height (cm) 
+165.5 (6.9) 
+166.7 (6.3) 
+169.6 (5.3) 
+168.6 (5.7) 
+167.4 (6.9) 
+161.7 (6.2) 
+161.2 (6.0) 
+160.3 (6.0) 
+Body mass (kg) 
+62.3 (8.5) 
+59.7 (8.6) 
+64.8 (8.5) 
+64.8 (7.4) 
+63.9 (8.5) 
+61.8 (8.5) 
+60.8 (7.9) 
+59.8 (9.1) 
+BMI (kg/m2) 
+22.8 (2.7) 
+21.5 (2.7) 
+22.5 (2.9) 
+22.8 (2.4) 
+22.8 (2.2) 
+23.6 (2.8) 
+23.4 (3.1) 
+23.2 (2.9) 
+N male 
+273 
+44 
+45 
+39 
+38 
+42 
+44 
+21 
+Age (years) 
+52.9 (19.2) 
+25.7 (2.8) 
+35.2 (3.2) 
+46.1 (2.8) 
+55.9 (3.0) 
+64.8 (3.0) 
+75.1 (3.0) 
+84.5 (2.8) 
+Height (cm) 
+177.0 (7.5) 
+181.7 (6.8) 
+178.9 (6.7) 
+178.8 (5.9) 
+178.2 (6.2) 
+175.9 (7.3) 
+172.1 (7.1) 
+170.4 (6.7) 
+Body mass (kg) 
+76.7 (9.6) 
+77.3 (10.0) 
+77.9 (9.8) 
+76.7 (9.1) 
+79.3 (10.5) 
+76.5 (8.4) 
+73.8 (9.6) 
+75.2 (9.2) 
+BMI (kg/m2) 
+24.5 (2.5) 
+23.4 (2.4) 
+24.3 (2.3) 
+24.0 (2.4) 
+24.9 (2.5) 
+24.7 (2.2) 
+24.9 (2.6) 
+25.9 (2.9) 
+N overall 
+545 
+91 
+82 
+83 
+81 
+83 
+74 
+51 
+Age (years) 
+52.9 (19.2) 
+25.6 (3.0) 
+35.5 (3.2) 
+46.2 (2.7) 
+55.6 (3.0) 
+65.4 (2.9) 
+74.7 (2.8) 
+84.4 (2.5) 
+Height (cm) 
+171.3 (9.3) 
+174.0 (10.0) 
+174.7 (7.6) 
+173.3 (7.7) 
+172.5 (8.5) 
+168.9 (9.8) 
+167.8 (8.6) 
+164.4 (8.0) 
+Body mass (kg) 
+69.6 (11.6) 
+68.3 (12.8) 
+71.9 (11.3) 
+70.3 (10.1) 
+71.2 (12.2) 
+69.2 (11.2) 
+68.7 (11.0) 
+66.1 (11.9) 
+BMI (kg/m2) 
+23.6 (2.8) 
+22.4 (2.7) 
+23.5 (2.7) 
+23.3 (2.4) 
+23.8 (2.6) 
+24.2 (2.6) 
+24.3 (2.9) 
+24.3 (3.2) 
+Sex (%)         
+Female 
+49.9 
+51.6 
+45.1 
+53.0 
+53.1 
+49.4 
+40.5 
+58.8 
+Male 
+50.1 
+48.4 
+54.9 
+47.0 
+46.9 
+50.6 
+59.5 
+41.2  
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 4 页 ---
+Gait & Posture 109 (2024) 101–108
+104
+groups in our study was notably above the 1.0 m/s threshold, which has 
+been suggested as an indicator of frailty [15]. 
+4.2. Interpretation 
+Our observations suggest a compensatory increase in cadence among 
+older age groups, possibly as an adaptive mechanism to maintain 
+walking speed despite reductions in stride length. The observed changes 
+in gait parameters with aging can be attributed to a range of interrelated 
+factors. Age-related declines in muscle mass and strength, balance, and 
+coordination [16–19], as well as alterations in the central and peripheral 
+nervous systems [20,21], contribute to slower, more variable, and 
+asymmetrical gait patterns. Additionally, a decline in motor unit number 
+and function [22,23] exacerbates these effects. Joint health issues, such 
+as osteoarthritis, limit movement and cause pain, leading to reduced gait 
+speed and stride length [24]. Sensory declines, particularly in vision and 
+proprioception, impact balance and spatial awareness, promoting more 
+cautious gait patterns [25–27]. Cognitive factors, including multitasking 
+abilities and attention, are also crucial, especially in older individuals, 
+influencing gait dynamics [28]. Moreover, lifestyle choices and physical 
+activity levels significantly influence gait performance as one ages [29, 
+30]. These factors collectively affect stability and walking efficiency, 
+often resulting in slower and less stable gait, characterized by increased 
+cycle duration variability and asymmetry [31,32]. This variability is 
+associated with a higher fall risk in older adults [1,33]. 
+4.3. Comparison with other studies 
+Most studies have focused on either older or younger healthy adults. 
+To the best of our knowledge, the Yishun Study by Lau et al. (2020) is the 
+only other study reporting gait parameters over the entire lifespan [5]. 
+Their study focused on a Southeast Asian population (n = 507, from 
+Singapore), whereas our study provides an overview for Swiss in­
+dividuals from mostly Caucasian origin. It has been described that gait 
+varies between demographic groups [6,7]. Specifically, a study by 
+Boulifard et al. (2019) found significant variations in gait across 
+different demographics with African American and Hispanic partici­
+pants having lower gait speeds than their white counterparts. Consistent 
+with our findings, they reported that older participants had slower 
+speeds than younger ones. Unlike our study, they observed generally 
+Table 3 
+Gait parameters of female and male participants (mean (SD)).   
+Age group  
+Overall 
+20–29 
+30–39 
+40–49 
+50–59 
+60–69 
+70–79 
+80–91 
+N female 
+272 
+47 
+37 
+44 
+43 
+41 
+30 
+30 
+Speed [m/s] 
+1.43 (0.15) 
+1.45 (0.14) 
+1.45 (0.13) 
+1.45 (0.12) 
+1.48 (0.14) 
+1.43 (0.14) 
+1.38 (0.14) 
+1.29 (0.20) 
+Variability [%] 
+2.44 (0.92) 
+2.30 (0.80) 
+2.18 (0.74) 
+2.35 (0.78) 
+2.13 (0.57) 
+2.51 (0.94) 
+2.82 (1.10) 
+3.09 (1.25) 
+Asymmetry [%] 
+2.15 (2.00) 
+1.98 (2.03) 
+1.42 (1.27) 
+1.82 (1.33) 
+2.18 (1.74) 
+2.63 (2.48) 
+1.82 (2.04) 
+3.48 (2.44) 
+Stride Length [m] 
+1.44 (0.13) 
+1.47 (0.10) 
+1.49 (0.11) 
+1.49 (0.10) 
+1.50 (0.11) 
+1.41 (0.10) 
+1.37 (0.09) 
+1.27 (0.14) 
+Cycle Duration [s] 
+1.02 (0.07) 
+1.03 (0.06) 
+1.04 (0.05) 
+1.04 (0.06) 
+1.02 (0.07) 
+1.00 (0.06) 
+1.01 (0.08) 
+1.00 (0.09) 
+Cadence [steps/min] 
+118.13 (7.76) 
+116.96 (6.57) 
+115.94 (6.25) 
+116.15 (6.55) 
+117.73 (8.31) 
+120.48 (7.02) 
+120.05 (8.45) 
+120.98 (10.38) 
+Stance [%] 
+60.64 (1.50) 
+60.73 (1.32) 
+60.91 (1.40) 
+60.81 (1.32) 
+60.47 (1.46) 
+60.75 (1.33) 
+60.71 (1.53) 
+59.96 (2.19) 
+Double Support [%] 
+21.25 (2.99) 
+21.42 (2.66) 
+21.82 (2.76) 
+21.59 (2.65) 
+20.91 (2.91) 
+21.50 (2.65) 
+21.28 (3.04) 
+19.87 (4.29) 
+Swing [%] 
+39.36 (1.50) 
+39.27 (1.32) 
+39.09 (1.40) 
+39.19 (1.32) 
+39.53 (1.46) 
+39.25 (1.33) 
+39.29 (1.53) 
+40.04 (2.19) 
+Loading [%] 
+13.73 (2.40) 
+14.23 (2.43) 
+14.59 (2.11) 
+13.56 (2.44) 
+14.68 (1.86) 
+13.71 (2.27) 
+13.20 (2.14) 
+11.30 (2.05) 
+Foot-flat [%] 
+49.92 (5.05) 
+48.68 (4.52) 
+49.34 (4.42) 
+50.02 (4.15) 
+48.95 (4.92) 
+49.56 (6.01) 
+50.14 (4.31) 
+54.09 (5.46) 
+Pushing [%] 
+36.36 (4.03) 
+37.09 (3.69) 
+36.07 (3.32) 
+36.42 (3.31) 
+36.37 (4.15) 
+36.79 (4.97) 
+36.66 (3.68) 
+34.61 (4.81) 
+N male 
+273 
+44 
+45 
+39 
+38 
+42 
+44 
+21 
+Speed [m/s] 
+1.43 (0.16) 
+1.43 (0.15) 
+1.43 (0.15) 
+1.46 (0.16) 
+1.45 (0.12) 
+1.46 (0.13) 
+1.40 (0.19) 
+1.31 (0.17) 
+Variability [%] 
+2.37 (0.87) 
+2.41 (0.77) 
+2.32 (0.71) 
+2.20 (0.65) 
+2.35 (0.90) 
+2.33 (0.88) 
+2.59 (1.25) 
+2.39 (0.69) 
+Asymmetry [%] 
+2.44 (2.22) 
+2.08 (1.89) 
+2.50 (2.02) 
+2.31 (2.51) 
+2.41 (2.67) 
+2.35 (1.87) 
+2.79 (2.29) 
+2.82 (2.46) 
+Stride Length [m] 
+1.51 (0.13) 
+1.55 (0.13) 
+1.53 (0.11) 
+1.55 (0.11) 
+1.54 (0.12) 
+1.52 (0.11) 
+1.44 (0.14) 
+1.37 (0.14) 
+Cycle Duration [s] 
+1.07 (0.06) 
+1.10 (0.06) 
+1.08 (0.06) 
+1.08 (0.06) 
+1.07 (0.05) 
+1.05 (0.06) 
+1.05 (0.07) 
+1.05 (0.06) 
+Cadence [steps/min] 
+112.63 (6.80) 
+109.20 (5.70) 
+111.94 (7.03) 
+111.83 (6.64) 
+111.99 (5.16) 
+114.48 (6.74) 
+115.47 (7.63) 
+114.28 (6.53) 
+Stance [%] 
+61.06 (1.38) 
+61.01 (1.43) 
+61.19 (1.48) 
+61.25 (1.54) 
+61.10 (1.09) 
+61.26 (1.30) 
+60.81 (1.56) 
+60.67 (0.96) 
+Double Support [%] 
+22.06 (2.78) 
+21.95 (2.89) 
+22.34 (2.97) 
+22.42 (3.08) 
+22.08 (2.23) 
+22.45 (2.60) 
+21.51 (3.10) 
+21.33 (2.04) 
+Swing [%] 
+38.94 (1.38) 
+38.99 (1.43) 
+38.81 (1.48) 
+38.75 (1.54) 
+38.90 (1.09) 
+38.74 (1.30) 
+39.19 (1.56) 
+39.33 (0.96) 
+Loading [%] 
+13.77 (2.55) 
+13.50 (2.58) 
+14.07 (2.08) 
+14.61 (2.94) 
+13.65 (2.46) 
+14.24 (2.55) 
+13.39 (2.78) 
+12.19 (1.42) 
+Foot-flat [%] 
+51.22 (4.47) 
+50.95 (4.31) 
+50.32 (4.47) 
+49.97 (4.27) 
+51.18 (3.36) 
+50.52 (4.12) 
+52.72 (5.08) 
+54.37 (4.56) 
+Pushing [%] 
+35.01 (3.47) 
+35.55 (2.90) 
+35.61 (3.83) 
+35.41 (3.21) 
+35.17 (3.02) 
+35.24 (3.23) 
+33.89 (3.47) 
+33.44 (4.70) 
+Abbreviations: N = number; m = metres; s = seconds; variability = cycle duration variability. 
+Table 4 
+Results of ANOVA test for the different gait parameters by age group.   
+Female  
+Male  
+F 
+p 
+effect size (ges)  
+F 
+p 
+effect size (ges) 
+Speed [m/s]  
+6.390  
+< 0.001  
+0.126    
+3.017  
+0.007  
+0.064 
+Variability [%]  
+5.412  
+< 0.001  
+0.109    
+0.788  
+0.580  
+0.017 
+Asymmetry [%]  
+0.335  
+0.918  
+0.008    
+1.786  
+0.102  
+0.039 
+Stride Length [m]  
+21.979  
+< 0.001  
+0.332    
+9.714  
+< 0.001  
+0.180 
+Cycle Duration [s]  
+2.320  
+0.034  
+0.050    
+4.090  
+0.001  
+0.084 
+Cadence [steps/min]  
+2.892  
+0.010  
+0.061    
+4.402  
+< 0.001  
+0.090 
+Stance [%]  
+1.505  
+0.177  
+0.033    
+0.859  
+0.526  
+0.019 
+Double Support [%]  
+1.566  
+0.157  
+0.034    
+0.858  
+0.526  
+0.019 
+Swing [%]  
+1.505  
+0.177  
+0.033    
+0.859  
+0.526  
+0.019 
+Loading [%]  
+9.070  
+< 0.001  
+0.170    
+2.752  
+0.013  
+0.058 
+Foot-flat [%]  
+4.638  
+< 0.001  
+0.095    
+3.779  
+0.001  
+0.079 
+Pushing [%]  
+1.351  
+0.235  
+0.030    
+2.060  
+0.058  
+0.044  
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 5 页 ---
+Gait & Posture 109 (2024) 101–108
+105
+Fig. 1. Percentile curves for Speed, Variability, and Stride length.  
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 6 页 ---
+Gait & Posture 109 (2024) 101–108
+106
+Fig. 2. Percentile curves for Cycle Duration, Cadence, Loading, and Foot-flat.  
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 7 页 ---
+Gait & Posture 109 (2024) 101–108
+107
+lower gait speeds in females compared to males [6]. A study from Hill 
+et al. (2022) highlights that racial differences in gait speeds among fe­
+males are influenced by both innate and modifiable factors, under­
+scoring the importance of collecting norm values for different ethnic 
+groups [7]. 
+Both the study by Lau et al. (2020) and our study focused on “healthy 
+individuals” (i.e. several diseases listed as exclusion criteria). We used a 
+wearable sensor system to measure gait parameters, which allowed for 
+unobtrusive data collection in a natural walking environment. The 
+Yishun Study employed the GAITRite electronic walkway system, a 
+widely used tool in gait analysis (often considered as “the golden stan­
+dard”). This system requires participants to walk on a special mat with 
+integrated sensors to record gait parameters. Although both methods are 
+valid for gait analysis, our approach allowed for a more naturalistic 
+assessment and longer walking distances (i.e. two times 20 m per 
+attempt) [5]. 
+Interestingly, for both females and males, participants in our study 
+consistently showed higher gait speeds, longer step/stride lengths, and 
+increased cadence across all age groups, compared to the Asian study. 
+Both studies involved healthy participants who were instructed to walk 
+at their habitual pace. A notable distinction is that participants in our 
+study wore shoes, while those in the Yishun Study walked barefoot [5]. 
+We are not aware of any studies explicitly linking these observed dif­
+ferences to whether participants are barefoot or shod. Therefore, the 
+variations in gait characteristics observed in our study may be attrib­
+utable to ethnic differences and/or disparities in test conditions. 
+In our study, we found significant differences in gait speed, stride 
+length, cycle duration, cadence, loading, and foot-flat phase across age 
+categories for both men and women. Gait speed and stride length 
+generally decreased with age, while cadence increased. These changes 
+were more pronounced in older individuals, particularly after the age of 
+60. The Yishun Study also reported age-related declines in gait speed 
+and stride length, as well as increases in stance time and double support 
+time, which are consistent with our findings [5]. Unlike our study, the 
+Yishun Study did not report an increase in cadence with age. This dif­
+ference might be attributed to the different populations studied, an 
+Asian urban population versus a Swiss suburban and rural population. 
+The differences observed between the two studies highlight the impor­
+tance of considering population-specific factors when interpreting gait 
+parameters and their potential clinical implications. 
+There are further studies reporting a decline in gait speed and stride 
+length with aging [31,34]. The observed changes in cycle duration 
+variability and asymmetry in our study are in line with previous research 
+[4], which reported an increase in cycle duration variability with age 
+and the association between age and gait asymmetry [35]. The results of 
+our study contribute to the understanding of gait changes throughout 
+the lifespan and can be compared to other populations to assess the 
+generalizability of our findings. 
+4.4. Strengths and limitations 
+Strengths of this study include the large sample size and the wide age 
+range of participants, which allowed for the investigation of gait 
+changes at all ages between 20 and 91 years. Furthermore, the use of a 
+reliable and validated system for gait assessment (Physilog 5) ensured 
+accurate and consistent data collection [13,14]. 
+The primary limitation of this study is that only one trial was 
+captured per participant. However, the analysis was based on an average 
+of 25 strides per participant, which is sufficient according to the liter­
+ature [36]. 
+Our study is founded on robust data derived from Swiss individuals, 
+predominantly of Caucasian origin. While inclusive and diverse research 
+is preferred, such inclusivity was not feasible in our context due to 
+challenges in recruiting a balanced number of participants from various 
+ethnic groups. Nonetheless, focusing primarily on one ethnic group, as 
+our study does, can yield detailed and specific insights pertinent to the 
+group in question. 
+5. Conclusion 
+Our study provides valuable insights into the changes in gait pa­
+rameters from 20 to over 90 years of age, revealing a decline in gait 
+speed and stride length, and an increase in cadence, cycle duration 
+variability, and asymmetry with aging. These findings provide valuable 
+reference values for clinical practice and can inform interventions aimed 
+at maintaining or improving gait performance in older adults. Targeted 
+exercise programs focusing on strength, balance, and coordination could 
+be particularly effective in preserving normal gait characteristics and 
+reducing fall risk. 
+CRediT authorship contribution statement 
+Roland R¨ossler: Formal analysis, Methodology, Visualization, 
+Writing – original draft, Writing – review & editing. Jonathan Wagner: 
+Data curation, Investigation, Project administration, Validation, Writing 
+– review & editing. Raphael Knaier: Data curation, Investigation, 
+Project administration, Validation. Nikki Rommers: Formal analysis, 
+Methodology, Visualization, Writing – original draft, Writing – review & 
+editing. Reto W. Kressig: Validation, Writing – review & editing. Arno 
+Schmidt-Trucks¨ass: Conceptualization, Funding acquisition, Methodol­
+ogy, Supervision, Writing – review & editing. Timo Hinrichs: Concep­
+tualization, 
+Funding 
+acquisition, 
+Investigation, 
+Methodology, 
+Supervision, Writing – review & editing. 
+Declaration of Competing Interest 
+None of the authors declares a conflict of interest. 
+Acknowledgement 
+The study was funded by the Swiss National Science Foundation 
+(grant no. 182815). The manufacturer of the Physilog system (Mind­
+maze; formerly GaitUp) provided product support throughout the 
+measurement period. They had no role in data analysis, data interpre­
+tation or publication of results. 
+Appendix A. Supporting information 
+Supplementary data associated with this article can be found in the 
+online version at doi:10.1016/j.gaitpost.2024.01.005. 
+References 
+[1] B.E. Maki, Gait changes in older adults: predictors of falls or indicators of fear, 
+J. Am. Geriatr. Soc. 45 (3) (1997) 313–320. 〈https://www.ncbi.nlm.nih.gov/ 
+pubmed/9063277〉. 
+[2] K. Thaler-Kall, A. Peters, B. Thorand, E. Grill, C.S. Autenrieth, A. Horsch, et al., 
+Description of spatio-temporal gait parameters in elderly people and their 
+association with history of falls: results of the population-based cross-sectional 
+KORA-Age study, BMC Geriatr. 15 (2015) 32. 〈https://www.ncbi.nlm.nih.gov/ 
+pubmed/25880255〉. 
+[3] F. Ayoubi, C.P. Launay, A. Kabeshova, B. Fantino, C. Annweiler, O. Beauchet, The 
+influence of fear of falling on gait variability: results from a large elderly 
+population-based cross-sectional study, J. Neuroeng. Rehabil. 11 (2014) 128. 
+〈https://www.ncbi.nlm.nih.gov/pubmed/25168467〉. 
+[4] N. Herssens, E. Verbecque, A. Hallemans, L. Vereeck, V. Van Rompaey, W. Saeys, 
+Do spatiotemporal parameters and gait variability differ across the lifespan of 
+healthy adults? A systematic review, Gait Posture 64 (2018) 181–190. 〈https:// 
+www.ncbi.nlm.nih.gov/pubmed/29929161〉. 
+[5] L.K. Lau, S.L. Wee, W.J.B. Pang, K.K. Chen, K. Abdul Jabbar, P.L.K. Yap, et al., 
+Reference values of gait speed and gait spatiotemporal parameters for a south east 
+asian population: the Yishun Study, Clin. Inter. Aging 15 (2020) 1753–1765. 
+〈https://www.ncbi.nlm.nih.gov/pubmed/33061327〉. 
+[6] D.A. Boulifard, E. Ayers, J. Verghese, Home-based gait speed assessment: 
+normative data and racial/ethnic correlates among older adults, J. Am. Med. Dir. 
+Assoc. 20 (10) (2019) 1224–1229. 〈https://www.ncbi.nlm.nih.gov/pubmed/313 
+95494〉. 
+R. R¨ossler et al.                                                                                                                                                                                                                                 
+
+
+--- 第 8 页 ---
+Gait & Posture 109 (2024) 101–108
+108
+[7] C.N. Hill, W. Reed, D. Schmitt, S.M. Arent, L.P. Sands, R.M. Queen, Factors 
+contributing to racial differences in gait mechanics differ by sex, Gait Posture 95 
+(2022) 277–283. 〈https://www.ncbi.nlm.nih.gov/pubmed/33658154〉. 
+[8] K. Carroll, R. Kennedy, V. Koutoulas, M. Bui, C. Kraan, Validation of shoe-worn 
+Gait Up Physilog® 5 wearable inertial sensors in adolescents, Gait Posture 91 
+(2022) 19–25. 
+[9] C.J. Hass, P. Malczak, J. Nocera, E.L. Stegemoller, A. Wagle Shukla, I. Malaty, et 
+al., Quantitative normative gait data in a large cohort of ambulatory persons with 
+Parkinson’s disease, PLoS One 7 (8) (2012) e42337. 〈https://www.ncbi.nlm.nih.go 
+v/pubmed/22879945〉. 
+[10] P.A. Goldie, T.A. Matyas, O.M. Evans, Gait after stroke: initial deficit and changes 
+in temporal patterns for each gait phase, Arch. Phys. Med. Rehab. 82 (8) (2001) 
+1057–1065. 〈https://www.ncbi.nlm.nih.gov/pubmed/11494185〉. 
+[11] L. Comber, R. Galvin, S. Coote, Gait deficits in people with multiple sclerosis: a 
+systematic review and meta-analysis, Gait Posture 51 (2017) 25–35. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/27693958〉. 
+[12] J. Wagner, R. Knaier, D. Infanger, K. Arbeev, M. Briel, T. Dieterle, et al., Functional 
+aging in health and heart failure: the COmPLETE Study, BMC Cardiovasc. Disord. 
+19 (1) (2019) 180. 〈https://www.ncbi.nlm.nih.gov/pubmed/31362698〉. 
+[13] F. Dadashi, B. Mariani, S. Rochat, C.J. Bula, B. Santos-Eggimann, K. Aminian, Gait 
+and foot clearance parameters obtained using shoe-worn inertial sensors in a large- 
+population sample of older adults, Sensors (Basel) 14 (1) (2013) 443–457. 〈https:// 
+www.ncbi.nlm.nih.gov/pubmed/24379049〉. 
+[14] B. Mariani, C. Hoskovec, S. Rochat, C. Bula, J. Penders, K. Aminian, 3D gait 
+assessment in young and elderly subjects using foot-worn inertial sensors, 
+J. Biomech. 43 (15) (2010) 2999–3006. 〈https://www.ncbi.nlm.nih.gov/ 
+pubmed/20656291〉. 
+[15] L.P. Fried, C.M. Tangen, J. Walston, A.B. Newman, C. Hirsch, J. Gottdiener, et al., 
+Frailty in older adults: evidence for a phenotype, J. Gerontol. A Biol. Sci. Med. Sci. 
+56 (3) (2001) M146–M156. 〈https://www.ncbi.nlm.nih.gov/pubmed/11253156〉. 
+[16] R.W. Bohannon, Reference values for extremity muscle strength obtained by hand- 
+held dynamometry from adults aged 20 to 79 years, Arch. Phys. Med. Rehab. 78 (1) 
+(1997) 26–32. 〈https://www.ncbi.nlm.nih.gov/pubmed/9014953〉. 
+[17] U. Granacher, A. Gollhofer, T. Hortobagyi, R.W. Kressig, T. Muehlbauer, The 
+importance of trunk muscle strength for balance, functional performance, and fall 
+prevention in seniors: a systematic review, Sports Med. 43 (7) (2013) 627–641. 
+〈https://www.ncbi.nlm.nih.gov/pubmed/23568373〉. 
+[18] D.P. LaRoche, K.A. Cremin, B. Greenleaf, R.V. Croce, Rapid torque development in 
+older female fallers and nonfallers: a comparison across lower-extremity muscles, 
+J. Electromyogr. Kinesiol. 20 (3) (2010) 482–488. 〈https://www.ncbi.nlm.nih.go 
+v/pubmed/19782579〉. 
+[19] T.W. Auyeung, S.W.J. Lee, J. Leung, T. Kwok, J. Woo, Age-associated decline of 
+muscle mass, grip strength and gait speed: a 4-year longitudinal study of 3018 
+community-dwelling older C hinese, Geriatr. Gerontol. Int. 14 (2014) 76–84. 
+[20] M.L. Callisaya, R. Beare, T.G. Phan, L. Blizzard, A.G. Thrift, J. Chen, et al., Brain 
+structural change and gait decline: a longitudinal population-based study, J. Am. 
+Geriatr. Soc. 61 (7) (2013) 1074–1079. 〈https://www.ncbi.nlm.nih.gov/ 
+pubmed/23796055〉. 
+[21] K. Jahn, A. Zwergal, R. Schniepp, Gait disturbances in old age: classification, 
+diagnosis, and treatment from a neurological perspective, Dtsch Arztebl Int. 107 
+(17) (2010) 306–15; quiz 316. 〈https://www.ncbi.nlm.nih.gov/pubmed/204903 
+46〉. 
+[22] D.J. Clark, R.M. Pojednic, K.F. Reid, C. Patten, E.P. Pasha, E.M. Phillips, 
+Longitudinal decline of neuromuscular activation and power in healthy older 
+adults, J. Gerontol. Ser. A: Biol. Sci. Med. Sci. 67(12 (2012) 1419–1425, https:// 
+doi.org/10.1093/gerona/gls197. 
+[23] H. Degens, T.M. Maden-Wilkinson, A. Ireland, M.T. Korhonen, H. Suominen, 
+A. Heinonen, et al., Relationship between ventilatory function and age in master 
+athletes and a sedentary reference population, Age (Dordr.) 35 (3) (2013) 
+1007–1015. 〈https://www.ncbi.nlm.nih.gov/pubmed/22544616〉. 
+[24] S.P. Messier, Osteoarthritis of the knee and associated factors of age and obesity: 
+effects on gait, Med Sci. Sports Exerc. 26 (12) (1994) 1446–1452. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/7869877〉. 
+[25] A. Hallemans, E. Ortibus, F. Meire, P. Aerts, Low vision affects dynamic stability of 
+gait, Gait Posture 32 (4) (2010) 547–551. 〈https://www.ncbi.nlm.nih.gov/ 
+pubmed/20801658〉. 
+[26] J.R. Wingert, C. Welder, P. Foo, Age-related hip proprioception declines: effects on 
+postural sway and dynamic balance, Arch. Phys. Med. Rehab. 95 (2) (2014) 
+253–261. 〈https://www.ncbi.nlm.nih.gov/pubmed/23994251〉. 
+[27] M. Henry, S. Baudry, Age-related changes in leg proprioception: implications for 
+postural control, J. Neurophysiol. 122 (2) (2019) 525–538. 〈https://www.ncbi. 
+nlm.nih.gov/pubmed/31166819〉. 
+[28] N. Theill, M. Martin, V. Schumacher, S.A. Bridenbaugh, R.W. Kressig, 
+Simultaneously measuring gait and cognitive performance in cognitively healthy 
+and cognitively impaired older adults: the Basel motor-cognition dual-task 
+paradigm, J. Am. Geriatr. Soc. 59 (6) (2011) 1012–1018. 〈https://www.ncbi.nlm. 
+nih.gov/pubmed/21649627〉. 
+[29] K.A. Boyer, T.P. Andriacchi, G.S. Beaupre, The role of physical activity in changes 
+in walking mechanics with age, Gait Posture 36 (1) (2012) 149–153. 〈https:// 
+www.ncbi.nlm.nih.gov/pubmed/22445586〉. 
+[30] D. Ciprandi, F. Bertozzi, M. Zago, C.L.P. Ferreira, G. Boari, C. Sforza, et al., Study of 
+the association between gait variability and physical activity, Eur. Rev. Aging Phys. 
+Act. 14 (1) (2017) 19. 〈https://www.ncbi.nlm.nih.gov/pubmed/29177018〉. 
+[31] J.H. Hollman, E.M. McDade, R.C. Petersen, Normative spatiotemporal gait 
+parameters in older adults, Gait Posture 34 (1) (2011) 111–118. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/21531139〉. 
+[32] J. Verghese, C. Wang, R.B. Lipton, R. Holtzer, X. Xue, Quantitative gait dysfunction 
+and risk of cognitive decline and dementia, J. Neurol. Neurosurg. Psychiatry 78 (9) 
+(2007) 929–935. 〈https://www.ncbi.nlm.nih.gov/pubmed/17237140〉. 
+[33] S.R. Lord, H.B. Menz, A. Tiedemann, A physiological profile approach to falls risk 
+assessment and prevention, Phys. Ther. 83 (3) (2003) 237–252. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/12620088〉. 
+[34] S. Studenski, S. Perera, K. Patel, C. Rosano, K. Faulkner, M. Inzitari, et al., Gait 
+speed and survival in older adults, JAMA 305 (1) (2011) 50–58. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/21205966〉. 
+[35] O. Beauchet, G. Allali, C. Annweiler, S. Bridenbaugh, F. Assal, R.W. Kressig, et al., 
+Gait variability among healthy adults: low and high stride-to-stride variability are 
+both a reflection of gait stability, Gerontology 57 (5) (2011) 435–440, https://doi. 
+org/10.1159/000322198. 
+[36] D. Kroneberg, M. Elshehabi, A.C. Meyer, K. Otte, S. Doss, F. Paul, et al., Less is 
+more - estimation of the number of strides required to assess gait variability in 
+spatially confined settings, Front. Aging Neurosci. 10 (2018) 435. 〈https://www. 
+ncbi.nlm.nih.gov/pubmed/30719002〉. 
+R. R¨ossler et al.                                                                                                                                                                                                                                 

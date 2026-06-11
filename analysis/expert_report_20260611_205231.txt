@@ -1,0 +1,17 @@
+======================================================================
+  专家知识库步态分析报告
+  Expert Knowledge-Based Gait Analysis Report
+======================================================================
+
+【引用文献】
+  • [8] Gait_Kinematic_Parameters_in_Parkinsons_Disease_A.pdf
+  • [10] nihms285593.pdf
+  • [11] Predicting_fall_risk_through_step_width_variabilit.pdf
+  • [12] Rssleretal.2024_Spatiotemporalgaitcharacteristicsacrosstheadultlifespan.pdf
+
+  (共引用 4 篇权威论文)
+
+======================================================================
+  报告生成时间: 2026-06-11 20:52:31
+  数据来源: 13 篇权威论文 + 患者步态数据库
+======================================================================

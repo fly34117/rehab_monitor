@@ -1,0 +1,1434 @@
+--- 第 1 页 ---
+RESEARCH
+Open Access
+© The Author(s) 2023. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, 
+sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and 
+the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this 
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included 
+in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will 
+need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/. The 
+Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available 
+in this article, unless otherwise stated in a credit line to the data.
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+https://doi.org/10.1186/s12984-023-01286-6
+Background
+Over the past two decades, significant advancements 
+in virtual reality (VR) technology have resulted in mul­
+tiple applications of VR related to medical education 
+[1, 2], surgical planning [2, 3], pain management [4–7], 
+patient education [8], and rehabilitation [9, 10]. However, 
+the utility of VR in medicine has not been fully realized, 
+particularly in the evaluation and treatment of neuro­
+logical and motor disorders. For example, performance 
+of complex tasks under realistic conditions may reveal 
+subtle deficits in motor control or cognitive functioning 
+that are typically overlooked in traditional clinical tests, 
+Journal of NeuroEngineering 
+and Rehabilitation
+*Correspondence:
+Morgan McGrath Lewis
+mkm126@case.edu
+Jay L. Alberts
+albertj@ccf.org
+1Department of Biomedical Engineering, Cleveland Clinic, Cleveland, OH, 
+USA
+2School of Medicine, Case Western Reserve University, Cleveland, OH, USA
+3Neurological Institute, Center for Neurological Restoration, Cleveland 
+Clinic, Cleveland, OH, USA
+Abstract
+Background  Omnidirectional treadmills (ODTs) offer a promising solution to the virtual reality (VR) locomotion 
+problem, which describes the mismatch between visual and somatosensory information and contributes to VR 
+sickness. However, little is known about how walking on ODTs impacts the biomechanics of gait. This project aimed to 
+compare overground and ODT walking and turning in healthy young adults.
+Methods  Fifteen young adults completed forward walk, 180° turn, and 360° turn tasks under three conditions: (1) 
+overground, (2) on the Infinadeck ODT in a virtual environment without a handrail, and (3) on the ODT with a handrail. 
+Kinematic data for all walking trials were gathered using 3D optical motion capture.
+Results  Overall, gait speed was slower during ODT walking than overground. When controlling for gait speed, ODT 
+walking resulted in shorter steps and greater variability in step length. There were no significant differences in other 
+spatiotemporal metrics between ODT and overground walking. Turning on the ODT required more steps and slower 
+rotational speeds than overground turns. The addition of the stability handrail to the ODT resulted in decreased gait 
+variability relative to the ODT gait without the handrail.
+Conclusion  Walking on an ODT resembles natural gait patterns apart from slower gait speed and shorter step length. 
+Slower walking and shorter step length are likely due to the novelty of physically navigating a virtual environment 
+which may result in a more conservative approach to gait. Future work will evaluate how older adults and those with 
+neurological disease respond to ODT walking.
+Keywords  Gait, Locomotion, Kinematics, Virtual reality, Omnidirectional treadmill
+Gait patterns during overground and virtual 
+omnidirectional treadmill walking
+Morgan McGrath Lewis1,2*, Colin Waltz1, Logan Scelina1, Kathryn Scelina1, Kelsey M. Owen1, Karissa Hastilow1, 
+Eric M. Zimmerman3, Anson B. Rosenfeldt1, Mandy Miller Koop1 and Jay L. Alberts1,3*
+
+
+--- 第 2 页 ---
+Page 2 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+thus providing additional insight into disease progression 
+and providing a target for treatment [11–14]. Capturing 
+gait deficits (e.g., freezing of gait in Parkinson’s disease) 
+in a traditional clinical setting is challenging [15, 16]. 
+Virtual reality offers a means to create immersive digital 
+representations of everyday environments and tasks to 
+evaluate motor function in real world contexts. Barriers 
+to using VR for the assessment and potential treatment 
+of neurological populations include the VR locomotion 
+problem (i.e., navigation of a large virtual environment 
+within the confines of a smaller physical space) and an 
+understanding of how gait patterns are impacted while 
+walking in a VR environment.
+Sensory inconsistencies between the visual and ves­
+tibular systems while completing tasks in traditional VR 
+setups often result in nausea or physical discomfort [17]. 
+Typical approaches to VR navigation include: (1) con­
+tinuous virtual movement with a controller joystick, (2) 
+non-continuous virtual movement through point-and-
+click teleportation between locations, and (3) matching 
+the size of the virtual space with the size of the available 
+physical space. These approaches are problematic as they 
+can cause motion sickness from the sensory mismatch 
+between visual flow and vestibular information, break the 
+user’s sense of immersion, critically limit the structure 
+and scale of possible VR environments, and, as in cases 
+1) and 2), fail to provide any information about gait func­
+tion [18–21].
+Recent VR applications have combined traditional uni­
+directional treadmills with simple VR environments in 
+which the user controls a virtual avatar during treadmill 
+walking [22–28]. This approach improves immersion and 
+reduces symptoms of motion sickness by fusing virtual 
+and physical movement; however, it necessarily limits 
+the complexity of gait during the VR experience as multi-
+directional movements and turning cannot be completed 
+[29, 30].
+The growth in VR gaming has resulted in commercial 
+availability of omnidirectional treadmills (ODTs) [31–
+35]. Omnidirectional treadmills utilize various mechani­
+cal approaches to allow the user to move more naturally 
+within virtual environments, including low-friction flat 
+surfaces, concave surfaces, and systems of traditional 
+treadmill belts. One such belt-based platform is the Infi­
+nadeck ODT (Infinadeck, Rocklin, CA), which is a large 
+treadmill in one axis that carries several smaller tread­
+mills in the perpendicular axis [36, 37]. The treadmill’s 
+motion is user-paced and responds to the direction and 
+acceleration of a VR motion tracker worn by the user 
+[38].
+Advances in technology related to the development 
+and control of ODTs may make them a viable approach 
+to addressing the long-standing VR locomotion prob­
+lem and promote the evaluation of gait under controlled, 
+realistic conditions. Numerous studies have compared 
+overground and traditional treadmill walking [39–43], 
+but to date few studies have systematically evaluated gait 
+kinematics during overground versus ODT locomotion. 
+An evaluation of speed adaptation on the Cyberith Vir­
+tualizer ODT, a low friction walking device, indicated 
+that ODT walking is characterized by consistently slower 
+gait speeds, increased cadence, and shorter step lengths 
+when compared to overground forward walking in a vir­
+tual environment [44]. Similarly, one study investigating 
+the CyberWalk ODT, a belt-based system, also reported 
+slower speeds, increased cadence, shorter steps lengths, 
+and higher gait variability [45]. Although previous stud­
+ies have evaluated gait while following curved pathways, 
+a gap remains in understanding how gait on an ODT is 
+affected during turning. Considering the importance of 
+turning and deficits in turning behavior linked to limited 
+mobility and falls in neurological patients, it is necessary 
+to characterize the kinematics of turning during ODT 
+locomotion [46–48].
+The limited evidence available suggests ODT locomo­
+tion may be impacted by the challenging gait conditions, 
+such as turning, and feelings of instability associated with 
+the novelty of ODT walking combined with the lack of 
+visual perception of the physical environment when 
+using an immersive VR headset. Other factors contribut­
+ing to differences with overground walking include haptic 
+feedback from the harness systems used with ODTs and 
+differing shear forces between the foot and walking sur­
+face when using ODTs with concave or low-friction plat­
+forms. Taken together, it is unreasonable to assume that 
+ODT locomotion directly imitates overground gait, and 
+the specific mechanical approach of each ODT device 
+likely plays a role in gait adaptation.
+A necessary precursor to the implementation of VR 
+paradigms that utilize ODTs in neurology or rehabilita­
+tion is to determine the differences in overground and 
+ODT gait patterns. As ODTs offer a distinct advantage 
+over unidirectional treadmills in the ability to evaluate 
+gait under realistic VR conditions that mimic the com­
+plex demands of everyday motor control (e.g., turning 
+and changing directions in response to stimuli), ODT 
+locomotion must be characterized for both simple for­
+ward walking and turning tasks. This understanding 
+will facilitate appropriate development of VR environ­
+ments and interpretation of outcomes, as well as provide 
+a necessary framework for evaluating ODT locomo­
+tion in a rehabilitation context. The aim of this project 
+was to use kinematic outcomes to compare overground 
+and ODT walking and turning in a VR environment in 
+healthy young adults. We hypothesized that forward gait 
+on the Infinadeck ODT would be characterized by slower 
+speeds, shorter steps, and increased variability in step 
+
+
+--- 第 3 页 ---
+Page 3 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+length, and ODT turning would be prolonged compared 
+to overground walking.
+Methods
+Participants
+Fifteen healthy adults participated in the study (8 males 
+and 7 females, age = 25.1 ± 4.0 years). This sample size is 
+consistent with similar evaluations of the Cyberith Vir­
+tualizer ODT [44] and the CyberWalk ODT [45], which 
+each analyzed data from 12 healthy young adults. Demo­
+graphic data are presented in Table 1. Participants were 
+free from any neurocognitive conditions or musculoskel­
+etal abnormalities that would affect cognitive function­
+ing or gait. The experiment protocol was approved by the 
+Cleveland Clinic human research ethics committee, and 
+all participants completed the informed consent process 
+prior to entering the study.
+Equipment set up and procedure
+All study procedures were performed in the Neural Con­
+trol Laboratory at the Cleveland Clinic, and each data 
+collection session required approximately three hours. 
+In addition to anthropomorphic measurements (height, 
+weight, leg lengths, and joint widths), participants pro­
+vided demographic details and information on prior 
+experience with VR and ODTs. Each participant was fit­
+ted in a full-body harness and three VIVE virtual reality 
+tracking devices (HTC Corporation, Taiwan): one affixed 
+to the lower back via a waist belt and one device affixed 
+to each foot. Participants completed the Simulator Sick­
+ness Questionnaire (SSQ) [49] before and after perform­
+ing all walking trials.
+Full body kinematics were captured using a 16-camera 
+Vicon motion capture system (Vicon Motion Systems 
+LTD, UK). Thirty-seven passive retro-reflective markers 
+were placed on specific bony landmarks, as specified by 
+a modified Plug-In-Gait model [50–52]. The Plug-In-
+Gait model details marker position and is used to trans­
+form raw positional data of the markers into kinematic 
+and kinetic gait variables within the Vicon Nexus soft­
+ware. This model was modified for the present study by 
+removing the four head markers, as these would have 
+been occluded by and interfered with the VR headset. 
+The positions of the reflective markers were recorded at 
+a sampling rate of 100 Hz during each overground and 
+treadmill trial. The motion capture system was calibrated 
+prior to each data collection session, and each participant 
+performed one static calibration trial to assign proper 
+anatomical labels to the body markers within the Vicon 
+Nexus software.
+Overground walking trials
+The overground environment consisted of a large, open 
+area free of obstacles and distractions. One center cone 
+was placed in the middle of the open area, surrounded 
+by four cones arranged 1 m in the positive and negative 
+X- and Y-directions (Fig. 1A, left). One reflective marker 
+was placed atop each cone to provide context during 
+data analysis. Only kinematic data captured within a 
+designated 4 × 2  m boundary around the center cone 
+were included in analysis, although participants were 
+instructed to start and stop walking outside the bounds 
+of the data capture space to eliminate effects of accelera­
+tion and deceleration. Participants were provided a dem­
+onstration of each walking task: (1) forward walking, (2) 
+forward walk to righthand 180° turn around center cone, 
+and (3) forward walk to righthand 360° turn around cen­
+ter cone (Fig.  1B). Participants completed two trials of 
+each task at a comfortable walking pace, following verbal 
+start and stop cues for each trial.
+Omnidirectional treadmill + VR walking trials
+Steam VR Room Set Up and Infinadeck ODT calibra­
+tion were performed prior to each session, as previously 
+described [38]. Three stationary base stations (Valve Cor­
+poration, Bellevue, WA) were arranged facing the tread­
+mill to monitor the position of the VR headset and VIVE 
+tracking devices throughout treadmill trials. The Infi­
+nadeck ODT was chosen for this study due to its similar­
+ity to traditional treadmills used for gait analysis as well 
+as the advantage of not requiring any specialized foot­
+wear to be worn by the user.
+Participants were provided an explanation and demon­
+stration of how to walk and turn on the ODT, followed 
+by time to acclimate to the treadmill prior to donning 
+the Valve Index headset (Valve Corporation, Bellevue, 
+WA). Study staff helped participants adjust the head­
+set to ensure the visual display was clear, and the body 
+harness was secured (Fig. 1 C). The virtual environment 
+replicated the dimensions and design of the physical 
+environment, including the same five-cone arrangement 
+in the center of the space (Fig.  1A, right). Participants 
+were given a habituation period to explore the environ­
+ment and become comfortable with walking and turning 
+on the treadmill in VR. Habituation was considered com­
+plete when the participant reported feeling comfortable 
+and study staff determined the participant had achieved 
+a consistent gait.
+Participants repeated the same three tasks (forward 
+walk, 180° turn, 360° turn) as in the overground condi­
+tion, completing a total of five trials per task. All trials for 
+a task were completed before advancing to the next task. 
+To evaluate the potential impact of a balance aid during 
+ODT walking, following completion of the initial VR tri­
+als, a circular handrail attachment was installed around 
+the perimeter of the treadmill platform (Fig.  1  C), and 
+participants completed two additional trials of each task. 
+If a participant reported symptoms of motion sickness, 
+
+
+--- 第 4 页 ---
+Page 4 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+the handrail trials were not performed. Total time in the 
+VR environment was approximately 60 min.
+Data processing
+Kinematic data captured within the designated bound­
+aries of the overground motion capture space were 
+included for analysis, representing a linear distance of 
+4 m in the forward walking direction. Participants started 
+and stopped walking outside of this range to minimize 
+effects of acceleration and deceleration on gait biome­
+chanics. For overground trials, cone reference mark­
+ers were used to truncate data to the appropriate range. 
+For treadmill trials, kinematic data capture Start and 
+Stop was automatically triggered based on relative posi­
+tion in the VR space using a custom Raspberry Pi link­
+ing the motion capture and VR systems. Thus, kinematic 
+data from both overground and ODT trials represent the 
+same 8m2 area in the physical and virtual spaces.
+All kinematic data were labeled using a modified Vicon 
+Plug-In-Gait marker set to create a three-dimensional 
+skeleton in the Vicon Nexus software. Small gaps in tra­
+jectory data were filled using rigid body techniques in 
+Nexus. Custom MATLAB (R2021a) scripts identified 
+heel strike and toe off events, as well as turn onset and 
+offset events using pelvic rotation. Kinematic data were 
+filtered using 2nd order and 4th order lowpass Butter­
+worth filters prior to identifying foot and turn events, 
+respectively. Heel strikes were identified using whichever 
+came first between minimum vertical heel position and 
+maximum anterior heel position. Toe off events were 
+identified as the maximum posterior distance of the toe 
+marker between heel strikes. Turn segments were iden­
+tified as the longest consecutive segment where pelvic 
+rotational velocity was > 95% of the mean and the seg­
+ment covered at least 80% of the rotation needed to com­
+plete the given turn task.
+Fig. 1  (A) Physical and virtual testing environments as viewed from the start position for all trials. (B) Diagram of forward walk, 180% turn, and 360% turn 
+tasks to be completed overground and in the ODT + VR. (C) Infinadeck ODT with handrail installed, Value Index headset, and ceiling-mounted full-body 
+harness in place. Reflective markers corresponding with Nexus Plug-In-Gait model are visible
+ 
+
+
+--- 第 5 页 ---
+Page 5 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+Spatiotemporal outcome metrics were calculated by 
+Vicon ProCalc software and custom MATLAB scripts 
+based on foot events and turn identification as described 
+previously. Average gait velocity for forward walk trials 
+was calculated as the total linear distance traveled (4 m) 
+divided by the trial duration. Step length was defined 
+as the 2D anteroposterior distance between the right 
+and left heel at consecutive heel strikes. Step width was 
+defined as the 2D mediolateral distance between the 
+right and left heel at consecutive heel strikes. Cadence 
+was calculated as the frequency of steps within the trial. 
+Step time was defined as the time between consecutive 
+heel strikes; whereas stance time was the time between 
+consecutive heel strike and toe off events, and swing time 
+was the time between consecutive toe off and heel strike 
+events. Double limb support percentage was calculated 
+as the percentage of the gait cycle for which both feet 
+were in contact with the ground. All forward walk met­
+rics were reported as an average per trial as well as the 
+coefficient of variation (standard deviation divided by 
+the mean, multiplied by 100) for the trial. Turn metrics 
+included total turn duration and number of steps in the 
+turn, as determined by the turn segment identified using 
+pelvic rotation data, as well as average and maximum 
+turn velocity, calculated using angular velocity of the pel­
+vis during turning.
+Statistical analysis
+The effect of condition (overground, treadmill, tread­
+mill + handrail) on spatiotemporal outcomes was eval­
+uated using linear mixed models (LMMs) fitted by 
+restricted maximum likelihood [53]. Linear mixed 
+models are especially well-suited to handle data with 
+repeated measures but do not require the same number 
+of observations across subjects as do repeated measures 
+ANOVA analyses. In the case of this dataset, there were 
+a number of participants for which specific trials were 
+excluded due to issues in data collection (e.g., stumble 
+steps) and data processing (e.g., missing marker trajecto­
+ries). Linear mixed models handle this missingness while 
+also accounting for the natural variation in gait patterns 
+between individuals through random effect terms.
+Each LMM was fitted with the forward walk outcome 
+of interest as the response variable and included fixed 
+effects of condition and average gait speed during the 
+trial. Models for turn outcomes included only condi­
+tion as a fixed effect. To account for differences in gait 
+between individuals, models included random inter­
+cepts per participant as well as random slopes by condi­
+tion per participant. All models were validated by visual 
+inspection to confirm residuals and random slopes had 
+nearly normal distributions. In models where the condi­
+tion term was significant, post-hoc pairwise comparisons 
+were performed using the Kenward-Roger approximation 
+of degrees of freedom and Tukey adjustments for mul­
+tiple comparisons.
+All statistical analyses were performed in RStudio 
+(version 2022.02.3). Models were fitted using the “lme4” 
+package (Bates, Maechler, Bolker, & Walker, 2015) and 
+evaluated using the “lmerTest” package (Kuznetsova, 
+Brockhoff, & Christensen, 2017). Diagnostic plots for 
+LMMs were built using the “redres” package (Goode, 
+McClernon, Zhao, Zhang, & Huo, 2019). Post-hoc pair­
+wise comparisons used the “emmeans” package (Lenth, 
+2022) to compute contrasts with Tukey adjustments. Sta­
+tistical significance was set at 0.05 for all tests.
+Results
+Participants
+While 40% of participants reported having any prior 
+experience with immersive virtual reality, only four (27%) 
+had used immersive VR within the past year and only one 
+(7%) used immersive VR regularly (Table 1). No partici­
+pant reported any prior experience with an ODT.
+Trials included in analysis
+Three participants did not complete all trials in the tread­
+mill + handrail condition due to motion sickness. Forty 
+trials were excluded due to missteps or loss of balance, 
+and 24 trials were excluded due to miscellaneous soft­
+ware malfunctions during data collection. In sum, 326 
+trials across all tasks and conditions were included in the 
+analysis.
+Adjusted model analysis
+Intermediate analyses constructed fully adjusted LMMs 
+that included fixed effects of sex, leg length, and BMI, in 
+addition to condition and speed. Adjusted model sum­
+maries are presented in Tables S1 – S3. These additional 
+covariates had no meaningful impact on the effects of 
+condition or speed in any model, and all presented find­
+ings result from the models specified in Methods.
+Table 1  Participant demographics (N = 15)
+Age (years), range 18–30
+25.1 ± 4.0
+Female
+7 (47%)
+Height (m)
+1.74 ± 0.11
+Weight (kg)
+76.6 ± 21.3
+BMI
+24.9 ± 5.0
+Any prior immersive VR experience
+6 (40%)
+Frequency of VR use in the past year
+  Never
+11 (73%)
+  Between one and five times
+3 (20%)
+  Greater than five times
+1 (7%)
+Any prior omnidirectional treadmill experience
+0 (0%)
+Data presented as mean ± standard deviation or number (percentage)
+
+
+--- 第 6 页 ---
+Page 6 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+Forward walking
+Impact of gait speed
+Participants were instructed to complete all trials at a 
+comfortable pace. For all forward walk trials, average gait 
+speed was significantly faster overground (1.3 ± 0.18 m/s) 
+compared to treadmill (0.43 ± 0.07  m/s, p < 0.001) and 
+treadmill + handrail (0.50 ± 0.04  m/s, p < 0.001) condi­
+tions. Based on the results of forward walk LMMs, gait 
+speed had a significant effect on every outcome, except 
+step width (Table 2) (p < 0.001 to 0.015).
+Figure 2 depicts results for a single spatiotemporal out­
+come to provide a representative visualization of both 
+raw data distribution and model fit for the three walk­
+ing conditions. In particular, data from the overground 
+condition span a larger range of gait speeds and display 
+a clear linear relationship with speed, whereas data from 
+both treadmill conditions are tightly clustered within a 
+narrow range of gait speeds. By including gait speed as 
+a fixed effect in the models, post-hoc pairwise compari­
+sons between conditions test for significant differences 
+between model estimates for the three conditions at a 
+given gait speed.
+Impact of walking condition
+Table 3 provides observed values of spatiotemporal out­
+comes from all forward walking trials, without adjust­
+ing for gait speed. After controlling for gait speed using 
+LMMs (Fig.  3), the only significant difference in spa­
+tiotemporal outcomes between the overground and 
+treadmill conditions was shorter step lengths for the 
+treadmill + handrail (p < 0.001) and treadmill (p < 0.001) 
+conditions compared to overground walking. At a gait 
+Table 2  Model estimates of the impact of velocity on 
+spatiotemporal outcomes
+Velocity (m/s)
+Outcome Measure
+Estimate (95% CI)
+SE
+p value
+Step Length (m)
+0.34 (0.27, 0.40)
+0.03
+< 0.001
+Step Width (m)
+-0.01 (-0.06, 0.04)
+0.02
+0.713
+Cadence (steps/min)
+39.7 (27.7, 52.0)
+5.92
+< 0.001
+Step Time (s)
+-0.20 (-0.27, -0.13)
+0.03
+< 0.001
+Stance Time (s)
+-0.35 (-0.47, -0.23)
+0.06
+< 0.001
+Swing Time (s)
+-0.05 (-0.08, -0.01)
+0.02
+0.015
+Double Limb Support (%) -16.7 (-22.0, -11.8)
+2.11
+< 0.001
+Estimate represents the change in the outcome for each 1 m/s increase in gait 
+speed, assuming all other variables are held constant, as predicted by the linear 
+mixed model
+CI = confidence interval, SE = standard error
+Fig. 2  Average step length for each forward walk trial is plotted versus average gait speed for the trial, with the corresponding linear mixed model (LMM) 
+overlaid for each condition. The LMM includes fixed effects of condition and velocity, as well as random intercepts and slopes by condition for participant 
+ID. Each point represents the average step length for a single forward walk trial. The distribution of the step length data, as well as the LMM fit, are repre­
+sentative of all spatiotemporal outcomes and models
+ 
+
+
+--- 第 7 页 ---
+Page 7 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+speed of 0.45 m/s (the average speed of all forward walk 
+trials on the ODT), predicted step lengths for the tread­
+mill, treadmill + handrail, and overground conditions 
+were 0.25  m, 0.28  m, and 0.43  m, respectively. No sig­
+nificant differences were observed in cadence, step width, 
+step time, stance time, swing time, or percentage of the 
+gait cycle spent in double limb support after controlling 
+for speed. When comparing the two treadmill condi­
+tions, the addition of the handrail resulted in longer step 
+lengths (p < 0.001), narrower step widths (p < 0.001), lon­
+ger swing times (p < 0.001), and lower cadence (p = 0.037).
+To evaluate variability in gait (Table  3), the percent 
+coefficient of variation (CV%) for each outcome was cal­
+culated for every trial. The same LMM procedure was 
+used to control for speed and compare CV% across con­
+ditions. Gait speed was not a significant predictor for 
+any CV% model (p = 0.114 to 0.694). Compared to over­
+ground, treadmill walking without the handrail resulted 
+in greater variability in step length (p < 0.001) and double 
+limb support (p = 0.007). Greater variability in step length 
+(p < 0.001) was observed during the treadmill + handrail 
+condition as well. Between the treadmill conditions, the 
+Fig. 3  Forward walk model estimates (± 95% confidence intervals) of spatiotemporal outcome metrics when gait speed = 0.45 m/s (the average velocity 
+of all forward walk trials on the treadmill). For models in which the main effect of Condition was significant, post-hoc pairwise comparisons between 
+conditions are illustrated. *p < 0.05, **p < 0.01, ***p < 0.001
+ 
+
+
+--- 第 8 页 ---
+Page 8 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+handrail reduced variability in the following outcomes: 
+cadence (p = 0.005), step time (p = 0.003), stance time 
+(p < 0.001), swing time (p = 0.001), and double limb sup­
+port (p < 0.001).
+Turning
+The LMMs for turn outcomes included only condition 
+(not speed) as a fixed effect and participant ID as a ran­
+dom effect. Condition was a significant predictor in all 
+models (p < 0.001). Results were consistent across both 
+180° and 360° turns (Fig. 4; Table 4). Compared to over­
+ground turning, turns on the treadmill were longer in 
+duration (p < 0.001), required more steps (p < 0.001), and 
+had slower average and maximum turning velocities 
+(p < 0.001). Between the two treadmill conditions, the 
+addition of the handrail brought treadmill turns closer 
+to natural overground turning in all domains except 
+maximum turn velocity. Compared to those without the 
+handrail, turns with the handrail were of shorter duration 
+(180°: p = 0.017, 360°: p < 0.001), contained fewer steps 
+(180°: p = 0.008, 360°: p < 0.001), and had higher average 
+turn velocites (180°: p = 0.043, 360°: p < 0.008).
+User experience
+All participants completed the Simulator Sickness Ques­
+tionnaire (SSQ) before and immediately after using the 
+ODT (Table  5). In addition to a total score, the SSQ 
+produces sub-scores for nausea, oculomotor, and disori­
+entation symptoms of simulator sickness. Overall, the 
+most common symptoms reported after completion of 
+the ODT trials were sweating (N = 8) and nausea (N = 
+4), with the majority of participants reporting no to mild 
+symptoms (median total score = 3.7 points out of 235.6 
+maximum).
+Discussion
+Omnidirectional treadmills offer a promising solution to 
+the VR locomotion problem by allowing users to physi­
+cally navigate large, realistic virtual environments to 
+reflect actions in the real world without, in general, sub­
+stantial VR sickness as captured by the SSQ. To realize 
+the potential in combining VR content and ODT tech­
+nology, it is necessary to understand the possible differ­
+ences and similarities between typical overground and 
+ODT walking in VR. Based on results of LMMs assessing 
+spatiotemporal gait metrics across walking conditions, 
+the gait pattern of ODT walking was not significantly dif­
+ferent than overground walking for healthy young adults, 
+with a few notable exceptions.
+Kinematic changes to gait during ODT walking
+Gait speed was approximately 65% slower during ODT 
+walking compared to overground, despite instruction 
+to perform all trials at a comfortable pace. This is con­
+sistent with existing evidence from self-paced walking 
+in VR environments while on a unidirectional tread­
+mill. Previous studies have reported slower self-selected 
+walking speeds in VR, as well as other indications of a 
+conservative or cautious gait (e.g., increased gait vari­
+ability, increased step width) [54–57]. A more conserva­
+tive approach to gait may be due to a sense of isolation 
+from the physical world induced by the fully immersive 
+VR environment presented through a head mounted dis­
+play (HMD) [56, 58]. However, an evaluation of the much 
+larger CyberWalk ODT indicated consistently slower 
+Table 3  Spatiotemporal outcome metrics for forward walk trials and pairwise comparisons from corresponding linear mixed models
+Pairwise Comparisons After Controlling for Velocity
+Outcome Measure
+Overground
+Treadmill
+Treadmill + Handrail
+Overground – TM
+Overground – TM + H
+TM – TM + H
+Average Velocity (m/s)
+1.30 ± 0.18
+0.43 ± 0.07
+0.50 ± 0.04
+Step Length (m)
+0.71 ± 0.07
+0.24 ± 0.04
+0.29 ± 0.04
+0.18 (0.10, 0.26)
+0.15 (0.07, 0.22)
+-0.03 (-0.05, -0.02)
+Step Width (m)
+0.12 ± 0.04
+0.13 ± 0.03
+0.10 ± 0.04
+-0.01 (-0.07, 0.05)
+0.03 (-0.02, 0.08)
+0.04 (0.02, 0.05)
+Cadence (steps/min)
+112 ± 8.5
+85 ± 12.2
+81 ± 7.3
+-7.75 (-23.62, 8.11)
+-1.43 (-15.91, 13.04)
+6.32 (0.40, 12.24)
+Step Time (s)
+0.54 ± 0.04
+0.73 ± 0.11
+0.75 ± 0.07
+--
+--
+--
+Stance Time (s)
+0.72 ± 0.06
+1.08 ± 0.19
+1.09 ± 0.11
+--
+--
+--
+Swing Time (s)
+0.36 ± 0.02
+0.37 ± 0.04
+0.40 ± 0.03
+0.02 (-0.02, 0.07)
+0.01 (-0.05, 0.03)
+-0.03 (-0.05, -0.01)
+Double Limb Support (%)
+33.8 ± 0.01
+47.9 ± 0.01
+46.3 ± 0.01
+--
+--
+--
+CV% Step Length
+2.4 ± 1.4
+30.9 ± 2.9
+32.1 ± 2.2
+-26.4 (-31.8, -21.1)
+-28.1 (-33.0, -23.2)
+-1.7 (-3.9, 0.6)
+CV% Step Width
+23.8 ± 9.7
+19.3 ± 8.4
+15.5 ± 9.0
+--
+--
+--
+CV% Cadence
+2.2 ± 1.0
+8.4 ± 2.5
+5.1 ± 1.7
+-3.6 (-9.1, 1.8)
+-0.5 (-5.5, 4.5)
+3.1 (1.0, 5.3)
+CV% Step Time
+2.2 ± 1.0
+8.6 ± 2.7
+5.2 ± 1.7
+-3.3 (-9.2, 2.5)
+0.0 (-5.4, 5.4)
+3.3 (1.2, 5.4)
+CV% Stance Time
+1.5 ± 0.6
+7.2 ± 2.1
+4.1 ± 1.5
+-3.8 (-8.2, 0.6)
+-0.6 (-4.7, 3.4)
+3.1 (1.7, 4.6)
+CV% Swing Time
+2.3 ± 1.0
+7.7 ± 1.9
+5.5 ± 1.1
+-3.7 (-8.0, 0.5)
+-1.2 (-5.0, 3.7)
+2.6 (1.1, 4.1)
+CV% Double Limb 
+Support
+1.8 ± 0.7
+5.7 ± 1.1
+3.1 ± 0.6
+-4.2 (-7.3, -1.1)
+-1.6 (-4.5, 1.3)
+2.6 (1.6, 3.6)
+Observed data reported as mean ± SD. Pairwise comparisons were calculated only for models in which condition was a significant main effect. Significant (p < 0.05) 
+contrast estimates and their 95% confidence intervals are bolded. TM = treadmill, H = handrail, CV% = coefficient of variation as a percentage
+
+
+--- 第 9 页 ---
+Page 9 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+walking speeds on the ODT compared to overground 
+when wearing a HMD device in both conditions, sug­
+gesting the ODT impacted gait beyond VR [45]. Slower 
+walking on ODTs appears to be a general adaptation as 
+even after providing participants with a 15-minute accli­
+mation period, gait speed was slower than overground 
+walking [53]. The habituation period employed in the 
+current study most likely provided sufficient familiariza­
+tion; there was no difference in gait speed as a function 
+of trial number. Taken together, this evidence suggests 
+slower gait speed is a fundamental characteristic of ODT 
+walking.
+Omnidirectional treadmill walking is slower than 
+overground walking even after attempts to standard­
+ize pace across conditions. Soni and Lamontagne aimed 
+to characterize speed adaptation on a different omnidi­
+rectional locomotion system, the Cyberith Virtualizer, 
+and reported the walking speeds achieved in the “fast” 
+ODT condition were comparable to those achieved in 
+the “slow” overground condition in a group of healthy 
+young adults [44]. Both with and without a VR environ­
+ment presented through a HMD, gait speed was approxi­
+mately 0.65 m/s slower on the treadmill than overground. 
+Therefore, should clinical applications use VR + ODT 
+Fig. 4  180° and 360° turn model estimates (± 95% confidence intervals) of turning outcome metrics. The main effect of Condition was significant in all 
+models. Statistically significant post-hoc pairwise comparisons are illustrated. *p < 0.05, **p < 0.01, ***p < 0.001
+ 
+
+
+--- 第 10 页 ---
+Page 10 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+paradigms, walking speed should not be directly related 
+or compared to overground walking in terms of charac­
+terizing community ambulation capability [59].
+Very little work has been done to characterize over­
+ground gait in healthy adults at very slow gait speeds 
+(< 0.5 m/s). However, the impact of speed on spatiotem­
+poral gait metrics is well-established [60–63]. These rela­
+tionships were replicated in the present findings, as gait 
+speed was a significant predictor of every forward walk 
+outcome except step width (Table  2). Across all condi­
+tions,  faster gait speed was associated with longer step 
+lengths, higher cadence, shorter step times, shorter swing 
+and stance times, and less time spent in double limb sup­
+port. Gait speed was not associated with any change in 
+the variability (CV%) of any spatiotemporal metric. The 
+relationships between gait speed and other spatiotempo­
+ral gait metrics during ODT locomotion are consistent 
+with those established for overground walking, suggest­
+ing that ODT walking mimics natural gait patterns [64]. 
+These relationships should continue to be evaluated as 
+ODT hardware and software improve and gait speed 
+becomes more reflective of overground walking.
+By including speed as a fixed effect in the LMMs, it 
+was possible to compare model estimates for spatiotem­
+poral outcomes across the three conditions at any given 
+gait speed. To produce model estimates with reasonable 
+uncertainty and avoid extrapolating beyond the range 
+of the observed data, Fig.  3 depicts model estimates 
+across conditions for every outcome when gait speed is 
+0.45 m/s, the average gait speed of all forward walk trials 
+on the treadmill. The models predict that overground and 
+ODT walking are not significantly different with respect 
+to cadence, step width, step time, stance and swing time, 
+nor double limb support. However, step length is shorter 
+on the ODT (0.25  m) than it is predicted to be over­
+ground (0.43 m) at slow speeds. Souman et al. similarly 
+reported shorter steps on the CyberWalk ODT compared 
+to overground, although gait parameters were calculated 
+using head position, and gait speed was not controlled 
+for across conditions [45].
+Even after accounting for gait speed, the short steps on 
+the Infinadeck ODT may be the result of limited dimen­
+sions of the walking platform. Compared to the Cyber­
+Walk ODT, which has a walking surface of 4 m x 4 m, the 
+Infinadeck platform is approximately 1.2 m x 1.2 m. Users 
+walk at the outer boundary of the platform to bring the 
+waist-worn tracker to the periphery of the walking sur­
+face, thus achieving the highest speed possible on the 
+treadmill but limiting maximum step length. Notably, the 
+addition of the stability handrail provided somatosensory 
+feedback about body position in space relative to the edge 
+of the walking platform, allowing participants to margin­
+ally increase both gait speed (16%) and step length (13%) 
+relative to ODT walking without the handrail.
+In addition to shorter steps, forward walking on the 
+treadmill was also characterized by greater variability in 
+step length. This was observed both with and without the 
+handrail and indicates a deviation from a natural gait pat­
+tern [65]. Participants were unable to walk at their pre­
+ferred step length, and instead relied on feedback from 
+the treadmill speed and the feeling of the surface under­
+foot to inform necessary modulations in step length from 
+one gait cycle to the next. Treadmill walking without the 
+handrail also involved greater variability in double limb 
+Table 4  Spatiotemporal outcome metrics for turn trials and pairwise comparisons from corresponding linear mixed models
+Pairwise Comparisons
+Outcome Measure
+Overground
+Treadmill
+Treadmill + Handrail
+Overground – TM
+Overground – TM + H
+TM – TM + H
+180° Turns
+Duration (s)
+2.2 ± 0.2
+6.3 ± 0.7
+5.3 ± 0.7
+-4.1 (-4.5, -3.6)
+-3.1 (-3.6, -2.6)
+1.0 (0.2, 3.2)
+Number of Steps
+4.9 ± 0.4
+10.6 ± 1.5
+8.4 ± 1.2
+-5.7 (-6.7, -4.7)
+-3.6 (-4.4, -2.7)
+2.1 (0.6, 3.6)
+Average velocity (deg/s)
+61.8 ± 3.5
+27.7 ± 3.0
+31.6 ± 3.7
+34.1 (31.4, 36.8)
+30.3 (26.8, 33.7)
+-3.9 (-7.6, -0.1)
+Max velocity (deg/s)
+73.3 ± 3.4
+38.4 ± 4.7
+42.4 ± 5.3
+34.8 (30.9, 38.6)
+31.0 (26.8, 35.3)
+-3.8 (-8.4, 0.9)
+360° Turns
+Duration (s)
+3.7 ± 0.5
+9.9 ± 1.0
+8.3 ± 1.2
+-6.3 (-6.9, -5.6)
+-4.7 (-5.4, -4.0)
+1.6 (0.7, 2.4)
+Number of Steps
+7.3 ± 0.8
+16.9 ± 2.3
+12.8 ± 1.5
+-9.7 (-11.4, -8.1)
+-5.5 (-6.6, -4.4)
+4.3 (2.8, 5.7)
+Average velocity (deg/s)
+85.0 ± 9.7
+34.6 ± 3.4
+40.6 ± 5.9
+50.4 (44.1, 56.7)
+44.6 (39.5, 49.6)
+-5.9 (-9.8, -1.9)
+Max velocity (deg/s)
+101.7 ± 12.5
+46.1 ± 3.7
+52.6 ± 9.3
+55.6 (46.8, 64.5)
+49.3 (42.9, 55.7)
+-6.3 (-12.8, 0.2)
+Observed data reported as mean ± SD. Pairwise comparisons were calculated only for models in which condition was a significant main effect. Significant (p < 0.05) 
+contrast estimates and their 95% confidence intervals are bolded. TM = treadmill, H = handrail, CV% = coefficient of variation as a percentage
+Table 5  Results of Simulator Sickness Questionnaire before and 
+after treadmill walking trials
+Pre
+Post
+p 
+value
+SSQ Total (max = 235.6)
+0.0 [0.0, 5.6]
+3.7 [1.9, 
+24.3]
+0.044
+Nausea Sub-score (max = 200.3)
+0.0 [0.0, 9.5]
+9.5 [0.0, 
+33.4]
+0.024
+Oculomotor Sub-score (max = 159.2)
+0.0 [0.0, 7.6]
+7.6 [0.0, 
+11.4]
+0.223
+Disorientation Sub-score (max = 292.3)
+0.0 [0.0, 0.0]
+0.0 [0.0, 
+27.8]
+0.027
+Data reported as median [Q1, Q3]. Pre and Post scores compared using one-
+sided paired Wilcoxon Signed Rank test
+
+
+--- 第 11 页 ---
+Page 11 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+support time. It has been hypothesized that step variabil­
+ity may reflect an effort to preserve mechanical stability 
+when walking [65]. This hypothesis is supported by the 
+present findings of greater CV% for all spatiotemporal 
+outcomes (except step length) on the treadmill compared 
+to the treadmill + handrail condition. Despite the utili­
+zation of a full-body harness for all ODT trials and the 
+absence of any falls or near-falls during ODT walking, 
+participants reported increased levels of comfort with the 
+handrail installed. Not only did the handrail offer balance 
+support, but it also provided tactile feedback to keep par­
+ticipants oriented in the physical space while navigating 
+in VR.
+Potential mechanisms underlying altered ODT walking
+There are likely several biological mechanisms at play 
+that influence the distinct deviations from normal gait 
+(slow speed, short steps, greater variability in step length) 
+observed in ODT locomotion. First, the use of a HMD 
+and VR environment, which obstructs the view of the 
+physical environment, introduces a higher degree of task 
+complexity for even basic forward walking tasks per­
+formed on this system compared to overground. In both 
+healthy adults and those with neurological disease, gait 
+speed and gait variability are negatively affected by dual 
+tasking, and the effect is magnified with increasing dual 
+task load [66, 67]. Second, the HMD and perceived insta­
+bility on the treadmill may induce a fear of falling, which 
+is also associated with similar spatiotemporal changes in 
+gait: slower speed, shorter steps, and increased variability 
+[68, 69]. The gait patterns observed in the treadmill con­
+dition resemble high-complexity dual tasking and fear 
+of falling. The added stability of the treadmill + handrail 
+condition reduced gait variability and increased speed, 
+step length, and cadence. This supports the use of the 
+handrail in future applications of this system to reduce 
+the influence of instability and fear of falling on gait.
+Beyond gait speed and step length, there were no dif­
+ferences in other spatiotemporal gait outcomes between 
+overground and treadmill walking despite the novelty 
+of the ODT + VR system for all participants. After a 
+brief habituation period (< 5  min for all participants), 
+gait cycles largely resembled natural walking in terms of 
+stance, swing, and double limb support phases. The con­
+sistency of gait in a unique environment and on a com­
+plicated walking surface points to the importance of both 
+stability and flexibility in the neural control of walking. 
+Variability, while traditionally viewed as evidence of a 
+detriment in motor control [70, 71], is an essential com­
+pensatory mechanism that maintains critical gait patterns 
+in the face of novel stimuli and disturbances in normal 
+walking [72]. However, these healthy compensatory 
+strategies deteriorate with aging and neurological dis­
+ease, reducing adaptability and contributing to increased 
+fall risk and fear of falling [68, 70, 73]. Omnidirectional 
+treadmill + VR systems offer a safe and controlled way to 
+introduce motor and cognitive challenges to evaluate gait 
+in complex situations.
+Turning behavior during ODT walking
+This is the first study to systematically evaluate turning 
+on an ODT compared to overground. As with forward 
+walking, all turns on the treadmill were performed at 
+slower speeds than overground. The duration and num­
+ber of steps in treadmill turns were two to three times 
+higher than overground turns. Turns performed with the 
+handrail on the treadmill were overall faster and required 
+fewer steps than those without the handrail, but they 
+were still significantly different than overground turns. 
+Despite these differences in traditional turning metrics, 
+this ODT system facilitates more natural turn navigation 
+than other systems that utilize a stationary waist harness 
+and only allow stabilized rotation. On the Infinadeck, 
+users turn by ambulating around the outer boundary of 
+the walking platform, replicating the path followed when 
+turning around an overground cone. Similar to limita­
+tions during forward walking, gait while turning is likely 
+affected by the increased complexity of the motor task 
+and perceived fear of falling.
+The potential to quantify turning behavior in realistic 
+complex environments is a major benefit of ODT sys­
+tems. Importantly, turning is an essential daily activity 
+required for many basic functional tasks, and turn steps 
+make up approximately 35–40% of all steps in a typical 
+day [74]. Aging [75] and neurological disease [76, 77] are 
+both associated with deficits in efficiency and quality of 
+turning, resulting in increased fall risk [78]. In particu­
+lar, freezing of gait (FoG) in Parkinson’s disease (PD) can 
+be triggered by complex scenarios such as turning while 
+in tight spaces or performing a simultaneous cognitive 
+task [79, 80]. The episodic and multifactorial nature of 
+FoG makes it difficult to capture in traditional clinical 
+settings, but FoG has important implications for overall 
+quality of life, medication management, and mitigation 
+of fall risk in PD [81–83]. With a VR + ODT system, it is 
+possible to recreate everyday scenarios that commonly 
+trigger FoG episodes and capture detailed biomechanical 
+data surrounding the phenomenon.
+Omnidirectional treadmill systems offer promising 
+opportunities to improve the evaluation and manage­
+ment of neurological and motor disorders such as PD. It 
+is essential, therefore, that the systems are well-tolerated 
+in terms of VR sickness. A recent meta-analysis reported 
+that while having a neurological disorder is positively cor­
+related with experiencing VR sickness, age does not have 
+a significant relationship with VR sickness [84]. Other 
+data indicate older adults and individuals with PD experi­
+ence low levels of motion sickness following exposure to 
+
+
+--- 第 12 页 ---
+Page 12 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+simple VR environments [23], but none of these studies 
+have combined VR with an ODT. Fusing the physical and 
+virtual worlds by combining VR visual flow with natural 
+locomotion will ultimately reduce the sensory mismatch 
+of traditional VR movement paradigms and reduce the 
+experience of motion sickness symptoms [19, 85].
+Minimal cybersickness during ODT walking
+Although the present study included only healthy young 
+adults, results from the SSQ revealed the majority of 
+participants experienced no symptoms (4 of 15, 27%) 
+or mild symptoms (8 of 15, 53%) of VR sickness after 
+approximately an hour of walking and turning on the 
+treadmill. Three participants were unable to complete the 
+total number of treadmill + handrail trials due to feelings 
+of motion sickness and subsequently reported higher 
+scores on the SSQ. The present protocol involved a total 
+of 14 turns around virtual cones, in addition to turns 
+performed during the habituation period and consider­
+able stationary turning necessary to reorient at the start 
+of each trial. Virtual applications that simulate every­
+day activities will likely involve purpose-driven turning 
+rather than repetitive prescribed turns around a cone, 
+reducing experience of disorientation symptoms. Sixty 
+total minutes in a VR environment is also a substantial 
+amount of time; our recently developed paradigm to 
+evaluate virtual instrumental activities of daily living is 
+substantially shorter and to date has been well tolerated 
+[38]. Importantly, the SSQ is only one possible tool to 
+quantify symptoms of VR sickness, and its direct appli­
+cability to VR systems has been questioned [86]. Addi­
+tional work is necessary to evaluate VR sickness among 
+various populations, identify specific triggers of sickness 
+within VR applications, and validate VR-specific sickness 
+questionnaires.
+Limitations
+This study was the first to quantify gait parameters using 
+the Infinadeck ODT. As such, the goal was to compare 
+natural overground gait with gait on the treadmill system, 
+and gait speed was not dictated a priori. Although LMMs 
+controlled for gait speed, it is possible that the relation­
+ship between gait speed and various spatiotemporal 
+metrics differs between overground walking and ODT 
+walking. Additional work is needed to evaluate ODT 
+locomotion across a wide range of gait speeds.
+The sample of young participants with no cognitive or 
+motor impairments offers an opportunity to assess the 
+influence of the ODT + VR system on functional, healthy 
+gait. A sample of healthy older adults and individuals 
+with PD also completed this protocol, and those data 
+are currently being analyzed to understand how aging 
+and pathology impact ODT walking. In addition, the 
+single-session nature of this testing paradigm presents 
+a limitation regarding the translation of these results to 
+ODT applications for rehabilitation purposes, in which 
+patients would generally undergo longer and repeated 
+testing sessions. Additional work is needed to investigate 
+the potential for gait parameters to normalize or be mod­
+ified over multiple exposures to ODT walking, although 
+the present analysis revealed that trial number within 
+the single testing session had no significant effect on any 
+spatiotemporal gait outcome, indicating the familiariza­
+tion period provided sufficient exposure to acclimate to 
+the novelty of the ODT. Finally, the hardware and soft­
+ware set-up was unique to this study, and caution should 
+be exercised in extending these results to all ODTs. Gait 
+strategies may differ between belt-based and low-friction 
+ODT systems. To this end, future directions for this work 
+include a direct comparison between a belt-based device 
+and a low-friction device in order to systematically evalu­
+ate differences in walking mechanics and user preference 
+between the systems.
+Conclusion
+Omnidirectional treadmills can be combined with VR 
+to allow users to physically navigate a large and realistic 
+virtual space. The present study quantified a relationship 
+between overground gait and ODT walking and turning. 
+Results revealed that treadmill walking involved slower 
+gait speed, shorter steps, and more variability compared 
+to overground walking. Similarly, turns were performed 
+more slowly and required more steps. The compromised 
+visual and vestibular feedback due to the immersive VR 
+headset and novelty of the walking platform contributed 
+to gait patterns indicative of decreased stability. Overall, 
+participants reported low levels of VR sickness symptoms 
+following completion of the walking protocol, despite the 
+high number of turns required.
+Omnidirectional treadmills show promise as a solu­
+tion to the VR locomotion problem. They provide oppor­
+tunity to recreate complex everyday scenarios to better 
+understand and monitor gait deficits in those with neu­
+rological function. These systems also have potential to 
+serve as rehabilitation platforms to train gait in real world 
+environments under dual-task conditions.
+Supplementary Information
+The online version contains supplementary material available at https://doi.
+org/10.1186/s12984-023-01286-6.
+Supplementary Material 1: Table S1. Adjusted and unadjusted model 
+estimates of the effects of condition, velocity, leg length, BMI, and sex on 
+forward walking outcomes. Table S2. Adjusted and unadjusted model 
+estimates of the effects of condition, velocity, leg length, BMI, and sex on 
+variabilityoutcomes. Table S3. Adjusted models estimates of the effects of 
+condition, velocity, leg length, BMI, and sex on turn outcomes
+
+
+--- 第 13 页 ---
+Page 13 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+Acknowledgements
+The authors would like to thank the participants of this study, as well as Evelyn 
+Thoman for assistance in data collection and project execution.
+Author Contributions
+Study conception and design were formulated by JLA, ABR, MMK, and MML. 
+MML, CW, LS, and KS implemented the study and collected data. KH and KMO 
+completed data processing and analysis. Statistical analysis was performed 
+by MMK, EMZ, and MML. MML wrote the main manuscript text and prepared 
+figures and tables. All authors provided critical feedback and reviewed the 
+manuscript.
+Funding
+This project was supported by the Michael J. Fox Foundation for Parkinson’s 
+Research (MJFF-020020) and the Edward and Barbara Bell Family Chair.
+Data Availability
+The datasets collected and analyzed during the current study are available 
+from the corresponding author on reasonable request.
+Declarations
+Ethics approval and consent to participate
+The experiment was approved by the Cleveland Clinic Institutional Review 
+Board for Human Research Ethics (#21–263) and conducted in compliance 
+with the Declaration of Helsinki. All participants gave their written informed 
+consent prior to entering the study.
+Consent for publication
+The authors confirm that any aspect of the work covered in this manuscript 
+(including individual details, images or videos) that has involved human 
+participants has been obtained with the consent for publication from all 
+relevant bodies.
+Competing interests
+The authors declare that they have no competing interests associated with 
+this publication and there has been no significant financial support for this 
+work that could have influenced its outcome.
+Received: 13 December 2022 / Accepted: 20 November 2023
+References
+1.	
+Pottle J. Virtual reality and the transformation of medical education. Future 
+Healthc J. 2019;6.
+2.	
+Chen T, Zhang Y, Ding C, Ting K, Yoon S, Sahak H et al. Virtual reality as a learn­
+ing tool in spinal anatomy and surgical techniques. North Am Spine Soc J. 
+2021;6.
+3.	
+Pfeiffer M, Kenngott H, Preukschas A, Huber M, Bettscheider L, Müller-Stich 
+B et al. IMHOTEP: virtual reality framework for surgical applications. Int J 
+Comput Assist Radiol Surg. 2018;13.
+4.	
+Ahmadpour N, Randall H, Choksi H, Gao A, Vaughan C, Poronnik P. Virtual real­
+ity interventions for acute and chronic pain management. Int J Biochem Cell 
+Biology. 2019.
+5.	
+Gold JI, Soohoo M, Laikin AM, Lane AS, Klein MJ. Effect of an immersive virtual 
+reality intervention on Pain and anxiety Associated with Peripheral Intrave­
+nous Catheter Placement in the Pediatric setting: a Randomized Clinical Trial. 
+JAMA Netw Open. 2021;4.
+6.	
+Huang Q, Lin J, Han R, Peng C, Huang A. Using virtual reality exposure therapy 
+in Pain Management: a systematic review and Meta-analysis of Randomized 
+controlled trials. Value in Health; 2022.
+7.	
+Groninger H, Stewart D, Wesley D, Cowgill J, Mete M. Virtual reality for 
+management of cancer pain: study rationale and design. Contemp Clin Trials 
+Commun. 2022;26.
+8.	
+Jimenez YA, Cumming S, Wang W, Stuart K, Thwaites DI, Lewis SJ. Patient edu­
+cation using virtual reality increases knowledge and positive experience for 
+Breast cancer patients undergoing radiation therapy. Support Care Cancer. 
+2018;26.
+9.	
+Choi JY, Yi SH, Ao L, Tang X, Xu X, Shim D et al. Virtual reality rehabilitation 
+in children with brain injury: a randomized controlled trial. Dev Med Child 
+Neurol. 2021;63.
+10.	 Zhang B, Li D, Liu Y, Wang J, Xiao Q. Virtual reality for limb motor function, 
+balance, gait, cognition and daily function of Stroke patients: a systematic 
+review and meta-analysis. J Adv Nurs. 2021.
+11.	 Tseng Y, Munro Cullum B, Zhang C. Older adults with amnestic mild cognitive 
+impairment exhibit exacerbated Gait slowing under Dual-Task challenges. 
+Curr Alzheimer Res. 2014;11:494–500.
+12.	 Baratin E, Sugavaneswaran L, Umapathy K, Ioana C, Krishnan S. Wavelet-based 
+characterization of gait signal for neurological abnormalities. Gait Posture. 
+2015;41:634–9.
+13.	 Yogev G, Giladi N, Peretz C, Springer S, Simon ES, Hausdorff JM. Dual tasking, 
+gait rhythmicity, and Parkinson’s Disease: which aspects of gait are attention 
+demanding? Eur J Neurosci. 2005;22:1248–56.
+14.	 Bayot M, Dujardin K, Tard C, Defebvre L, Bonnet CT, Allart E, et al. The interac­
+tion between cognition and motor control: a theoretical framework for 
+dual-task interference effects on posture, gait initiation, gait and turning. 
+Neurophysiol Clin. 2018;48:361–75.
+15.	 Nieuwboer A, De Weerdt W, Dom R, Lesaffre E. A frequency and correlation 
+analysis of motor deficits in Parkinson patients. Disabil Rehabil. 1998;20.
+16.	 Barthel C, Mallia E, Debû B, Bloem BR, Ferraye MU. The practicalities of assess­
+ing freezing of Gait. J Parkinsons Dis. 2016.
+17.	 Gallagher M, Ferrè ER. Cybersickness: a multisensory integration perspective. 
+Multisens Res. 2018;31:645–74.
+18.	 Shafer DM, Carbonara CP, Korpi MF. Factors affecting enjoyment of virtual 
+reality games: a comparison involving consumer-grade virtual reality tech­
+nology. Games Health J. 2019;8.
+19.	 Duzmanska N, Strojny P, Strojny A. Can simulator sickness be avoided? A 
+review on temporal aspects of simulator sickness. Front Psychol. Frontiers 
+Media S.A.; 2018.
+20.	 Reason JT. Motion sickness adaptation: a neural mismatch model. J R Soc 
+Med. 1978;71.
+21.	 Boletsis C, Cedergren JE. VR Locomotion in the New Era of Virtual Reality: An 
+Empirical Comparison of Prevalent Techniques. Advances in Human-Com­
+puter Interaction. 2019;2019.
+22.	 Mirelman A, Rochester L, Maidan I, Del Din S, Alcock L, Nieuwhof F et al. 
+Addition of a non-immersive virtual reality component to treadmill training 
+to reduce fall risk in older adults (V-TIME): a randomised controlled trial. The 
+Lancet. 2016;388.
+23.	 Kim A, Darakjian N, Finley JM. Walking in fully immersive virtual environments: 
+an evaluation of potential adverse effects in older adults and individuals with 
+Parkinson’s Disease. J Neuroeng Rehabil BioMed Central Ltd; 2017;14.
+24.	 Pelosin E, Ponte C, Putzolu M, Lagravinese G, Hausdorff JM, Nieuwboer A 
+et al. Motor–cognitive treadmill training with virtual reality in Parkinson’s 
+Disease: the Effect of Training Duration. Front Aging Neurosci. 2022;13.
+25.	 Peruzzi A, Cereatti A, Della Croce U, Mirelman A. Effects of a virtual reality and 
+treadmill training on gait of subjects with multiple sclerosis: a pilot study. 
+Mult Scler Relat Disord. 2016;5.
+26.	 Cho C, Hwang W, Hwang S, Chung Y. Treadmill training with virtual reality 
+improves gait, balance, and muscle strength in children with cerebral palsy. 
+Tohoku J Exp Med. 2016;238.
+27.	 Hsieh KL, Mirelman A, Shema-Shiratzky S, Galperin I, Regev K, Shen S et al. A 
+multi-modal virtual reality treadmill intervention for enhancing mobility and 
+cognitive function in people with multiple sclerosis: protocol for a random­
+ized controlled trial. Contemp Clin Trials. 2020;97.
+28.	 de Rooij IJM, van de Port IGL, Punt M, Abbink-van Moorsel PJM, Kortsmit M, 
+van Eijk RPA et al. Effect of virtual reality gait training on participation in survi­
+vors of Subacute Stroke: a Randomized Controlled Trial. Phys Ther. 2021;101.
+29.	 Lheureux A, Lebleu J, Frisque C, Sion C, Stoquart G, Warlop T et al. Immersive 
+Virtual Reality to Restore Natural Long-Range Autocorrelations in Parkinson’s 
+Disease Patients’ Gait During Treadmill Walking. Front Physiol. Frontiers Media 
+S.A.; 2020;11.
+30.	 Waller D, Bachmann E, Hodgson E, Beall AC. The HIVE: a huge immersive 
+virtual environment for research in spatial cognition. Behav Res Methods. 
+2007;39.
+31.	 Virtuix Omni. www.virtuix.com.2022.
+32.	 SpaceWalker V. Reality Walking Simulator. www.spacewalkervr.com.2022.
+33.	 ROVR VR. Treadmill. www.wizdish.com.2022.
+34.	 Kat VR. https://www.kat-vr.com/. 2022.
+35.	 Cakmak T, Hager H. Cyberith virtualizer - A locomotion device for virtual real­
+ity. ACM SIGGRAPH 2014 Emerging Technologies, SIGGRAPH 2014. 2014.
+
+
+--- 第 14 页 ---
+Page 14 of 14
+Lewis et al. Journal of NeuroEngineering and Rehabilitation           (2024) 21:29 
+36.	 Infinadeck Omni-Directional Treadmill. https://www.infinadeck.com/. 2022.
+37.	 Darken RP, Cockayne WR, Carmein D. Omni-directional treadmill: A locomo­
+tion device for virtual worlds. UIST (User Interface Software and Technology): 
+Proceedings of the ACM Symposium. 1997.
+38.	 Alberts JL, McGrath M, Koop MM, Waltz C, Scelina L, Scelina K et al. The 
+Immersive Cleveland Clinic Virtual Reality Shopping Platform for the Assess­
+ment of Instrumental Activities of Daily Living. Journal of Visualized Experi­
+ments. Journal of Visualized Experiments; 2022;2022.
+39.	 Fallahtafti F, Mohammadzadeh Gonabadi A, Samson K, Yentes JM. Margin 
+of Stability May be larger and less variable during Treadmill walking Versus 
+Overground. Biomechanics. 2021;1.
+40.	 Lu C, Louie KH, Twedell EL, Vitek JL, MacKinnon CD, Cooper SE. Overground 
+versus treadmill walking in Parkinson’s Disease: relationship between speed 
+and spatiotemporal gait metrics. Gait Posture. 2022;93.
+41.	 Chiu SL, Chang CC, Chou LS. Inter-joint coordination of overground versus 
+treadmill walking in young adults. Gait Posture. 2015;41.
+42.	 Yang F, King GA. Dynamic gait stability of treadmill versus overground walk­
+ing in young adults. J Electromyogr Kinesiol. 2016;31.
+43.	 Parvataneni K, Ploeg L, Olney SJ, Brouwer B. Kinematic, kinetic and metabolic 
+parameters of treadmill versus overground walking in healthy older adults. 
+Clin Biomech Elsevier Ltd. 2009;24.
+44.	 Soni S, Lamontagne A. Characterization of speed adaptation while walking 
+on an omnidirectional treadmill. J Neuroeng Rehabil BioMed Central Ltd; 
+2020;17.
+45.	 Souman JL, Giordano PR, Schwaiger M, Frissen I, Thümmel T, Ulbrich H et al. 
+CyberWalk: enabling unconstrained omnidirectional walking through virtual 
+environments. ACM Trans Appl Percept. 2011;8.
+46.	 Curtze C, Nutt JG, Carlson-Kuhta P, Mancini M, Horak FB. Objective Gait and 
+Balance impairments relate to Balance confidence and perceived mobility in 
+people with Parkinson Disease. Phys Ther. 2016;96:1734–43.
+47.	 Mancini M, El-Gohary M, Pearson S, McNames J, Schlueter H, Nutt JG, et al. 
+Continuous monitoring of turning in Parkinson’s Disease: Rehabilitation 
+potential. NeuroRehabilitation. 2015;37:3–10.
+48.	 Stack E, Ashburn A. Dysfunctional turning in Parkinson’s Disease. Disabil 
+Rehabil. 2008;30:1222–9.
+49.	 Kennedy RS, Lane NE, Berbaum KS, Lilienthal MG. Simulator Sickness Ques­
+tionnaire: an enhanced method for quantifying Simulator sickness. Int J Aviat 
+Psychol. 1993;3:203–20.
+50.	 Modeling with Plug-in Gait. Vicon Nexus 2.14 Documentation. 2022.
+51.	 Kadaba MP, Ramakrishnan HK, Wootten ME. Measurement of lower extremity 
+kinematics during level walking. J Orthop Res. 1990;8:383–92.
+52.	 Davis RB, Õunpuu S, Tyburski D, Gage JR. A gait analysis data collection and 
+reduction technique. Hum Mov Sci. 1991;10:575–87.
+53.	 Breslow NE, Clayton DG. Approximate inference in Generalized Linear mixed 
+models. J Am Stat Assoc. 1993;88.
+54.	 Sloot LH, van der Krogt MM, Harlaar J. Effects of adding a virtual reality 
+environment to different modes of treadmill walking. Gait Posture Elsevier. 
+2014;39:939–45.
+55.	 Wodarski P, Jurkojć J, Polechoński J, Bieniek A, Chrzan M, Michnik R et al. 
+Assessment of gait stability and preferred walking speed in virtual reality. 
+Acta Bioeng Biomech. 2020;22.
+56.	 Hollman JH, Brey RH, Robb RA, Bang TJ, Kaufman KR. Spatiotemporal gait 
+deviations in a virtual reality environment. Gait Posture. 2006;23:441–4.
+57.	 Kastavelis D, Mukherjee M, Decker LM, Stergiou N. The effect of virtual reality 
+on Gait variability. J Articles. 2010;55.
+58.	 Hollman JH, Brey RH, Bang TJ, Kaufman KR. Does walking in a virtual environ­
+ment induce unstable gait? Gait Posture. 2007;26:289–94.
+59.	 Kyrdalen IL, Thingstad P, Sandvik L, Ormstad H. Associations between gait 
+speed and well-known fall risk factors among community-dwelling older 
+adults. Physiotherapy Res Int. 2019;24:e1743.
+60.	 Fan Y, Li Z, Han S, Lv C, Zhang B. The influence of gait speed on the stability of 
+walking among the elderly. Gait Posture. 2016;47:31–6.
+61.	 Zijlstra W. Assessment of spatio-temporal parameters during unconstrained 
+walking. Eur J Appl Physiol. 2004;92:39–44.
+62.	 Chui KK, Lusardi MM. Spatial and temporal parameters of self-selected and 
+fast walking speeds in Healthy Community-living adults aged 72–98 years. J 
+Geriatr Phys Ther. 2010;33:173–83.
+63.	 Hollman JH, McDade EM, Petersen RC. Normative spatiotemporal gait param­
+eters in older adults. Gait Posture. 2011;34:111–8.
+64.	 Stansfield B, Hawkins K, Adams S, Bhatt H. A mixed linear modelling char­
+acterisation of gender and speed related changes in spatiotemporal and 
+kinematic characteristics of gait across a wide speed range in healthy adults. 
+Med Eng Phys. 2018;60:94–102.
+65.	 Sivakumaran S, Schinkel-Ivy A, Masani K, Mansfield A. Relationship between 
+margin of stability and deviations in spatiotemporal gait features in healthy 
+young adults. Hum Mov Sci. 2018;57.
+66.	 Smith E, Cusack T, Cunningham C, Blake C. The influence of a Cognitive Dual 
+Task on the Gait parameters of healthy older adults: a systematic review and 
+Meta-analysis. J Aging Phys Act. 2017;25:671–86.
+67.	 Montero-Odasso M, Muir SW, Speechley M. Dual-Task Complexity affects gait 
+in people with mild cognitive impairment: the interplay between Gait vari­
+ability, dual tasking, and risk of Falls. Arch Phys Med Rehabil. 2012;93:293–9.
+68.	 Ayoubi F, Launay CP, Annweiler C, Beauchet O. Fear of falling and Gait vari­
+ability in older adults: a systematic review and Meta-analysis. J Am Med Dir 
+Assoc. 2015;16:14–9.
+69.	 Chamberlin ME, Fulwider BD, Sanders SL, Medeiros JM. Does fear of falling 
+influence spatial and temporal gait parameters in Elderly persons Beyond 
+Changes Associated with Normal Aging? J Gerontol A Biol Sci Med Sci. 
+2005;60:1163–7.
+70.	 Moon Y, Sung J, An R, Hernandez ME, Sosnoff JJ. Gait variability in people 
+with neurological disorders: a systematic review and meta-analysis. Hum Mov 
+Sci. 2016;47:197–208.
+71.	 Hausdorff JM, Nelson ME, Kaliton D, Layne JE, Bernstein MJ, Nuernberger A, et 
+al. Etiology and modification of gait instability in older adults: a randomized 
+controlled trial of exercise. J Appl Physiol. 2001;90:2117–29.
+72.	 Decker LM, Cignetti F, Stergiou N. Complexity and human gait. Rev Andal 
+Med Deport. 2010;3:2–12.
+73.	 Callisaya ML, Blizzard L, Schmidt MD, Martin KL, McGinley JL, Sanders LM, et 
+al. Gait, gait variability and the risk of multiple incident falls in older people: a 
+population-based study. Age Ageing. 2011;40:481–7.
+74.	 Glaister BC, Bernatz GC, Klute GK, Orendurff MS. Video task analysis of turning 
+during activities of daily living. Gait Posture. 2007;25.
+75.	 Lin JC, Kuo FC, Hong CZ, Liau BY. Kinematic variability of the head, lumbar 
+spine and knee during the walk and turn to sit down task in older and young 
+adults. Gait Posture. 2014;39.
+76.	 Snijders AH, Haaxma CA, Hagen YJ, Munneke M, Bloem BR. Freezer or non-
+freezer: clinical assessment of freezing of gait. Parkinsonism Relat Disord. 
+2012;18:149–54.
+77.	 Fino PC, Parrington L, Walls M, Sippel E, Hullar TE, Chesnutt JC, et al. Abnormal 
+turning and its Association with Self-reported symptoms in chronic mild 
+traumatic brain Injury. J Neurotrauma. 2018;35:1167–77.
+78.	 Dite W, Temple VA. Development of a clinical measure of turning for older 
+adults. Am J Phys Med Rehabil. 2002.
+79.	 Schaafsma JD, Balash Y, Gurevich T, Bartels AL, Hausdorff JM, Giladi N. Charac­
+terization of freezing of gait subtypes and the response of each to levodopa 
+in Parkinson’s Disease. Eur J Neurol. 2003;10:391–8.
+80.	 Spildooren J, Vercruysse S, Desloovere K, Vandenberghe W, Kerckhofs E, Nieu­
+wboer A. Freezing of gait in Parkinson’s Disease: the impact of dual-tasking 
+and turning. Mov Disord. 2010;25:2563–70.
+81.	 Rahimpour S, Gaztanaga W, Yadav AP, Chang SJ, Krucoff MO, Cajigas I et al. 
+Freezing of Gait in Parkinson’s Disease: Invasive and Noninvasive Neuromodu­
+lation. Neuromodulation: Technology at the Neural Interface. 2021;24:829–42.
+82.	 Okuma Y. Freezing of Gait and Falls in Parkinson’s Disease. J Parkinsons Dis. 
+2014;4:255–60.
+83.	 Morris ME, Iansek R, Galna B. Gait festination and freezing in Parkinson’s 
+Disease: Pathogenesis and rehabilitation. Mov Disord. 2008;23:451–60.
+84.	 Howard MC, Van Zandt EC. A meta-analysis of the virtual reality problem: 
+unequal effects of virtual reality sickness across individual differences. Virtual 
+Real. 2021;25.
+85.	 Chance SS, Gaunet F, Beall AC, Loomis JM. Locomotion mode affects the 
+updating of objects encountered during travel: The contribution of vestibular 
+and proprioceptive inputs to path integration. Presence: Teleoperators and 
+Virtual Environments. 1998;7.
+86.	 Kim HK, Park J, Choi Y, Choe M. Virtual reality sickness questionnaire (VRSQ): 
+motion sickness measurement index in a virtual reality environment. Appl 
+Ergon. 2018;69:66–73.
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations. 

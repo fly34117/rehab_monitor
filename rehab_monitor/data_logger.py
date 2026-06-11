@@ -1,10 +1,12 @@
-"""数据存储 — SQLite 建表 + 写入 + 查询 (支持异步写入)"""
+"""数据存储 — SQLite 建表 + 写入 + 查询 + 统计分析 (支持异步写入)"""
 import sqlite3
 import json
 import time
 import queue
 import threading
+import numpy as np
 from datetime import datetime
+from collections import defaultdict
 
 from .config import DB_PATH
 from .logging_setup import get_logger
@@ -461,6 +463,141 @@ class RehabDatabase:
             "emotions": emotions,
             "gait_summary": gait_summary,
         }
+
+    # ----- 步态统计分析 -----
+    def get_gait_stats(self, session_id=None, seconds=None):
+        """获取步态指标的统计摘要
+
+        Args:
+            session_id: 指定会话ID，None=当前会话
+            seconds: 时间窗口（秒），None=全部数据
+
+        Returns:
+            dict: 每项指标的 {mean, std, min, max, count, latest}
+        """
+        sid = session_id or self.session_id
+        if sid is None:
+            return None
+
+        c = self.conn.cursor()
+        cols = [
+            "cadence", "speed", "symmetry",
+            "stride_length_m", "gait_velocity_mps", "step_width_m",
+            "stance_percentage", "left_knee_rom", "right_knee_rom",
+            "step_time_cv", "step_length_cv", "foot_clearance_cm",
+            "gait_rehab_score", "trunk_sway_deg", "double_support_ratio",
+            "step_count",
+        ]
+
+        if seconds is not None:
+            # 用该会话最新数据的时间戳作为参考点（而非 time.time()），
+            # 这样会话关闭后再分析也能正确找到"最后 N 秒"的数据
+            c.execute(
+                "SELECT MAX(timestamp) FROM gait_metrics WHERE session_id=?",
+                (sid,))
+            row = c.fetchone()
+            if row and row[0]:
+                cutoff = row[0] - seconds
+            else:
+                cutoff = time.time() - seconds
+            c.execute(
+                f"SELECT {', '.join(cols)} FROM gait_metrics "
+                "WHERE session_id=? AND timestamp >= ? ORDER BY timestamp",
+                (sid, cutoff))
+        else:
+            c.execute(
+                f"SELECT {', '.join(cols)} FROM gait_metrics "
+                "WHERE session_id=? ORDER BY timestamp", (sid,))
+
+        rows = c.fetchall()
+        if not rows:
+            return None
+
+        arr = np.array(rows, dtype=np.float64)
+        stats = {}
+        for i, col in enumerate(cols):
+            vals = arr[:, i]
+            nonzero = vals[vals > 0] if col != "step_count" else vals
+            if len(nonzero) == 0:
+                nonzero = vals
+            stats[col] = {
+                "mean": round(float(np.mean(nonzero)), 2),
+                "std": round(float(np.std(nonzero)), 2),
+                "min": round(float(np.min(nonzero)), 2),
+                "max": round(float(np.max(nonzero)), 2),
+                "latest": round(float(vals[-1]), 2),
+                "count": len(nonzero),
+            }
+        stats["total_records"] = len(rows)
+        return stats
+
+    def get_monthly_gait_trend(self, days=30):
+        """获取过去 N 天的每日步态均值趋势（跨所有会话）
+
+        Args:
+            days: 统计天数
+
+        Returns:
+            dict: {dates: [...], metrics: {col: [daily_avg, ...]}}
+        """
+        cutoff = time.time() - days * 86400
+        c = self.conn.cursor()
+
+        cols = [
+            "gait_velocity_mps", "symmetry", "cadence",
+            "gait_rehab_score", "left_knee_rom", "right_knee_rom",
+            "step_length_cv", "foot_clearance_cm", "double_support_ratio",
+            "trunk_sway_deg",
+        ]
+
+        c.execute(
+            f"SELECT timestamp, {', '.join(cols)} FROM gait_metrics "
+            "WHERE timestamp >= ? ORDER BY timestamp", (cutoff,))
+        rows = c.fetchall()
+
+        if not rows:
+            return None
+
+        # 按天分组
+        daily = defaultdict(lambda: defaultdict(list))
+        for row in rows:
+            ts = row[0]
+            day = datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
+            for i, col in enumerate(cols):
+                val = row[i + 1]
+                if val is not None and val > 0:
+                    daily[day][col].append(float(val))
+
+        dates = sorted(daily.keys())
+        trend = {"dates": dates, "metrics": {}}
+        for col in cols:
+            trend["metrics"][col] = [
+                round(float(np.mean(daily[d][col])), 2) if daily[d][col] else 0.0
+                for d in dates
+            ]
+
+        return trend
+
+    def clear_gait_data(self, session_id=None):
+        """清空步态数据
+
+        Args:
+            session_id: 指定会话ID，None=清空所有步态数据
+        """
+        c = self.conn.cursor()
+        if session_id is not None:
+            c.execute("DELETE FROM gait_metrics WHERE session_id=?", (session_id,))
+            c.execute("DELETE FROM frame_snapshots WHERE session_id=?", (session_id,))
+            c.execute("DELETE FROM fall_alerts WHERE session_id=?", (session_id,))
+            c.execute("DELETE FROM emotion_log WHERE session_id=?", (session_id,))
+            logger.info("已清空会话 #%d 的步态/帧/跌倒/情绪数据", session_id)
+        else:
+            c.execute("DELETE FROM gait_metrics")
+            c.execute("DELETE FROM frame_snapshots")
+            c.execute("DELETE FROM fall_alerts")
+            c.execute("DELETE FROM emotion_log")
+            logger.info("已清空全部步态/帧/跌倒/情绪数据")
+        self.conn.commit()
 
     def flush(self, timeout=3.0):
         """等待异步队列清空"""

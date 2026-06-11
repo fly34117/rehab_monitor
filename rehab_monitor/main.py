@@ -84,8 +84,8 @@ def _draw_help_overlay(frame):
     h, w = frame.shape[:2]
     overlay = frame.copy()
     # 半透明背景
-    cv2.rectangle(overlay, (w // 2 - 200, h // 2 - 160),
-                  (w // 2 + 200, h // 2 + 160), (0, 0, 0), -1)
+    cv2.rectangle(overlay, (w // 2 - 200, h // 2 - 175),
+                  (w // 2 + 200, h // 2 + 175), (0, 0, 0), -1)
     frame[:] = cv2.addWeighted(frame, 0.4, overlay, 0.6, 0)
 
     lines = [
@@ -98,8 +98,9 @@ def _draw_help_overlay(frame):
         "SPACE - Pause / Resume",
         "r - Reset Kalman tracking",
         "t - Enroll target face",
+        "c - Clear gait data (DB)",
     ]
-    y0 = h // 2 - 110
+    y0 = h // 2 - 125
     font = cv2.FONT_HERSHEY_SIMPLEX
     for i, line in enumerate(lines):
         y = y0 + i * 28
@@ -224,7 +225,7 @@ def main():
         lock_confidence = LOCK_ENTER_THRESH  # 跳过迟滞，快速锁定
         logger.info("恢复锁定目标: %s（搜索中...）", _saved_target)
 
-    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置(清除锁定+人脸库) h=帮助 space=暂停")
+    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置 c=清空数据 h=帮助 space=暂停")
 
     # 延迟打开摄像头 — 等 OpenVINO 模型编译完成后再开，避免 MSMF 流超时
     cap = _open_camera(api_args.camera)
@@ -809,6 +810,10 @@ def main():
                     logger.info("目标已录入! (线索: %s)", "+".join(cues))
                 else:
                     logger.warning("录入失败 - 未检测到人脸且关键点不足。请正对摄像头")
+            elif key == ord('c'):
+                # 清空步态数据（保留会话记录）
+                db.clear_gait_data()
+                logger.info("步态数据已清空 (会话 #%d 继续运行)", session_id)
 
     except KeyboardInterrupt:
         logger.info("KeyboardInterrupt 中断退出")

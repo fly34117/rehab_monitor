@@ -1,0 +1,1072 @@
+--- 第 1 页 ---
+RESEARCH
+Open Access
+© The Author(s) 2025. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 
+International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you 
+give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the 
+licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the 
+material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or 
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit ​h​t​t​p​:​/​/​c​r​e​a​t​i​
+v​e​c​o​m​m​o​n​s​.​o​r​g​/​l​i​c​e​n​s​e​s​/​b​y​-​n​c​-​n​d​/​4​.​0​/.
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+https://doi.org/10.1186/s13102-025-01126-1
+BMC Sports Science, Medicine 
+and Rehabilitation
+†Giacomo Rossettini and Jorge Hugo Villafañe contributed equally to 
+this work and share the last senior authorship.
+*Correspondence:
+Amir Letafatkar
+letafatkaramir@yahoo.com
+Full list of author information is available at the end of the article
+Abstract
+Background  Gait alterations associated with postural deviations are a significant factor contributing to functional 
+limitations in older adults. Among these, sway-back posture has been linked to chronic low back pain (CLBP), defined 
+as pain persisting for more than three months. This study aimed to analyze ground reaction forces (GRFs), loading 
+and unloading rates, spatiotemporal gait parameters, and the asymmetry index (ASI) in older adults with sway-back 
+posture and CLBP (SBCLBP) without adjusting for walking speed.
+Methods  A total of 36 older adults were included and categorized into three groups: 12 with SBCLBP, 12 with CLBP 
+without sway-back posture, and 12 without CLBP. GRFs and spatiotemporal gait parameters—including stride time, 
+cadence, stride length, gait speed, and stance phase duration—were recorded for all participants. GRFs were analyzed 
+at the anteroposterior peaks during heel contact (Fx1) and push-off (Fx2) phases, as well as at the vertical force peaks 
+at heel contact (Fy1), mid-stance (Fy2), and push-off (Fy3) phases. Additionally, mediolateral force peaks (Fz) during 
+heel contact were assessed. The ASI was calculated for all participants. Between-group differences were examined 
+using one-way ANOVA and ANCOVA.
+Results  Cadence, stride length, gait speed, and Fy2 values were significantly lower in the SBCLBP and CLBP groups 
+compared to the control group. Additionally, these parameters were significantly lower in the SBCLBP group than 
+in the CLBP group. However, the loading rate demonstrated greater variability across participants. No significant 
+differences in ASI were observed among the groups.
+Comparative analysis of ground reaction 
+forces and spatiotemporal gait parameters 
+in older adults with sway-back posture 
+and chronic low back pain: a cross-sectional 
+study
+Fatemeh Esmaeilpour1, Amir Letafatkar1*, Mohammad Taghi Karimi2, Mehdi Khaleghi1, Giacomo Rossettini3,4† and 
+Jorge Hugo Villafañe4†
+
+
+--- 第 2 页 ---
+Page 2 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+Introduction
+Chronic low back pain (CLBP) exhibits a significant age-
+related increase, impacting a substantial segment of the 
+elderly population worldwide [1, 2]. Epidemiological esti­
+mates suggest that approximately 21–68% of individuals 
+aged 60 years or older experience CLBP annually [3]. The 
+high prevalence of CLBP is of particular concern due to 
+its substantial contribution to functional impairments in 
+this age group [4]. This high prevalence is of particular 
+concern due to its strong association with progressive 
+functional impairments, particularly in locomotor abili­
+ties such as walking [5].
+CLBP is linked to alterations in gait dynamics through 
+several biomechanical and neuromuscular mechanisms. 
+These include reduced trunk control, proprioceptive defi­
+cits, and muscular imbalances, all of which contribute to 
+compensatory gait adaptations [6, 7].
+Studies have shown that individuals with CLBP often 
+exhibit decreased gait speed, shorter stride length, 
+increased stance time, and alterations in ground reac­
+tion forces (GRFs), suggesting a compromised ability to 
+generate and control movement [8, 9]. Additionally, defi­
+cits in spinal stability associated with CLBP can lead to 
+increased reliance on passive structures, further exacer­
+bating postural control difficulties [10].
+Walking function is essential for maintaining inde­
+pendence in older adults. To objectively assess gait per­
+formance, researchers analyze various spatiotemporal 
+parameters—such as stride time, cadence, stride length, 
+gait speed, and stance time—as well as GRFs [11, 12]. 
+These metrics establish a normative basis for identify­
+ing gait deviations that may reflect underlying functional 
+impairments in the elderly [13]. GRFs, which describe the 
+interaction forces between the ground and the body dur­
+ing foot contact, provide critical insights into dynamic 
+gait mechanics [14]. Specifically, altered loading rates and 
+asymmetrical force distribution in CLBP patients suggest 
+adaptations aimed at minimizing discomfort but may 
+lead to further musculoskeletal deterioration [15].
+The presence of postural deviations, such as sway-back 
+posture, may amplify these impairments. Sway-back pos­
+ture is characterized by excessive posterior displacement 
+of the thorax relative to the pelvis, often accompanied 
+by weakened gluteal muscles and altered sagittal balance 
+[16]. This condition may contribute to abnormal load 
+distribution during gait, affecting both postural stabil­
+ity and pain perception [17]. While some studies have 
+examined the link between CLBP and spatiotemporal 
+gait parameters, comprehensive analyses incorporating 
+postural misalignments remain limited [18]. Understand­
+ing these relationships is critical, as both CLBP and pos­
+tural abnormalities can independently and synergistically 
+impact gait mechanics, increasing the risk of falls and 
+further functional decline [19].
+Recent research highlights significant differences in gait 
+parameters between individuals with CLBP and those 
+without, including increased stance duration, reduced 
+stride length, and alterations in GRFs [19, 20]. However, 
+the extent to which sway-back posture modifies these 
+parameters remains unclear. Given the potential interac­
+tion between chronic pain and postural misalignment, 
+investigating these factors together can provide valuable 
+insights into their combined impact on mobility in older 
+adults [21, 22].
+Moreover, the propensity for postural shifts in CLBP 
+patients, often due to muscular deficiencies, particularly 
+the weakening of the gluteal muscles, fosters a sway-back 
+posture [23]. Although multiple studies have corrobo­
+rated the substantial influence of sagittal imbalances on 
+pain and disability [24, 25], the literature documenting 
+these postural dynamics in relation to spatiotemporal 
+gait parameters remains limited [26].
+Recent works have highlighted the biomechanical dif­
+ferences during tasks such as gait in individuals with 
+CLBP compared to pain-free controls [27], while most 
+studies have primarily focused on the ages of the popu­
+lation [5, 7]. However, to our knowledge, little research 
+has been reported on the effects of posture on gait vari­
+ables in elderly people with CLBP. Studies indicate that 
+changes in the spine of elderly individuals lead to altera­
+tions in gait variables [28]. Additionally, modifications 
+in the spine associated with sway-back posture, includ­
+ing an increase in the posterior tilt of the pelvis, trunk, 
+and thoracic kyphosis, can further affect these variables, 
+Conclusions  Older adults with SBCLBP exhibit distinct gait characteristics compared to those with CLBP alone 
+and those without CLBP. These differences may be attributed to structural postural alterations, distinguishing 
+this subgroup from individuals with isolated CLBP. These findings underscore the need for targeted rehabilitation 
+strategies tailored to the specific biomechanical alterations observed in this population. Future research should focus 
+on optimizing intervention protocols to enhance stability and mitigate pain-related gait impairments associated with 
+aging.
+Trial registration  Current Controlled Trials using the UMIN Clinical Trials Registry website with ID number of, 
+UMIN000055653 “Retrospectively registered” at 27/09/2024.
+Keywords  Chronic low back pain, Older adults, Gait, Grand reaction forces, Spatiotemporal, Sway-back
+
+
+--- 第 3 页 ---
+Page 3 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+while also increasing stress in the lumbar region [29]. It 
+has been reported that changes in the increase of tho­
+racic kyphosis and the decrease of spinal lordosis, along 
+with the resulting alterations in the lower limbs [30], can 
+contribute to the presence of imbalance in older adults 
+and ultimately lead to an increase in chronic pain in these 
+individuals. Recent studies have shown that changes in 
+postural alignment and the experience of chronic pain, 
+such as CLBP, can have a greater impact on the gait of 
+older adults, especially when compared to individuals 
+who experience only one of these factors. The importance 
+of examining changes in gait in elderly individuals who 
+experience changes in posture along with chronic pain, 
+this can lead to effective solutions aimed at reducing the 
+problems faced by the elderly, particularly balance issues 
+and the prevention of increased fall risk [31]. Previous 
+studies have shown that body posture and movement 
+patterns can play a significant role in the exacerbation of 
+pain. Therefore, understanding these changes in move­
+ment patterns and improving posture may contribute to 
+reducing pain levels and enhancing the quality of life for 
+individuals [32].
+This study aims to analyze the differences in ground 
+reaction forces (GRFs), loading and unloading rates, spa­
+tiotemporal gait parameters, and asymmetry index (ASI) 
+among three groups of older adults: (1) those with sway-
+back posture and chronic low back pain (SBCLBP), (2) 
+those with chronic low back pain (CLBP) without pos­
+tural deviations, and (3) those without CLBP. The objec­
+tive is to determine whether the presence of sway-back 
+posture introduces distinct biomechanical and gait alter­
+ations beyond those observed in individuals with CLBP 
+alone. We hypothesize that SBCLBP will exhibit greater 
+impairments in gait parameters and GRF amplitudes 
+compared to both CLBP and control groups, while asym­
+metry in force application will remain minimal across all 
+groups.
+Materials and methods
+Study design
+This observational cross-sectional study was conducted 
+in accordance with the Strengthening the Reporting of 
+Observational Studies in Epidemiology (STROBE) guide­
+lines [33]. The study protocol was approved by the Eth­
+ics Committee of the Medical Center Office of Shiraz 
+Rehabilitation Sciences University (IR.SUMS.REHAB.
+REC.1399.034). Informed consent was obtained from 
+all participants, adhering to the ethical principles of the 
+Declaration of Helsinki.
+Setting and participants
+The study was carried out at a clinical research cen­
+ter in the rehabilitation laboratory of Shiraz University, 
+Iran, from December 14, 2020, to March 3, 2021. Three 
+participant groups were recruited: older adults with 
+SBCLBP, those with CLBP only, and those without any 
+history of CLBP. The inclusion criteria targeted partici­
+pants aged 60–85 years [5].
+Participants in the CLBP group were included based 
+on a numeric pain rating scale (NPRS) for current, mini­
+mum, and maximum pain experienced over the past 
+24  h, pain experienced at least 4 days per week, and a 
+minimum pain duration of 3 months [2]. Exclusion cri­
+teria were walking with personal assistance or assistive 
+devices, radicular pain below the knee, known spinal 
+pathology other than osteoarthritis (e.g., recent trauma, 
+vertebral compression fractures, ankylosing spondyli­
+tis, metastatic carcinoma), a history of lumbar surgery, 
+severely limited mobility (e.g., requiring assistive devices 
+for household ambulation), progressive neurological dis­
+orders, or terminal illness.
+Participants with SBCLBP were included if they met 
+the inclusion and exclusion criteria of the CLBP group 
+and exhibited a sway-back posture. Details on sway-back 
+posture assessment are described below. Participants 
+in the non-CLBP group were required to have no his­
+tory of LBP at enrollment and were excluded if they had 
+undergone lumbar surgery, received treatment for CLBP 
+in the previous 6 months, or had any of the aforemen­
+tioned exclusion criteria, also lacked sway back posture 
+and other changes in body alignment. In general, all par­
+ticipants who entered this study had the ability to walk 
+independently and without the need for a companion or 
+assistive device.
+Self-Reported measures
+Pain in older adults with CLBP were assessed using the 
+Numerical Pain Rating Scale (NPRS) [34, 35]. Additional 
+measurements included demographic variables such as 
+age, sex, leg length, height, weight, and body mass index 
+(BMI), was calculated by dividing the participant’s weight 
+(kg) by the square of their height (m²) [13]. The NPRS, 
+ranging from 0 (“painless”) to 10 (“worst possible pain”), 
+was used to evaluate current pain intensity, as well as 
+the highest and lowest pain levels in the past 24 h. These 
+scores were averaged to yield a composite pain intensity 
+rating [36].
+Sample size calculation
+The sample size was determined based on previous 
+research on gait parameters with similar descriptive and 
+exploratory objectives [37]. Using G*Power software, a 
+minimum of 12 participants per group was required to 
+detect a statistically significant effect (partial η² = 0.338) 
+with 95% confidence and adequate power (0.80), which 
+pertains to the gait parameters. To account for potential 
+dropouts, we aimed to include at least 15 participants in 
+each group.
+
+
+--- 第 4 页 ---
+Page 4 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+Evaluation of sway-back posture
+The evaluation of sway-back posture was conducted in 
+the first step. Participants who met the inclusion criteria 
+for the study were classified according to clinical descrip­
+tions of various standing postures in the sagittal plane to 
+investigate the presence of sway-back posture [38]. The 
+participant was asked to stand in a comfortable posture, 
+looking ahead, with the feet positioned so that the legs 
+are parallel to each other and the toes are pointed straight 
+ahead. Next, we attached markers to the subject’s left 
+side on the external auditory meatus, acromion, greater 
+trochanter, and lateral malleolus using double-sided 
+tape. The subject was photographed from the left using 
+a camera placed 2.5 m away. The passage of the plumb 
+line and the examination of the various sections were 
+conducted to assess the posture (Fig. 1). Participants with 
+sway back posture, characterized by a posterior displace­
+ment of the thorax relative to the pelvis (i.e., a backward 
+trunk lean relative to the hips), a long thoracic kyphosis, 
+and a flattened lumbar angle (i.e., less lumbar lordosis), 
+were evaluated by clinical assessment conducted by a 
+corrective exercise expert [39].
+Spatiotemporal gait parameters
+Gait data were captured using a Qualisys™ motion cap­
+ture system (Qualisys, Sweden) with eight cameras, 
+recording trajectories of reflective markers attached to 
+the participants at 120 Hz, and Qualisys Track Manager 
+Software (QTM). The system was calibrated according to 
+manufacturer guidelines before each session. Kinematic 
+data were low-pass filtered with a 10 Hz cutoff. A Kistler 
+force platform synchronized with the Qualisys system 
+was used to identify gait events, kinetics, and trajectory. 
+Retro-reflective markers were positioned on participants’ 
+heels and toes for accurate spatiotemporal gait measure­
+ment during multiple 10-meter walking trials. One gait 
+cycle was defined as the duration from initial contact 
+of one foot to the subsequent contact of the same foot. 
+Among the walking cycles, the cycle that started with 
+the heel striking the force plate was selected until the 
+same heel made contact again in the next step. Param­
+eters assessed included cadence, stride length, gait speed, 
+and stance time [40]. Stride length was calculated as the 
+anterior-posterior displacement of the right heel marker 
+during two consecutive heel strike events, and Stance 
+phase percentage (ST/GC) was the percentage of stance 
+phase in one gait cycle. To evaluate these parameters, the 
+participant performed three trials with both feet, and the 
+overall average was reported.
+Ground reaction forces (GRFs)
+A kistler force plate was used to record the forces applied 
+to the leg during walking. The force plate data were col­
+lected with a frequency of 1200  Hz and filtered with a 
+Butterworth low pass filter with a cut-off frequency of 
+10 Hz. The peaks of the vertical force (FY), anteropos­
+terior force (FX), and mediolateral force (FZ) (Fig.  2) 
+applied on average of the right, and left legs were used 
+for the final analysis. In total, six clinical trials were con­
+ducted, with three trials for each leg, in which GRFs were 
+measured three times for the right foot and three times 
+for the left foot on a force plate, from the moment of 
+heel strike to toe-off. GRFs threshold of 10 N was used 
+for the identification of heel strike event. The GRF val­
+ues were recorded along the vertical (y), anteroposterior 
+(x), and mediolateral (z) directions as follows: the peak 
+of the vertical GRF (FyMAX) and the indentation of the 
+Fig. 1  Sway-back posture in older adults with chronic low back pain. 
+Note: AM—external auditory meatus; A—acromion; GT– greater Trochan­
+ter; LM—lateral malleolus
+ 
+
+
+--- 第 5 页 ---
+Page 5 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+curve (the minimum value between the two peaks of 
+the curve); the positive (FxMAX) and negative (FxMIN) 
+peaks of the anteroposterior curve; and the negative peak 
+in the mediolateral direction (FzMIN). Stride length was 
+normalized by leg length and GRF by body weight [13]. 
+The loading and unloading rates of vertical components 
+of ground reaction force were also evaluated in this study. 
+It was done based on the method described by Chocka­
+lingam et al. [41] and Schizas et al. [42]. Loading rate and 
+unloading rate are estimated as the difference in force 
+over difference in time.
+	
+Loading rate = ∆F (load)/∆t
+Unloading rate = ∆F (unload) /∆t
+Data processing
+Data were processed using the QTM software to dis­
+play and identify the markers’ trajectories and their six 
+degrees of freedom using the Automatic Identification 
+Model. Each gait event was labelled, and foot contact 
+and foot off gait events were labelled to identify stance 
+and swing phases. A low-pass filter was used to remove 
+the noise without affecting the true signals. The output 
+was transmitted to a computer through analogue-digital 
+converter, then to QTM and sampled at a frequency of 
+120 Hz. Participants’ information and data obtained from 
+walking tasks were extracted and analyzed by a biome­
+chanics expert with 10 years of experience in the field.
+Asymmetry index (ASI)
+Gait symmetry was evaluated using the Asymmetry 
+Index (ASI), as described by Herzog et al. [43]. An ASI 
+value of zero indicates perfect symmetry, while values 
+above or below zero denote asymmetry. The ASI was 
+used to evaluate the symmetry of movements as well 
+as the forces applied to the legs in the ground reaction 
+forces. The asymmetry was measured based on the fol­
+lowing equation:
+Fig. 2  The vertical (a), anteroposterior (b), and mediolateral forces (c) of SBCLBP subject. This figure provides a comprehensive overview of the ground 
+reaction forces (GRFs) discussed throughout the article
+ 
+
+
+--- 第 6 页 ---
+Page 6 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+	
+ASI =
+X right −X left
+(X right + X left)/2 × 100
+Statistical analysis
+All statistical analyses were performed using SPSS ver­
+sion 28 (IBM, Armonk, NY, USA). The Shapiro-Wilk test 
+was applied to assess data normality, while Levene’s test 
+evaluated homogeneity of variances. Descriptive statis­
+tics, including demographic characteristics and mean 
+pain intensity, were calculated for all three groups.
+For normally distributed variables, one-way ANOVA 
+was utilized to compare cadence, stride length, gait 
+speed, loading rate, and force asymmetry (Fz1, Fz2, Fz3) 
+among the SBCLBP, CLBP, and control groups. Addition­
+ally, ANCOVA was employed for group comparisons of 
+force components (Fz1, Fz2, Fy2), adjusting for baseline 
+gait speed. All statistical tests were conducted with a sig­
+nificance level of α = 0.05.
+Results
+Demographic and clinical characteristics of participants
+A total of 51 individuals were screened for eligibility, 
+of whom 15 were excluded due to a history of lumbar 
+surgery, the presence of radicular symptoms extend­
+ing below the knee, or inconsistencies identified during 
+postural assessment. The final sample comprised thirty-
+six participants, stratified into three groups: older adults 
+with SBCLBP (n = 12, age range: 63–80 years, mean 
+age: 69.8 ± 7.28 years), older adults with non-specific 
+chronic CLBP (n = 12, age range: 65–80 years, mean age: 
+70.08 ± 4.35 years), and a control group of older adults 
+without CLBP (n = 12, age range: 66–72 years, mean age: 
+69.66 ± 1.92 years). All groups exhibited a normal Body 
+Mass Index (BMI), spanning from 18.5 to 24.9 kg/m^2. 
+No significant demographic differences were observed 
+across the groups, apart from the Numeric Pain Rating 
+Scale (NPRS) scores, which were exclusively elevated in 
+the CLBP cohorts. The characteristics of the study par­
+ticipants are detailed in Table 1.
+Spatiotemporal gait parameters
+The analysis of spatiotemporal gait parameters revealed 
+significant intergroup differences. Notably, stride time, 
+cadence, stride length, gait speed, and stance time all 
+varied significantly (p < 0.001 for stride time, p = 0.002 
+for cadence, p = 0.025 for stride length, p = 0.003 for 
+gait speed, p = 0.007 for stance time). Participants with 
+SBCLBP demonstrated reduced cadence, stride length, 
+and gait speed coupled with prolonged stride and stance 
+times compared to the other groups. These parameters 
+are summarized in Table 2.
+Ground reaction forces (GRFs)
+Differential ground reaction forces were apparent among 
+the groups. The vertical force during mid-stance (second 
+peak FY) and loading rates were significantly different, 
+with the non-CLBP group displaying the highest second 
+Table 1  The characteristics of older adults with SBCLBP, CLBP, 
+and without CLBP participants who participated in the study
+Characteristics
+SBCLBP 
+Group 
+(n = 12)
+CLBP Group 
+(n = 12)
+Without 
+CLBP Group 
+(n = 12)
+P-
+val­
+ue
+Sex, n
+Male 5, 
+Female 7
+Male 6, 
+Female 6
+Male 4, 
+Female 8
+0.710
+Age (y)
+69.08 ± 7.28
+70.08 ± 4.35
+69.66 ± 1.92
+0.288
+Body Height (cm) 158.75 ± 8.06
+163.66 ± 5.05
+162.16 ± 5.7
+0.173
+weight (kg)
+57.75 ± 11.61
+59.33 ± 6.13
+59.33 ± 4.90
+0.875
+Body mass index 
+(kg/m2)
+25.74 ± 3.82
+22.08 ± 1.25
+22.52 ± 0.64
+0.308
+Average NPRS 
+(0–10)
+3.42 ± 1.08
+3.42 ± 0.79
+N/A
+0.017
+Abbreviation: CLBP, Chronic low back pain; SBCLBP, sway-back and chronic low 
+back pain; NA; Not applicable, NPRS, Numerical pain rating scale. Values stands 
+for mean ± SD
+Table 2  Between-group differences for Spatiotemporal parameters of self-selected gait for older adults with SBCLBP, CLBP, and 
+without CLBP participants who participated in the study
+Gait Parameter
+SBCLBP Group (n = 12)
+Mean ± SD (min-max)
+With CLBP(n = 12)
+Mean ± SD (min-max)
+Without CLBP(n = 12)
+Mean ± SD (min-max)
+P-value
+Stride time (s)
+1.41 ± 0.23
+(1.12–1.83)
+1.22 ± 0.09
+(0.99–1.40)
+1.07 ± 1.95
+(0.74–1.31)
+< 0.001
+Cadence (steps/min)
+86.15 ± 3.85
+(77.67–94.63)
+96.48 ± 1.70
+(92.72 -100.23)
+101.08 ± 1.57
+(102.12 -109.04)
+0.002
+Stride length/ leg length
+0.93 ± 0.19
+(0.74 − 0.13)
+0.97 ± 0.11
+(0.74– 1.16)
+1.09 ± 0.55
+(0.97–1.30)
+0.025
+Gait speed (m/s)
+0.68 ± 0.25
+(0.34–1.05)
+0.84 ± 0.14
+(0.63–1.03)
+0.97 ± 0.14
+(0.72–1.19)
+0.003
+Stance (GC)
+0.66 ± 0.04
+(0.62–0.72)
+0.63 ± 0.03
+(0.59–0.70)
+0.62 ± 0.02
+(0.59–0.66)
+0.007
+Stride length normalized to leg length. Abbreviation: CLBP, Chronic low back pain; (SBCLBP): older adults with CLBP and sway-back, (With CLBP): older adults with 
+CLBP, (Without CLBP): older adults without CLBP .CI, Confidence Interval; GC, Gait cycle; s, second; m, meter; min, minute
+
+
+--- 第 7 页 ---
+Page 7 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+peak vertical force. The CLBP group showed a higher 
+mean second peak of vertical force than the SBCLBP 
+group, with statistical significance also noted in the load­
+ing rates (p = 0.004). This suggests elevated mechani­
+cal stress during gait in participants with sway back and 
+CLBP. The specific values and comparisons are presented 
+in Table 3.
+Asymmetry index (ASI)
+No significant differences were found in the asymmetry 
+index (ASI) between groups, indicating a similar distribu­
+tion of load across the limbs among all cohorts. Details of 
+the ASI analysis are provided in Table 4.
+Discussion
+CLBP is one of several factors impairing sagittal align­
+ment, with aging significantly affecting spinal posture 
+[30]. Over time, these pathologies can contribute to 
+progressive thoracic kyphosis and lumbar lordosis loss. 
+Age-related changes also impact the musculature and 
+ligaments along the spine and lower extremities, particu­
+larly in the hip extensors and ankle plantar flexors, which 
+are critical for gait propulsion. This study highlights dis­
+tinct gait dynamics in older adults with CLBP, including 
+prolonged stance times and reduced gait speeds. These 
+changes likely result from declines in muscular strength, 
+exacerbating postural instability and increasing pain sus­
+ceptibility [44].
+Table 3  GRF (Average left and right foot) of older adults with SBCLBP, CLBP, and without CLBP participants who participated in the 
+study
+Gait parameter
+SBCLBP Group (n = 12)
+Mean ± SD (min-max)
+With CLBP Group (n = 12)
+Mean ± SD (min-max)
+Without CLBP Group (n = 12)
+Mean ± SD (min-max)
+P-value
+Fy1 (N/BW)
+0.94 ± 0.057
+(0.085–0.105)
+0.989 ± 0.028
+(0.942–1.035)
+1.014 ± 0.020
+(0.978–1.044)
+0.228
+FY2 (N/BW)
+0.79 ± 0.005
+(0.070–0.085)
+0.801 ± 0.039
+(0.746– 0.898)
+0.824 ± 0.025
+(0.788– 0.869)
+0.005
+FY3 (N/BW)
+0.93 ± 0.007
+(0.79–1.06)
+0.767 ± 0.040
+(0.712–0.806)
+0.662 ± 0.049
+(0.60–0.712)
+0.422
+FX1 (N/BW)
+-0.052 ± 0.027
+(-0.093–0.016)
+-0.061 ± 0.015
+(-0.098– -0.045)
+-0.071 ± 0.012
+(-0.098– -0.055)
+0.543
+FX2 (N/BW)
+0.133 ± 0.030
+(0.083–0.180)
+0.187 ± 0.026
+(0.109–0.203)
+0.224 ± 0.073
+(0.160–0.443)
+0.198
+FZ (N/BW)
+-0.088 ± 0.058
+(-0.175– -0.004)
+-0.052 ± 0.027
+(-0.088 - -0.064)
+-0.048 ± 0.013
+(-0.069– -0.024)
+0.722
+Loading rate (BW/S)
+0.003 ± 0.001
+(0.002–0.005)
+0.002 ± 0.000
+(0.001–0.003)
+0.002 ± 0.000
+(0.001–0.002)
+0.004
+Unloading rate
+(BW/S)
+0.04 ± 0.04
+(0.001–0.02)
+0.002 ± 0.000
+(0.002–0.017)
+0.004 ± 0.005
+(0.001–0.002)
+0.196
+p-value adjusted for baseline gait speed; Abbreviation: BW, body weight; CLBP, Chronic low back pain; (SBCLBP): older adults with CLBP and sway-back, (With CLBP): 
+older adults with CLBP, (Without CLBP): older adults without CLBP .CI, Confidence Interval, FY, Vertical force; FZ, Mediolateral force; FX, Anteroposterior force; N, 
+Newton; Values are mean ± SD
+Table 4  The results of asymmetry analysis of Spatiotemporal and force parameters of older adults with SBCLBP, CLBP, and without 
+CLBP participants who participated in the study
+Gait parameter
+SBCLBP Group (n = 12)
+Mean ± SD (min-max)
+With CLBP(n = 12)
+Mean ± SD (min-max)
+Without CLBP(n = 12)
+Mean ± SD (min-max)
+P-value
+Fy1 (%)
+0.08 ± 0.07
+(0.00–0.26)
+0.07 ± 0.03
+(0.03–0.12)
+0.08 ± 0.04
+(0.02–0.15)
+0.820
+Fy2 (%)
+3.96 ± 4.26
+(0.50 -15.68)
+5.24 ± 0.83
+(4.25–6.62)
+3.08 ± 2.17
+(0.38–7.68)
+0.181
+Fy3 (%)
+8.70 ± 15.29
+(0.18–41.40)
+2.90 ± 1.59
+(0.05 − 5.12)
+2.75 ± 1.67
+(0.05–5.07)
+0.193
+Fx1 (%)
+-19.64 ± 20.05
+(-69.99 - -3.80)
+-22.60 ± 14.20
+(-43.36– -2.91)
+-22.70 ± 14.45
+(-42.36– -1.91)
+0.885
+Fx2 (%)
+11.99 ± 8.65
+(1.20–27.42)
+6.01 ± 5.78
+(0.41–19.27)
+5.93 ± 5.61
+(0.41–18.27)
+0.06
+Fz (%)
+-169.81 ± 127.04
+(-448.52– -12.43)
+-237.75 ± 94.48
+(-456.44 − 146.62)
+-233.25 ± 111.59
+(-459.35– -105.98)
+0.282
+Abbreviations: BW, body weight; CLBP, Chronic low back pain; (CLBP and sway back), older adults with CLBP and sway-back; (With CLBP), older adults with CLBP; 
+(Without CLBP), older adults without CLBP; CI, Confidence Interval; FY, vertical force; FZ, mediolateral force; FX, anteroposterior force; N, Newton; %, percentage. 
+Values are mean ± SD
+
+
+--- 第 8 页 ---
+Page 8 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+Our findings align with prior research, reinforcing 
+that CLBP significantly impacts mobility in older adults 
+[2, 45]. Changes in posture due to aging influence walk­
+ing speed [46], a crucial factor in gait analysis. Variations 
+in gait speed affect spatiotemporal parameters, which 
+may explain the reduced ground reaction forces (GRFs) 
+observed in the CLBP group compared to the control 
+group. This could be attributed to decreased hip and knee 
+joint flexion, leading to lower mechanical loads on the 
+legs [13]. Additionally, increased thoracic kyphosis has 
+been linked to reduced hip sagittal mobility, increased 
+external foot progression, and delayed foot-off, poten­
+tially explaining the reduced GRFs in elderly individuals 
+with CLBP and sway-back posture [47].
+Participants with CLBP adjusted their stride lengths to 
+mitigate impact forces during heel strike, a compensatory 
+mechanism to reduce pain-related discomfort [48–50]. 
+This may also account for the lower second peak verti­
+cal force (FY2) observed in older adults with SBCLBP, 
+consistent with findings by Farahpour et al. (2016) on 
+foot pronation’s role in modifying GRFs in CLBP patients 
+[51]. In aging individuals, the primary issue may not be 
+overall muscle strength but rather the speed of muscle 
+contraction, which could explain the decreased peak 
+plantar-flexion angle among our older participants [46].
+Altered upper torso positioning shifts the body’s cen­
+ter of mass toward the plantar aspect of the foot through 
+biomechanical adjustments at the hip and ankle joints. 
+This shift redistributes tension from dorsal musculature 
+to the calf muscles [5]. Additionally, increased trunk stiff­
+ness—linked to augmented GRFs—has been observed 
+with reduced quadriceps activity during initial heel con­
+tact [52, 53], potentially impairing energy absorption and 
+increasing mechanical stress. Contrary to expectations, 
+the SBCLBP group exhibited the highest loading rates, 
+suggesting that individuals with LBP may adopt compen­
+satory gait strategies that prolong the loading response 
+phase, reducing mechanical efficiency [54].
+Our analysis of gait asymmetry revealed that the Asym­
+metry Index (ASI) did not significantly differ among 
+groups. While previous studies have suggested that CLBP 
+may alter limb load distribution, our findings indicate 
+that individuals with SBCLBP may employ compensatory 
+mechanisms to maintain symmetrical gait patterns [55]. 
+However, setting a threshold for asymmetry would pro­
+vide a clearer distinction between normal and pathologi­
+cal gait patterns, as minor deviations from symmetry are 
+common and not necessarily indicative of dysfunction. 
+Discrepancies in studies on spinal deformities and scolio­
+sis may stem from variations in frontal plane deformities 
+or the severity of spinal abnormalities [56].
+Post hoc analysis was conducted to ensure statistical 
+power calculations were realistic based on our collected 
+data, refining the interpretation of group differences. 
+Additionally, we acknowledge the challenges in defin­
+ing sway-back posture objectively. The magnitude of this 
+postural deviation was quantified to ensure that only 
+individuals meeting predefined criteria were included. 
+Future studies should refine these diagnostic criteria to 
+enhance reproducibility and clinical applicability.
+Clinical implications
+Considering the structural disorders that occur in the 
+body’s condition over time, it may be possible to con­
+trol these changes and prevent the emergence of muscle 
+weaknesses through proper training. A comprehensive 
+understanding of the relationship between body posture 
+defects and the distribution of ground reaction forces 
+on the feet can lead to a more thorough evaluation of 
+how these factors are interconnected. This, in turn, can 
+enhance the effectiveness of treatments for any disor­
+ders associated with these phenomena. Continuous gait 
+analysis is essential for monitoring the efficacy of these 
+interventions and for ongoing adjustments to treatment 
+protocols.
+Future research should explore the integration of 
+advanced technological aids, such as robotic exoskel­
+etons and virtual reality systems, in rehabilitation set­
+tings. These tools offer novel approaches to managing 
+and potentially reversing gait abnormalities associated 
+with chronic back pain, paving the way for improved 
+clinical outcomes and enhanced quality of life for affected 
+individuals.
+Limitations
+This study provides extensive insights into older adults 
+with SBCLBP, surpassing previous research focused 
+on generic CLBP. However, several limitations should 
+be noted. First, only CLBP patients participated, limit­
+ing the generalizability of our findings to other types of 
+LBP. Additionally, while this study focuses on chronic 
+conditions such as LBP and postural changes, other pain 
+conditions may also be relevant in older adults. Future 
+research should explore additional chronic pain condi­
+tions, such as joint or muscular pain, to provide a more 
+comprehensive understanding of factors affecting qual­
+ity of life in this population. Regulating walking speeds in 
+subsequent studies may refine correlations between clini­
+cal gait analysis and real-life mobility challenges faced by 
+individuals with CLBP.
+Conclusions
+Older adults with SBCLBP exhibit significant gait altera­
+tions, including slower walking speeds, shorter stride 
+lengths, and lower cadence compared to CLBP and 
+asymptomatic individuals. These individuals also demon­
+strate prolonged stance phase and stride time. GRF anal­
+ysis reveals lower FY2 values and higher loading rates in 
+
+
+--- 第 9 页 ---
+Page 9 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+the SBCLBP group, suggesting that sway-back posture 
+exacerbates the biomechanical deficits associated with 
+CLBP.
+Given the limited research on compensatory postures 
+and gait dynamics, further studies are needed to clarify 
+underlying mechanisms and optimize rehabilitative strat­
+egies. The use of objective gait assessment tools in clini­
+cal practice may aid in identifying gait impairments and 
+improving targeted interventions for this population.
+Author contributions
+Conceptualization, F.E.; A.L.; M.T.K.; and M.K.; methodology, F.E.; A.L.; M.T.K.; and 
+M.K.; validation, F.E.; A.L.; M.T.K.; and M.K.; investigation, F.E.; A.L.; M.T.K.; and M.K.; 
+data curation, F.E.; A.L.; M.T.K.; and M.K.; writing—original draft preparation, A.L.; 
+G.R.; and J.H.V.; writing—review and editing, A.L.; G.R.; and J.H.V.; visualization, 
+A.L.; supervision, A.L.; G.R.; and J.H.V. All authors have read and agreed to the 
+published version of the manuscript.
+Funding
+This research received no external funding.
+Data availability
+Data are available from the corresponding author upon reasonable request.
+Declarations
+Institutional review board
+The study was conducted in accordance with the Declaration of Helsinki, 
+and approved by the Ethics Committee of the Medical Center Office of Shiraz 
+Rehabilitation Sciences University (IR.SUMS.REHAB.REC.1399.034).
+Consent for publication
+All participants provided written informed consent for the publication of their 
+personal and clinical details, as well as any identifying images, in this study.
+Informed consent
+Informed consent was obtained from all subjects involved in the study.
+Competing interests
+The authors declare no competing interests.
+Author details
+1Department of Biomechanics and Sport Injuries, Faculty of Physical 
+Education and Sport Sciences, Kharazmi University, Tehran 
+11369, Islamic Republic of Iran
+2School of Rehabilitation Sciences, Shiraz University of Medical Sciences, 
+Shiraz, Tehran 11369, Islamic Republic of Iran
+3School of Physiotherapy, University of Verona, Verona, Italy
+4Department of Physiotherapy, Faculty of Medicine, Health and Sports, 
+Universidad Europea de Madrid, Villaviciosa de Odón 28670, Spain
+Received: 18 September 2024 / Accepted: 20 March 2025
+References
+1.	
+GBD 2019 MSK in Adolescents Collaborators Global Pattern, Trend, and Cross-
+Country Inequality of Early Musculoskeletal Disorders from 1990 to 2019, 
+with Projection from 2020 to 2050. Med. 2024, May 30:S2666-6340(24)00179-
+X, ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​m​e​d​j​.​2​0​2​4​.​0​4​.​0​0​9
+2.	
+Rudy TE, Weiner DK, Lieber SJ, Slaboda J, Boston JR. The Impact of Chronic 
+Low Back Pain on Older Adults: A Comparative Study of Patients and Con­
+trols. Pain. 2007;131:293–301. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​p​a​i​n​.​2​0​0​7​.​0​1​.​0​1​2
+3.	
+Meucci RD, Fassa AG, Faria NMX. Prevalence of chronic low back pain: system­
+atic review. Rev Saude Publica. 2015;49:73.
+4.	
+Hoy D, March L, Brooks P, Blyth F, Woolf A, Bain C, Williams G, Smith E, Vos T, 
+Barendregt J. The global burden of low back pain: estimates from the global 
+burden of disease 2010 study. Ann Rheum Dis. 2014;73:968–74. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​
+g​/​1​0​.​1​1​3​6​/​a​n​n​r​h​e​u​m​d​i​s​-​2​0​1​3​-​2​0​4​4​2​8.
+5.	
+Hicks GE, Sions JM, Coyle PC, Pohlig RT. Altered Spatiotemporal charac­
+teristics of gait in older adults with chronic low back pain. Gait Posture. 
+2017;55:172–6. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​0​1​7​.​0​4​.​0​2​7.
+6.	
+Anders C, Sander K, Layher F, Patenge S, Kinne RW. Temporal and Spatial 
+relationship between gluteal muscle surface EMG activity and the verti­
+cal component of the ground reaction force during walking. PLoS ONE. 
+2021;16:e0251758. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​3​7​1​/​j​o​u​r​n​a​l​.​p​o​n​e​.​0​2​5​1​7​5​8.
+7.	
+Hollman JH, McDade EM, Petersen RC. Normative Spatiotemporal gait 
+parameters in older adults. Gait Posture. 2011;34:111–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​
+1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​0​1​1​.​0​3​.​0​2​4.
+8.	
+GBD 2019 IMID Collaborators. Global, regional, and National incidence of six 
+major Immune-Mediated inflammatory diseases: findings from the global 
+burden of disease study 2019. EClinicalMedicine. 2023;64:102193. ​h​t​t​p​s​:​/​/​d​o​i​.​
+o​r​g​/​1​0​.​1​0​1​6​/​j​.​e​c​l​i​n​m​.​2​0​2​3​.​1​0​2​1​9​3.
+9.	
+Simmonds MJ, Lee CE, Etnyre BR, Morris GS. The Influence of Pain Distribution 
+on Walking Velocity and Horizontal Ground Reaction Forces in Patients with 
+Low Back Pain. Pain Res Treat. 2012;214980. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​5​5​/​2​0​1​2​/​2​1​4​
+9​8​0
+10.	 Buraschi R, Pollet J, Villafañe JH, Piovanelli B, Negrini S. Temporal and kine­
+matic analyses of timed up and go test in chronic low back pain patients. 
+Gait Posture. 2022;96:137–42. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​0​2​2​.​0​5​.​0​2​7.
+11.	 Fujita N, Sakurai A, Miyamoto A, Michikawa T, Otaka Y, Suzuki S, Tsuji O, 
+Nagoshi N, Okada E, Yagi M. Stride length of elderly patients with lumbar 
+spinal stenosis: Multi-Center study using the Two-Step test. J Orthop Sci. 
+2019;24:787–92.
+12.	 Guo J, Huang X, Dou L, Yan M, Shen T, Tang W, Li J. Aging and Aging-Related 
+diseases: from molecular mechanisms to interventions and treatments. 
+Signal Transduct Target Ther. 2022;7:391.
+13.	 Zahraee MH, Karimi MT, Mostamand J, Fatoye F. Analysis of asymmetry of the 
+forces applied on the lower limb in subjects with nonspecific chronic low 
+back pain. Biomed Res Int. 2014;2014(289491). ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​5​5​/​2​0​1​4​/​
+2​8​9​4​9​1.
+14.	 Lin J, Halaki M, Leaver A. Limited evidence of altered gait parameters in 
+people with chronic nonspecific low back pain. Gait Posture. 2023;99:98–103. ​
+h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​0​2​2​.​1​1​.​0​0​1.
+15.	 Rainoldi L, Zaina F, Villafañe JH, Donzelli S, Negrini S. Quality of life in normal 
+and idiopathic scoliosis adolescents before diagnosis: reference values and 
+discriminative validity of the SRS-22. A Cross-Sectional study of 1,205 pupils. 
+Spine J. 2015;15:662–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​s​p​i​n​e​e​.​2​0​1​4​.​1​2​.​0​0​4.
+16.	 Kozinoga M, Kotwicki T. Non-Structural misalignments of body posture in the 
+sagittal plane. Scoliosis Spinal Disord. 2018;13. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​8​6​/​s​1​3​0​1​
+3​-​0​1​8​-​0​1​5​1​-​5.
+17.	 Żurawski A, Śliwiński Z, Suliga E, Śliwiński G, Wypych Ż, Kiebzak W. Effect of 
+thoracic kyphosis and lumbar lordosis on the distribution of ground reaction 
+forces on the feet. Orthop Res Rev. 2022;187–97. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​2​1​4​7​/​O​R​R​
+.​S​3​4​4​9​7​2.
+18.	 Nutt J, Marsden C, Thompson P. Human walking and Higher-level gait disor­
+ders, particularly in the elderly. Neurology. 1993;43:268–268. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​
+0​.​1​2​1​2​/​w​n​l​.​4​3​.​2​.​2​6​8.
+19.	 Uematsu A, Tsuchiya K, Kadono N, Kobayashi H, Kaetsu T, Hortobagyi T, Suzuki 
+SA. Behavioral mechanism of how increases in leg strength improve old 
+adults’ gait speed. PLoS ONE. 2014;9:e110350. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​3​7​1​/​j​o​u​r​n​a​l​.​
+p​o​n​e​.​0​1​1​0​3​5​0.
+20.	 CARLSÖÖ S. The static muscle load in different work positions: an electro­
+myographic study. Ergonomics. 1961;4:193–211. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​8​0​/​0​0​1​
+4​0​1​3​6​1​0​8​9​3​0​5​2​0.
+21.	 Song S, Geyer H. Predictive neuromechanical simulations indicate why walk­
+ing performance declines with ageing. J Physiol. 2018;596:1199–210. ​h​t​t​p​s​:​/​/​
+d​o​i​.​o​r​g​/​1​0​.​1​1​1​3​/​J​P​2​7​5​1​6​6.
+22.	 Villafañe JH, Valdes K. Reliability of pinch strength testing in elderly subjects 
+with unilateral thumb carpometacarpal osteoarthritis. J Phys Ther Sci. 
+2014;26:993–5. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​5​8​9​/​j​p​t​s​.​2​6​.​9​9​3.
+23.	 McGregor A, Hukins D. Lower limb involvement in spinal function and low 
+back pain. J Back Musculoskelet Rehabil. 2009;22:219–22. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​3​
+2​3​3​/​B​M​R​-​2​0​0​9​-​0​2​3​9.
+24.	 Ames CP, Smith JS, Scheer JK, Bess S, Bederman SS, Deviren V, Lafage V, 
+Schwab F, Shaffrey CI. Impact of spinopelvic alignment on decision making in 
+deformity surgery in adults: A review. J Neurosurg Spine. 2012;16:547–64. ​h​t​t​
+p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​3​1​7​1​/​2​0​1​2​.​2​.​S​P​I​N​E​1​1​3​2​0.
+
+
+--- 第 10 页 ---
+Page 10 of 10
+Esmaeilpour et al. BMC Sports Science, Medicine and Rehabilitation           (2025) 17:71 
+25.	 Blondel B, Schwab F, Ungar B, Smith J, Bridwell K, Glassman S, Shaffrey C, 
+Farcy J-P, Lafage V. Impact of magnitude and percentage of global sagittal 
+plane correction on Health-Related quality of life at 2-Years Follow-Up. Neu­
+rosurgery. 2012;71:341–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​2​2​7​/​N​E​U​.​0​b​0​1​3​e​3​1​8​2​5​d​2​0​c​0.
+26.	 Murata K, Endo K, Aihara T, Suzuki H, Matsuoka Y, Nishimura H, Taka­
+matsu T, Yamamoto K. The impact of sagittal imbalance on walking in 
+patients with lumbar spinal Canal stenosis. J Orthop Surg Hong Kong. 
+2021;29:23094990211010522. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​7​7​/​2​3​0​9​4​9​9​0​2​1​1​0​1​0​5​2​2.
+27.	 Van Dieën JH, Reeves NP, Kawchuk G, Van Dillen LR, Hodges PW. Motor con­
+trol changes in low back pain: divergence in presentations and mechanisms. 
+J Orthop Sports Phys Ther. 2019;49:370–9. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​2​5​1​9​/​j​o​s​p​t​.​2​0​1​9​.​
+7​9​1​7.
+28.	 Moe-Nilssen R, Helbostad JL. Spatiotemporal gait parameters for older 
+Adults–an interactive model adjusting reference data for gender, age, and 
+body height. Gait Posture. 2020;82:220–6. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​
+0​2​0​.​0​9​.​0​0​9.
+29.	 Fujitani R, Jiromaru T, Kida N, Nomura T. Effect of standing postural deviations 
+on trunk and hip muscle activity. J Phys Ther Sci. 2017;29:1212–5. ​h​t​t​p​s​:​/​/​d​o​i​.​
+o​r​g​/​1​0​.​1​5​8​9​/​j​p​t​s​.​2​9​.​1​2​1​2.
+30.	 Fernandes VLS, Ribeiro DM, Fernandes LC, Menezes RL. De postural changes 
+versus balance control and falls in Community-Living older adults: A system­
+atic review. Fisioter Em Mov. 2018;31:e003125. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​5​9​0​/​1​9​8​0​-​5​
+9​1​8​.​0​3​1​.​A​O​2​5.
+31.	 Pillastrini P, Ferrari S, Rattin S, Cupello A, Villafañe JH, Vanti C. Exercise and 
+tropism of the multifidus muscle in low back pain: A short review. J Phys Ther 
+Sci. 2015;27:943–5. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​5​8​9​/​j​p​t​s​.​2​7​.​9​4​3.
+32.	 Castaldo M, Ge H-Y, Chiarotto A, Villafane JH, Arendt-Nielsen L. Myofascial 
+trigger points in patients with Whiplash-Associated disorders and mechanical 
+neck pain. Pain Med. 2014;15:842–9. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​1​1​/​p​m​e​.​1​2​4​2​9.
+33.	 Von Elm ESTROBE, Initiative. The strengthening the reporting of observa­
+tional studies in epidemiology (STROBE) statement: guidelines for reporting 
+observational studies. Ann Intern Med. 2007;147:573–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​7​3​
+2​6​/​0​0​0​3​-​4​8​1​9​-​1​4​7​-​8​-​2​0​0​7​1​0​1​6​0​-​0​0​0​1​0.
+34.	 La Touche R, Pérez-Fernández M, Barrera-Marchessi I, López-de-Uralde-
+Villanueva I, Villafañe JH, Prieto-Aldana M, Suso-Martí L, Paris-Alemany A. 
+Psychological and physical factors related to disability in chronic low back 
+pain. J Back Musculoskelet Rehabil. 2019;32:603–11. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​3​2​3​3​/​B​
+M​R​-​1​8​1​2​6​9.
+35.	 Villafañe JH, Preface. Chronic musculoskeletal pain: A biopsychosocial 
+approach. Top Geriatr Rehabil. 2024;42:96–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​9​7​/​T​G​R​.​0​0​0​
+0​0​0​0​0​0​0​0​0​0​4​2​7.
+36.	 Williamson A, Hoggart B, Pain. A review of three commonly used pain rating 
+scales. J Clin Nurs. 2005;14:798–804. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​1​1​/​j​.​1​3​6​5​-​2​7​0​2​.​2​0​0​5​
+.​0​1​1​2​1​.​x.
+37.	 Christe G, Kade F, Jolles BM, Favre J. Chronic low back pain patients walk with 
+locally altered spinal kinematics. J Biomech. 2017;60:211–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​
+.​1​0​1​6​/​j​.​j​b​i​o​m​e​c​h​.​2​0​1​7​.​0​6​.​0​4​2.
+38.	 Bissolotti L, Rota M, Calza S, Sanchez Romero EA, Battaglino A, Villafañe JH. 
+Relationship between lower limbs performance and spinal alignment in Par­
+kinson’s disease patients: an observational study with cross sectional design. 
+J Clin Med. 2022;11:3775. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​3​3​9​0​/​j​c​m​1​1​1​3​3​7​7​5.
+39.	 Bissolotti L, Berjano P, Zuccher P, Zenorini A, Buraschi R, Villafañe JH, Negrini 
+S. Sagittal balance is correlated with Parkinson’s disease clinical parameters: 
+an overview of spinopelvic alignment on 175 consecutive cases. Eur Spine J. 
+2017;26:471–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​7​/​s​0​0​5​8​6​-​0​1​7​-​5​0​5​2​-​4.
+40.	 World Medical Association World Medical Association Declaration of Helsinki. 
+Ethical principles for medical research involving human subjects. JAMA. 
+2013;310:2191–4. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​1​/​j​a​m​a​.​2​0​1​3​.​2​8​1​0​5​3.
+41.	 Chockalingam N, Dangerfield PH, Rahmatalla A, Ahmed E-N, Cochrane 
+T. Assessment of ground reaction force during scoliotic gait. Eur Spine J. 
+2004;13:750–4.
+42.	 Schizas C, Kramers-de Quervain I, Stüssi E, Grob D. Gait asymmetries in 
+patients with idiopathic scoliosis using vertical forces measurement only. Eur 
+Spine J. 1998;7:95–8.
+43.	 Herzog W, Nigg BM, Read LJ, Olsson E. Asymmetries in ground reaction force 
+patterns in normal human gait. Med Sci Sports Exerc. 1989;21:110–4. ​h​t​t​p​s​:​/​/​
+d​o​i​.​o​r​g​/​1​0​.​1​2​4​9​/​0​0​0​0​5​7​6​8​-​1​9​8​9​0​2​0​0​0​-​0​0​0​2​0.
+44.	 Da Silva RA, Vieira ER, Carvalho CE, Oliveira MR, Amorim CF, Neto EN. Age-
+Related differences on low back pain and postural control during One-Leg 
+stance: A Case–Control study. Eur Spine J. 2016;25:1251–7.
+45.	 Reid MC, Williams CS, Gill TM. Back pain and decline in lower extremity physi­
+cal function among Community-Dwelling older persons. J Gerontol Biol Sci 
+Med Sci. 2005;60:793–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​9​3​/​g​e​r​o​n​a​/​6​0​.​6​.​7​9​3.
+46.	 Sloot LH, Malheiros S, Truijen S, Saeys W, Mombaur K, Hallemans A, Van 
+Criekinge T. Decline in gait propulsion in older adults over age decades. Gait 
+Posture. 2021;90:475–82. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​g​a​i​t​p​o​s​t​.​2​0​2​1​.​0​9​.​1​6​6.
+47.	 Langella F, Villafañe JH, Lafage V, Smith JS, Shaffrey C, Kim HJ, Burton D, Hostin 
+R, Bess S, Ames C, Xipho-Pubic. Angle (XPA) correlates with patient’s reported 
+outcomes in a population of adult spinal deformity: results from a Multi-
+Center cohort study. Eur Spine J. 2018;27:670–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​7​/​s​0​0​5​
+8​6​-​0​1​7​-​5​4​6​0​-​5.
+48.	 Bissolotti L, Gobbo M, Villafane JH, Negrini S. Spinopelvic balance: new 
+Biomechanical insights with clinical implications for Parkinson’s disease. Eur 
+Spine J. 2014;23:576–83. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​7​/​s​0​0​5​8​6​-​0​1​3​-​3​0​6​8​-​y.
+49.	 Voloshin A, Wosk J. An in vivo study of low back pain and shock absorption in 
+the human locomotor system. J Biomech. 1982;15:21–7. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​
+1​6​/​0​0​2​1​-​9​2​9​0​(​8​2​)​9​0​0​3​1​-​8.
+50.	 Hodges PW, Tucker K. Moving differently in pain: A new theory to explain the 
+adaptation to pain. Pain. 2011;152:S90–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​p​a​i​n​.​2​0​1​0​.​
+1​0​.​0​2​0.
+51.	 Farahpour N, Jafarnezhad A, Damavandi M, Bakhtiari A, Allard P. Gait ground 
+reaction force characteristics of low back pain patients with pronated foot 
+and Able-Bodied individuals with and without foot pronation. J Biomech. 
+2016;49:1705–10. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​j​b​i​o​m​e​c​h​.​2​0​1​6​.​0​3​.​0​5​6.
+52.	 Seay JF, Van Emmerik RE, Hamill J. Low back pain status affects Pelvis-Trunk 
+coordination and variability during walking and running. Clin Biomech. 
+2011;26:572–8. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​c​l​i​n​b​i​o​m​e​c​h​.​2​0​1​0​.​1​1​.​0​1​2.
+53.	 Liikavainio T, Isolehto J, Helminen HJ, Perttunen J, Lepola V, Kiviranta I, 
+Arokoski JP, Komi PV. Loading and Gait Symmetry during Level and Stair 
+Walking in Asymptomatic Subjects with Knee Osteoarthritis: Importance 
+of Quadriceps Femoris in Reducing Impact Force during Heel Strike? Knee. 
+2007;14:231–238. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​j​.​k​n​e​e​.​2​0​0​7​.​0​3​.​0​0​1
+54.	 Jalalvand A, Hosseini Y, Amini A, HAMEDANI BA. Comparative study of ground 
+reaction forces, loading rate and impulse during single leg drop landing in 
+recurrent low back pain population. 2018.
+55.	 Giakas G, Baltzopoulos V, Dangerfield PH, Dorgan JC, Dalmira S. Comparison 
+of gait patterns between healthy and scoliotic patients using time and 
+frequency domain analysis of ground reaction forces. Spine Phila Pa 1976. 
+1996;21:2235–42. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​9​7​/​0​0​0​0​7​6​3​2​-​1​9​9​6​1​0​0​1​0​-​0​0​0​1​1.
+56.	 Donzelli S, Poma S, Balzarini L, Borboni A, Respizzi S, Villafane JH, Zaina F, 
+Negrini S. State of the Art of current 3-D scoliosis classifications: A systematic 
+review from a clinical perspective. J Neuroeng Rehabil. 2015;12:1–11.
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in 
+published maps and institutional affiliations.

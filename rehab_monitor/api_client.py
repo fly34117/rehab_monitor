@@ -73,7 +73,8 @@ def generate_report(recent_data, api_key=None):
         )
         resp.raise_for_status()
         body = resp.json()
-        content = body["choices"][0]["message"]["content"]
+        msg = body["choices"][0]["message"]
+        content = msg.get("content") or msg.get("reasoning_content") or ""
 
         # 解析 JSON
         report_json = _parse_response(content)

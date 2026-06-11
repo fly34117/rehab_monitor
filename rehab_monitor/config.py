@@ -1,8 +1,21 @@
 """所有可调参数集中管理"""
 import os
 
+# ---- 从 .env 文件加载环境变量（不依赖 python-dotenv） ----
+_project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_env_path = os.path.join(_project_root, ".env")
+if os.path.exists(_env_path):
+    with open(_env_path, "r", encoding="utf-8") as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _key, _val = _line.split("=", 1)
+                _key, _val = _key.strip(), _val.strip().strip('"').strip("'")
+                if _key not in os.environ:  # 不覆盖已有的环境变量
+                    os.environ[_key] = _val
+
 # ===== 路径 =====
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = _project_root
 ULTRALYTICS_DIR = os.path.join(PROJECT_ROOT, "ultralytics-8.4.46")
 MODEL_DIR = os.path.join(ULTRALYTICS_DIR, "model")
 POSE_MODEL_PATH = os.path.join(MODEL_DIR, "yolo26n-pose_int8_openvino_model")
