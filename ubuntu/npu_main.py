@@ -103,5 +103,14 @@ def _corrected_process_frame(self, frame):
 pd_module.PoseDetector.process_frame = _corrected_process_frame
 print(f"[ubuntu] 腿关键点纠正器已启用")
 
+# ---- Monkey-patch: 硬件加速摄像头 ----
+if os.environ.get("REHAB_HW_DECODE", "").lower() in ("1", "true", "yes"):
+    from ubuntu.hw_camera import monkey_patch_cv2_videocapture, detect_best_backend
+    best = detect_best_backend()
+    print(f"[ubuntu] 硬件解码: 检测到最优后端 = {best}")
+    monkey_patch_cv2_videocapture()
+else:
+    print("[ubuntu] 硬件解码: 未启用 (设置 REHAB_HW_DECODE=1 启用)")
+
 import rehab_monitor.main
 rehab_monitor.main.main()

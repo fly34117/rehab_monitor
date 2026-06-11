@@ -8,6 +8,9 @@
 #   ./run.sh --model yolo11n --npu        YOLO11n NPU (最快)
 #   ./run.sh --model yolo11s --cpu        YOLO11s CPU INT8
 #   ./run.sh --gpu                        YOLO26n GPU
+#   ./run.sh --hw-decode                  启用硬件解码 (GStreamer VA-API / MJPEG)
+#   ./run.sh --optimized                  三阶段异构管线 (解码→iGPU, 推理→iGPU, 后处理→CPU)
+#   ./run.sh --optimized --gpu            三阶段 + 强制 GPU 推理
 #   ./run.sh --original                   原始配置 (不改模型/设备)
 #
 # 性能参考 (Intel Core Ultra 5 225U):
@@ -45,6 +48,8 @@ export LD_LIBRARY_PATH="$OV_LIBS:${LD_LIBRARY_PATH}"
 MODEL="yolo26n"
 DEVICE="cpu"     # cpu / gpu / npu
 ORIGINAL=false
+HW_DECODE=false
+OPTIMIZED=false
 MAIN_ARGS=()
 
 while [[ $# -gt 0 ]]; do
@@ -60,7 +65,9 @@ while [[ $# -gt 0 ]]; do
         --cpu)  DEVICE="cpu"; shift ;;
         --gpu)  DEVICE="gpu"; shift ;;
         --npu)  DEVICE="npu"; shift ;;
-        --original) ORIGINAL=true; shift ;;
+        --hw-decode)  HW_DECODE=true; shift ;;
+        --optimized)  OPTIMIZED=true; shift ;;
+        --original)   ORIGINAL=true; shift ;;
         *)      MAIN_ARGS+=("$1"); shift ;;
     esac
 done
@@ -90,6 +97,27 @@ export OV_CPU_NUM_STREAMS=2
 export OV_CPU_ENABLE_CPU_PINNING=NO
 export OV_CPU_HYPER_THREADING=YES
 
+# ---- 硬件解码自动检测 ----
+if $HW_DECODE; then
+    # 检查 VA-API 是否可用
+    if [ -n "$LIBVA_DRIVER_NAME" ] || vainfo &>/dev/null 2>&1; then
+        export REHAB_HW_DECODE=1
+        echo "[硬件解码] 已启用 (GStreamer VA-API / V4L2 MJPEG)"
+    elif [ -c /dev/dri/renderD128 ] && groups "$USER" | grep -q render; then
+        # GPU 节点和权限都存在, 可能缺驱动
+        export REHAB_HW_DECODE=1
+        echo "[硬件解码] 尝试启用 (如失败将自动回退 V4L2 MJPEG)"
+        echo "           提示: 运行 ubuntu/setup_hw_decode.sh --check 诊断"
+    else
+        echo "[硬件解码] 未检测到硬件解码能力, 使用 CPU 解码"
+        echo "           提示: sudo bash ubuntu/setup_hw_decode.sh 安装驱动"
+    fi
+elif [ -z "${REHAB_HW_DECODE:-}" ] && vainfo &>/dev/null 2>&1; then
+    # 未显式指定 --hw-decode, 但 VA-API 可用 → 自动启用
+    export REHAB_HW_DECODE=1
+    echo "[硬件解码] 自动检测到 VA-API, 已启用"
+fi
+
 # ---- 启动信息 ----
 PYVER=$($PY -c 'import sys; print(sys.version.split()[0])' 2>/dev/null || echo '?')
 OVVER=$($PY -c 'import openvino; print(openvino.__version__.split("-")[0])' 2>/dev/null || echo N/A)
@@ -97,14 +125,31 @@ OVDEV=$($PY -c 'import openvino as ov; print(", ".join(ov.Core().available_devic
 
 echo "============================================"
 echo "  康复监测系统 — Ubuntu/Linux"
+PIPELINE_MODE="monkey-patch"
+$OPTIMIZED && PIPELINE_MODE="三阶段异构"
+$ORIGINAL && PIPELINE_MODE="原始"
+echo "  管线  : $PIPELINE_MODE"
 echo "  模型  : ${MODEL^^}-pose | 设备: $DEVICE"
+echo "  解码  : ${REHAB_HW_DECODE:+硬件加速}${REHAB_HW_DECODE:-CPU}"
 echo "  HW    : $OVDEV"
 echo "  Conda : yolov26 | Python $PYVER | OV $OVVER"
 echo "============================================"
 echo ""
 
 # ---- 启动 ----
-if $ORIGINAL; then
+if $OPTIMIZED; then
+    # 三阶段异构管线: Stage1 解码→iGPU, Stage2 推理→iGPU/NPU, Stage3 后处理→CPU
+    OPT_ARGS=(
+        --model "$MODEL"
+        --camera 0
+    )
+    [ "$DEVICE" = "gpu" ] && OPT_ARGS+=(--gpu)
+    [ "$DEVICE" = "npu" ] && OPT_ARGS+=(--npu)
+    [ "$DEVICE" = "cpu" ] && OPT_ARGS+=(--cpu)
+    [ "${REHAB_HW_DECODE:-}" = "1" ] && OPT_ARGS+=(--gstreamer)
+    echo "[启动] rehab_optimized (三阶段异构管线)"
+    exec $PY -m rehab_optimized.main "${OPT_ARGS[@]}" "${MAIN_ARGS[@]}"
+elif $ORIGINAL; then
     exec $PY -m rehab_monitor.main "${MAIN_ARGS[@]}"
 else
     export REHAB_MODEL="$MODEL"
