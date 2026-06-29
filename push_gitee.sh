@@ -43,7 +43,7 @@ if [ -n "$LARGE_FILES" ]; then
 fi
 echo -e "${GREEN}✓ git 历史无超限文件${NC}"
 
-# --- 2. 检查工作区中是否有大文件（git add -A 会把这些也提交）---
+# --- 2. 检查工作区中是否有大文件（排除 .gitignore 已屏蔽的）---
 echo -e "\n${YELLOW}[2/5] 检查工作区大文件 (>${GITEE_LIMIT_MB}MB)...${NC}"
 
 WS_LARGE_FILES=$(find . -type f -size +"${GITEE_LIMIT_MB}"M \
@@ -51,16 +51,25 @@ WS_LARGE_FILES=$(find . -type f -size +"${GITEE_LIMIT_MB}"M \
     -not -path './.claude/*' \
     -printf '%s %p\n' 2>/dev/null | sort -rn)
 
+WARN_FILES=""
 if [ -n "$WS_LARGE_FILES" ]; then
-    echo -e "${RED}✗ 工作区存在超过 ${GITEE_LIMIT_MB}MB 的文件（git add -A 将提交它们）:${NC}"
-    echo "$WS_LARGE_FILES" | while read size path; do
+    while read size path; do
+        # 跳过已被 .gitignore 屏蔽的文件（git add -A 不会提交它们）
+        if git check-ignore -q "$path" 2>/dev/null; then
+            continue
+        fi
         size_mb=$(echo "scale=1; $size / 1024 / 1024" | bc 2>/dev/null || echo "$size")
-        echo -e "  ${RED}• $path (${size_mb}MB)${NC}"
-    done
-    echo -e "\n${RED}请先移除大文件或将它们加入 .gitignore！${NC}"
+        WARN_FILES="${WARN_FILES}  ${RED}• $path (${size_mb}MB)${NC}\n"
+    done <<< "$WS_LARGE_FILES"
+fi
+
+if [ -n "$WARN_FILES" ]; then
+    echo -e "${RED}✗ 工作区存在超过 ${GITEE_LIMIT_MB}MB 且未被 .gitignore 屏蔽的文件:${NC}"
+    echo -e "$WARN_FILES"
+    echo -e "${RED}请先移除大文件或将它们加入 .gitignore！${NC}"
     exit 1
 fi
-echo -e "${GREEN}✓ 工作区无超限文件${NC}"
+echo -e "${GREEN}✓ 工作区无超限文件（已排除 .gitignore 屏蔽的）${NC}"
 
 # --- 3. 检查变更 ---
 echo -e "\n${YELLOW}[3/5] 检查本地变更...${NC}"
