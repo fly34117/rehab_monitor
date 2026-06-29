@@ -23,8 +23,8 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
     exit 1
 fi
 
-# --- 1. 检查是否有大文件（>100MB）---
-echo -e "\n${YELLOW}[1/4] 检查大文件 (>${GITEE_LIMIT_MB}MB)...${NC}"
+# --- 1. 检查 git 历史中是否有大文件（>100MB）---
+echo -e "\n${YELLOW}[1/5] 检查 git 历史大文件 (>${GITEE_LIMIT_MB}MB)...${NC}"
 
 LARGE_FILES=$(git rev-list --objects --all | \
     git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
@@ -32,7 +32,7 @@ LARGE_FILES=$(git rev-list --objects --all | \
     sort -rn)
 
 if [ -n "$LARGE_FILES" ]; then
-    echo -e "${RED}✗ 仓库中存在超过 ${GITEE_LIMIT_MB}MB 的文件:${NC}"
+    echo -e "${RED}✗ 仓库历史中存在超过 ${GITEE_LIMIT_MB}MB 的文件:${NC}"
     echo "$LARGE_FILES" | while read size path; do
         size_mb=$(echo "scale=1; $size / 1024 / 1024" | bc 2>/dev/null || echo "$size")
         echo -e "  ${RED}• $path (${size_mb}MB)${NC}"
@@ -41,10 +41,29 @@ if [ -n "$LARGE_FILES" ]; then
     echo -e "  参考: git filter-branch --index-filter 'git rm --cached --ignore-unmatch <file>' -- --all"
     exit 1
 fi
-echo -e "${GREEN}✓ 未发现超限文件${NC}"
+echo -e "${GREEN}✓ git 历史无超限文件${NC}"
 
-# --- 2. 检查变更 ---
-echo -e "\n${YELLOW}[2/4] 检查本地变更...${NC}"
+# --- 2. 检查工作区中是否有大文件（git add -A 会把这些也提交）---
+echo -e "\n${YELLOW}[2/5] 检查工作区大文件 (>${GITEE_LIMIT_MB}MB)...${NC}"
+
+WS_LARGE_FILES=$(find . -type f -size +"${GITEE_LIMIT_MB}"M \
+    -not -path './.git/*' \
+    -not -path './.claude/*' \
+    -printf '%s %p\n' 2>/dev/null | sort -rn)
+
+if [ -n "$WS_LARGE_FILES" ]; then
+    echo -e "${RED}✗ 工作区存在超过 ${GITEE_LIMIT_MB}MB 的文件（git add -A 将提交它们）:${NC}"
+    echo "$WS_LARGE_FILES" | while read size path; do
+        size_mb=$(echo "scale=1; $size / 1024 / 1024" | bc 2>/dev/null || echo "$size")
+        echo -e "  ${RED}• $path (${size_mb}MB)${NC}"
+    done
+    echo -e "\n${RED}请先移除大文件或将它们加入 .gitignore！${NC}"
+    exit 1
+fi
+echo -e "${GREEN}✓ 工作区无超限文件${NC}"
+
+# --- 3. 检查变更 ---
+echo -e "\n${YELLOW}[3/5] 检查本地变更...${NC}"
 
 if [ -z "$(git status --porcelain)" ] && [ -z "$(git log gitee/main..HEAD --oneline 2>/dev/null)" ]; then
     echo -e "${GREEN}✓ 没有需要推送的内容${NC}"
@@ -65,7 +84,7 @@ fi
 
 # --- 3. 自动提交（如果有未提交的变更） ---
 if [ -n "$(git status --porcelain)" ]; then
-    echo -e "\n${YELLOW}[3/4] 提交变更...${NC}"
+    echo -e "\n${YELLOW}[4/5] 提交变更...${NC}"
     git add -A
 
     if [ -n "$1" ]; then
@@ -77,11 +96,11 @@ if [ -n "$(git status --porcelain)" ]; then
     git commit -m "$COMMIT_MSG"
     echo -e "${GREEN}✓ 已提交: $COMMIT_MSG${NC}"
 else
-    echo -e "\n${YELLOW}[3/4] 无需提交，跳过${NC}"
+    echo -e "\n${YELLOW}[4/5] 无需提交，跳过${NC}"
 fi
 
 # --- 4. 推送到 Gitee ---
-echo -e "\n${YELLOW}[4/4] 推送到 Gitee...${NC}"
+echo -e "\n${YELLOW}[5/5] 推送到 Gitee...${NC}"
 
 if git push "$GITEE_REMOTE" main 2>&1; then
     echo -e "\n${GREEN}============================================${NC}"
