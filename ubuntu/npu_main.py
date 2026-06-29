@@ -234,6 +234,7 @@ if os.environ.get("REHAB_WRISTBAND", "").lower() in ("1", "true", "yes"):
     _wristband_fall = [0.0, 0.0]  # [score, timestamp] — set when wristband detects fall
 
     _fall_pattern = _re.compile(r"FALL #\d+ \| Peak: ([\d.]+) m/s2 \| Conf: (\d+)%")
+    _http_fall_pattern = _re.compile(r"FALL \(HTTP\)! mag=([\d.]+)")
 
     # Clean up leftover processes from a previous run
     _wristband_port = int(os.environ.get("REHAB_WRISTBAND_PORT", "8081"))
@@ -257,6 +258,7 @@ if os.environ.get("REHAB_WRISTBAND", "").lower() in ("1", "true", "yes"):
             if not line:
                 continue
             m = _fall_pattern.search(line)
+            hm = _http_fall_pattern.search(line)
             if m:
                 peak = float(m.group(1))
                 conf = int(m.group(2)) / 100.0
@@ -267,6 +269,19 @@ if os.environ.get("REHAB_WRISTBAND", "").lower() in ("1", "true", "yes"):
                     import rehab_monitor.api_server as _api
                     _api.broadcast_fall_alert((0, 0), conf)
                     print(f"[手环] WebSocket 告警已推送 conf={conf:.2f}")
+                except Exception as _exc:
+                    print(f"[手环] WebSocket 推送失败: {_exc}")
+                print(f"[手环] {line}")
+            elif hm:
+                conf = float(hm.group(1)) / 10.0  # mag 10.0 → score 1.0
+                conf = min(conf, 1.0)
+                _popup_enqueue("wristband", conf, {"magnitude": float(hm.group(1))})
+                _wristband_fall[0] = conf
+                _wristband_fall[1] = time.time()
+                try:
+                    import rehab_monitor.api_server as _api
+                    _api.broadcast_fall_alert((0, 0), conf)
+                    print(f"[手环] WebSocket 告警已推送 (HTTP) conf={conf:.2f}")
                 except Exception as _exc:
                     print(f"[手环] WebSocket 推送失败: {_exc}")
                 print(f"[手环] {line}")
@@ -381,25 +396,6 @@ if _need_fall_patch:
         cam_status, cam_score = _orig_fall_update(
             self, person_kpts, bbox, frame_h, depth_m)
 
-        # If phone or wristband is active (but didn't trigger above),
-        # camera fall detection is disabled — return safe
-        try:
-            _phone_active = False
-            try:
-                from ubuntu.phone_data import phone_data_source
-                _phone_active = phone_data_source.is_active()
-            except Exception:
-                pass
-            _wristband_active = False
-            try:
-                _wristband_active = True  # wristband was enabled
-            except NameError:
-                pass
-            if _phone_active or _wristband_active:
-                return ("safe", 0.0)
-        except Exception:
-            pass
-
         # CSI fall detection — runs in PARALLEL with camera (not replaces)
         # CSI and YOLO detect falls using different physical principles
         # (RF multipath vs. visual pose), so they are complementary
@@ -417,7 +413,7 @@ if _need_fall_patch:
         return (cam_status, cam_score)
 
     _fd_module.FallDetector.update = _patched_fall_update
-    print("[ubuntu] FallDetector 已注入 (手机+手环: 替换, CSI: 并联, 摄像头: 回退)")
+    print("[ubuntu] FallDetector 已注入 (手机+手环: 优先, CSI: 并联, 摄像头: 始终运行)")
 
 import rehab_monitor.main
 rehab_monitor.main.main()

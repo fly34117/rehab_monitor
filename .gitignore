@@ -48,6 +48,14 @@ model/*.xml
 model/*.xml.bin
 model/*.mapping
 model/*_openvino_model/
+ubuntu/model/*.pt
+ubuntu/model/*.pth
+ubuntu/model/*.onnx
+ubuntu/model/*.bin
+ubuntu/model/*.xml
+ubuntu/model/*.xml.bin
+ubuntu/model/*.mapping
+ubuntu/model/*_openvino_model/
 
 # Keep small model files (uncomment if needed)
 # !model/emotion_model.pt       # ~1MB
@@ -58,6 +66,8 @@ model/*_openvino_model/
 # Database (contains user health data — NEVER commit)
 # ============================================================
 *.db
+*.db-shm
+*.db-wal
 *.sqlite
 *.sqlite3
 

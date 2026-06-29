@@ -95,7 +95,20 @@ class HTTPHandler(BaseHTTPRequestHandler):
                 data = json.loads(body)
                 data['received_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 fall_events.append(data)
-                print(f"[{data['received_at']}] FALL (HTTP)! mag={data.get('peak_magnitude',0):.1f}")
+                mag = data.get('peak_magnitude', 0)
+                print(f"[{data['received_at']}] FALL (HTTP)! mag={mag:.1f}")
+                # 直接推送 WebSocket（同进程模式） + 桌面弹窗
+                try:
+                    from rehab_monitor.api_server import broadcast_fall_alert
+                    conf = min(mag / 10.0, 1.0)
+                    broadcast_fall_alert((0, 0), conf)
+                except Exception:
+                    pass
+                try:
+                    from ubuntu.fall_popup import enqueue_fall
+                    enqueue_fall("wristband", conf, {"magnitude": mag})
+                except Exception:
+                    pass
             except Exception as e:
                 print(f"Parse error: {e}")
             response = b'{"ok":true}'

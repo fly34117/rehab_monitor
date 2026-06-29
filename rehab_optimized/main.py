@@ -50,9 +50,15 @@ from rehab_monitor.trajectory_monitor import TrajectoryMonitor
 from rehab_monitor.skeleton_viewer import SkeletonViewer
 from rehab_monitor.gait_metrics_viewer import GaitMetricsViewer
 from rehab_monitor.api_client import generate_report
+from rehab_monitor.api_server import broadcast_fall_alert
 from ubuntu.leg_corrector import LegCorrector
 
 logger = setup_logging("rehab")
+
+# 跌倒推送边沿触发 + 冷却 (与原始 rehab_monitor/main.py 保持一致)
+_prev_fall_status = "safe"
+_last_fall_push_time = 0.0
+FALL_PUSH_COOLDOWN = 5.0  # 秒
 
 
 def _keypoints_to_bbox(kpts):
@@ -81,6 +87,7 @@ def stage3_postprocess(
 
     全部在 CPU 上执行，不阻塞 Stage 1/2。
     """
+    global _prev_fall_status, _last_fall_push_time
     t0 = time.time()
 
     # ---- 3a. 腿关键点纠正 ----
@@ -152,6 +159,19 @@ def stage3_postprocess(
                               m["trunk_sway_deg"], m["double_support_ratio"])
         if fall_status == "alert":
             db.write_fall_alert(frame_num)
+            # ---- 跌倒告警广播 (边沿触发 + 5s 冷却) ----
+            if _prev_fall_status != "alert":
+                now_ts = time.time()
+                if now_ts - _last_fall_push_time > FALL_PUSH_COOLDOWN:
+                    try:
+                        loc = world_pos if world_pos else (0, 0)
+                        broadcast_fall_alert(loc, fall_score)
+                        logger.info("跌倒告警已广播 score=%.2f pos=(%.1f,%.1f)",
+                                    fall_score, loc[0], loc[1])
+                    except Exception:
+                        pass
+                    _last_fall_push_time = now_ts
+        _prev_fall_status = fall_status
         if state.get("emotion_label", "neutral") != "neutral":
             db.write_emotion(frame_num, state["emotion_label"],
                              state["emotion_scores"], None)
