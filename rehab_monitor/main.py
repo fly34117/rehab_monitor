@@ -3,6 +3,7 @@ import argparse
 import time
 import queue
 import threading
+from collections import deque
 import cv2
 import numpy as np
 
@@ -13,6 +14,7 @@ from .config import (
     SPATIAL_CAMERA_HEIGHT_M, SPATIAL_CAMERA_TILT_DEG,
     SPATIAL_CALIB_POINTS,
     EMOTION_CLASSES,
+    BREATHING_DURATION, BREATHING_MIN_BPM, BREATHING_MAX_BPM, BREATHING_SIGMA,
 )
 from .pose_detector import PoseDetector
 from .gait_analyzer import GaitAnalyzer
@@ -27,6 +29,10 @@ from .gait_metrics_viewer import GaitMetricsViewer
 from .api_client import generate_report
 from .emotion_recognizer import EmotionRecognizer, run_emotion_thread
 from .face_locker import FaceNetLocker
+from .breathing_detector import (
+    BreathingDetector, draw_breathing_waveform, draw_breathing_result,
+    draw_breathing_result_frame,
+)
 from .logging_setup import setup_logging, get_logger
 
 setup_logging()
@@ -99,6 +105,7 @@ def _draw_help_overlay(frame):
         "r - Reset Kalman tracking",
         "t - Enroll target face",
         "c - Clear gait data (DB)",
+        "b - Breathing detection (after t)",
     ]
     y0 = h // 2 - 125
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -139,6 +146,9 @@ def main():
         spatial.calibrate_from_points(img_pts, wld_pts)
     emotion_recognizer = EmotionRecognizer()
     face_locker = FaceNetLocker()
+    breathing_det = BreathingDetector(sigma=BREATHING_SIGMA,
+                                       min_bpm=BREATHING_MIN_BPM,
+                                       max_bpm=BREATHING_MAX_BPM)
 
     # ---- 表情后台线程 ----
     frame_ref = [None]        # 共享帧引用
@@ -225,7 +235,58 @@ def main():
         lock_confidence = LOCK_ENTER_THRESH  # 跳过迟滞，快速锁定
         logger.info("恢复锁定目标: %s（搜索中...）", _saved_target)
 
-    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置 c=清空数据 h=帮助 space=暂停")
+    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置 c=清空数据 b=呼吸 h=帮助 space=暂停")
+
+    # ── 呼吸检测状态 (非阻塞状态机: idle → active → result → idle) ──
+    breathing_state = 'idle'          # 'idle' | 'active' | 'result'
+    breathing_roi = None              # (x, y, w, h) 锁定 ROI
+    breathing_start_time = 0.0
+    breathing_result_start_time = 0.0
+    breathing_movements = []          # 运动信号序列
+    breathing_wave_buf = deque(maxlen=300)
+    breathing_frame_count = 0
+    breathing_prev_gray = None
+    breathing_bpm = 0.0
+    breathing_win = "Breathing Waveform"
+
+    def _start_breathing(target_kpts, ref_frame):
+        """初始化呼吸检测状态 (非阻塞, 在主循环中逐帧采集)"""
+        nonlocal breathing_state, breathing_roi, breathing_start_time
+        nonlocal breathing_movements, breathing_wave_buf, breathing_frame_count
+        nonlocal breathing_prev_gray, breathing_bpm
+
+        roi = BreathingDetector.get_chest_roi_from_keypoints(
+            target_kpts, ref_frame.shape)
+        if roi is None:
+            logger.error("无法从目标关键点计算胸腔 ROI, 请确保目标正对摄像头")
+            return False
+
+        breathing_roi = roi
+        breathing_start_time = time.time()
+        breathing_movements = []
+        breathing_wave_buf = deque(maxlen=300)
+        breathing_frame_count = 0
+        breathing_prev_gray = None
+        breathing_bpm = 0.0
+        breathing_state = 'active'
+
+        cv2.namedWindow(breathing_win, cv2.WINDOW_NORMAL)
+        cv2.resizeWindow(breathing_win, 640, 400)
+        logger.info("呼吸检测开始: ROI=%s, 时长=%ds (非阻塞模式)", roi, BREATHING_DURATION)
+        return True
+
+    def _cleanup_breathing():
+        """清理呼吸检测状态, 关闭波形窗口"""
+        nonlocal breathing_state, breathing_roi, breathing_prev_gray
+        breathing_state = 'idle'
+        breathing_roi = None
+        breathing_prev_gray = None
+        try:
+            cv2.destroyWindow(breathing_win)
+        except Exception:
+            pass
+
+    logger.info("快捷键: q=退出 s=截图 f=切换FPS r=重置(清除锁定+人脸库) h=帮助 space=暂停 t=录入人脸 b=呼吸检测(需先t锁定) c=清空数据")
 
     # 延迟打开摄像头 — 等 OpenVINO 模型编译完成后再开，避免 MSMF 流超时
     cap = _open_camera(api_args.camera)
@@ -508,6 +569,40 @@ def main():
                     cv2.putText(annotated, f"sim:{target_similarity:.2f}",
                                 (x1, y2+22), cv2.FONT_HERSHEY_SIMPLEX, 0.5, source_color, 1)
 
+            # 1.6 呼吸检测数据采集 (非阻塞, 逐帧累加运动信号)
+            if breathing_state == 'active' and breathing_roi is not None:
+                bx, by, brw, brh = breathing_roi
+                if (bx >= 0 and by >= 0
+                        and bx + brw <= frame.shape[1]
+                        and by + brh <= frame.shape[0]):
+                    roi_frame = frame[by:by + brh, bx:bx + brw]
+                    if roi_frame.size > 0:
+                        gray = cv2.cvtColor(roi_frame, cv2.COLOR_BGR2GRAY)
+                        if breathing_prev_gray is not None:
+                            motion = float(cv2.absdiff(breathing_prev_gray, gray).mean())
+                            breathing_movements.append(motion)
+                            breathing_wave_buf.append(motion)
+                            breathing_frame_count += 1
+                        breathing_prev_gray = gray
+
+                # 检查是否到达检测时长
+                elapsed = time.time() - breathing_start_time
+                if elapsed >= BREATHING_DURATION:
+                    # 计算 BPM, 切换到结果展示状态
+                    actual_fps = (breathing_frame_count / elapsed
+                                  if elapsed > 0 else 25.0)
+                    if len(breathing_movements) >= actual_fps:
+                        breathing_bpm = breathing_det.calculate_bpm(
+                            breathing_movements, actual_fps, method='fft')
+                        logger.info("呼吸检测完成: BPM=%.1f, 帧数=%d, FPS=%.1f",
+                                   breathing_bpm, breathing_frame_count, actual_fps)
+                    else:
+                        breathing_bpm = 0.0
+                        logger.warning("呼吸检测数据不足 (%d 帧)",
+                                      len(breathing_movements))
+                    breathing_state = 'result'
+                    breathing_result_start_time = time.time()
+
             # 2. 步态分析 (先空间定位 → 再步态, 因为真实步长需要世界坐标)
             angles = {}
             step_count = 0
@@ -707,6 +802,28 @@ def main():
             output = overlay.render(annotated, state)
             if show_help:
                 _draw_help_overlay(output)
+
+            # 在主画面右上角叠加呼吸检测状态 + 锁定 ROI 框
+            if breathing_state == 'active':
+                elapsed = time.time() - breathing_start_time
+                cv2.putText(output, "BREATHING", (output.shape[1] - 200, 30),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 200), 2)
+                cv2.putText(output,
+                            f"{elapsed:.0f}s/{BREATHING_DURATION}s",
+                            (output.shape[1] - 200, 55),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 200), 1)
+                if breathing_roi is not None:
+                    bx, by, brw, brh = breathing_roi
+                    cv2.rectangle(output, (bx, by), (bx + brw, by + brh),
+                                  (255, 180, 0), 2)
+                    cv2.putText(output, "ROI LOCKED", (bx, by - 6),
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.4, (255, 180, 0), 1)
+            elif breathing_state == 'result':
+                cv2.putText(output,
+                            f"BREATHING BPM: {breathing_bpm:.1f}",
+                            (output.shape[1] - 280, 30),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 200), 2)
+
             cv2.imshow("Rehab Monitor - YOLOv26 Pose + Gait + Fall + Emotion", output)
 
             # 7.5 独立诊断窗 (每3帧刷新)
@@ -729,6 +846,24 @@ def main():
                                            spatial.is_lying_down)
                 gait_metrics_viewer.update(gait.get_metrics())
                 gait_metrics_viewer.render()
+
+            # 7.6 呼吸检测波形窗口 (非阻塞, 独立窗口与其他诊断窗并行)
+            if breathing_state == 'active':
+                wave_canvas = draw_breathing_waveform(
+                    breathing_wave_buf, breathing_frame_count,
+                    BREATHING_DURATION,
+                    cap.get(cv2.CAP_PROP_FPS) or 25.0,
+                    BREATHING_MIN_BPM, BREATHING_MAX_BPM)
+                cv2.imshow(breathing_win, wave_canvas)
+            elif breathing_state == 'result':
+                remaining = 5.0 - (time.time() - breathing_result_start_time)
+                if remaining > 0:
+                    result_canvas = draw_breathing_result_frame(
+                        breathing_bpm, remaining)
+                    cv2.imshow(breathing_win, result_canvas)
+                else:
+                    _cleanup_breathing()
+                    logger.info("呼吸检测结果窗口已销毁 (BPM=%.1f)", breathing_bpm)
 
             # 8. 键盘控制
             key = cv2.waitKey(1) & 0xFF
@@ -814,6 +949,22 @@ def main():
                 # 清空步态数据（保留会话记录）
                 db.clear_gait_data()
                 logger.info("步态数据已清空 (会话 #%d 继续运行)", session_id)
+            elif key == ord('b'):
+                # 呼吸检测: 需先用 t 锁定目标人脸, 非阻塞运行
+                if breathing_state != 'idle':
+                    # 正在检测中, 按 b 中断
+                    logger.info("呼吸检测被用户中断 (已采集 %d 帧)",
+                               breathing_frame_count)
+                    _cleanup_breathing()
+                elif not target_enrolled or target_person_id < 0:
+                    logger.warning(
+                        "请先按 't' 锁定目标人脸, 再按 'b' 开始呼吸检测")
+                elif kpts is None or kpts.shape[0] == 0:
+                    logger.warning("未检测到目标关键点, 无法开始呼吸检测")
+                elif person_kpts is None:
+                    logger.warning("目标关键点无效, 无法定位胸腔 ROI")
+                else:
+                    _start_breathing(person_kpts, frame)
 
     except KeyboardInterrupt:
         logger.info("KeyboardInterrupt 中断退出")

@@ -102,3 +102,9 @@ IMAGE_MAX_WIDTH = 1024             # 图片最大宽度
 
 # ===== 患者锁定 =====
 LOCK_SIMILARITY_THRESHOLD = 0.55   # 人脸匹配阈值
+
+# ===== 呼吸检测 (按 b 键触发, 需先 t 锁定人脸) =====
+BREATHING_DURATION = 30            # 检测时长 (秒)
+BREATHING_MIN_BPM = 5.0            # 有效呼吸频率下限
+BREATHING_MAX_BPM = 100.0          # 有效呼吸频率上限
+BREATHING_SIGMA = 1.5              # 高斯平滑 sigma
