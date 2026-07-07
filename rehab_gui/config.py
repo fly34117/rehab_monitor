@@ -74,6 +74,7 @@ LLAMA_LIB_DIR = os.path.join(PROJECT_ROOT, "llm_local", "llama.cpp", "build", "b
 LLM_CPUSET = os.environ.get("REHAB_LLM_CPUSET", "4-13")
 LLM_THREADS = int(os.environ.get("REHAB_LLM_THREADS", "4"))
 LLM_NICE = int(os.environ.get("REHAB_LLM_NICE", "5"))
+LLM_PORT = int(os.environ.get("REHAB_LLM_PORT", "8089"))
 
 # ===== 环境 =====
 CONDA_PREFIX = "/home/ubuntu224/miniconda3/envs/yolov26"

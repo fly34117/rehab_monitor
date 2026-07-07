@@ -23,7 +23,7 @@ MODEL_PATH = os.path.join(LLAMA_DIR, "models", "qwen2.5-3b-instruct-q4_k_m.gguf"
 LLAMA_LIB_DIR = os.path.join(LLAMA_DIR, "llama.cpp", "build", "bin")
 
 # ===== 服务器配置 =====
-SERVER_PORT = 8088
+SERVER_PORT = int(os.environ.get("REHAB_LLM_PORT", "8089"))
 SERVER_HOST = "127.0.0.1"
 API_BASE = f"http://{SERVER_HOST}:{SERVER_PORT}/v1"
 SERVER_STARTUP_TIMEOUT = 30  # 等待服务器就绪的超时

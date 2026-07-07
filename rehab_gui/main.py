@@ -366,6 +366,7 @@ def main():
         env = os.environ.copy()
         env["LD_LIBRARY_PATH"] = f"{LLAMA_LIB_DIR}:{env.get('LD_LIBRARY_PATH', '')}"
         os.environ["LLM_MODEL_ALIAS"] = model_key  # 同步给 llm_client.py
+        os.environ["REHAB_LLM_PORT"] = str(LLM_PORT)
         cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
                "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
                "--reasoning", "on", "--reasoning-budget", "256"]
