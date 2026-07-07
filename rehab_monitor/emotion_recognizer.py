@@ -83,25 +83,53 @@ class FaceROIExtractor:
 
 
 class EmotionClassifier:
-    """情绪分类器，优先加载 OpenVINO 模型，回退到 PyTorch"""
+    """情绪分类器，优先加载 OpenVINO 模型（NPU/CPU），回退到 PyTorch"""
 
-    def __init__(self, model_path=None):
+    def __init__(self, model_path=None, device="cpu"):
         self.model_path = model_path or EMOTION_MODEL_PATH
         self.classes = EMOTION_CLASSES
         self.model = None
-        self.backend = None  # "openvino" or "torch"
+        self.backend = None      # "openvino" or "torch"
+        self._ov_device = None   # "NPU" / "CPU"
+        self._ov_infer = None    # OpenVINO infer request
 
-        self._load_model()
+        self._load_model(device)
 
-    def _load_model(self):
-        # 尝试 OpenVINO
+    def _load_model(self, device):
+        # 尝试 OpenVINO IR (XML+BIN 目录)
         if os.path.isdir(self.model_path):
             try:
-                from ultralytics import YOLO
-                self.model = YOLO(self.model_path)
-                self.backend = "openvino"
-                logger.info("OpenVINO 模型已加载: %s", self.model_path)
-                return
+                import openvino as ov
+                xml_path = os.path.join(self.model_path, "emotion_model.xml")
+                if not os.path.exists(xml_path):
+                    # 尝试找目录内第一个 xml
+                    xmls = [f for f in os.listdir(self.model_path) if f.endswith('.xml')]
+                    if xmls:
+                        xml_path = os.path.join(self.model_path, xmls[0])
+
+                if os.path.exists(xml_path):
+                    core = ov.Core()
+                    ov_model = core.read_model(xml_path)
+
+                    # 设备选择：优先 NPU，回退 CPU
+                    ov_device = "NPU" if device.lower() == "npu" and "NPU" in core.available_devices else "CPU"
+                    try:
+                        compiled = core.compile_model(ov_model, ov_device)
+                        self._ov_infer = compiled.create_infer_request()
+                        self._ov_device = ov_device
+                        self.backend = "openvino"
+                        logger.info("OpenVINO 模型已加载 (%s): %s", ov_device, self.model_path)
+                        return
+                    except Exception as e:
+                        if ov_device == "NPU":
+                            logger.warning("NPU 编译失败，回退 CPU: %s", str(e)[:100])
+                            compiled = core.compile_model(ov_model, "CPU")
+                            self._ov_infer = compiled.create_infer_request()
+                            self._ov_device = "CPU"
+                            self.backend = "openvino"
+                            logger.info("OpenVINO 模型已加载 (CPU): %s", self.model_path)
+                            return
+                        raise
             except Exception as e:
                 logger.warning("OpenVINO 加载失败: %s", e)
 
@@ -145,18 +173,15 @@ class EmotionClassifier:
         return "neutral", {c: 0.0 for c in self.classes}
 
     def _predict_openvino(self, face_roi):
-        # 将灰度图转 3 通道 BGR
-        img = cv2.cvtColor(face_roi, cv2.COLOR_GRAY2BGR)
-        results = self.model(img, verbose=False)
-        if results[0].probs is not None:
-            idx = results[0].probs.top1
-            conf = float(results[0].probs.top1conf)
-            # ImageNet 1000 → 映射到情绪类（占位；需微调后才准确）
-            label = self.classes[idx % len(self.classes)]
-            scores = {c: 0.0 for c in self.classes}
-            scores[label] = conf
-            return label, scores
-        return "neutral", {c: 0.0 for c in self.classes}
+        # face_roi: (64, 64) uint8 grayscale → float32 [0,1], shape (1, 1, 64, 64)
+        x = face_roi.astype(np.float32) / 255.0
+        x = np.expand_dims(x, axis=(0, 1))  # (1, 1, 64, 64)
+        out = self._ov_infer.infer([x])[0]
+        probs = out.squeeze()
+        idx = int(probs.argmax())
+        label = self.classes[idx]
+        scores = {self.classes[i]: float(probs[i]) for i in range(len(self.classes))}
+        return label, scores
 
     def _predict_torch(self, face_roi):
         import torch
@@ -380,9 +405,9 @@ class TargetFaceEnroller:
 class EmotionRecognizer:
     """表情识别器：人脸提取 + 分类 + 多帧投票 + 目标匹配"""
 
-    def __init__(self, model_path=None):
+    def __init__(self, model_path=None, device="cpu"):
         self.extractor = FaceROIExtractor()
-        self.classifier = EmotionClassifier(model_path)
+        self.classifier = EmotionClassifier(model_path, device=device)
         self.voter = EmotionVoter(window_size=15)
         self.target = TargetFaceEnroller(self.classifier)
         self._current_kpts = None

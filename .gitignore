@@ -117,3 +117,15 @@ WeXin_Server/project.private.config.json
 .claude/
 CLAUDE.md
 PLAN.md
+
+# ============================================================
+# LLM Local — 大文件排除（模型需单独下载，二进制需本地编译）
+# ============================================================
+llm_local/models/*.gguf
+llm_local/llama.cpp/build/bin/*.so
+llm_local/llama.cpp/build/bin/*.so.*
+# 保留 llama-server/llama-bench 二进制（~18KB each）
+!llm_local/llama.cpp/build/
+!llm_local/llama.cpp/build/bin/
+!llm_local/llama.cpp/build/bin/llama-server
+!llm_local/llama.cpp/build/bin/llama-bench

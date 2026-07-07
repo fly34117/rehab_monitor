@@ -23,7 +23,9 @@ class PoseDetector:
         model_path = model_path or POSE_MODEL_PATH
         logger.info("加载模型: %s", model_path)
         self.model = YOLO(model_path)
-        self.device = "intel:cpu" if device == "cpu" else device
+        dev_lower = device.lower().replace("intel:", "")
+        _DEVICE_MAP = {"cpu": "intel:cpu", "gpu": "intel:gpu", "npu": "intel:NPU"}
+        self.device = _DEVICE_MAP.get(dev_lower, device)
         logger.info("推理设备: %s", self.device)
 
         self.use_kalman = use_kalman

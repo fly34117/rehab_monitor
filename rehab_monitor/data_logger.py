@@ -603,11 +603,17 @@ class RehabDatabase:
         """等待异步队列清空"""
         if not self.async_mode:
             return
-        deadline = time.time() + timeout
-        while time.time() < deadline:
-            if self._write_queue.empty():
-                break
-            time.sleep(0.05)
+        done = threading.Event()
+
+        def barrier(conn):
+            conn.commit()
+            done.set()
+
+        try:
+            self._write_queue.put(barrier, timeout=timeout)
+        except queue.Full:
+            return
+        done.wait(timeout)
 
     def close(self):
         if self.async_mode:

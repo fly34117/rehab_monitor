@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Rehab Monitor
+GenericName=康复监控系统
+Comment=三模态智能康复监控系统 - YOLOv26-Pose + OpenVINO
+Icon=video-display
+Exec=/home/ubuntu224/miniconda3/envs/yolov26/bin/python -m rehab_gui.main
+Path=/home/ubuntu224/桌面/yolov26
+Terminal=false
+Categories=Utility;Science;
+StartupWMClass=rehab_gui
+Keywords=rehabilitation;monitor;yolo;pose;gait;fall;

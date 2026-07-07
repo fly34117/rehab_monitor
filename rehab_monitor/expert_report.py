@@ -363,13 +363,20 @@ class ExpertReportGenerator:
             resp.raise_for_status()
             body = resp.json()
             msg = body["choices"][0]["message"]
-            content = msg.get("content") or msg.get("reasoning_content") or ""
+            from .llm_client import (
+                extract_final_answer,
+                format_reasoning_response,
+            )
+            content = format_reasoning_response(
+                msg.get("reasoning_content") or "",
+                msg.get("content") or "",
+            )
 
             if not content:
                 return None, cited_papers, None, "API 返回空内容 (可能是推理模型未完成)"
 
             # 解析 JSON
-            report_json = self._parse_response(content)
+            report_json = self._parse_response(extract_final_answer(content))
             return report_json, cited_papers, content, None
 
         except requests.exceptions.Timeout:

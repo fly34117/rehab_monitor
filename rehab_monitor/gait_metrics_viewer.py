@@ -34,6 +34,11 @@ class GaitMetricsViewer:
             else:
                 self.history[key].append(float(val) if val is not None else np.nan)
 
+    def reset(self):
+        """Clear all gait metric history."""
+        for values in self.history.values():
+            values.clear()
+
     def render(self):
         w, h = self.width, self.height
         canvas = np.full((h, w, 3), (22, 22, 28), dtype=np.uint8)

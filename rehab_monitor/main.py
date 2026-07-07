@@ -631,33 +631,34 @@ def main():
                 cadence = gait.cadence
                 bbox = _keypoints_to_bbox(person_kpts)
 
-            # 3. 跌倒检测（仅锁定后运行）
-            if target_enrolled and target_person_id >= 0:
-                frame_h = frame.shape[0]
-                depth_m = spatial._torso_depth if spatial._torso_depth > 0 else 3.0
-                fall_status, fall_score = fall.update(
-                    person_kpts if kpts is not None and kpts.shape[0] > 0 else None,
-                    bbox, frame_h, depth_m)
-            else:
-                fall_status = "safe"
-                fall_score = 0.0
-
-            # 躺下回溯分类: 先确认躯干水平, 再回看速度区分跌倒/休息（仅锁定后）
-            if target_enrolled and target_person_id >= 0:
-                if spatial.is_lying_down:
-                    fall._lying_confirmed = True
-                    lying_type = fall.classify_lying_down()
-                    if lying_type == "fall" and fall_status != "alert":
-                        fall_status = "alert"
-                        fall_score = 0.8
-                    # 通知空间定位
-                    spatial.set_lying_down(True)
-                else:
-                    if fall._lying_confirmed:
-                        fall.reset_lying_state()
-                        if fall_status == "alert":
-                            fall_status = "safe"
-                            fall_score = 0.0
+            # [DISABLED] 视觉跌倒检测 — 已由 npu_main.py 补丁处理手机/手环/CSI
+            # if target_enrolled and target_person_id >= 0:
+            #     frame_h = frame.shape[0]
+            #     depth_m = spatial._torso_depth if spatial._torso_depth > 0 else 3.0
+            #     fall_status, fall_score = fall.update(
+            #         person_kpts if kpts is not None and kpts.shape[0] > 0 else None,
+            #         bbox, frame_h, depth_m)
+            # else:
+            #     fall_status = "safe"
+            #     fall_score = 0.0
+            #
+            # # 躺下回溯分类
+            # if target_enrolled and target_person_id >= 0:
+            #     if spatial.is_lying_down:
+            #         fall._lying_confirmed = True
+            #         lying_type = fall.classify_lying_down()
+            #         if lying_type == "fall" and fall_status != "alert":
+            #             fall_status = "alert"
+            #             fall_score = 0.8
+            #         spatial.set_lying_down(True)
+            #     else:
+            #         if fall._lying_confirmed:
+            #             fall.reset_lying_state()
+            #             if fall_status == "alert":
+            #                 fall_status = "safe"
+            #                 fall_score = 0.0
+            fall_status = "safe"
+            fall_score = 0.0
 
             # 跌倒告警广播 (5s 冷却去重)
             if target_enrolled and fall_status == "alert" and previous_fall_status != "alert":

@@ -11,9 +11,9 @@ import rehab_monitor.config as cfg
 
 # ---- 模型-精度映射 ----
 MODEL_PRECISION = {
-    "yolo11n": {"cpu": "int8", "gpu": "fp32", "npu": "fp32"},
-    "yolo11s": {"cpu": "int8", "gpu": "fp32", "npu": "fp32"},
-    "yolo26n": {"cpu": "int8", "gpu": "fp32", "npu": "fp16"},
+    "yolo11n": {"cpu": "int8", "gpu": "fp16", "npu": "fp16"},
+    "yolo11s": {"cpu": "int8", "gpu": "fp16", "npu": "fp16"},
+    "yolo26n": {"cpu": "int8", "gpu": "fp32", "npu": "fp32"},
     "yolo26s": {"cpu": "int8", "gpu": "fp32", "npu": "fp32"},
     "yolo26m": {"cpu": "fp32", "gpu": "fp32", "npu": "fp32"},
 }
@@ -32,11 +32,7 @@ else:
     model_dir = f"{model_name}-pose_openvino_model"
 
 cfg.POSE_MODEL_PATH = os.path.join(cfg.MODEL_DIR, model_dir)
-cfg.POSE_DEVICE = {
-    "cpu": "cpu",
-    "gpu": "intel:gpu",
-    "npu": "intel:npu",
-}[device]
+cfg.POSE_DEVICE = device  # "cpu" / "gpu" / "npu" — pose_detector 会自动加 intel: 前缀
 
 if not os.path.exists(cfg.POSE_MODEL_PATH):
     print(f"[ubuntu] 模型不存在: {cfg.POSE_MODEL_PATH}")

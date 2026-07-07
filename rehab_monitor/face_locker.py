@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import torch
 from facenet_pytorch import InceptionResnetV1, MTCNN
+from PIL import Image
 from .logging_setup import get_logger
 
 logger = get_logger("face")
@@ -13,13 +14,19 @@ logger = get_logger("face")
 class FaceNetLocker:
     """FaceNet 人脸特征提取 + 特征库匹配"""
 
-    def __init__(self, db_path="model/face_db.json"):
+    def __init__(self, db_path="model/face_db.json", device=None):
         self.db_path = db_path
+        self.requested_device = (device or "cpu").lower()
         self.device = None
         self.resnet = None
         self.mtcnn = None
+        self.ov_core = None
+        self.ov_infer = None
+        self.ov_input_name = None
+        self.ov_device = None
         self.db = {"entries": []}
         self._loaded = False
+        self._ov_ready = False
         self.reference_face = None       # 参考人脸缩略图
         self.reference_body_feat = None  # 参考人体外观特征
         self.face_threshold = 0.55
@@ -28,17 +35,89 @@ class FaceNetLocker:
     def _ensure_loaded(self):
         if self._loaded:
             return
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        logger.info("设备: %s, 加载 FaceNet...", self.device)
+        self.device = torch.device("cpu")
+        logger.info("设备: %s, 加载 FaceNet...", self.requested_device)
         self.mtcnn = MTCNN(keep_all=False, device=self.device)
-        self.resnet = InceptionResnetV1(pretrained="vggface2").eval().to(self.device)
+        self._try_load_openvino()
+        if not self._ov_ready:
+            self.resnet = InceptionResnetV1(pretrained="vggface2").eval().to(self.device)
+            logger.info("FaceNet embedding 使用 PyTorch CPU")
         self._load_db()
         self._loaded = True
 
+    def _try_load_openvino(self):
+        """优先使用 OpenVINO FaceNet IR；MTCNN 仍保留 CPU。"""
+        if self.requested_device not in ("npu", "gpu", "cpu"):
+            return
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        xml_path = os.path.join(
+            project_root,
+            "model",
+            "facenet_ir",
+            "facenet_inceptionresnetv1.xml",
+        )
+        if not os.path.exists(xml_path):
+            return
+        try:
+            import openvino as ov
+            self.ov_core = ov.Core()
+            device_map = {"npu": "NPU", "gpu": "GPU", "cpu": "CPU"}
+            ov_device = device_map[self.requested_device]
+            if ov_device not in self.ov_core.available_devices:
+                logger.warning("OpenVINO %s 不可用，FaceNet 回退 PyTorch CPU", ov_device)
+                return
+            ov_model = self.ov_core.read_model(xml_path)
+            ov_model.reshape({ov_model.input(0): ov.PartialShape([1, 3, 160, 160])})
+            compiled = self.ov_core.compile_model(ov_model, ov_device)
+            self.ov_infer = compiled.create_infer_request()
+            self.ov_input_name = compiled.input(0).get_any_name()
+            self.ov_device = ov_device
+            self._ov_ready = True
+            logger.info("FaceNet embedding 使用 OpenVINO %s: %s", ov_device, xml_path)
+        except Exception as e:
+            logger.warning("OpenVINO FaceNet 加载失败，回退 PyTorch CPU: %s", str(e)[:160])
+            self.ov_core = None
+            self.ov_infer = None
+            self.ov_input_name = None
+            self.ov_device = None
+            self._ov_ready = False
+
+    def _embedding_from_face_tensor(self, face_tensor):
+        """从 MTCNN 对齐后的 face_tensor 提取 512 维嵌入。"""
+        if face_tensor is None:
+            return None
+        if self._ov_ready:
+            x = face_tensor.detach().cpu().numpy().astype(np.float32)
+            if x.ndim == 3:
+                x = np.expand_dims(x, axis=0)
+            out = self.ov_infer.infer({self.ov_input_name: x})
+            return next(iter(out.values())).squeeze().astype(np.float32)
+
+        with torch.no_grad():
+            emb = self.resnet(face_tensor.unsqueeze(0).to(self.device))
+            return emb.cpu().squeeze().numpy()
+
+    def _mtcnn_face_tensor(self, rgb):
+        """兼容 numpy/PIL 输入，返回 MTCNN 对齐后 tensor。"""
+        try:
+            return self.mtcnn(Image.fromarray(rgb))
+        except Exception:
+            return self.mtcnn(rgb)
+
     def _load_db(self):
-        if os.path.exists(self.db_path):
-            with open(self.db_path, "r") as f:
-                self.db = json.load(f)
+        if not os.path.exists(self.db_path):
+            self.db = {"entries": []}
+            logger.info("特征库: 0 人")
+            return
+        try:
+            with open(self.db_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+            self.db = loaded if isinstance(loaded, dict) else {"entries": []}
+            if not isinstance(self.db.get("entries"), list):
+                self.db["entries"] = []
+        except (OSError, json.JSONDecodeError) as e:
+            logger.warning("特征库读取失败，已重置为空库: %s", e)
+            self.db = {"entries": []}
         logger.info("特征库: %d 人", len(self.db.get("entries", [])))
 
     def extract_embedding_from_frame(self, frame_bgr):
@@ -46,15 +125,14 @@ class FaceNetLocker:
         self._ensure_loaded()
         rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
         try:
-            face_tensor = self.mtcnn(rgb)
+            face_tensor = self._mtcnn_face_tensor(rgb)
             if face_tensor is None:
                 return None, None
         except Exception as e:
             logger.debug("MTCNN 全帧检测失败: %s", e)
             return None, None
-        with torch.no_grad():
-            emb = self.resnet(face_tensor.unsqueeze(0).to(self.device))
-            return emb.cpu().squeeze().numpy(), face_tensor
+        emb = self._embedding_from_face_tensor(face_tensor)
+        return emb, face_tensor
 
     def extract_embedding_from_roi(self, frame_bgr, x1, y1, x2, y2):
         """从帧中裁剪区域提取 FaceNet 嵌入（COCO粗定位+MTCNN精对齐）
@@ -82,14 +160,17 @@ class FaceNetLocker:
             crop = frame_bgr
 
         rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
-        # 对小脸区域放大后再检测（帮助 MTCNN）
-        min_size = 160
+        # 限制 MTCNN 输入在 160~250px：小脸放大，大脸缩小，减少金字塔层数 (68ms→8-16ms)
+        min_size, max_size = 160, 250
         if rgb.shape[0] < min_size or rgb.shape[1] < min_size:
             scale = min_size / min(rgb.shape[0], rgb.shape[1])
             rgb = cv2.resize(rgb, (int(rgb.shape[1] * scale), int(rgb.shape[0] * scale)))
+        elif rgb.shape[0] > max_size or rgb.shape[1] > max_size:
+            scale = max_size / max(rgb.shape[0], rgb.shape[1])
+            rgb = cv2.resize(rgb, (int(rgb.shape[1] * scale), int(rgb.shape[0] * scale)))
 
         try:
-            face_tensor = self.mtcnn(rgb)
+            face_tensor = self._mtcnn_face_tensor(rgb)
         except Exception as e:
             logger.debug("MTCNN ROI 检测失败: %s", e)
             return None
@@ -97,9 +178,7 @@ class FaceNetLocker:
         if face_tensor is None:
             return None
 
-        with torch.no_grad():
-            emb = self.resnet(face_tensor.unsqueeze(0).to(self.device))
-            return emb.cpu().squeeze().numpy()
+        return self._embedding_from_face_tensor(face_tensor)
 
     def extract_body_features(self, frame_bgr, kpts):
         """从关键点提取人体外观特征 — 上下半身分区的 HSV 颜色直方图
@@ -185,15 +264,13 @@ class FaceNetLocker:
         self._ensure_loaded()
         rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
         try:
-            face_tensor = self.mtcnn(rgb)
+            face_tensor = self._mtcnn_face_tensor(rgb)
             if face_tensor is None:
                 return None
         except Exception as e:
             logger.debug("MTCNN 录入检测失败: %s", e)
             return None
-        with torch.no_grad():
-            emb = self.resnet(face_tensor.unsqueeze(0).to(self.device))
-            return emb.cpu().squeeze().numpy()
+        return self._embedding_from_face_tensor(face_tensor)
 
     def enroll_body(self, frame_bgr, kpts):
         """录入人体外观特征（侧身/背身时的后备匹配线索）"""
@@ -231,16 +308,16 @@ class FaceNetLocker:
         self._ensure_loaded()
         rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
         try:
-            face = self.mtcnn(rgb)
+            face = self._mtcnn_face_tensor(rgb)
             if face is None:
                 return None, 0.0, None
         except Exception as e:
             logger.debug("MTCNN process_frame 失败: %s", e)
             return None, 0.0, None
 
-        with torch.no_grad():
-            emb = self.resnet(face.unsqueeze(0).to(self.device))
-            emb_np = emb.cpu().squeeze().numpy()
+        emb_np = self._embedding_from_face_tensor(face)
+        if emb_np is None:
+            return None, 0.0, None
 
         # 缩略图
         thumbnail = cv2.resize(frame_bgr, (80, 80))
