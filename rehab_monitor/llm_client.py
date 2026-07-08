@@ -16,10 +16,10 @@ from .logging_setup import get_logger
 
 logger = get_logger("llm_client")
 
-# ===== 路径 =====
-LLAMA_DIR = os.path.expanduser("/home/ubuntu224/桌面/llm_local")
+# ===== 路径（由 main.py 启动 llama-server 时动态设置，此处仅 fallback）=====
+_llm_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "llm_local")
+LLAMA_DIR = _llm_dir
 LLAMA_SERVER = os.path.join(LLAMA_DIR, "llama.cpp", "build", "bin", "llama-server")
-MODEL_PATH = os.path.join(LLAMA_DIR, "models", "qwen2.5-3b-instruct-q4_k_m.gguf")
 LLAMA_LIB_DIR = os.path.join(LLAMA_DIR, "llama.cpp", "build", "bin")
 
 # ===== 服务器配置 =====

@@ -1,5 +1,6 @@
 """GUI 配置常量 — 模型/设备/功能选项"""
 import os
+import sys
 
 # ===== 模型选项 =====
 MODEL_OPTIONS = [
@@ -77,9 +78,9 @@ LLM_NICE = int(os.environ.get("REHAB_LLM_NICE", "5"))
 LLM_PORT = int(os.environ.get("REHAB_LLM_PORT", "8089"))
 
 # ===== 环境 =====
-CONDA_PREFIX = "/home/ubuntu224/miniconda3/envs/yolov26"
+CONDA_PREFIX = os.environ.get("CONDA_PREFIX", sys.prefix)
 PYTHON_BIN = os.path.join(CONDA_PREFIX, "bin", "python")
-LD_LIBRARY_PATH = os.path.join(CONDA_PREFIX, "lib", "python3.11", "site-packages", "openvino", "libs")
+LD_LIBRARY_PATH = os.path.join(CONDA_PREFIX, "lib", f"python{sys.version_info.major}.{sys.version_info.minor}", "site-packages", "openvino", "libs")
 
 # ===== CPU 线程 (Arrow Lake-U 优化) =====
 ENV_VARS = {
