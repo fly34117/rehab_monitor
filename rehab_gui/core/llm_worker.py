@@ -63,7 +63,7 @@ class LLMWorker(QThread):
 
             response, error = _run_llm_stream(
                 SYSTEM_PROMPT, user_prompt, on_chunk,
-                max_tokens=max_tokens
+                max_tokens=max_tokens,
             )
 
             if error and not response:
@@ -92,22 +92,65 @@ class LLMChatWorker(QThread):
     # 状态更新
     progress_update = pyqtSignal(str)
 
-    # 默认系统提示
-    DEFAULT_SYSTEM = (
-        "你是康复助手小安，专注于康复训练、步态分析、跌倒预防等健康话题。"
-        "回答简洁专业、通俗易懂，用中文回复。"
-    )
+    # ── 模型差异化配置 ──
+    # 小模型需要详细约束防跑偏，大模型精简提示词节省 token
+    MODEL_CONFIGS = {
+        "qwen2.5-3b": {
+            "temperature": 0.2,
+            "system": (
+                "你是康复助手小安。你必须严格遵守以下规则：\n"
+                "1. 你只能输出助手回复内容，绝对不能生成用户对话、角色标记（user/assistant/system）、或 XML 标签\n"
+                '2. 只回答康复、步态分析、跌倒预防相关问题，其他问题回复「请咨询康复相关问题」\n'
+                "3. 回答简洁专业，用中文，不超过200字\n"
+                '4. 不确定就说「我暂时无法回答这个问题」，不要编造'
+            ),
+        },
+        "qwen3-4b": {
+            "temperature": 0.3,
+            "system": (
+                "你是康复助手小安，专注康复训练、步态分析、跌倒预防。\n"
+                "用中文简洁专业回答。非康复问题礼貌拒绝。不要生成用户对话。"
+            ),
+            "max_tokens": 500,
+            # 注: Qwen3 是思考模型，当前 llama.cpp 版本偶发超时，建议优先用 7B
+        },
+        "qwen2.5-7b": {
+            "temperature": 0.4,
+            "system": (
+                "你是康复助手小安。用中文简洁专业地回答康复相关问题。"
+                "非康复问题请礼貌拒绝。"
+            ),
+            "max_tokens": 800,
+        },
+    }
+    # fallback 配置（未知模型）
+    _DEFAULT_CONFIG = {
+        "temperature": 0.3,
+        "system": (
+            "你是康复助手小安。用中文简洁专业地回答康复相关问题。"
+        ),
+    }
 
-    def __init__(self, messages=None, system_prompt=None):
+    @classmethod
+    def get_model_config(cls, model_key):
+        """获取模型对应的提示词和温度"""
+        return cls.MODEL_CONFIGS.get(model_key, cls._DEFAULT_CONFIG)
+
+    def __init__(self, messages=None, system_prompt=None, model_key=None):
         """初始化对话线程
 
         Args:
             messages: 对话历史 [{"role": "user"|"assistant", "content": "..."}, ...]
-            system_prompt: 系统提示（None 使用默认）
+            system_prompt: 系统提示（None 使用模型默认）
+            model_key: LLM 模型 key，用于选择温度（None 使用默认）
         """
         super().__init__()
         self.messages = messages or []
-        self.system_prompt = system_prompt or self.DEFAULT_SYSTEM
+        cfg = self.get_model_config(model_key) if model_key else self._DEFAULT_CONFIG
+        self.system_prompt = system_prompt or cfg["system"]
+        self._temperature = cfg["temperature"]
+        self._max_tokens = cfg.get("max_tokens", 600)
+        self._model_key = model_key  # 用于选择推理路径
         self._full_text = []
 
     def run(self):
@@ -115,6 +158,9 @@ class LLMChatWorker(QThread):
             self.progress_update.emit("thinking")
             self._full_text = []
 
+            # Use chat/completions for all configured chat models. For Qwen3,
+            # llama-server should use the GGUF embedded template so reasoning is
+            # returned separately instead of being mixed into raw text.
             from rehab_monitor.llm_client import _run_llm_stream_raw
 
             parts = [f"<|im_start|>system\n{self.system_prompt}<|im_end|>\n"]
@@ -127,7 +173,8 @@ class LLMChatWorker(QThread):
                 self.partial_response.emit(accumulated)
 
             response, error = _run_llm_stream_raw(
-                full_prompt, on_chunk, max_tokens=1024, temperature=0.7
+                full_prompt, on_chunk, max_tokens=self._max_tokens,
+                temperature=self._temperature,
             )
 
             if error and not response:

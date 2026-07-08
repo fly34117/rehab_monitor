@@ -59,15 +59,15 @@ DEFAULT_VISUAL_FALL = True  # 视觉跌倒检测默认开启
 # ===== LLM 模型选项 =====
 LLM_MODEL_OPTIONS = {
     "qwen2.5-3b": "Qwen2.5-3B",
-    "qwen3-4b": "Qwen3-4B (推荐)",
-    "qwen2.5-7b": "Qwen2.5-7B",
+    "qwen3-4b": "Qwen3-4B (实验性)",
+    "qwen2.5-7b": "Qwen2.5-7B (推荐)",
 }
 LLM_MODEL_PATHS = {
     "qwen2.5-3b": os.path.join(PROJECT_ROOT, "llm_local", "models", "qwen2.5-3b-instruct-q4_k_m.gguf"),
     "qwen3-4b": os.path.join(PROJECT_ROOT, "llm_local", "models", "Qwen3-4B-Q4_K_M.gguf"),
     "qwen2.5-7b": os.path.join(PROJECT_ROOT, "llm_local", "models", "Qwen2.5-7B-Instruct-IQ3_M.gguf"),
 }
-DEFAULT_LLM_MODEL = "qwen3-4b"
+DEFAULT_LLM_MODEL = "qwen2.5-7b"
 
 LLAMA_SERVER = os.path.join(PROJECT_ROOT, "llm_local", "llama.cpp", "build", "bin", "llama-server")
 LLAMA_LIB_DIR = os.path.join(PROJECT_ROOT, "llm_local", "llama.cpp", "build", "bin")

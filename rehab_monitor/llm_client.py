@@ -90,9 +90,16 @@ def _ensure_server(timeout=SERVER_STARTUP_TIMEOUT):
     AI 对话时，不应立即报错，而是短暂等待 /v1/models 可用。
     """
     deadline = time.time() + max(0, timeout)
+    logged = False
     while True:
         if _check_health():
+            if logged:
+                elapsed = timeout - (deadline - time.time())
+                logger.info(f"llama-server 已就绪（等待了 {elapsed:.0f} 秒）")
             return True
+        if not logged:
+            logger.info(f"等待 llama-server 就绪（最长 {timeout:.0f} 秒）...")
+            logged = True
         if time.time() >= deadline:
             logger.error("llama-server 未就绪（等待超时）")
             return False
@@ -111,25 +118,33 @@ def _check_health():
         return False
 
 
-def _api_chat(messages, max_tokens=800, temperature=0.3, timeout=DEFAULT_TIMEOUT, on_token=None):
+def _api_chat(messages, max_tokens=800, temperature=0.3, timeout=DEFAULT_TIMEOUT,
+              on_token=None, enable_thinking=None, thinking_budget_tokens=None):
     """调用 llama-server API，支持 SSE 流式回调
 
     Args:
         messages: [{"role": ..., "content": ...}]
         on_token: 若提供，逐 token 回调 on_token(accumulated_text: str)
     """
-    if not _ensure_server(timeout=min(15, timeout)):
+    if not _ensure_server(timeout=min(60, timeout)):
         return None, "llama-server 未就绪"
 
     stream = on_token is not None
     model_name = os.environ.get("LLM_MODEL_ALIAS", "qwen3-4b")
-    payload = json.dumps({
+    payload_obj = {
         "model": model_name,
         "messages": messages,
         "stream": stream,
         "temperature": temperature,
         "max_tokens": max_tokens,
-    }).encode("utf-8")
+    }
+    if enable_thinking is not None:
+        payload_obj["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
+        payload_obj["reasoning_control"] = True
+    if thinking_budget_tokens is not None:
+        payload_obj["thinking_budget_tokens"] = int(thinking_budget_tokens)
+
+    payload = json.dumps(payload_obj).encode("utf-8")
 
     req = urllib.request.Request(
         f"{API_BASE}/chat/completions",
@@ -194,34 +209,104 @@ def _api_chat(messages, max_tokens=800, temperature=0.3, timeout=DEFAULT_TIMEOUT
 
 
 def _run_llm(system_prompt, user_prompt, max_tokens=DEFAULT_MAX_TOKENS,
-             temperature=DEFAULT_TEMPERATURE):
+             temperature=DEFAULT_TEMPERATURE, enable_thinking=None,
+             thinking_budget_tokens=None):
     """非流式推理"""
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
-    return _api_chat(messages, max_tokens, temperature)
+    return _api_chat(
+        messages, max_tokens, temperature,
+        enable_thinking=enable_thinking,
+        thinking_budget_tokens=thinking_budget_tokens,
+    )
 
 
 def _run_llm_stream(system_prompt, user_prompt, on_chunk, max_tokens=DEFAULT_MAX_TOKENS,
-                    temperature=DEFAULT_TEMPERATURE, timeout=None):
+                    temperature=DEFAULT_TEMPERATURE, timeout=None,
+                    enable_thinking=None, thinking_budget_tokens=None):
     """真流式推理 — SSE 逐 token 回调"""
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
     response, error = _api_chat(messages, max_tokens, temperature,
-                                timeout or DEFAULT_TIMEOUT, on_token=on_chunk)
+                                timeout or DEFAULT_TIMEOUT, on_token=on_chunk,
+                                enable_thinking=enable_thinking,
+                                thinking_budget_tokens=thinking_budget_tokens)
     return response, error
 
 
 def _run_llm_stream_raw(full_prompt, on_chunk, max_tokens=DEFAULT_MAX_TOKENS,
-                        temperature=DEFAULT_TEMPERATURE, timeout=None):
+                        temperature=DEFAULT_TEMPERATURE, timeout=None,
+                        enable_thinking=None, thinking_budget_tokens=None):
     """真流式（对话用）"""
     messages = _parse_chatml(full_prompt)
     response, error = _api_chat(messages, max_tokens, temperature,
-                                timeout or DEFAULT_TIMEOUT, on_token=on_chunk)
+                                timeout or DEFAULT_TIMEOUT, on_token=on_chunk,
+                                enable_thinking=enable_thinking,
+                                thinking_budget_tokens=thinking_budget_tokens)
     return response, error
+
+
+def _run_llm_stream_raw_completion(full_prompt, on_chunk, max_tokens=DEFAULT_MAX_TOKENS,
+                                   temperature=DEFAULT_TEMPERATURE, timeout=None):
+    """真流式 — 走 /v1/completions 绕过 chat template 兼容问题（Qwen3 等）"""
+    if not _ensure_server(timeout=min(60, timeout or DEFAULT_TIMEOUT)):
+        return None, "llama-server 未就绪"
+
+    model_name = os.environ.get("LLM_MODEL_ALIAS", "qwen3-4b")
+    payload = json.dumps({
+        "model": model_name,
+        "prompt": full_prompt,
+        "stream": on_chunk is not None,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "stop": ["<|im_end|>", "<|im_start|>"],  # 防止生成 ChatML 标记
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        f"{API_BASE}/completions",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=timeout or DEFAULT_TIMEOUT) as resp:
+            if on_chunk is None:
+                data = json.loads(resp.read().decode())
+                text = data["choices"][0]["text"]
+                return strip_reasoning_text(text), None
+
+            # SSE 流式
+            accumulated = ""
+            for line_bytes in resp:
+                line = line_bytes.decode("utf-8", errors="replace").strip()
+                if not line or line.startswith(":"):
+                    continue
+                if line.startswith("data: "):
+                    data_str = line[6:]
+                    if data_str == "[DONE]":
+                        break
+                    try:
+                        chunk = json.loads(data_str)
+                        token = chunk.get("choices", [{}])[0].get("text", "")
+                        if token:
+                            accumulated += token
+                            on_chunk(strip_reasoning_text(accumulated))
+                    except json.JSONDecodeError:
+                        pass
+            return strip_reasoning_text(accumulated), None
+
+    except urllib.error.URLError as e:
+        return None, f"llama-server 连接失败: {e.reason}"
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        return None, f"llama-server HTTP {e.code}: {body[:200]}"
+    except Exception as e:
+        return None, f"API 错误: {str(e)[:200]}"
 
 
 def _parse_chatml(text):
@@ -273,6 +358,7 @@ def _build_data_prompt(recent_data):
         for key, (label, unit) in {
             "gait_velocity_mps": ("步速", "m/s"), "stride_length_m": ("步长", "m"),
             "symmetry": ("对称性", ""), "cadence_spm": ("步频", "spm"),
+            "step_width_m": ("步宽", "m"), "double_support_ratio": ("双支撑比", ""),
             "left_knee_rom": ("左膝ROM", "°"), "right_knee_rom": ("右膝ROM", "°"),
             "foot_clearance_cm": ("足廓清", "cm"), "gait_rehab_score": ("GRS评分", "/100"),
             "trunk_sway_deg": ("躯干侧倾", "°"),

@@ -668,6 +668,12 @@ class StatusPanel(QFrame):
         if precision:
             self._precision_label.setText(f"精度: {precision}")
 
+    def update_llm_model_info(self, model_key):
+        """更新 AI 分析模型名称"""
+        from rehab_gui.config import LLM_MODEL_OPTIONS
+        label = LLM_MODEL_OPTIONS.get(model_key, model_key)
+        self._llm_model_label.setText(f"模型: {label}")
+
     def update_sensor_status(self, sensor_status):
         """更新外部传感器状态
 

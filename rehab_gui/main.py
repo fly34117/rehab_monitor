@@ -5,6 +5,7 @@ import signal
 import time
 import threading
 import subprocess
+import urllib.request
 import numpy as np
 
 from PyQt6.QtWidgets import QApplication, QMessageBox, QDialog, QVBoxLayout, QLabel, QProgressBar
@@ -279,26 +280,72 @@ class BackendIntegrator:
 
 
 class InitDialog(QDialog):
-    """初始化进度对话框"""
+    """启动画面 — 显示初始化进度"""
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("初始化")
-        self.setFixedSize(400, 120)
+        self.setWindowTitle("Rehab Monitor — 正在启动")
+        self.setFixedSize(420, 180)
+        self.setWindowFlags(
+            Qt.WindowType.Dialog
+            | Qt.WindowType.CustomizeWindowHint
+            | Qt.WindowType.FramelessWindowHint
+        )
+        self.setStyleSheet("""
+            QDialog {
+                background-color: #1e1e1e;
+                border: 1px solid #3c3c3c;
+                border-radius: 8px;
+            }
+            QLabel { color: #e0e0e0; }
+            QProgressBar {
+                border: 1px solid #3c3c3c;
+                border-radius: 4px;
+                background: #2d2d2d;
+                height: 18px;
+                text-align: center;
+                color: #e0e0e0;
+            }
+            QProgressBar::chunk {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                    stop:0 #0e639c, stop:1 #4fc3f7);
+                border-radius: 3px;
+            }
+        """)
+
         layout = QVBoxLayout(self)
+        layout.setContentsMargins(24, 20, 24, 20)
+        layout.setSpacing(12)
 
-        label = QLabel("正在初始化后端组件...")
-        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(label)
+        # 标题
+        title = QLabel("🏥 Rehab Monitor")
+        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setStyleSheet("font-size: 18px; font-weight: bold; color: #4fc3f7;")
+        layout.addWidget(title)
 
+        # 步骤文字
+        self._step_label = QLabel("正在启动...")
+        self._step_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._step_label.setStyleSheet("font-size: 13px; color: #a0a0a0;")
+        layout.addWidget(self._step_label)
+
+        # 进度条
         self._progress = QProgressBar()
-        self._progress.setRange(0, 0)
+        self._progress.setRange(0, 100)
+        self._progress.setValue(0)
         layout.addWidget(self._progress)
 
-        from PyQt6.QtWidgets import QPushButton
-        self._cancel_btn = QPushButton("取消")
-        self._cancel_btn.clicked.connect(self.reject)
-        layout.addWidget(self._cancel_btn)
+        # 版本信息
+        ver = QLabel("YOLO + FaceNet + LLM 多模态康复监控")
+        ver.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        ver.setStyleSheet("font-size: 10px; color: #666;")
+        layout.addWidget(ver)
+
+    def set_step(self, text, pct):
+        """更新当前步骤和进度"""
+        self._step_label.setText(text)
+        self._progress.setValue(pct)
+        QApplication.processEvents()
 
 
 def main():
@@ -335,9 +382,9 @@ def main():
 
     logger.info(f"使用配置: {config}")
 
-    # 创建主窗口
+    # ── 第一步：创建主窗口（先不显示）──
     window = MainWindow(config=config)
-    window.show()
+    # 注意：window.show() 推迟到全部初始化完成后
 
     # 创建线程桥接器
     bridge = ThreadBridge()
@@ -347,8 +394,9 @@ def main():
     # LLM 状态信号（分析/对话共用）
     bridge.llm_status_signal.connect(window.update_llm_status)
 
-    # === llama-server 管理（Python 控制启停） ===
+    # ── llama-server 管理（Python 控制启停）──
     _llm_server_proc = [None]  # list 以便闭包修改
+    llm_ready = [False]         # LLM 服务器是否就绪
 
     def _start_llm_server(model_key):
         """启动 llama-server GPU 模式"""
@@ -367,9 +415,16 @@ def main():
         env["LD_LIBRARY_PATH"] = f"{LLAMA_LIB_DIR}:{env.get('LD_LIBRARY_PATH', '')}"
         os.environ["LLM_MODEL_ALIAS"] = model_key  # 同步给 llm_client.py
         os.environ["REHAB_LLM_PORT"] = str(LLM_PORT)
-        cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
-               "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
-               "--reasoning", "on", "--reasoning-budget", "256"]
+        # Qwen3 GGUF already carries the correct chat template. Passing the
+        # literal string "qwen3" here makes llama-server render a 3-token prompt.
+        if "qwen3" in model_key.lower():
+            cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
+                   "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
+                   "--reasoning", "off"]
+        else:
+            cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
+                   "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
+                   "--reasoning", "on", "--reasoning-budget", "256"]
 
         try:
             log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
@@ -408,14 +463,22 @@ def main():
             _llm_server_proc[0] = None
             logger.info("llama-server 已停止")
 
-    # 启动时根据配置启动 LLM 服务器（延迟到 GUI 初始化完成后，避免 GPU 加载卡住 YOLO）
-
-    # 显示初始化对话框
-    init_dialog = InitDialog(window)
+    # ── 显示启动画面 ──
+    init_dialog = InitDialog()
     init_dialog.show()
-    app.processEvents()  # 立即显示对话框
+    app.processEvents()
 
-    # === 在主线程直接初始化后端组件（避免 QThread 阻塞） ===
+    # ── 启动 LLM 服务器（后台线程，与 YOLO 并行加载）──
+    llm_model = config.get("llm_model", "qwen3-4b")
+    threading.Thread(
+        target=lambda: _start_llm_server(llm_model),
+        name="LlmServerStarter",
+        daemon=True,
+    ).start()
+    init_dialog.set_step("启动 LLM 服务器...", 5)
+    app.processEvents()
+
+    # ── 初始化后端组件 ──
     logger.info("后台初始化后端组件（简化版）...")
 
     try:
@@ -448,12 +511,16 @@ def main():
         camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         logger.info("✓ 摄像头已打开")
+        init_dialog.set_step("✓ 摄像头就绪 — 加载 YOLO 模型...", 20)
+        app.processEvents()
 
         # 初始化检测器
         pose_detector = PoseDetector(model_path, device, USE_KALMAN)
         if "npu" in device.lower() and "cpu" in pose_detector.device.lower():
             logger.warning("⚠ NPU 编译失败（模型算子不兼容），已回退到 CPU")
         logger.info("✓ 姿态检测器已初始化（实际设备: %s）", pose_detector.device)
+        init_dialog.set_step(f"✓ YOLO 就绪 ({pose_detector.device}) — 加载人脸识别...", 40)
+        app.processEvents()
 
         # 初始化分析器
         gait_analyzer = GaitAnalyzer()
@@ -483,6 +550,9 @@ def main():
         except Exception as e:
             logger.warning(f"人脸锁定器初始化失败（可选功能）: {e}")
 
+        init_dialog.set_step("✓ 人脸识别就绪 — 初始化传感器...", 55)
+        app.processEvents()
+
         # 初始化呼吸检测器（定时触发模式：点击按钮 → 采集 30s → 计算 BPM → 显示结果）
         from rehab_monitor.breathing_detector import BreathingDetector
         breathing_detector = BreathingDetector(sigma=1.5, min_bpm=5, max_bpm=100, auto_correct=True)
@@ -508,11 +578,15 @@ def main():
         logger.info(f"✓ 外部传感器已初始化（手环={sensor_mgr.wristband_proc is not None}, "
                     f"手机={sensor_mgr.phone_data_source is not None}, "
                     f"CSI={sensor_mgr.csi_monitor is not None}）")
+        init_dialog.set_step("✓ 传感器就绪 — 初始化数据库...", 70)
+        app.processEvents()
 
         # 初始化数据库（异步写入）
         db = RehabDatabase(async_mode=True)
         db_session_id = db.start_session()
         logger.info(f"✓ 数据库已初始化 (session={db_session_id})")
+        init_dialog.set_step("✓ 数据库就绪 — 等待 LLM 加载...", 80)
+        app.processEvents()
 
         # 人脸锁定状态
         target_locked = [False]      # 用 list 以便闭包修改
@@ -545,9 +619,7 @@ def main():
         actual_device = pose_detector.device if hasattr(pose_detector, 'device') else device
         if hasattr(window, '_status_panel'):
             window._status_panel.update_model_info(model_name, actual_device, precision)
-
-        # 关闭初始化对话框
-        init_dialog.accept()
+            window._status_panel.update_llm_model_info(llm_model)
 
         # 创建帧处理函数
         frame_count = 0
@@ -1222,17 +1294,40 @@ def main():
         )
         frame_worker_thread[0].start()
 
-        logger.info("✓ GUI 已启动（简化集成模式）")
+        logger.info("✓ 后端组件全部就绪")
 
-        # 延迟 3 秒后启动 LLM，避免 GPU 模型加载卡住 YOLO 初始化
-        def _delayed_start_llm():
-            llm_model = config.get("llm_model", "qwen3-4b")
-            threading.Thread(
-                target=lambda: _start_llm_server(llm_model),
-                name="LlmServerStarter",
-                daemon=True,
-            ).start()
-        QTimer.singleShot(3000, _delayed_start_llm)
+        # ── 等待 LLM 服务器就绪（轮询 health，最长 120 秒）──
+        init_dialog.set_step("等待 LLM 模型加载...", 85)
+        app.processEvents()
+        llm_deadline = time.time() + 120
+        llm_loaded = False
+        while time.time() < llm_deadline:
+            try:
+                r = urllib.request.urlopen(
+                    f"http://127.0.0.1:{LLM_PORT}/health", timeout=2
+                )
+                if r.status == 200:
+                    llm_loaded = True
+                    break
+            except Exception:
+                pass
+            time.sleep(1)
+            app.processEvents()  # 保持 UI 响应
+
+        if llm_loaded:
+            init_dialog.set_step("✓ 全部就绪 — 启动中...", 100)
+            logger.info("✓ LLM 服务器已就绪")
+        else:
+            init_dialog.set_step("⚠ LLM 未能在 120s 内就绪（后续可重试）", 100)
+            logger.warning("LLM 服务器未能在 120s 内就绪")
+
+        app.processEvents()
+        time.sleep(0.3)  # 让用户看到 100%
+
+        # ── 显示主窗口 ──
+        window.show()
+        init_dialog.close()
+        logger.info("✓ GUI 已启动")
 
         # === 人脸锁定/解锁回调 ===
         def on_lock_target():
@@ -1421,7 +1516,12 @@ def main():
                        "3. 等待步态指标更新后再试")
                 window.update_llm_status("error", "步态数据不足")
                 if hasattr(window._diagnostic_tabs, "_llm_widget"):
-                    window._diagnostic_tabs._llm_widget._text_edit.setPlainText(msg)
+                    # 追加警告到对话，不清除已有内容
+                    existing = window._diagnostic_tabs._llm_widget._text_edit.toPlainText()
+                    if existing:
+                        window._diagnostic_tabs._llm_widget._text_edit.append("\n" + msg)
+                    else:
+                        window._diagnostic_tabs._llm_widget._text_edit.setPlainText(msg)
                     window._diagnostic_tabs._llm_widget.show_error("步态数据不足")
                 if hasattr(window._diagnostic_tabs, "switch_to_llm_tab"):
                     window._diagnostic_tabs.switch_to_llm_tab()
@@ -1519,7 +1619,7 @@ def main():
                 window._diagnostic_tabs._llm_widget.show_running("思考中...")
 
             # 创建对话线程
-            worker = LLMChatWorker(messages=history)
+            worker = LLMChatWorker(messages=history, model_key=llm_model)
 
             def on_partial(partial_text):
                 window.update_chat_stream(partial_text)
