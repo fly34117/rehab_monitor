@@ -473,12 +473,17 @@ def main():
                 return False
 
         _stop_llm_server()
-        # 杀掉所有占用 LLM 端口的旧进程（防止残留）
+        # 彻底清理：杀端口 + 杀所有残留 llama-server（防止 GPU 显存泄漏）
         try:
             subprocess.run(["fuser", "-k", f"{LLM_PORT}/tcp"], stderr=subprocess.DEVNULL, timeout=5)
         except Exception:
             pass
-        time.sleep(1)
+        try:
+            # kill -9 确保 D 状态（GPU 等待）的进程也被清理
+            subprocess.run(["pkill", "-9", "-f", "llama-server"], stderr=subprocess.DEVNULL, timeout=5)
+        except Exception:
+            pass
+        time.sleep(2)  # 等 GPU 显存释放
         env = os.environ.copy()
         env["LD_LIBRARY_PATH"] = f"{LLAMA_LIB_DIR}:{env.get('LD_LIBRARY_PATH', '')}"
         os.environ["LLM_MODEL_ALIAS"] = model_key  # 同步给 llm_client.py
