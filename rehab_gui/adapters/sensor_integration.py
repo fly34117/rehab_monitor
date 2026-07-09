@@ -16,6 +16,7 @@
 import os
 import sys
 import re
+import time
 import threading
 import subprocess as sp
 
@@ -37,6 +38,10 @@ class SensorManager:
         self.wristband_fall = {"active": False, "score": 0.0, "magnitude": 0.0}
         self.phone_fall = {"active": False, "score": 0.0}
         self.csi_fall = {"active": False, "score": 0.0}
+        # 跌倒超时自动重置 — 防止传感器状态永不消退
+        self.SENSOR_FALL_TIMEOUT = 5.0  # 秒
+        self._wristband_fall_time = 0.0
+        self._csi_fall_time = 0.0
 
     def get_status(self):
         """获取所有传感器状态
@@ -70,17 +75,23 @@ class SensorManager:
 
         传感器跌倒优先于摄像头视觉跌倒检测。
         当传感器未检测到跌倒时，会重置 FallDetector 状态。
+        跌倒状态超时（默认5秒）后自动重置，防止永不消退。
 
         Args:
             fall_detector: FallDetector 实例
         """
-        # 手环跌倒
+        now = time.time()
+
+        # 手环跌倒（带超时自动重置）
         if self.wristband_fall["active"]:
-            fall_detector.status = "alert"
-            fall_detector.score = self.wristband_fall["score"]
-            return ("alert", fall_detector.score)
+            if now - self._wristband_fall_time > self.SENSOR_FALL_TIMEOUT:
+                self.wristband_fall["active"] = False
+                self.wristband_fall["score"] = 0.0
+            else:
+                fall_detector.status = "alert"
+                fall_detector.score = self.wristband_fall["score"]
+                return ("alert", fall_detector.score)
         else:
-            # 重置手环状态
             self.wristband_fall["active"] = False
             self.wristband_fall["score"] = 0.0
 
@@ -97,7 +108,7 @@ class SensorManager:
                 self.phone_fall["active"] = False
                 self.phone_fall["score"] = 0.0
 
-        # CSI 跌倒（并联检测，不取代摄像头）
+        # CSI 跌倒（带超时自动重置，并联检测，不取代摄像头）
         if self.csi_monitor and self.csi_monitor.is_fallen:
             csi_status = self.csi_monitor.status
             csi_score = csi_status.get("score", 0.0)
@@ -106,8 +117,14 @@ class SensorManager:
                 fall_detector.score = csi_score
                 self.csi_fall["active"] = True
                 self.csi_fall["score"] = csi_score
+                self._csi_fall_time = now
                 return ("alert", fall_detector.score)
             else:
+                if now - self._csi_fall_time > self.SENSOR_FALL_TIMEOUT:
+                    self.csi_fall["active"] = False
+                    self.csi_fall["score"] = 0.0
+        else:
+            if now - self._csi_fall_time > self.SENSOR_FALL_TIMEOUT:
                 self.csi_fall["active"] = False
                 self.csi_fall["score"] = 0.0
 
@@ -209,6 +226,7 @@ def _init_wristband(wristband_port=8081, wristband_http=8080, sensor_manager=Non
                     sensor_manager.wristband_fall["active"] = True
                     sensor_manager.wristband_fall["score"] = conf
                     sensor_manager.wristband_fall["magnitude"] = peak
+                    sensor_manager._wristband_fall_time = time.time()
                 logger.info(f"手环跌倒: peak={peak:.1f} m/s2, conf={conf:.0%}")
                 print(f"[手环] {line}")
                 # 广播跌倒告警 (WebSocket → 小程序 + GUI 弹窗)
@@ -223,6 +241,7 @@ def _init_wristband(wristband_port=8081, wristband_http=8080, sensor_manager=Non
                     sensor_manager.wristband_fall["active"] = True
                     sensor_manager.wristband_fall["score"] = conf
                     sensor_manager.wristband_fall["magnitude"] = float(hm.group(1))
+                    sensor_manager._wristband_fall_time = time.time()
                 logger.info(f"手环跌倒(HTTP): mag={hm.group(1)}, conf={conf:.0%}")
                 print(f"[手环] {line}")
                 try:
