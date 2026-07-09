@@ -666,6 +666,13 @@ def start_api_server(gait, spatial, db, face_locker_, detector, emotion,
 
     app = create_app()
 
+    # 注册手机 IMU 数据路由
+    try:
+        from ubuntu.phone_data import _register_phone_routes
+        _register_phone_routes(app)
+    except Exception as e:
+        logger.debug("手机 IMU 路由注册失败: %s", e)
+
     _port = port if port is not None else API_PORT
     _ws_port = ws_port if ws_port is not None else WS_PORT
 
