@@ -136,7 +136,13 @@ def main():
     # 创建 WebSocket 客户端
     ws_client = WebSocketClient()
     ws_client.metrics_received.connect(lambda data: window._on_metrics_update(data))
-    ws_client.fall_alert_received.connect(lambda data: window._on_fall_update(data))
+    ws_client.fall_alert_received.connect(
+        lambda data: window._on_fall_update({
+            "status": "alert",
+            "score": data.get("score"),
+            "source": f"WebSocket (severity={data.get('severity', 'medium')})",
+        })
+    )
     ws_client.start()
 
     logger.info("GUI 已启动 (WebSocket 模式)")

@@ -30,6 +30,7 @@ class PhoneDataSource:
         self._last_trajectory = None   # dict: {x, y, heading, stepCount, distance, timestamp}
         self._last_fall = None         # dict: {status, currentAccelMag, alertCountdown, ...}
         self._last_update_time = 0.0
+        self._last_fall_time = 0.0     # 最后一次跌倒数据的时间（独立于轨迹更新）
         self._traj_count = 0           # debug counter
 
     # -- write side (called from Flask route) --
@@ -43,6 +44,7 @@ class PhoneDataSource:
     def update_fall(self, data):
         with self._lock:
             self._last_fall = data
+            self._last_fall_time = time.time()
             self._last_update_time = time.time()
 
     # -- read side (called from main loop) --
@@ -60,10 +62,17 @@ class PhoneDataSource:
             return (self._last_trajectory.get("heading", 0.0)
                     if self._last_trajectory else 0.0)
 
-    def get_fall_status(self):
-        """Return fall state string: NORMAL / FREE_FALL / IMPACT / ... / ALERTING."""
+    def get_fall_status(self, timeout=5.0):
+        """Return fall state string: NORMAL / FREE_FALL / IMPACT / ... / ALERTING.
+
+        如果最后一次跌倒数据超过 timeout 秒未更新，自动重置为 NORMAL，
+        防止手机持续发送轨迹数据导致跌倒状态永不消退。
+        """
         with self._lock:
             if self._last_fall:
+                age = time.time() - self._last_fall_time
+                if age > timeout:
+                    return "NORMAL"
                 return self._last_fall.get("status", "NORMAL")
             return "NORMAL"
 
@@ -119,6 +128,10 @@ phone_data_source = PhoneDataSource()
 # Set by FaceNetLocker monkey-patch — True when face tracking is lost
 face_tracking_lost = False
 
+# 手机跌倒告警冷却 — 防止手机高频发送跌倒包导致弹窗刷屏
+_last_phone_fall_alert = 0.0
+PHONE_FALL_ALERT_COOLDOWN = 5.0  # 秒
+
 
 # ---------------------------------------------------------------------------
 # Phone API — Flask route handlers
@@ -158,12 +171,16 @@ def _register_phone_routes(app):
                     pos = phone_data_source.get_position() or (0, 0)
                     score = phone_data_source.get_fall_score()
                     print(f"[手机] 收到摔倒: status={status} score={score:.2f} pos={pos}")
-                    # WebSocket → 微信小程序 + GUI 弹窗
-                    try:
-                        from rehab_monitor.api_server import broadcast_fall_alert
-                        broadcast_fall_alert(pos, score)
-                    except Exception:
-                        pass
+                    # WebSocket → 微信小程序（带冷却，防止手机高频发包刷屏）
+                    global _last_phone_fall_alert
+                    now = time.time()
+                    if now - _last_phone_fall_alert >= PHONE_FALL_ALERT_COOLDOWN:
+                        _last_phone_fall_alert = now
+                        try:
+                            from rehab_monitor.api_server import broadcast_fall_alert
+                            broadcast_fall_alert(pos, score)
+                        except Exception:
+                            pass
                 return jsonify({"code": 0, "message": "ok"})
             else:
                 return jsonify({"code": -1,
