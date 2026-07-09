@@ -130,15 +130,31 @@ document.getElementById('py').style.color=px.style.color;
 # ---------------------------------------------------------------------------
 
 def _get_local_ip():
-    """Return the best-guess LAN IP address."""
+    """Return the best-guess LAN IP address, preferring real WiFi/LAN interfaces."""
+    import subprocess
+    try:
+        out = subprocess.check_output(["hostname", "-I"], text=True).strip()
+        ips = out.split()
+        for ip in ips:
+            if ip.startswith("192.168."):
+                return ip
+        for ip in ips:
+            if ip.startswith("10."):
+                return ip
+        if ips:
+            return ips[0]
+    except Exception:
+        pass
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(("8.8.8.8", 80))
         ip = s.getsockname()[0]
         s.close()
-        return ip
+        if not ip.startswith("127.") and not ip.startswith("198.18."):
+            return ip
     except Exception:
-        return "127.0.0.1"
+        pass
+    return "127.0.0.1"
 
 
 def _now():
