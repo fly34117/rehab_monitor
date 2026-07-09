@@ -222,6 +222,7 @@ def create_app():
     def health():
         with current_lock_lock:
             lock = dict(current_lock)
+        import platform
         return jsonify({
             "code": 0,
             "data": {
@@ -233,6 +234,7 @@ def create_app():
                 "face_locker_ready": face_locker is not None,
                 "websocket_clients": len(websocket_clients),
                 "target_locked": lock,
+                "hostname": platform.node(),
                 "timestamp": time.time()
             }
         })
