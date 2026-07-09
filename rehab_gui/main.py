@@ -398,15 +398,18 @@ def main():
     _llm_server_proc = [None]  # list 以便闭包修改
     llm_ready = [False]         # LLM 服务器是否就绪
 
-    def _detect_gpu_layers():
+    def _detect_gpu_layers(model_path):
         """检测可用 GPU 并返回推荐的 -ngl 值。
 
-        - NVIDIA 独显 (nvidia-smi) → 99 (全部 offload)
-        - Intel/AMD 核显 / 无 GPU → 0 (纯 CPU)
-
-        核显共享系统内存，-ngl 99 在大模型上反而会 OOM 卡死。
+        策略:
+        - NVIDIA/CUDA → 99 (独显有专用 VRAM，全部 offload)
+        - Intel/AMD Vulkan: 检查模型是否超出 GPU 可用内存
+          推理实测: Vulkan 5.07 t/s vs CPU 3.07 t/s（快 65%）
+          但 7B 模型 (3.4GB) 超出 Intel iGPU 3.4GB 可用 → 回退 CPU
+        - 无 GPU → 0 (纯 CPU)
         """
-        # 检查是否有可用的 vulkan 设备
+        import re as _re
+        # 检查 Vulkan 设备列表
         try:
             result = subprocess.run(
                 [LLAMA_SERVER, "--list-devices"],
@@ -414,27 +417,43 @@ def main():
                 env={**os.environ, "LD_LIBRARY_PATH": LLAMA_LIB_DIR}
             )
             output = result.stdout + result.stderr
-            # 查找 Vulkan 设备
-            has_vulkan = "Vulkan" in output
             has_nvidia = "NVIDIA" in output.upper()
             has_cuda = "CUDA" in output.upper()
+            has_vulkan = "Vulkan" in output
+
             if has_nvidia or has_cuda:
-                logger.info(f"检测到 NVIDIA/CUDA GPU，使用 GPU offload (-ngl 99)")
+                logger.info("检测到 NVIDIA/CUDA GPU，使用 GPU offload (-ngl 99)")
                 return 99
+
             if has_vulkan:
-                # 可能是 Intel/AMD 核显 — 用小值尝试
-                logger.info("检测到 Vulkan 设备（非 NVIDIA），使用 CPU 推理 (-ngl 0)")
-                return 0
+                # Intel/AMD 核显 — 检查模型大小 vs GPU 可用内存
+                model_size_gb = os.path.getsize(model_path) / (1024**3) if os.path.exists(model_path) else 99
+                # 解析 GPU 可用内存 (MiB)，如 "3748 MiB, 3373 MiB free"
+                mem_match = _re.search(r'(\d+)\s*MiB[^,]*free', output)
+                gpu_free_gb = int(mem_match.group(1)) / 1024.0 if mem_match else 0
+                # 留 512MB margin 给 KV cache
+                if model_size_gb + 0.5 < gpu_free_gb:
+                    logger.info(
+                        f"Vulkan GPU 可用 {gpu_free_gb:.1f}GB, 模型 {model_size_gb:.1f}GB → "
+                        f"GPU offload (-ngl 99)"
+                    )
+                    return 99
+                else:
+                    logger.info(
+                        f"Vulkan GPU 可用 {gpu_free_gb:.1f}GB < 模型 {model_size_gb:.1f}GB + 0.5GB margin → "
+                        f"CPU 推理 (-ngl 0)"
+                    )
+                    return 0
         except Exception:
             pass
-        # 回退：检查 nvidia-smi
+        # 回退：nvidia-smi
         try:
             subprocess.run(["nvidia-smi"], capture_output=True, timeout=5)
             logger.info("检测到 NVIDIA GPU (nvidia-smi)，使用 GPU offload (-ngl 99)")
             return 99
         except Exception:
             pass
-        logger.info("未检测到独立 GPU，使用纯 CPU 推理 (-ngl 0)")
+        logger.info("未检测到 GPU，使用纯 CPU 推理 (-ngl 0)")
         return 0
 
     def _start_llm_server(model_key):
@@ -465,7 +484,7 @@ def main():
         os.environ["LLM_MODEL_ALIAS"] = model_key  # 同步给 llm_client.py
         os.environ["REHAB_LLM_PORT"] = str(LLM_PORT)
 
-        ngl = _detect_gpu_layers()
+        ngl = _detect_gpu_layers(model_path)
         gpu_label = "GPU" if ngl > 0 else "CPU"
 
         # 通用启动参数
