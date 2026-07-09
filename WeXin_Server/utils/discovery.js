@@ -1,80 +1,65 @@
 /**
- * 局域网 UDP 服务发现
+ * 局域网 mDNS 服务发现
  * 
- * PC 服务端每 3 秒广播 server 地址到 255.255.255.255:5003，
- * 小程序监听 UDP 包自动获取服务端 IP。
+ * PC 服务端通过 zeroconf 注册 _rehab._tcp 服务，
+ * 小程序用 wx.startLocalServiceDiscovery 自动发现。
  */
 
-const DISCOVERY_PORT = 5003;
-const SCAN_TIMEOUT = 2500;  // 扫描超时（ms），需 > 广播间隔 3s？不，收一个就够了
+const SCAN_TIMEOUT = 3000;  // 扫描超时（ms）
 
 /**
  * 扫描局域网内的康复监测服务器
- * @param {number} timeout 扫描超时（ms），默认 2500
- * @returns {Promise<Array<{ip, port, ws_port, hostname}>>}
+ * @param {number} timeout 扫描超时（ms），默认 3000
+ * @returns {Promise<Array<{ip, port, hostname}>>}
  */
 function scanLan(timeout = SCAN_TIMEOUT) {
   return new Promise((resolve) => {
     const servers = [];
     const seen = new Set();
-    let socket = null;
+    let service = null;
     let timer = null;
 
     const finish = () => {
       if (timer) clearTimeout(timer);
-      if (socket) {
-        try { socket.close(); } catch (e) {}
+      if (service) {
+        try { service.stop(); } catch (e) {}
       }
       resolve(servers);
     };
 
-    // 超时兜底
     timer = setTimeout(finish, timeout);
 
     try {
-      socket = wx.createUDPSocket();
-      const port = socket.bind(DISCOVERY_PORT);
+      service = wx.startLocalServiceDiscovery({
+        serviceType: '_rehab._tcp.local.',
 
-      socket.onError(() => finish());
+        success: () => {
+          service.onFound((res) => {
+            try {
+              const ip = res.ip || '';
+              const port = (res.service && res.service.port) || 5000;
+              const attrs = res.service && res.service.attributes || {};
+              const hostname = attrs.hostname || res.serviceName || '';
 
-      socket.onMessage((res) => {
-        try {
-          // res.message 可能是 ArrayBuffer 或 string
-          let text = '';
-          if (typeof res.message === 'string') {
-            text = res.message;
-          } else if (res.message instanceof ArrayBuffer) {
-            const buf = new Uint8Array(res.message);
-            text = String.fromCharCode.apply(null, buf);
-          } else {
-            return;
-          }
-
-          const data = JSON.parse(text);
-          if (data.type === 'rehab_server' && data.ip) {
-            const key = `${data.ip}:${data.port}`;
-            if (!seen.has(key)) {
+              if (!ip) return;
+              const key = `${ip}:${port}`;
+              if (seen.has(key)) return;
               seen.add(key);
-              servers.push({
-                ip: data.ip,
-                port: data.port || 5000,
-                ws_port: data.ws_port || 5001,
-                hostname: data.hostname || '',
-              });
-            }
-          }
-        } catch (e) {
-          // 忽略解析失败的包
-        }
-      });
 
-      // 端口绑定成功
-      port.onListening(() => {
-        // 已开始监听，等待超时
-      });
+              servers.push({ ip, port, hostname });
+            } catch (e) {}
+          });
 
+          // 发现完成（部分 Android 可能不触发，超时兜底）
+          service.onServiceResolveComplete && service.onServiceResolveComplete(() => {});
+        },
+
+        fail: (err) => {
+          // mDNS 不可用（如 iOS 限制），直接结束
+          finish();
+        },
+      });
     } catch (e) {
-      // UDP socket 创建失败，直接返回空
       finish();
     }
   });

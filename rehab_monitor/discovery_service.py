@@ -1,28 +1,22 @@
-"""局域网 UDP 广播发现服务
+"""局域网 mDNS 服务发现
 
-后台线程每 3 秒向 255.255.255.255:5003 广播服务器地址，
-供微信小程序同网段自动发现。
+通过 zeroconf 注册 _rehab._tcp 服务，小程序用
+wx.startLocalServiceDiscovery 自动发现服务端 IP 和端口。
 """
-import json
 import socket
-import time
-import threading
 import platform
+import threading
 
 from .logging_setup import get_logger
 
 logger = get_logger("discovery")
 
-BROADCAST_PORT = 5003
-BROADCAST_INTERVAL = 3  # 秒
 API_PORT = 5000
-WS_PORT = 5001
 
 
 def _get_lan_ip():
     """获取本机局域网 IP"""
     try:
-        # 通过 UDP 连接探测获取实际出口 IP
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.settimeout(0.1)
         s.connect(("192.168.255.255", 1))
@@ -31,96 +25,98 @@ def _get_lan_ip():
         return ip
     except Exception:
         pass
-    # 回退：遍历网卡
     try:
-        hostname = socket.gethostname()
-        return socket.gethostbyname(hostname)
+        return socket.gethostbyname(socket.gethostname())
     except Exception:
         return "127.0.0.1"
 
 
 class DiscoveryService:
-    """UDP 广播发现服务（后台线程）"""
+    """mDNS 服务注册（后台线程）"""
 
-    def __init__(self, api_port=API_PORT, ws_port=WS_PORT):
+    def __init__(self, api_port=API_PORT):
         self._api_port = api_port
-        self._ws_port = ws_port
         self._running = False
         self._thread = None
-        self._sock = None
+        self._zc = None
+        self._info = None
 
     def start(self):
-        """启动广播线程"""
+        """启动 mDNS 注册"""
         if self._running:
             return
         self._running = True
         self._thread = threading.Thread(
-            target=self._broadcast_loop, daemon=True, name="discovery-svc"
+            target=self._register_loop, daemon=True, name="mdns-svc"
         )
         self._thread.start()
-        logger.info("UDP 发现服务已启动 (端口 %d, 间隔 %ds)", BROADCAST_PORT, BROADCAST_INTERVAL)
 
     def stop(self):
-        """停止广播"""
+        """停止 mDNS 注册"""
         self._running = False
-        if self._sock:
-            try:
-                self._sock.close()
-            except Exception:
-                pass
-            self._sock = None
-        logger.info("UDP 发现服务已停止")
+        try:
+            if self._info and self._zc:
+                self._zc.unregister_service(self._info)
+        except Exception:
+            pass
+        try:
+            if self._zc:
+                self._zc.close()
+        except Exception:
+            pass
+        self._zc = None
+        self._info = None
+        logger.info("mDNS 发现服务已停止")
 
-    def _broadcast_loop(self):
+    def _register_loop(self):
+        try:
+            from zeroconf import Zeroconf, ServiceInfo
+        except ImportError:
+            logger.warning("zeroconf 未安装，mDNS 发现不可用: pip install zeroconf")
+            return
+
         ip = _get_lan_ip()
         hostname = platform.node()
-        msg = json.dumps({
-            "type": "rehab_server",
-            "ip": ip,
-            "port": self._api_port,
-            "ws_port": self._ws_port,
+        props = {
             "hostname": hostname,
-        }, ensure_ascii=False)
+            "port": str(self._api_port),
+            "type": "rehab_server",
+        }
 
+        self._zc = Zeroconf()
+        self._info = ServiceInfo(
+            type_="_rehab._tcp.local.",
+            name=f"{hostname}._rehab._tcp.local.",
+            addresses=[socket.inet_aton(ip)],
+            port=self._api_port,
+            properties=props,
+        )
+
+        try:
+            self._zc.register_service(self._info, allow_name_change=True)
+            logger.info("mDNS 发现服务已注册: %s (%s:%d)", hostname, ip, self._api_port)
+        except Exception as e:
+            logger.warning("mDNS 注册失败: %s", e)
+            self._zc.close()
+            self._zc = None
+            return
+
+        # 保持线程存活，直到 stop() 被调用
         while self._running:
-            try:
-                self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                self._sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-                self._sock.settimeout(2)
-                self._sock.sendto(msg.encode("utf-8"), ("255.255.255.255", BROADCAST_PORT))
-                self._sock.close()
-                self._sock = None
-            except Exception as e:
-                logger.debug("UDP 广播失败: %s", e)
-                if self._sock:
-                    try:
-                        self._sock.close()
-                    except Exception:
-                        pass
-                    self._sock = None
-
-            # 等够间隔，但每 0.5s 检查一次 _running
-            for _ in range(BROADCAST_INTERVAL * 2):
-                if not self._running:
-                    break
-                time.sleep(0.5)
+            import time
+            time.sleep(1)
 
 
 # 模块级单例
 _discovery_service = None
 
 
-def get_discovery_service():
-    """获取或创建 DiscoveryService 单例"""
+def start_discovery():
+    """快捷启动"""
     global _discovery_service
     if _discovery_service is None:
         _discovery_service = DiscoveryService()
-    return _discovery_service
-
-
-def start_discovery():
-    """快捷启动"""
-    get_discovery_service().start()
+    _discovery_service.start()
 
 
 def stop_discovery():
