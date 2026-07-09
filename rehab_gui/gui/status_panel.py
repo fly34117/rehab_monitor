@@ -205,15 +205,16 @@ class StatusPanel(QFrame):
         self._qr_label.setMinimumSize(180, 180)
         self._qr_label.setMaximumSize(200, 200)
         self._qr_label.setStyleSheet("background-color: white; border: 2px solid #0e639c; border-radius: 6px;")
-        self._generate_qr_code()
         qr_layout.addWidget(self._qr_label, alignment=Qt.AlignmentFlag.AlignCenter)
 
         self._qr_addr = QLabel("")
         self._qr_addr.setStyleSheet("color: #4ec9b0; font-size: 10px;")
         self._qr_addr.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self._qr_addr.setWordWrap(True)
-        self._update_qr_addr_label()
         qr_layout.addWidget(self._qr_addr)
+
+        self._generate_qr_code()
+        self._update_qr_addr_label()
 
         layout.addWidget(self._qr_group)
 
