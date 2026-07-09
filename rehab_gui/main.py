@@ -589,9 +589,9 @@ def main():
         # 启动 API 服务器（供小程序使用）
         try:
             from rehab_monitor.api_server import start_api_server
-            api_thread, ws_thread = start_api_server(
+            api_thread = start_api_server(
                 gait_analyzer, spatial_mapper, db, face_locker,
-                pose_detector, None,  # emotion=None
+                pose_detector, None,
                 debug=False,
             )
             logger.info("✓ API 服务器已启动 (HTTP:5000, WS:5001)")

@@ -20,14 +20,21 @@ tracker.set_origin()  # origins at first stationary moment
 pos_data = tracker.get_state()
 
 def get_local_ip():
+    import subprocess
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))
-        ip = s.getsockname()[0]
-        s.close()
-        return ip
+        out = subprocess.check_output(["hostname", "-I"], text=True).strip()
+        ips = out.split()
+        for ip in ips:
+            if ip.startswith("192.168."):
+                return ip
+        for ip in ips:
+            if ip.startswith("10."):
+                return ip
+        if ips:
+            return ips[0]
     except:
-        return "127.0.0.1"
+        pass
+    return "127.0.0.1"
 
 def register_mdns():
     if not HAS_ZEROCONF:
