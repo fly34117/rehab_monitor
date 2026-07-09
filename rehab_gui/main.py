@@ -398,12 +398,61 @@ def main():
     _llm_server_proc = [None]  # list 以便闭包修改
     llm_ready = [False]         # LLM 服务器是否就绪
 
+    def _detect_gpu_layers():
+        """检测可用 GPU 并返回推荐的 -ngl 值。
+
+        - NVIDIA 独显 (nvidia-smi) → 99 (全部 offload)
+        - Intel/AMD 核显 / 无 GPU → 0 (纯 CPU)
+
+        核显共享系统内存，-ngl 99 在大模型上反而会 OOM 卡死。
+        """
+        # 检查是否有可用的 vulkan 设备
+        try:
+            result = subprocess.run(
+                [LLAMA_SERVER, "--list-devices"],
+                capture_output=True, text=True, timeout=5,
+                env={**os.environ, "LD_LIBRARY_PATH": LLAMA_LIB_DIR}
+            )
+            output = result.stdout + result.stderr
+            # 查找 Vulkan 设备
+            has_vulkan = "Vulkan" in output
+            has_nvidia = "NVIDIA" in output.upper()
+            has_cuda = "CUDA" in output.upper()
+            if has_nvidia or has_cuda:
+                logger.info(f"检测到 NVIDIA/CUDA GPU，使用 GPU offload (-ngl 99)")
+                return 99
+            if has_vulkan:
+                # 可能是 Intel/AMD 核显 — 用小值尝试
+                logger.info("检测到 Vulkan 设备（非 NVIDIA），使用 CPU 推理 (-ngl 0)")
+                return 0
+        except Exception:
+            pass
+        # 回退：检查 nvidia-smi
+        try:
+            subprocess.run(["nvidia-smi"], capture_output=True, timeout=5)
+            logger.info("检测到 NVIDIA GPU (nvidia-smi)，使用 GPU offload (-ngl 99)")
+            return 99
+        except Exception:
+            pass
+        logger.info("未检测到独立 GPU，使用纯 CPU 推理 (-ngl 0)")
+        return 0
+
     def _start_llm_server(model_key):
-        """启动 llama-server GPU 模式"""
+        """启动 llama-server（自动检测 GPU/CPU 模式）"""
         model_path = LLM_MODEL_PATHS.get(model_key)
         if not model_path or not os.path.exists(model_path):
             logger.error(f"LLM 模型不存在: {model_path}")
             return False
+
+        # 确保 llama-server 有执行权限（git 可能丢失 +x）
+        if not os.access(LLAMA_SERVER, os.X_OK):
+            try:
+                os.chmod(LLAMA_SERVER, 0o755)
+                logger.info("已修复 llama-server 执行权限")
+            except Exception as e:
+                logger.error(f"无法设置 llama-server 执行权限: {e}")
+                return False
+
         _stop_llm_server()
         # 杀掉所有占用 LLM 端口的旧进程（防止残留）
         try:
@@ -415,16 +464,21 @@ def main():
         env["LD_LIBRARY_PATH"] = f"{LLAMA_LIB_DIR}:{env.get('LD_LIBRARY_PATH', '')}"
         os.environ["LLM_MODEL_ALIAS"] = model_key  # 同步给 llm_client.py
         os.environ["REHAB_LLM_PORT"] = str(LLM_PORT)
-        # Qwen3 GGUF already carries the correct chat template. Passing the
-        # literal string "qwen3" here makes llama-server render a 3-token prompt.
+
+        ngl = _detect_gpu_layers()
+        gpu_label = "GPU" if ngl > 0 else "CPU"
+
+        # 通用启动参数
+        base_cmd = [LLAMA_SERVER, "-m", model_path,
+                    "--host", "127.0.0.1", "--port", str(LLM_PORT),
+                    "-t", str(LLM_THREADS), "-c", "4096",
+                    "-ngl", str(ngl), "--alias", model_key,
+                    "--mlock"]  # 锁定内存防止 swap
+
         if "qwen3" in model_key.lower():
-            cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
-                   "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
-                   "--reasoning", "off"]
+            cmd = base_cmd + ["--reasoning", "off"]
         else:
-            cmd = [LLAMA_SERVER, "-m", model_path, "--host", "127.0.0.1", "--port", str(LLM_PORT),
-                   "-t", str(LLM_THREADS), "-c", "4096", "-ngl", "99", "--alias", model_key,
-                   "--reasoning", "on", "--reasoning-budget", "256"]
+            cmd = base_cmd + ["--reasoning", "on", "--reasoning-budget", "256"]
 
         try:
             log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
@@ -440,7 +494,7 @@ def main():
             llama_log.close()
             logger.info(
                 f"llama-server 启动中: {model_key} (PID={_llm_server_proc[0].pid}, "
-                f"GPU mode, threads={LLM_THREADS}, cpuset={LLM_CPUSET}, nice={LLM_NICE}, "
+                f"{gpu_label} mode, ngl={ngl}, threads={LLM_THREADS}, cpuset={LLM_CPUSET}, nice={LLM_NICE}, "
                 f"log={llama_log_path})"
             )
             return True
