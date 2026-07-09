@@ -452,6 +452,13 @@ def create_app():
                     "code": -1,
                     "message": f"报告生成失败: {err[:80]}"
                 })
+            # 同步到对话历史（小程序和 GUI 都能看到）
+            try:
+                from .chat_store import chat_store
+                chat_store.add_message("user", "📋 请求生成康复分析报告")
+                chat_store.add_message("assistant", text or "")
+            except Exception:
+                pass
             return jsonify({
                 "code": 0,
                 "data": {

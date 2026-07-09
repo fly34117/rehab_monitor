@@ -82,14 +82,14 @@ Page({
     if (this.data.sending) return;
     this.setData({ sending: true });
 
-    const msg = '请帮我生成一份当前步态数据的康复分析报告，包括步态评估和康复建议。';
-    const messages = [...this.data.messages, { role: 'user', content: '📋 ' + msg }];
+    const messages = [...this.data.messages, { role: 'user', content: '📋 请求生成康复分析报告' }];
     this.setData({ messages });
     this._scrollToBottom();
 
     try {
-      const result = await api.sendChat(msg);
-      messages.push({ role: 'assistant', content: result.reply || '' });
+      const result = await api.generateReport(30);
+      const reply = result.text || '暂无报告内容';
+      messages.push({ role: 'assistant', content: reply });
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
