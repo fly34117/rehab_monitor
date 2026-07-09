@@ -325,4 +325,11 @@ def init_external_sensors(config, fall_detector=None):
     # 手机 IMU 始终尝试启动（UDP 自动发现，不阻塞）
     _init_phone(sensor_manager=manager)
 
+    # 启动局域网发现服务（供小程序自动发现服务器）
+    try:
+        from rehab_monitor.discovery_service import start_discovery
+        start_discovery()
+    except Exception as e:
+        logger.warning(f"UDP 发现服务启动失败（不影响核心功能）: {e}")
+
     return manager
