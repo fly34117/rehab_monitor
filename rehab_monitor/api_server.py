@@ -445,6 +445,14 @@ def create_app():
         seconds = request.args.get('seconds', 30, type=int)
         try:
             data = database.get_recent_data(seconds=seconds)
+            # 检查是否有足够的步态数据
+            gs = data.get("gait_summary", {}) if data else {}
+            gait_count = data.get("gait_records", 0) if data else 0
+            if not gs or gait_count < 1:
+                return jsonify({
+                    "code": -1,
+                    "message": "步态数据不足，请先锁定患者并让其在画面中行走一段距离后再试"
+                })
             from .llm_client import generate_report
             text, summary, err = generate_report(data)
             if err:
@@ -584,7 +592,7 @@ def create_app():
             return jsonify({"code": -1, "message": str(e)[:200]})
 
     @app.route(f'/api/{API_VERSION}/chat/send', methods=['POST'])
-    @rate_limit(per_second=1)
+    @rate_limit(per_second=3)
     def chat_send():
         """发送消息到本地 LLM 并获取回复"""
         try:

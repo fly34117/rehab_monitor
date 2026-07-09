@@ -160,13 +160,14 @@ page { background: #f5f5f5; font-family: -apple-system, sans-serif; }
 .btn-report {
   width: 72rpx;
   height: 72rpx;
-  line-height: 72rpx;
   background: #f0f7ff;
   color: #1a73e8;
   border: 1rpx solid #1a73e8;
   border-radius: 36rpx;
   font-size: 28rpx;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
