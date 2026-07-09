@@ -158,20 +158,12 @@ def _register_phone_routes(app):
                     pos = phone_data_source.get_position() or (0, 0)
                     score = phone_data_source.get_fall_score()
                     print(f"[手机] 收到摔倒: status={status} score={score:.2f} pos={pos}")
-                    # WebSocket → 微信小程序
+                    # WebSocket → 微信小程序 + GUI 弹窗
                     try:
                         from rehab_monitor.api_server import broadcast_fall_alert
                         broadcast_fall_alert(pos, score)
                     except Exception:
                         pass
-                    # OpenCV 弹窗
-                    try:
-                        from ubuntu.fall_popup import enqueue_fall
-                        enqueue_fall("phone", score,
-                                     {"location": list(pos) if pos else [0, 0]})
-                        print("[手机] 弹窗已触发")
-                    except Exception as _exc:
-                        print(f"[手机] 弹窗触发失败: {_exc}")
                 return jsonify({"code": 0, "message": "ok"})
             else:
                 return jsonify({"code": -1,

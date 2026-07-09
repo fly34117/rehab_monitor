@@ -211,6 +211,12 @@ def _init_wristband(wristband_port=8081, wristband_http=8080, sensor_manager=Non
                     sensor_manager.wristband_fall["magnitude"] = peak
                 logger.info(f"手环跌倒: peak={peak:.1f} m/s2, conf={conf:.0%}")
                 print(f"[手环] {line}")
+                # 广播跌倒告警 (WebSocket → 小程序 + GUI 弹窗)
+                try:
+                    from rehab_monitor.api_server import broadcast_fall_alert
+                    broadcast_fall_alert(None, conf)
+                except Exception:
+                    pass
             elif hm:
                 conf = min(float(hm.group(1)) / 10.0, 1.0)
                 if sensor_manager:
@@ -219,6 +225,11 @@ def _init_wristband(wristband_port=8081, wristband_http=8080, sensor_manager=Non
                     sensor_manager.wristband_fall["magnitude"] = float(hm.group(1))
                 logger.info(f"手环跌倒(HTTP): mag={hm.group(1)}, conf={conf:.0%}")
                 print(f"[手环] {line}")
+                try:
+                    from rehab_monitor.api_server import broadcast_fall_alert
+                    broadcast_fall_alert(None, conf)
+                except Exception:
+                    pass
             elif important.search(line):
                 print(f"[手环] {line}")
 
