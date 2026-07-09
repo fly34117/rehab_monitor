@@ -73,7 +73,7 @@ Page({
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
-      wx.showToast({ title: '发送失败', icon: 'none' });
+      wx.showToast({ title: e.message || '发送失败', icon: 'none', duration: 3000 });
       this.setData({ sending: false });
     }
   },
@@ -93,7 +93,7 @@ Page({
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
-      wx.showToast({ title: '生成失败', icon: 'none' });
+      wx.showToast({ title: e.message || '生成失败', icon: 'none', duration: 3000 });
       this.setData({ sending: false });
     }
   },

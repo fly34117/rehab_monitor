@@ -596,11 +596,17 @@ def create_app():
                 "非康复问题请礼貌拒绝。回答不超过200字。"
             )
 
+            # 先检查 llama-server 可达性
+            from .llm_client import _check_health
+            if not _check_health():
+                return jsonify({"code": -1, "message": "LLM 服务未启动，请确认 GUI 已加载模型"})
+
             from .llm_client import _run_llm
             reply, error = _run_llm(system_prompt, msg, max_tokens=300, temperature=0.3)
 
-            if error and not reply:
-                return jsonify({"code": -1, "message": f"LLM 错误: {error}"})
+            if error:
+                logger.error("LLM 调用失败: %s", error)
+                return jsonify({"code": -1, "message": error[:200]})
 
             reply = (reply or "").strip()
             chat_store.add_message("assistant", reply)
@@ -610,8 +616,10 @@ def create_app():
                 "data": {"reply": reply, "user_message": msg}
             })
         except Exception as e:
-            logger.error("对话发送失败: %s", e)
-            return jsonify({"code": -1, "message": str(e)[:200]})
+            import traceback
+            tb = traceback.format_exc()
+            logger.error("对话发送失败:\n%s", tb)
+            return jsonify({"code": -1, "message": f"{type(e).__name__}: {e}"})
 
     return app
 
