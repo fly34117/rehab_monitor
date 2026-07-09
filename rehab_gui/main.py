@@ -1271,7 +1271,7 @@ def main():
                             llm_health_state[0] = "off"
                             last_llm_health_check[0] = time.time()
                             _llm_state = "off"
-                    logger.info("⏱ Frame#%d: cur=%.1fms avg=%.1fms p99=%.1fms (proc≈%.0fFPS target=%dFPS) LLM=%s | %s",
+                    logger.debug("⏱ Frame#%d: cur=%.1fms avg=%.1fms p99=%.1fms (proc≈%.0fFPS target=%dFPS) LLM=%s | %s",
                               frame_count, _total, _avg, _p99,
                               1000/_avg if _avg > 0 else 0,
                               TARGET_FPS,

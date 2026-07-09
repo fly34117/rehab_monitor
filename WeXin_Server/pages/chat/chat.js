@@ -111,7 +111,7 @@ Page({
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
-      wx.showToast({ title: e.message || '发送失败', icon: 'none', duration: 3000 });
+      wx.showToast({ title: e.message || '发送失败', icon: 'none', duration: 1500 });
       this.setData({ sending: false });
     }
   },
@@ -131,7 +131,7 @@ Page({
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
-      wx.showToast({ title: e.message || '生成失败', icon: 'none', duration: 3000 });
+      wx.showToast({ title: e.message || '生成失败', icon: 'none', duration: 1500 });
       this.setData({ sending: false });
     }
   },
