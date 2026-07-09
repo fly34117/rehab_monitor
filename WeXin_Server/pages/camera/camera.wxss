@@ -35,12 +35,11 @@ page { background: #000; height: 100vh; }
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.btn-square text {
   color: #fff;
   font-size: 30rpx;
   font-weight: 500;
+  text-align: center;
+  line-height: 80rpx;
 }
 
 .btn-flip {
@@ -51,9 +50,14 @@ page { background: #000; height: 100vh; }
 .btn-capture {
   width: 280rpx;
   height: 100rpx;
+  line-height: 100rpx;
 }
 
 .btn-album {
   width: 240rpx;
   height: 80rpx;
+}
+
+.is-disabled {
+  opacity: 0.65;
 }

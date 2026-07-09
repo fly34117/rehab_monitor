@@ -6,15 +6,11 @@
     class="camera-preview"
   ></camera>
 
-  <view class="btn-stack">
-    <view class="btn-square btn-flip" bindtap="flipCamera">
-      <text>翻转摄像头</text>
-    </view>
-    <view class="btn-square btn-capture" bindtap="takePhoto">
-      <text>拍照锁定</text>
-    </view>
-    <view class="btn-square btn-album" bindtap="chooseFromAlbum">
-      <text>从相册选择</text>
-    </view>
-  </view>
+  <cover-view class="btn-stack">
+    <cover-view class="btn-square btn-flip" bindtap="flipCamera">翻转摄像头</cover-view>
+    <cover-view class="btn-square btn-capture {{loading ? 'is-disabled' : ''}}" bindtap="takePhoto">
+      {{loading ? '识别中...' : '拍照锁定'}}
+    </cover-view>
+    <cover-view class="btn-square btn-album" bindtap="chooseFromAlbum">从相册选择</cover-view>
+  </cover-view>
 </view>

@@ -215,7 +215,7 @@ Page({
 
   // ===== 导航 =====
 
-  goToCamera() { wx.navigateTo({ url: '/pages/camera/camera' }); },
+  goToCamera() { wx.switchTab({ url: '/pages/camera/camera' }); },
   goToTrend() { wx.switchTab({ url: '/pages/trend/trend' }); },
   goToMap() { wx.switchTab({ url: '/pages/map/map' }); },
   goToReport() { wx.navigateTo({ url: '/pages/report/report' }); },

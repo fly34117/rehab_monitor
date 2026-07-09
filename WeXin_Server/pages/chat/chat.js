@@ -8,6 +8,7 @@ Page({
     locked: false,
     inputText: '',
     sending: false,
+    scrollIntoView: '',
   },
 
   onShow() {
@@ -67,6 +68,7 @@ Page({
         messages: result.messages || [],
         loading: false,
       });
+      this._scrollToBottom();
       this._startPolling();
     } catch (e) {
       this.setData({ loading: false });
@@ -137,11 +139,9 @@ Page({
   },
 
   _scrollToBottom() {
-    wx.createSelectorQuery()
-      .select('.chat-list')
-      .boundingClientRect()
-      .exec(() => {
-        wx.pageScrollTo({ scrollTop: 99999, duration: 200 });
-      });
+    this.setData({ scrollIntoView: '' });
+    setTimeout(() => {
+      this.setData({ scrollIntoView: 'chat-bottom' });
+    }, 50);
   },
 });
