@@ -5,6 +5,7 @@
     "pages/map/map",
     "pages/camera/camera",
     "pages/report/report",
+    "pages/chat/chat",
     "pages/profile/profile"
   ],
   "window": {

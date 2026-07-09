@@ -1,0 +1,41 @@
+<scroll-view scroll-y style="height:100vh;" enhanced show-scrollbar="{{false}}">
+  <view wx:if="{{!locked}}" class="unlock-msg">
+    <text class="unlock-icon">🔒</text>
+    <text class="unlock-text">请先在首页锁定患者</text>
+  </view>
+
+  <view wx:if="{{locked}}" class="container">
+    <view class="header">
+      <text class="header-title">💬 AI 对话记录</text>
+      <text class="header-desc">来自本地 LLM 的对话内容</text>
+    </view>
+
+    <!-- 空状态 -->
+    <view wx:if="{{messages.length === 0 && !loading}}" class="empty-hint">
+      <text class="empty-icon">💬</text>
+      <text>暂无对话记录</text>
+      <text class="empty-sub">在 PC 端 GUI 的 AI 对话区输入内容后，将显示在这里</text>
+    </view>
+
+    <!-- 对话列表 -->
+    <view wx:if="{{messages.length > 0}}" class="chat-list">
+      <view wx:for="{{messages}}" wx:key="index"
+            class="chat-item {{item.role === 'user' ? 'msg-user' : 'msg-assistant'}}">
+        <view class="avatar">
+          <text>{{item.role === 'user' ? '🧑' : '🤖'}}</text>
+        </view>
+        <view class="bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-assistant'}}">
+          <text class="role-label">{{item.role === 'user' ? '你' : '小安'}}</text>
+          <text class="content" selectable="true">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 清除按钮 -->
+    <view wx:if="{{messages.length > 0}}" class="footer-bar">
+      <button class="btn-clear" bindtap="clearChat">🗑 清除对话</button>
+    </view>
+
+    <view style="height:120rpx;"></view>
+  </view>
+</scroll-view>

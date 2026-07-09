@@ -536,6 +536,40 @@ def create_app():
             logger.error("专家报告生成失败: %s", e)
             return jsonify({"code": -1, "message": str(e)[:200]})
 
+    # ── 对话历史（本地 LLM 共享）──
+
+    @app.route(f'/api/{API_VERSION}/chat/history')
+    def chat_history():
+        """获取本地 LLM 对话历史"""
+        try:
+            from .chat_store import chat_store
+            messages = chat_store.get_history()
+            return jsonify({
+                "code": 0,
+                "data": {
+                    "messages": messages,
+                    "count": len(messages),
+                }
+            })
+        except Exception as e:
+            logger.error("获取对话历史失败: %s", e)
+            return jsonify({"code": -1, "message": str(e)[:200]})
+
+    @app.route(f'/api/{API_VERSION}/chat/clear', methods=['POST'])
+    def chat_clear():
+        """清除本地 LLM 对话历史"""
+        try:
+            from .chat_store import chat_store
+            cleared = chat_store.clear()
+            logger.info("对话历史已清除 (%d 条)", cleared)
+            return jsonify({
+                "code": 0,
+                "data": {"cleared": cleared}
+            })
+        except Exception as e:
+            logger.error("清除对话历史失败: %s", e)
+            return jsonify({"code": -1, "message": str(e)[:200]})
+
     return app
 
 

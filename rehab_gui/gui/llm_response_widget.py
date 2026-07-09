@@ -13,6 +13,7 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout,
     QTextEdit, QLabel, QPushButton, QLineEdit,
 )
+from rehab_monitor.chat_store import chat_store
 
 
 class LLMResponseWidget(QWidget):
@@ -32,7 +33,6 @@ class LLMResponseWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self._current_report = ""
-        self._chat_history = []
         self._streaming = False
         self._thinking_dots = 0
         self._thinking_timer = QTimer(self)
@@ -315,7 +315,7 @@ class LLMResponseWidget(QWidget):
 
     def clear_chat(self):
         """清除对话历史和显示"""
-        self._chat_history = []
+        chat_store.clear()
         self._current_report = ""
         self._streaming = False
         self._text_edit.clear()
@@ -334,8 +334,8 @@ class LLMResponseWidget(QWidget):
 
     def get_chat_history(self):
         """获取对话历史"""
-        return list(self._chat_history)
+        return chat_store.get_history()
 
     def add_to_history(self, role, content):
         """添加到对话历史"""
-        self._chat_history.append({"role": role, "content": content})
+        chat_store.add_message(role, content)

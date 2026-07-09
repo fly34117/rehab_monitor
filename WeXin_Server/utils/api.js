@@ -79,6 +79,16 @@ function getTrajectory(limit = 100) {
   return request('GET', '/trajectory?limit=' + limit);
 }
 
+/** 获取本地 LLM 对话历史 */
+function getChatHistory() {
+  return request('GET', '/chat/history');
+}
+
+/** 清除本地 LLM 对话历史 */
+function clearChat() {
+  return request('POST', '/chat/clear');
+}
+
 module.exports = {
   getRealtimeMetrics,
   getHistoryTrend,
@@ -87,5 +97,7 @@ module.exports = {
   generateReport,
   generateExpertReport,
   getEmotionStats,
-  getTrajectory
+  getTrajectory,
+  getChatHistory,
+  clearChat,
 };

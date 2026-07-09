@@ -219,6 +219,7 @@ Page({
   goToTrend() { wx.switchTab({ url: '/pages/trend/trend' }); },
   goToMap() { wx.switchTab({ url: '/pages/map/map' }); },
   goToReport() { wx.navigateTo({ url: '/pages/report/report' }); },
+  goToChat() { wx.navigateTo({ url: '/pages/chat/chat' }); },
   goToProfile() { wx.switchTab({ url: '/pages/profile/profile' }); },
 
   // ===== 按钮 =====
