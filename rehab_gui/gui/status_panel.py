@@ -698,19 +698,6 @@ class StatusPanel(QFrame):
 
     # ── 二维码（小程序扫码连接）──
 
-    def _get_lan_ip(self):
-        """获取本机局域网 IP"""
-        import socket
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.settimeout(0.1)
-            s.connect(("192.168.255.255", 1))
-            ip = s.getsockname()[0]
-            s.close()
-            return ip
-        except Exception:
-            return "127.0.0.1"
-
     def _generate_qr_code(self):
         """生成服务器地址二维码"""
         try:
@@ -718,8 +705,9 @@ class StatusPanel(QFrame):
             from io import BytesIO
             from PyQt6.QtGui import QPixmap
             import json
+            from rehab_monitor.discovery_service import get_lan_ip
 
-            ip = self._get_lan_ip()
+            ip = get_lan_ip()
             data = json.dumps({"ip": ip, "port": 5000}, ensure_ascii=False)
 
             qr = qrcode.QRCode(box_size=4, border=2)
@@ -728,12 +716,15 @@ class StatusPanel(QFrame):
             img = qr.make_image(fill_color="black", back_color="white")
 
             buf = BytesIO()
+            img = img.convert("RGB")  # Qt 不兼容 1-bit 模式，转 RGB
             img.save(buf, format="PNG")
             buf.seek(0)
 
             pixmap = QPixmap()
-            pixmap.loadFromData(buf.read())
-            scaled = pixmap.scaled(150, 150, Qt.AspectRatioMode.KeepAspectRatio,
+            ok = pixmap.loadFromData(buf.read())
+            if not ok or pixmap.isNull():
+                raise RuntimeError("QPixmap 加载失败")
+            scaled = pixmap.scaled(180, 180, Qt.AspectRatioMode.KeepAspectRatio,
                                    Qt.TransformationMode.SmoothTransformation)
             self._qr_label.setPixmap(scaled)
         except Exception as e:
@@ -742,7 +733,8 @@ class StatusPanel(QFrame):
 
     def _update_qr_addr_label(self):
         """更新二维码地址提示"""
-        ip = self._get_lan_ip()
+        from rehab_monitor.discovery_service import get_lan_ip
+        ip = get_lan_ip()
         self._qr_addr.setText(f"服务器: {ip}:5000")
 
     def update_sensor_status(self, sensor_status):

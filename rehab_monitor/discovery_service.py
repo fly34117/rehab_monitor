@@ -14,21 +14,37 @@ logger = get_logger("discovery")
 API_PORT = 5000
 
 
-def _get_lan_ip():
-    """获取本机局域网 IP"""
+def get_lan_ip():
+    """获取本机局域网真实 IP（排除虚拟网卡/Docker/VPN，优先 WiFi）"""
+    import subprocess
+    try:
+        out = subprocess.check_output(["hostname", "-I"], text=True).strip()
+        ips = out.split()
+        for ip in ips:
+            if ip.startswith("192.168."):
+                return ip
+        for ip in ips:
+            if ip.startswith("10."):
+                return ip
+        if ips:
+            return ips[0]
+    except Exception:
+        pass
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.settimeout(0.1)
         s.connect(("192.168.255.255", 1))
         ip = s.getsockname()[0]
         s.close()
-        return ip
+        if not ip.startswith("127.") and not ip.startswith("198.18."):
+            return ip
     except Exception:
         pass
-    try:
-        return socket.gethostbyname(socket.gethostname())
-    except Exception:
-        return "127.0.0.1"
+    return "127.0.0.1"
+
+
+# 内部别名（向后兼容）
+_get_lan_ip = get_lan_ip
 
 
 class DiscoveryService:
