@@ -1,5 +1,4 @@
 const app = getApp();
-const { scanLan } = require('../../utils/discovery');
 
 Page({
   data: {
@@ -7,7 +6,6 @@ Page({
     locked: false,
     notificationsEnabled: true,
     apiBaseUrl: '',
-    scanning: false,
   },
 
   onLoad() {
@@ -47,44 +45,6 @@ Page({
 
   switchPatient() {
     wx.navigateTo({ url: '/pages/camera/camera' });
-  },
-
-  async scanLan() {
-    this.setData({ scanning: true });
-    try {
-      const servers = await scanLan(2500);
-      this.setData({ scanning: false });
-
-      if (servers.length === 0) {
-        wx.showToast({ title: '未发现设备，请确认同一WiFi', icon: 'none' });
-        return;
-      }
-
-      if (servers.length === 1) {
-        // 只找到一个，直接连接
-        const s = servers[0];
-        const addr = `${s.ip}:${s.port}`;
-        wx.setStorageSync('apiBaseUrl', addr);
-        this.setData({ apiBaseUrl: addr });
-        wx.showToast({ title: `已连接 ${s.hostname || s.ip}`, icon: 'success' });
-      } else {
-        // 多个服务器，让用户选
-        const items = servers.map(s => `${s.hostname || s.ip} (${s.ip})`);
-        wx.showActionSheet({
-          itemList: items,
-          success: (res) => {
-            const s = servers[res.tapIndex];
-            const addr = `${s.ip}:${s.port}`;
-            wx.setStorageSync('apiBaseUrl', addr);
-            this.setData({ apiBaseUrl: addr });
-            wx.showToast({ title: `已连接 ${s.hostname || s.ip}`, icon: 'success' });
-          }
-        });
-      }
-    } catch (e) {
-      this.setData({ scanning: false });
-      wx.showToast({ title: '扫描失败，请重试', icon: 'none' });
-    }
   },
 
   scanQRCode() {

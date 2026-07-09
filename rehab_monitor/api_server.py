@@ -445,7 +445,7 @@ def create_app():
         seconds = request.args.get('seconds', 30, type=int)
         try:
             data = database.get_recent_data(seconds=seconds)
-            from .api_client import generate_report
+            from .llm_client import generate_report
             text, summary, err = generate_report(data)
             if err:
                 return jsonify({
@@ -497,10 +497,9 @@ def create_app():
             if trend_days > 0:
                 trend_data = database.get_monthly_gait_trend(days=trend_days)
 
-            # 3. 调用专家知识库分析
-            from .expert_report import ExpertReportGenerator
-            expert = ExpertReportGenerator()
-            report_json, cited_papers, raw, err = expert.generate(
+            # 3. 调用本地 LLM 专家分析
+            from .llm_client import generate_expert_report
+            report_json, cited_papers, raw, err = generate_expert_report(
                 gait_stats, trend_data
             )
 
@@ -511,7 +510,12 @@ def create_app():
                 })
 
             # 4. 格式化报告文本
-            formatted = expert.format_report(report_json, cited_papers)
+            if isinstance(report_json, dict):
+                from .expert_report import ExpertReportGenerator
+                expert = ExpertReportGenerator()
+                formatted = expert.format_report(report_json, cited_papers)
+            else:
+                formatted = raw or str(report_json)
 
             # 5. 保存到数据库
             if raw:
@@ -570,6 +574,70 @@ def create_app():
             })
         except Exception as e:
             logger.error("清除对话历史失败: %s", e)
+            return jsonify({"code": -1, "message": str(e)[:200]})
+
+    @app.route(f'/api/{API_VERSION}/chat/send', methods=['POST'])
+    @rate_limit(per_second=1)
+    def chat_send():
+        """发送消息到本地 LLM 并获取回复"""
+        try:
+            data = request.get_json(force=True, silent=True)
+            if not data or "message" not in data:
+                return jsonify({"code": -1, "message": "缺少 message 字段"})
+            msg = data["message"].strip()
+            if not msg:
+                return jsonify({"code": -1, "message": "消息不能为空"})
+
+            from .chat_store import chat_store
+            history = chat_store.get_history()
+
+            # 添加用户消息到历史
+            chat_store.add_message("user", msg)
+
+            # 构建对话上下文
+            parts = []
+            for h in history:
+                role_cn = "用户" if h["role"] == "user" else "助手"
+                parts.append(f"{role_cn}: {h['content']}")
+            context = "\n".join(parts)
+
+            system_prompt = "你是康复助手小安。用中文简洁专业回答康复相关问题。非康复问题请礼貌拒绝。回答不超过200字。"
+            full_prompt = (
+                f"<|im_start|>system\n{system_prompt}<|im_end|>\n"
+                f"<|im_start|>user\n{context}\n{msg}<|im_end|>\n"
+                f"<|im_start|>assistant\n"
+            )
+
+            from .llm_client import _run_llm_stream_raw
+            full_response = [""]
+
+            def on_chunk(accumulated):
+                full_response[0] = accumulated
+
+            response_text, error = _run_llm_stream_raw(
+                full_prompt, on_chunk, max_tokens=400, temperature=0.3
+            )
+
+            if error and not response_text:
+                return jsonify({"code": -1, "message": f"LLM 错误: {error}"})
+
+            reply = response_text or ""
+            # 清理思考内容
+            from .llm_client import strip_reasoning_text
+            reply = strip_reasoning_text(reply).strip()
+
+            # 保存助手回复到历史
+            chat_store.add_message("assistant", reply)
+
+            return jsonify({
+                "code": 0,
+                "data": {
+                    "reply": reply,
+                    "user_message": msg,
+                }
+            })
+        except Exception as e:
+            logger.error("对话发送失败: %s", e)
             return jsonify({"code": -1, "message": str(e)[:200]})
 
     return app

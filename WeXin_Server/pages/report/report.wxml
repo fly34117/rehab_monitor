@@ -5,138 +5,34 @@
   </view>
 
   <view wx:if="{{locked}}" class="container">
-    <!-- 模式切换 -->
-    <view class="mode-tabs">
-      <view class="mode-tab {{mode === 'quick' ? 'active' : ''}}" data-mode="quick" bindtap="switchMode">
-        <text>快速分析</text>
-      </view>
-      <view class="mode-tab {{mode === 'expert' ? 'active' : ''}}" data-mode="expert" bindtap="switchMode">
-        <text>专家分析</text>
-      </view>
-    </view>
-
-    <!-- 快速模式 -->
-    <view wx:if="{{mode === 'quick'}}" class="period-select">
+    <!-- 时间段选择 -->
+    <view class="period-select">
       <text class="option {{seconds === 30 ? 'active' : ''}}" data-seconds="30" bindtap="changePeriod">30秒</text>
       <text class="option {{seconds === 300 ? 'active' : ''}}" data-seconds="300" bindtap="changePeriod">5分钟</text>
       <text class="option {{seconds === 1800 ? 'active' : ''}}" data-seconds="1800" bindtap="changePeriod">30分钟</text>
     </view>
 
-    <!-- 专家模式 -->
-    <view wx:if="{{mode === 'expert'}}" class="expert-options">
-      <view class="option-label">数据窗口</view>
-      <view class="period-select">
-        <text class="option {{seconds === 60 ? 'active' : ''}}" data-seconds="60" bindtap="changePeriod">1分钟</text>
-        <text class="option {{seconds === 300 ? 'active' : ''}}" data-seconds="300" bindtap="changePeriod">5分钟</text>
-      </view>
-      <view class="option-label">趋势对比</view>
-      <view class="period-select">
-        <text class="option {{trendDays === 0 ? 'active' : ''}}" data-days="0" bindtap="changeTrendDays">无</text>
-        <text class="option {{trendDays === 7 ? 'active' : ''}}" data-days="7" bindtap="changeTrendDays">7天</text>
-        <text class="option {{trendDays === 30 ? 'active' : ''}}" data-days="30" bindtap="changeTrendDays">30天</text>
-      </view>
-      <view class="expert-hint">
-        <text>结合 13 篇权威论文 + DeepSeek AI 生成文献引用报告</text>
-      </view>
-    </view>
-
     <!-- 生成按钮 -->
-    <button class="btn-generate {{mode === 'expert' ? 'btn-expert' : ''}}"
-            bindtap="generateReport" loading="{{loading}}" disabled="{{loading}}">
-      {{loading ? 'AI 分析中...' : (mode === 'expert' ? '生成专家报告' : '生成康复报告')}}
+    <button class="btn-generate" bindtap="generateReport" loading="{{loading}}" disabled="{{loading}}">
+      {{loading ? 'AI 分析中...' : '生成康复报告'}}
     </button>
 
     <!-- 报告展示 -->
     <view wx:if="{{reportText !== ''}}">
-      <!-- 专家报告头 -->
-      <view wx:if="{{mode === 'expert' && reportJson}}" class="card expert-card">
-        <text class="card-title">专家知识库步态分析报告</text>
-        <view class="expert-meta">
-          <text class="meta-tag">引用 {{citedCount}} 篇权威论文</text>
-          <text class="meta-tag">DeepSeek AI</text>
-        </view>
+      <view wx:if="{{reportSummary}}" class="card">
+        <text class="section-title">报告摘要</text>
+        <text class="summary-text">{{reportSummary}}</text>
       </view>
-
-      <!-- 摘要 -->
-      <view wx:if="{{mode === 'expert' && reportJson.summary}}" class="card">
-        <text class="section-title">摘要</text>
-        <text class="summary-text">{{reportJson.summary}}</text>
-      </view>
-
-      <!-- 步态评估 -->
-      <view wx:if="{{mode === 'expert' && reportJson.gait_assessment}}" class="card">
-        <text class="section-title">步态评估</text>
-        <view class="assessment-overall">
-          <text class="overall-badge">{{reportJson.gait_assessment.overall}}</text>
-        </view>
-        <text wx:if="{{reportJson.gait_assessment.grs_score}}" class="detail-text">
-          GRS 解读: {{reportJson.gait_assessment.grs_score}}
-        </text>
-        <view wx:for="{{reportJson.gait_assessment.key_findings}}" wx:for-item="f" wx:key="index" class="finding-item">
-          <text>• {{f}}</text>
-        </view>
-      </view>
-
-      <!-- 文献对比 -->
-      <view wx:if="{{mode === 'expert' && reportJson.literature_comparison}}" class="card">
-        <text class="section-title">文献对比分析</text>
-        <view wx:for="{{reportJson.literature_comparison}}" wx:for-item="row" wx:key="metric" class="lit-row">
-          <view class="lit-name">{{row.metric}}</view>
-          <view class="lit-val">{{row.patient_value}}</view>
-          <view class="lit-ref">{{row.normal_range}}</view>
-          <view class="lit-assess">{{row.assessment}}</view>
-        </view>
-      </view>
-
-      <!-- 跌倒风险 -->
-      <view wx:if="{{mode === 'expert' && reportJson.fall_risk_assessment}}" class="card">
-        <text class="section-title">跌倒风险评估</text>
-        <view class="risk-{{reportJson.fall_risk_assessment.level}}">
-          {{reportJson.fall_risk_assessment.level === 'high' ? '高风险' : (reportJson.fall_risk_assessment.level === 'medium' ? '中风险' : '低风险')}}
-        </view>
-        <view wx:for="{{reportJson.fall_risk_assessment.risk_factors}}" wx:for-item="f" wx:key="index" class="finding-item">
-          <text>• {{f}}</text>
-        </view>
-        <text wx:if="{{reportJson.fall_risk_assessment.literature_evidence}}" class="lit-evidence">
-          文献依据: {{reportJson.fall_risk_assessment.literature_evidence}}
-        </text>
-      </view>
-
-      <!-- 临床建议 -->
-      <view wx:if="{{mode === 'expert' && reportJson.recommendations}}" class="card">
-        <text class="section-title">临床建议</text>
-        <view wx:for="{{reportJson.recommendations}}" wx:for-item="rec" wx:key="action" class="rec-item">
-          <text class="rec-prio prio-{{rec.priority}}">{{rec.priority}}</text>
-          <text class="rec-action">{{rec.action}}</text>
-          <text wx:if="{{rec.basis}}" class="rec-basis">依据: {{rec.basis}}</text>
-        </view>
-      </view>
-
-      <!-- 快速模式报告 -->
-      <view wx:if="{{mode === 'quick'}}">
-        <view wx:if="{{reportSummary}}" class="card">
-          <text class="section-title">报告摘要</text>
-          <text class="summary-text">{{reportSummary}}</text>
-        </view>
-        <view class="card">
-          <text class="section-title">详细报告</text>
-          <text class="report-text" selectable="true">{{reportText}}</text>
-        </view>
-      </view>
-
-      <!-- 专家报告全文 -->
-      <view wx:if="{{mode === 'expert'}}" class="card">
-        <text class="section-title">报告全文</text>
+      <view class="card">
+        <text class="section-title">详细报告</text>
         <text class="report-text" selectable="true">{{reportText}}</text>
       </view>
-
       <button class="btn-share" open-type="share">分享报告</button>
     </view>
 
     <!-- 空状态 -->
     <view wx:else class="empty-hint">
-      <text wx:if="{{mode === 'quick'}}">选择时间范围，点击生成按钮\n获取 AI 康复分析报告</text>
-      <text wx:if="{{mode === 'expert'}}">选择数据窗口 + 趋势天数\n结合 13 篇权威论文生成专家报告</text>
+      <text>选择时间范围，点击生成按钮\n获取本地 AI 康复分析报告</text>
     </view>
 
     <view style="height:120rpx;"></view>

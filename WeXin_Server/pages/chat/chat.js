@@ -6,6 +6,8 @@ Page({
     messages: [],
     loading: false,
     locked: false,
+    inputText: '',
+    sending: false,
   },
 
   onShow() {
@@ -49,5 +51,41 @@ Page({
         }
       }
     });
+  },
+
+  onInput(e) {
+    this.setData({ inputText: e.detail.value });
+  },
+
+  async sendMessage() {
+    const msg = this.data.inputText.trim();
+    if (!msg || this.data.sending) return;
+
+    this.setData({ inputText: '', sending: true });
+
+    // 先乐观显示用户消息
+    const messages = [...this.data.messages, { role: 'user', content: msg }];
+    this.setData({ messages });
+    this._scrollToBottom();
+
+    try {
+      const result = await api.sendChat(msg);
+      // 追加助手回复
+      messages.push({ role: 'assistant', content: result.reply || '' });
+      this.setData({ messages, sending: false });
+      this._scrollToBottom();
+    } catch (e) {
+      wx.showToast({ title: '发送失败', icon: 'none' });
+      this.setData({ sending: false });
+    }
+  },
+
+  _scrollToBottom() {
+    wx.createSelectorQuery()
+      .select('.chat-list')
+      .boundingClientRect()
+      .exec(() => {
+        wx.pageScrollTo({ scrollTop: 99999, duration: 200 });
+      });
   },
 });

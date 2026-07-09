@@ -36,6 +36,15 @@
       <button class="btn-clear" bindtap="clearChat">🗑 清除对话</button>
     </view>
 
+    <!-- 输入框 -->
+    <view class="input-bar">
+      <input class="chat-input" placeholder="输入消息..." value="{{inputText}}"
+             bindinput="onInput" confirm-type="send" bindconfirm="sendMessage"/>
+      <button class="btn-send" bindtap="sendMessage" disabled="{{sending}}">
+        {{sending ? '...' : '发送'}}
+      </button>
+    </view>
+
     <view style="height:120rpx;"></view>
   </view>
 </scroll-view>

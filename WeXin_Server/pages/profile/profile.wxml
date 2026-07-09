@@ -22,9 +22,6 @@
       <text class="info-label">服务器地址</text>
       <text class="info-value small">{{apiBaseUrl}}</text>
     </view>
-    <button class="btn-scan" bindtap="scanLan" loading="{{scanning}}" disabled="{{scanning}}">
-      {{scanning ? '扫描中...' : '🔍 扫描局域网'}}
-    </button>
     <button class="btn-qrcode" bindtap="scanQRCode">
       📷 扫码连接
     </button>

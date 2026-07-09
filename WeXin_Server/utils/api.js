@@ -89,6 +89,11 @@ function clearChat() {
   return request('POST', '/chat/clear');
 }
 
+/** 发送消息到本地 LLM */
+function sendChat(message) {
+  return request('POST', '/chat/send', { message: message });
+}
+
 module.exports = {
   getRealtimeMetrics,
   getHistoryTrend,
@@ -100,4 +105,5 @@ module.exports = {
   getTrajectory,
   getChatHistory,
   clearChat,
+  sendChat,
 };
