@@ -1566,6 +1566,13 @@ def main():
                     formatted = text
                 window.finish_llm_text(formatted)
                 window.update_llm_status("done", "分析完成")
+                # 同步到 chat_store，小程序也能看到
+                try:
+                    from rehab_monitor.chat_store import chat_store
+                    chat_store.add_message("user", "📋 请求生成康复分析报告")
+                    chat_store.add_message("assistant", formatted)
+                except Exception:
+                    pass
                 if hasattr(window, '_diagnostic_tabs') and hasattr(window._diagnostic_tabs, 'switch_to_llm_tab'):
                     window._diagnostic_tabs.switch_to_llm_tab()
 

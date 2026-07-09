@@ -14,6 +14,44 @@ Page({
     this.setData({ locked: app.globalData.patientLocked });
     if (app.globalData.patientLocked) {
       this.loadHistory();
+    } else {
+      this._stopPolling();
+    }
+  },
+
+  onHide() {
+    this._stopPolling();
+  },
+
+  onUnload() {
+    this._stopPolling();
+  },
+
+  _startPolling() {
+    this._stopPolling();
+    this._pollTimer = setInterval(() => {
+      this._pollHistory();
+    }, 3000);
+  },
+
+  _stopPolling() {
+    if (this._pollTimer) {
+      clearInterval(this._pollTimer);
+      this._pollTimer = null;
+    }
+  },
+
+  async _pollHistory() {
+    if (this.data.sending) return;
+    try {
+      const result = await api.getChatHistory();
+      const msgs = result.messages || [];
+      if (msgs.length !== this.data.messages.length) {
+        this.setData({ messages: msgs });
+        this._scrollToBottom();
+      }
+    } catch (e) {
+      // 静默失败，不打扰用户
     }
   },
 
@@ -29,9 +67,9 @@ Page({
         messages: result.messages || [],
         loading: false,
       });
+      this._startPolling();
     } catch (e) {
       this.setData({ loading: false });
-      wx.showToast({ title: '加载对话失败', icon: 'none' });
     }
   },
 
