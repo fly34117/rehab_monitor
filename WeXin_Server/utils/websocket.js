@@ -10,6 +10,7 @@ class MetricsSocket {
     this.socket = null;
     this.url = '';
     this.callbacks = [];
+    this._statusCallbacks = [];
     this.reconnectTimer = null;
     this.reconnectAttempts = 0;
     this.maxReconnectAttempts = 10;
@@ -38,6 +39,7 @@ class MetricsSocket {
       this.connected = true;
       this.reconnectAttempts = 0;
       this._startHeartbeat();
+      this._notifyStatus(true);
     });
 
     this.socket.onMessage((res) => {
@@ -70,6 +72,19 @@ class MetricsSocket {
     this.callbacks = this.callbacks.filter(cb => cb !== callback);
   }
 
+  /** 订阅连接状态变化（即时推送，不走轮询） */
+  onStatusChange(callback) {
+    if (typeof callback === 'function') {
+      this._statusCallbacks.push(callback);
+    }
+  }
+
+  _notifyStatus(connected) {
+    this._statusCallbacks.forEach(cb => {
+      try { cb(connected); } catch (e) {}
+    });
+  }
+
   _startHeartbeat() {
     this._stopHeartbeat();
     this.heartbeatTimer = setInterval(() => {
@@ -90,6 +105,7 @@ class MetricsSocket {
     this.connected = false;
     this._stopHeartbeat();
     this.socket = null;
+    this._notifyStatus(false);
 
     if (this.reconnectAttempts < this.maxReconnectAttempts) {
       this.reconnectAttempts++;
@@ -112,6 +128,8 @@ class MetricsSocket {
     }
     this.connected = false;
     this.callbacks = [];
+    this._statusCallbacks = [];
+    this._notifyStatus(false);
   }
 }
 

@@ -103,19 +103,51 @@ Page({
 
     this.setData({ inputText: '', sending: true });
 
-    const messages = [...this.data.messages, { role: 'user', content: msg }];
+    // 用户气泡 + AI 占位气泡
+    const messages = [
+      ...this.data.messages,
+      { role: 'user', content: msg },
+      { role: 'assistant', content: '▊', streaming: true },
+    ];
     this.setData({ messages });
     this._scrollToBottom();
 
-    try {
-      const result = await api.sendChat(msg);
-      messages.push({ role: 'assistant', content: result.reply || '' });
-      this.setData({ messages, sending: false });
-      this._scrollToBottom();
-    } catch (e) {
-      wx.showToast({ title: e.message || '发送失败', icon: 'none', duration: 1500 });
-      this.setData({ sending: false });
-    }
+    // 流式请求
+    api.sendChatStream(
+      msg,
+      // onChunk: 逐字更新助手气泡
+      (text) => {
+        const msgs = [...this.data.messages];
+        // 更新最后一个助手气泡
+        const last = msgs[msgs.length - 1];
+        if (last && last.role === 'assistant') {
+          last.content = text + '▊';
+          last.streaming = true;
+        }
+        this.setData({ messages: msgs });
+      },
+      // onDone: 完成
+      (finalText) => {
+        const msgs = [...this.data.messages];
+        const last = msgs[msgs.length - 1];
+        if (last && last.role === 'assistant') {
+          last.content = finalText || last.content.replace('▊', '');
+          last.streaming = false;
+        }
+        this.setData({ messages: msgs, sending: false });
+        this._scrollToBottom();
+      },
+      // onError
+      (errMsg) => {
+        const msgs = [...this.data.messages];
+        const last = msgs[msgs.length - 1];
+        if (last && last.role === 'assistant') {
+          last.content = '抱歉，请求失败：' + (errMsg || '未知错误');
+          last.streaming = false;
+        }
+        this.setData({ messages: msgs, sending: false });
+      }
+    );
   },
 
   async generateReport() {

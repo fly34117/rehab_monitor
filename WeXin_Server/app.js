@@ -105,12 +105,17 @@ App({
       }
     });
 
+    // 连接状态即时推送（替代 5s 轮询）
+    this.socket.onStatusChange((connected) => {
+      this.globalData.wsConnected = connected;
+      this._notifyPages('connectionChange');
+    });
+
     const wsUrl = this._getWsUrl();
     this.socket.connect(wsUrl);
 
-    this._wsCheckTimer = setInterval(() => {
-      this.globalData.wsConnected = this.socket && this.socket.connected;
-    }, 5000);
+    // 初始状态（connect 是异步的，onStatusChange 会在 onOpen/onClose 时触发）
+    this.globalData.wsConnected = false;
   },
 
   _getWsUrl() {
