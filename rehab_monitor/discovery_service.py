@@ -15,29 +15,37 @@ API_PORT = 5000
 
 
 def get_lan_ip():
-    """获取本机局域网真实 IP（排除虚拟网卡/Docker/VPN，优先 WiFi）"""
+    """获取本机局域网真实 IP — 走默认路由的网卡，排除虚拟网卡"""
     import subprocess
+    import re
     try:
+        # 方法1: 查默认路由对应的接口名，然后取它的 IP（最准确）
+        route = subprocess.check_output(
+            ["ip", "route", "show", "default"], text=True
+        ).strip()
+        m = re.search(r"dev\s+(\S+)", route)
+        if m:
+            iface = m.group(1)
+            addr_out = subprocess.check_output(
+                ["ip", "-4", "addr", "show", iface], text=True
+            )
+            m2 = re.search(r"inet\s+([\d.]+)", addr_out)
+            if m2:
+                return m2.group(1)
+    except Exception:
+        pass
+    try:
+        # 方法2: hostname -I, 过滤掉虚拟网段
         out = subprocess.check_output(["hostname", "-I"], text=True).strip()
         ips = out.split()
         for ip in ips:
-            if ip.startswith("192.168."):
+            if ip.startswith("192.168.") and not ip.startswith("192.168.56."):
                 return ip
         for ip in ips:
             if ip.startswith("10."):
                 return ip
         if ips:
             return ips[0]
-    except Exception:
-        pass
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.settimeout(0.1)
-        s.connect(("192.168.255.255", 1))
-        ip = s.getsockname()[0]
-        s.close()
-        if not ip.startswith("127.") and not ip.startswith("198.18."):
-            return ip
     except Exception:
         pass
     return "127.0.0.1"

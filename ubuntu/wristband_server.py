@@ -131,6 +131,12 @@ document.getElementById('py').style.color=px.style.color;
 
 def _get_local_ip():
     """Return the best-guess LAN IP address, preferring real WiFi/LAN interfaces."""
+    try:
+        from rehab_monitor.discovery_service import get_lan_ip
+        return get_lan_ip()
+    except ImportError:
+        pass
+    # fallback（独立运行时）
     import subprocess
     try:
         out = subprocess.check_output(["hostname", "-I"], text=True).strip()
@@ -138,20 +144,8 @@ def _get_local_ip():
         for ip in ips:
             if ip.startswith("192.168."):
                 return ip
-        for ip in ips:
-            if ip.startswith("10."):
-                return ip
         if ips:
             return ips[0]
-    except Exception:
-        pass
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))
-        ip = s.getsockname()[0]
-        s.close()
-        if not ip.startswith("127.") and not ip.startswith("198.18."):
-            return ip
     except Exception:
         pass
     return "127.0.0.1"
