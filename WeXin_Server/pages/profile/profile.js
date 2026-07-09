@@ -44,7 +44,7 @@ Page({
   },
 
   switchPatient() {
-    wx.navigateTo({ url: '/pages/camera/camera' });
+    wx.switchTab({ url: '/pages/camera/camera' });
   },
 
   scanQRCode() {

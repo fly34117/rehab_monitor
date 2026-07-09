@@ -1,183 +1,244 @@
-page { background: #f5f5f5; font-family: -apple-system, sans-serif; }
-
-.container { padding: 12rpx; }
-
-/* 头部 */
-.header {
-  background: #fff;
-  border-radius: 12rpx;
-  padding: 20rpx;
-  margin-bottom: 12rpx;
+page {
+  background: #f4f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  height: 100vh;
 }
+
+.chat-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #f4f7fb;
+}
+
+.chat-header {
+  background: #fff;
+  padding: 24rpx 28rpx 20rpx;
+  border-bottom: 1rpx solid #e7edf5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  flex-shrink: 0;
+}
+
 .header-title {
-  font-size: 30rpx;
+  font-size: 34rpx;
   font-weight: 700;
-  color: #333;
+  color: #17233c;
   display: block;
   margin-bottom: 6rpx;
 }
 .header-desc {
-  font-size: 22rpx;
-  color: #999;
+  font-size: 24rpx;
+  color: #7d8a9c;
 }
 
-/* 空状态 */
+.chat-body {
+  flex: 1;
+  min-height: 0;
+  padding: 24rpx 24rpx 18rpx;
+  box-sizing: border-box;
+}
+
 .empty-hint {
-  padding: 120rpx 40rpx;
+  min-height: 55vh;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 12rpx;
+  gap: 14rpx;
+  color: #7d8a9c;
 }
-.empty-icon { font-size: 80rpx; }
+.empty-icon {
+  font-size: 72rpx;
+  line-height: 1;
+}
 .empty-hint > text:nth-child(2) {
-  font-size: 28rpx;
-  color: #999;
+  font-size: 30rpx;
+  color: #344054;
+  font-weight: 600;
 }
 .empty-sub {
-  font-size: 22rpx;
-  color: #bbb;
+  width: 520rpx;
+  max-width: 90%;
+  font-size: 24rpx;
+  color: #98a2b3;
   line-height: 1.6;
-  margin-top: 8rpx;
 }
 
-/* 对话列表 */
 .chat-list {
   display: flex;
   flex-direction: column;
-  gap: 16rpx;
+  gap: 22rpx;
+  padding-bottom: 16rpx;
 }
 
 .chat-item {
   display: flex;
-  gap: 10rpx;
+  gap: 14rpx;
+  align-items: flex-start;
 }
 
 .msg-user { flex-direction: row-reverse; }
 
 .avatar {
-  width: 60rpx;
-  height: 60rpx;
-  border-radius: 30rpx;
-  background: #e8e8e8;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: #e8eef7;
+  color: #426083;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 28rpx;
+  font-size: 20rpx;
+  font-weight: 700;
 }
 
 .bubble {
-  max-width: 75%;
-  padding: 16rpx 20rpx;
-  border-radius: 16rpx;
+  max-width: 78%;
+  padding: 18rpx 22rpx;
+  border-radius: 18rpx;
   position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.06);
 }
 
 .bubble-user {
-  background: #1a73e8;
-  border-top-right-radius: 4rpx;
+  background: #1f7ae0;
+  border-top-right-radius: 6rpx;
 }
 
 .bubble-assistant {
   background: #fff;
-  border-top-left-radius: 4rpx;
-  border: 1rpx solid #e8e8e8;
+  border-top-left-radius: 6rpx;
+  border: 1rpx solid #e7edf5;
 }
 
 .bubble-user .content { color: #fff; }
-.bubble-assistant .content { color: #333; }
+.bubble-assistant .content { color: #243042; }
 
 .role-label {
   font-size: 20rpx;
-  opacity: 0.6;
   display: block;
-  margin-bottom: 4rpx;
+  margin-bottom: 6rpx;
 }
-.bubble-user .role-label { color: rgba(255,255,255,0.7); }
-.bubble-assistant .role-label { color: #999; }
+.bubble-user .role-label { color: rgba(255,255,255,0.72); }
+.bubble-assistant .role-label { color: #8b98aa; }
 
 .content {
-  font-size: 26rpx;
+  font-size: 28rpx;
   line-height: 1.7;
   white-space: pre-wrap;
   word-break: break-all;
 }
 
-/* 清除按钮 */
-.footer-bar {
-  margin-top: 24rpx;
-  display: flex;
-  justify-content: center;
-}
+.chat-bottom-anchor { height: 2rpx; }
 
 .btn-clear {
-  width: 60%;
-  height: 72rpx;
-  line-height: 72rpx;
-  background: #fff;
-  color: #e74c3c;
-  border: 1rpx solid #e74c3c;
-  border-radius: 12rpx;
-  font-size: 26rpx;
+  width: 112rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #fff5f5;
+  color: #d92d20;
+  border: 1rpx solid #ffd5d2;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  margin: 0;
+  padding: 0;
 }
 
-/* 输入栏 */
 .input-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
-  gap: 10rpx;
-  padding: 12rpx 16rpx;
+  align-items: center;
+  gap: 12rpx;
+  padding: 16rpx 20rpx calc(16rpx + env(safe-area-inset-bottom));
   background: #fff;
-  border-top: 1rpx solid #e8e8e8;
-  box-shadow: 0 -2rpx 8rpx rgba(0,0,0,0.05);
+  border-top: 1rpx solid #e7edf5;
+  box-shadow: 0 -8rpx 24rpx rgba(15, 23, 42, 0.06);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.input-shell {
+  flex: 1;
+  min-width: 0;
+  height: 76rpx;
+  background: #f3f6fa;
+  border-radius: 38rpx;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .chat-input {
-  flex: 1;
-  height: 72rpx;
-  background: #f5f5f5;
-  border-radius: 36rpx;
-  padding: 0 24rpx;
-  font-size: 26rpx;
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 30rpx;
+  color: #17233c;
+  caret-color: #1f7ae0;
+}
+
+.chat-placeholder {
+  color: #98a2b3;
 }
 
 .btn-send {
-  width: 120rpx;
-  height: 72rpx;
-  line-height: 72rpx;
-  background: #1a73e8;
+  width: 124rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #1f7ae0;
   color: #fff;
-  border-radius: 36rpx;
-  font-size: 26rpx;
-  text-align: center;
-}
-
-.btn-report {
-  width: 72rpx;
-  height: 72rpx;
-  background: #f0f7ff;
-  color: #1a73e8;
-  border: 1rpx solid #1a73e8;
-  border-radius: 36rpx;
+  border-radius: 38rpx;
   font-size: 28rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
   flex-shrink: 0;
 }
 
-/* 未解锁 */
+.btn-report {
+  width: 156rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #eef6ff;
+  color: #1f7ae0;
+  border: 1rpx solid #b7d7ff;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.btn-send[disabled],
+.btn-report[disabled] {
+  opacity: 0.55;
+}
+
+button::after {
+  border: 0;
+}
+
 .unlock-msg {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  min-height: 100vh;
+  background: #f4f7fb;
 }
 .unlock-icon { font-size: 80rpx; margin-bottom: 20rpx; }
-.unlock-text { font-size: 28rpx; color: #999; }
+.unlock-text { font-size: 28rpx; color: #7d8a9c; }

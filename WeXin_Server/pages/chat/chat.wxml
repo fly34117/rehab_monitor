@@ -1,28 +1,46 @@
-<scroll-view scroll-y style="height:100vh;" enhanced show-scrollbar="{{false}}">
-  <view wx:if="{{!locked}}" class="unlock-msg">
-    <text class="unlock-icon">🔒</text>
-    <text class="unlock-text">请先在首页锁定患者</text>
+<view wx:if="{{!locked}}" class="unlock-msg">
+  <text class="unlock-icon">🔒</text>
+  <text class="unlock-text">请先在首页锁定患者</text>
+</view>
+
+<view wx:if="{{locked}}" class="chat-page">
+  <view class="chat-header">
+    <view>
+      <text class="header-title">AI 助手</text>
+      <text class="header-desc">康复问答与报告生成</text>
+    </view>
+    <view class="header-actions">
+      <button class="btn-report" bindtap="generateReport" disabled="{{sending}}">生成报告</button>
+      <button wx:if="{{messages.length > 0}}" class="btn-clear" bindtap="clearChat">清除</button>
+    </view>
   </view>
 
-  <view wx:if="{{locked}}" class="container">
-    <view class="header">
-      <text class="header-title">🤖 AI 助手</text>
-      <text class="header-desc">对话或点击 📋 生成康复报告</text>
+  <scroll-view
+    class="chat-body"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    scroll-into-view="{{scrollIntoView}}"
+  >
+    <view wx:if="{{loading}}" class="empty-hint">
+      <text class="empty-icon">...</text>
+      <text>正在加载对话</text>
     </view>
 
-    <!-- 空状态 -->
-    <view wx:if="{{messages.length === 0 && !loading}}" class="empty-hint">
+    <view wx:if="{{!loading && messages.length === 0}}" class="empty-hint">
       <text class="empty-icon">💬</text>
       <text>暂无对话记录</text>
-      <text class="empty-sub">在 PC 端 GUI 的 AI 对话区输入内容后，将显示在这里</text>
+      <text class="empty-sub">可以直接输入问题，也可以点击右上角生成康复分析报告</text>
     </view>
 
-    <!-- 对话列表 -->
-    <view wx:if="{{messages.length > 0}}" class="chat-list">
-      <view wx:for="{{messages}}" wx:key="index"
-            class="chat-item {{item.role === 'user' ? 'msg-user' : 'msg-assistant'}}">
+    <view wx:if="{{!loading && messages.length > 0}}" class="chat-list">
+      <view
+        wx:for="{{messages}}"
+        wx:key="index"
+        class="chat-item {{item.role === 'user' ? 'msg-user' : 'msg-assistant'}}"
+      >
         <view class="avatar">
-          <text>{{item.role === 'user' ? '🧑' : '🤖'}}</text>
+          <text>{{item.role === 'user' ? '我' : 'AI'}}</text>
         </view>
         <view class="bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-assistant'}}">
           <text class="role-label">{{item.role === 'user' ? '你' : '小安'}}</text>
@@ -30,24 +48,22 @@
         </view>
       </view>
     </view>
+    <view id="chat-bottom" class="chat-bottom-anchor"></view>
+  </scroll-view>
 
-    <!-- 清除按钮 -->
-    <view wx:if="{{messages.length > 0}}" class="footer-bar">
-      <button class="btn-clear" bindtap="clearChat">🗑 清除对话</button>
+  <view class="input-bar">
+    <view class="input-shell">
+      <input
+        class="chat-input"
+        placeholder="输入消息..."
+        placeholder-class="chat-placeholder"
+        value="{{inputText}}"
+        bindinput="onInput"
+        confirm-type="send"
+        bindconfirm="sendMessage"
+        adjust-position="{{false}}"
+      />
     </view>
-
-    <!-- 输入框 -->
-    <view class="input-bar">
-      <button class="btn-report" bindtap="generateReport" disabled="{{sending}}">
-        📋
-      </button>
-      <input class="chat-input" placeholder="输入消息..." value="{{inputText}}"
-             bindinput="onInput" confirm-type="send" bindconfirm="sendMessage"/>
-      <button class="btn-send" bindtap="sendMessage" disabled="{{sending}}">
-        发送
-      </button>
-    </view>
-
-    <view style="height:120rpx;"></view>
+    <button class="btn-send" bindtap="sendMessage" disabled="{{sending}}">发送</button>
   </view>
-</scroll-view>
+</view>

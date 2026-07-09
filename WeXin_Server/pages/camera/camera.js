@@ -14,10 +14,14 @@ Page({
   },
 
   takePhoto() {
+    if (this.data.loading) return;
     const ctx = wx.createCameraContext();
     ctx.takePhoto({
       quality: 'low',
-      success: (res) => this._compressAndLock(res.tempImagePath)
+      success: (res) => this._compressAndLock(res.tempImagePath),
+      fail: () => {
+        wx.showToast({ title: '拍照失败，请检查相机权限', icon: 'none' });
+      }
     });
   },
 
@@ -77,7 +81,7 @@ Page({
         icon: 'success'
       });
 
-      setTimeout(() => wx.navigateBack(), 1500);
+      setTimeout(() => wx.switchTab({ url: '/pages/index/index' }), 1500);
     } catch (e) {
       wx.hideLoading();
       this.setData({ loading: false });
