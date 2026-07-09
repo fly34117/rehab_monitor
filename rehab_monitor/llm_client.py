@@ -247,7 +247,22 @@ def _run_llm_stream_raw(full_prompt, on_chunk, max_tokens=DEFAULT_MAX_TOKENS,
                                 timeout or DEFAULT_TIMEOUT, on_token=on_chunk,
                                 enable_thinking=enable_thinking,
                                 thinking_budget_tokens=thinking_budget_tokens)
+    # 部分 Qwen3 GGUF 的 chat template 会在回复开头输出 "system" 前缀，过滤掉
+    if response and not error:
+        response = _strip_role_prefix(response)
     return response, error
+
+
+def _strip_role_prefix(text):
+    """去除 LLM 回复开头的角色前缀（Qwen3 模型偶发输出 'system' / 'assistant' token）"""
+    if not text:
+        return text
+    # 匹配开头可能出现的 role token: "system\n", "system ", "assistant\n", etc.
+    for prefix in ("system\n", "system ", "system", "assistant\n", "assistant ", "assistant"):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+    return text.strip()
 
 
 def _run_llm_stream_raw_completion(full_prompt, on_chunk, max_tokens=DEFAULT_MAX_TOKENS,

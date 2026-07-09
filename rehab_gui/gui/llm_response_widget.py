@@ -344,11 +344,16 @@ class LLMResponseWidget(QWidget):
         return chat_store.get_history()
 
     def add_to_history(self, role, content):
-        """添加到对话历史"""
+        """添加到对话历史（仅写入 chat_store，不触发重复显示）
+
+        消息显示由以下路径各自负责，此处只做持久化：
+        - GUI 对话: append_user_message + stream + finish_stream
+        - 小程序: _sync_from_store 定时器
+        - 报告: start_analysis + update_partial + finish_text
+        """
         chat_store.add_message(role, content)
-        # 立即同步显示
-        self._synced_count = 0
-        self._sync_from_store()
+        # 更新同步计数防止定时器重复显示已持久化的消息
+        self._synced_count = len(chat_store.get_history())
 
     def _sync_from_store(self):
         """从 chat_store 同步新消息到显示区（小程序发的消息也能看到）"""

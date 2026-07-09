@@ -161,7 +161,7 @@ class LLMChatWorker(QThread):
             # Use chat/completions for all configured chat models. For Qwen3,
             # llama-server should use the GGUF embedded template so reasoning is
             # returned separately instead of being mixed into raw text.
-            from rehab_monitor.llm_client import _run_llm_stream_raw
+            from rehab_monitor.llm_client import _run_llm_stream_raw, _strip_role_prefix
 
             parts = [f"<|im_start|>system\n{self.system_prompt}<|im_end|>\n"]
             for msg in self.messages:
@@ -170,7 +170,8 @@ class LLMChatWorker(QThread):
             full_prompt = "".join(parts)
 
             def on_chunk(accumulated):
-                self.partial_response.emit(accumulated)
+                # Qwen3 模型偶发以 role token 开头，流式时也过滤
+                self.partial_response.emit(_strip_role_prefix(accumulated))
 
             response, error = _run_llm_stream_raw(
                 full_prompt, on_chunk, max_tokens=self._max_tokens,
