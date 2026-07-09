@@ -585,6 +585,19 @@ def main():
         db = RehabDatabase(async_mode=True)
         db_session_id = db.start_session()
         logger.info(f"✓ 数据库已初始化 (session={db_session_id})")
+
+        # 启动 API 服务器（供小程序使用）
+        try:
+            from rehab_monitor.api_server import start_api_server
+            api_thread, ws_thread = start_api_server(
+                gait_analyzer, spatial_mapper, db, face_locker,
+                pose_detector, None,  # emotion=None
+                debug=False,
+            )
+            logger.info("✓ API 服务器已启动 (HTTP:5000, WS:5001)")
+        except Exception as e:
+            logger.warning(f"API 服务器启动失败（不影响核心功能）: {e}")
+
         init_dialog.set_step("✓ 数据库就绪 — 等待 LLM 加载...", 80)
         app.processEvents()
 
