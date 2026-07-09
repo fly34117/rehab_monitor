@@ -38,6 +38,12 @@ class LLMResponseWidget(QWidget):
         self._thinking_timer = QTimer(self)
         self._thinking_timer.timeout.connect(self._animate_thinking)
 
+        # 定时同步 chat_store → 显示（小程序发的消息也能看到）
+        self._synced_count = 0
+        self._sync_timer = QTimer(self)
+        self._sync_timer.timeout.connect(self._sync_from_store)
+        self._sync_timer.start(1500)  # 每 1.5 秒检查
+
         # 流式 UI 节流 — 避免每 token 触发 setPlainText 轰炸主线程
         self._pending_text = ""
         self._pending_mode = ""  # "chat" 或 "report"
@@ -316,6 +322,7 @@ class LLMResponseWidget(QWidget):
     def clear_chat(self):
         """清除对话历史和显示"""
         chat_store.clear()
+        self._synced_count = 0
         self._current_report = ""
         self._streaming = False
         self._text_edit.clear()
@@ -339,3 +346,31 @@ class LLMResponseWidget(QWidget):
     def add_to_history(self, role, content):
         """添加到对话历史"""
         chat_store.add_message(role, content)
+        # 立即同步显示
+        self._synced_count = 0
+        self._sync_from_store()
+
+    def _sync_from_store(self):
+        """从 chat_store 同步新消息到显示区（小程序发的消息也能看到）"""
+        if self._streaming:
+            return
+        messages = chat_store.get_history()
+        if len(messages) <= self._synced_count:
+            return
+        # 有新消息 — 增量追加到显示
+        new_msgs = messages[self._synced_count:]
+        for m in new_msgs:
+            if m["role"] == "user":
+                plain = self._text_edit.toPlainText()
+                if plain and not plain.rstrip().endswith("\n\n"):
+                    self._text_edit.moveCursor(QTextCursor.MoveOperation.End)
+                    self._text_edit.insertPlainText("\n\n" if plain.rstrip() else "")
+                self._text_edit.moveCursor(QTextCursor.MoveOperation.End)
+                self._text_edit.insertPlainText(f"🧑 你:\n{m['content']}\n\n")
+            elif m["role"] == "assistant":
+                self._text_edit.moveCursor(QTextCursor.MoveOperation.End)
+                self._text_edit.insertPlainText(f"🤖 小安:\n{m['content']}\n\n")
+        self._synced_count = len(messages)
+        # 滚动到底部
+        sb = self._text_edit.verticalScrollBar()
+        sb.setValue(sb.maximum())
