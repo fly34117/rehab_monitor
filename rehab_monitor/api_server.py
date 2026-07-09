@@ -589,52 +589,25 @@ def create_app():
                 return jsonify({"code": -1, "message": "消息不能为空"})
 
             from .chat_store import chat_store
-            history = chat_store.get_history()
-
-            # 添加用户消息到历史
             chat_store.add_message("user", msg)
 
-            # 构建对话上下文
-            parts = []
-            for h in history:
-                role_cn = "用户" if h["role"] == "user" else "助手"
-                parts.append(f"{role_cn}: {h['content']}")
-            context = "\n".join(parts)
-
-            system_prompt = "你是康复助手小安。用中文简洁专业回答康复相关问题。非康复问题请礼貌拒绝。回答不超过200字。"
-            full_prompt = (
-                f"<|im_start|>system\n{system_prompt}<|im_end|>\n"
-                f"<|im_start|>user\n{context}\n{msg}<|im_end|>\n"
-                f"<|im_start|>assistant\n"
+            system_prompt = (
+                "你是康复助手小安。用中文简洁专业回答康复相关问题。"
+                "非康复问题请礼貌拒绝。回答不超过200字。"
             )
 
-            from .llm_client import _run_llm_stream_raw
-            full_response = [""]
+            from .llm_client import _run_llm
+            reply, error = _run_llm(system_prompt, msg, max_tokens=300, temperature=0.3)
 
-            def on_chunk(accumulated):
-                full_response[0] = accumulated
-
-            response_text, error = _run_llm_stream_raw(
-                full_prompt, on_chunk, max_tokens=400, temperature=0.3
-            )
-
-            if error and not response_text:
+            if error and not reply:
                 return jsonify({"code": -1, "message": f"LLM 错误: {error}"})
 
-            reply = response_text or ""
-            # 清理思考内容
-            from .llm_client import strip_reasoning_text
-            reply = strip_reasoning_text(reply).strip()
-
-            # 保存助手回复到历史
+            reply = (reply or "").strip()
             chat_store.add_message("assistant", reply)
 
             return jsonify({
                 "code": 0,
-                "data": {
-                    "reply": reply,
-                    "user_message": msg,
-                }
+                "data": {"reply": reply, "user_message": msg}
             })
         except Exception as e:
             logger.error("对话发送失败: %s", e)

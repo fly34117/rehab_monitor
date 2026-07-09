@@ -24,8 +24,7 @@
       <view class="nav-item" bindtap="goToTrend"><text class="nav-icon">📈</text><text class="nav-text">趋势</text></view>
       <view class="nav-item" bindtap="goToMap"><text class="nav-icon">🗺️</text><text class="nav-text">地图</text></view>
       <view class="nav-item" bindtap="goToCamera"><text class="nav-icon">📷</text><text class="nav-text">拍照</text></view>
-      <view class="nav-item" bindtap="goToReport"><text class="nav-icon">📋</text><text class="nav-text">报告</text></view>
-      <view class="nav-item" bindtap="goToChat"><text class="nav-icon">💬</text><text class="nav-text">对话</text></view>
+      <view class="nav-item" bindtap="goToChat"><text class="nav-icon">🤖</text><text class="nav-text">AI 助手</text></view>
     </view>
   </block>
 
@@ -61,8 +60,7 @@
       <view class="nav-item" bindtap="goToTrend"><text class="nav-icon">📈</text><text class="nav-text">趋势</text></view>
       <view class="nav-item" bindtap="goToMap"><text class="nav-icon">🗺️</text><text class="nav-text">地图</text></view>
       <view class="nav-item" bindtap="goToCamera"><text class="nav-icon">📷</text><text class="nav-text">拍照</text></view>
-      <view class="nav-item" bindtap="goToReport"><text class="nav-icon">📋</text><text class="nav-text">报告</text></view>
-      <view class="nav-item" bindtap="goToChat"><text class="nav-icon">💬</text><text class="nav-text">对话</text></view>
+      <view class="nav-item" bindtap="goToChat"><text class="nav-icon">🤖</text><text class="nav-text">AI 助手</text></view>
     </view>
 
     <view class="section">
@@ -87,7 +85,7 @@
     </view>
 
     <view class="quick-row">
-      <button class="q-btn" bindtap="quickReport">生成报告</button>
+      <button class="q-btn" bindtap="goToChat">AI 助手</button>
       <button class="q-btn outline" open-type="share">分享</button>
     </view>
   </block>

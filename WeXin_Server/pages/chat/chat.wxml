@@ -6,8 +6,8 @@
 
   <view wx:if="{{locked}}" class="container">
     <view class="header">
-      <text class="header-title">💬 AI 对话记录</text>
-      <text class="header-desc">来自本地 LLM 的对话内容</text>
+      <text class="header-title">🤖 AI 助手</text>
+      <text class="header-desc">对话或点击 📋 生成康复报告</text>
     </view>
 
     <!-- 空状态 -->
@@ -38,10 +38,13 @@
 
     <!-- 输入框 -->
     <view class="input-bar">
+      <button class="btn-report" bindtap="generateReport" disabled="{{sending}}">
+        📋
+      </button>
       <input class="chat-input" placeholder="输入消息..." value="{{inputText}}"
              bindinput="onInput" confirm-type="send" bindconfirm="sendMessage"/>
       <button class="btn-send" bindtap="sendMessage" disabled="{{sending}}">
-        {{sending ? '...' : '发送'}}
+        发送
       </button>
     </view>
 

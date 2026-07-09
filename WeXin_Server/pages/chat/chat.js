@@ -63,19 +63,37 @@ Page({
 
     this.setData({ inputText: '', sending: true });
 
-    // 先乐观显示用户消息
     const messages = [...this.data.messages, { role: 'user', content: msg }];
     this.setData({ messages });
     this._scrollToBottom();
 
     try {
       const result = await api.sendChat(msg);
-      // 追加助手回复
       messages.push({ role: 'assistant', content: result.reply || '' });
       this.setData({ messages, sending: false });
       this._scrollToBottom();
     } catch (e) {
       wx.showToast({ title: '发送失败', icon: 'none' });
+      this.setData({ sending: false });
+    }
+  },
+
+  async generateReport() {
+    if (this.data.sending) return;
+    this.setData({ sending: true });
+
+    const msg = '请帮我生成一份当前步态数据的康复分析报告，包括步态评估和康复建议。';
+    const messages = [...this.data.messages, { role: 'user', content: '📋 ' + msg }];
+    this.setData({ messages });
+    this._scrollToBottom();
+
+    try {
+      const result = await api.sendChat(msg);
+      messages.push({ role: 'assistant', content: result.reply || '' });
+      this.setData({ messages, sending: false });
+      this._scrollToBottom();
+    } catch (e) {
+      wx.showToast({ title: '生成失败', icon: 'none' });
       this.setData({ sending: false });
     }
   },
