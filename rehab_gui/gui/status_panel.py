@@ -448,6 +448,33 @@ class StatusPanel(QFrame):
 
         layout.addWidget(self._llm_group)
 
+        # === 扫码连接（小程序） ===
+        self._qr_group = QGroupBox("📱 扫码连接")
+        qr_layout = QVBoxLayout(self._qr_group)
+        qr_layout.setSpacing(4)
+
+        self._qr_label = QLabel()
+        self._qr_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._qr_label.setMinimumSize(120, 120)
+        self._qr_label.setMaximumSize(160, 160)
+        self._qr_label.setStyleSheet("background-color: white; border: 1px solid #555; border-radius: 4px;")
+        self._generate_qr_code()
+        qr_layout.addWidget(self._qr_label, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        self._qr_hint = QLabel("微信扫一扫连接")
+        self._qr_hint.setStyleSheet("color: #8a8a8a; font-size: 10px;")
+        self._qr_hint.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        qr_layout.addWidget(self._qr_hint)
+
+        self._qr_addr = QLabel("")
+        self._qr_addr.setStyleSheet("color: #6a6a6a; font-size: 10px;")
+        self._qr_addr.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._qr_addr.setWordWrap(True)
+        self._update_qr_addr_label()
+        qr_layout.addWidget(self._qr_addr)
+
+        layout.addWidget(self._qr_group)
+
         layout.addStretch()
 
         scroll.setWidget(container)
@@ -673,6 +700,54 @@ class StatusPanel(QFrame):
         from rehab_gui.config import LLM_MODEL_OPTIONS
         label = LLM_MODEL_OPTIONS.get(model_key, model_key)
         self._llm_model_label.setText(f"模型: {label}")
+
+    # ── 二维码（小程序扫码连接）──
+
+    def _get_lan_ip(self):
+        """获取本机局域网 IP"""
+        import socket
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.settimeout(0.1)
+            s.connect(("192.168.255.255", 1))
+            ip = s.getsockname()[0]
+            s.close()
+            return ip
+        except Exception:
+            return "127.0.0.1"
+
+    def _generate_qr_code(self):
+        """生成服务器地址二维码"""
+        try:
+            import qrcode
+            from io import BytesIO
+            from PyQt6.QtGui import QPixmap
+            import json
+
+            ip = self._get_lan_ip()
+            data = json.dumps({"ip": ip, "port": 5000}, ensure_ascii=False)
+
+            qr = qrcode.QRCode(box_size=4, border=2)
+            qr.add_data(data)
+            qr.make(fit=True)
+            img = qr.make_image(fill_color="black", back_color="white")
+
+            buf = BytesIO()
+            img.save(buf, format="PNG")
+            buf.seek(0)
+
+            pixmap = QPixmap()
+            pixmap.loadFromData(buf.read())
+            scaled = pixmap.scaled(150, 150, Qt.AspectRatioMode.KeepAspectRatio,
+                                   Qt.TransformationMode.SmoothTransformation)
+            self._qr_label.setPixmap(scaled)
+        except Exception as e:
+            logger.debug("生成二维码失败: %s", e)
+
+    def _update_qr_addr_label(self):
+        """更新二维码地址提示"""
+        ip = self._get_lan_ip()
+        self._qr_addr.setText(f"服务器: {ip}:5000")
 
     def update_sensor_status(self, sensor_status):
         """更新外部传感器状态

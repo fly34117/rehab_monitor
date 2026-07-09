@@ -25,6 +25,9 @@
     <button class="btn-scan" bindtap="scanLan" loading="{{scanning}}" disabled="{{scanning}}">
       {{scanning ? '扫描中...' : '🔍 扫描局域网'}}
     </button>
+    <button class="btn-qrcode" bindtap="scanQRCode">
+      📷 扫码连接
+    </button>
   </view>
 
   <view class="card">

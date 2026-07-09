@@ -86,4 +86,28 @@ Page({
       wx.showToast({ title: '扫描失败，请重试', icon: 'none' });
     }
   },
+
+  scanQRCode() {
+    wx.scanCode({
+      scanType: ['qrCode'],
+      success: (res) => {
+        try {
+          const data = JSON.parse(res.result);
+          if (data.ip && data.port) {
+            const addr = `${data.ip}:${data.port}`;
+            wx.setStorageSync('apiBaseUrl', addr);
+            this.setData({ apiBaseUrl: addr });
+            wx.showToast({ title: `已连接 ${data.ip}`, icon: 'success' });
+          } else {
+            wx.showToast({ title: '无效的二维码', icon: 'error' });
+          }
+        } catch (e) {
+          wx.showToast({ title: '二维码格式错误', icon: 'error' });
+        }
+      },
+      fail: () => {
+        wx.showToast({ title: '扫码取消', icon: 'none' });
+      }
+    });
+  },
 });
