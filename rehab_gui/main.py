@@ -239,7 +239,7 @@ class BackendIntegrator:
             self._bridge.push_frame_count(self._frame_count)
 
             if fall_status != "safe":
-                self._bridge.push_fall(fall_status, fall_score)
+                self._bridge.push_fall(fall_status, fall_score, "摄像头")
 
             self._bridge.push_metrics({"person_count": state["person_count"]})
 
@@ -608,6 +608,7 @@ def main():
         lock_confidence = [0]
         latest_fall_status = ["safe"]   # 供 LLM 回调读取
         latest_fall_score = [0.0]
+        latest_fall_source = ["摄像头"]  # 跌倒来源
         llm_active_worker = [None]       # 保持 LLMWorker 引用，防止 GC 回收
         chat_worker_ref = [None]        # 保持 LLMChatWorker 引用
         _llm_streaming = [False]        # LLM 是否正在生成 token（分析 or 对话）
@@ -930,9 +931,10 @@ def main():
                 # 传感器优先，视觉检测仅在传感器未告警 + 开关开启时运行
                 if sensor_result[0] == "alert":
                     # 传感器已触发跌倒 → 直接使用
-                    fall_status, fall_score = sensor_result
+                    fall_status, fall_score, fall_source = sensor_result
                     latest_fall_status[0] = fall_status
                     latest_fall_score[0] = fall_score
+                    latest_fall_source[0] = fall_source
                 elif fall_detector.visual_enabled:
                     # 传感器未告警 + 视觉检测开启 → 摄像头推断
                     bbox = None
@@ -947,11 +949,13 @@ def main():
                     fall_status, fall_score = fall_detector.update(keypoints, bbox, 480)
                     latest_fall_status[0] = fall_status
                     latest_fall_score[0] = fall_score
+                    latest_fall_source[0] = "摄像头"
                 else:
                     # 传感器安全 + 视觉关闭 → 使用传感器结果
-                    fall_status, fall_score = sensor_result
+                    fall_status, fall_score, fall_source = sensor_result
                     latest_fall_status[0] = fall_status
                     latest_fall_score[0] = fall_score
+                    latest_fall_source[0] = fall_source
 
                 _tick("fall")
                 # 只有锁定人脸后才提取
@@ -1043,7 +1047,7 @@ def main():
                     import time as _time
                     _now = _time.time()
                     if _now - last_fall_alert_time[0] >= 5.0:  # 5秒冷却
-                        bridge.push_fall(fall_status, fall_score)
+                        bridge.push_fall(fall_status, fall_score, latest_fall_source[0])
                         last_fall_alert_time[0] = _now
 
                 # 推送实时步态指标到状态面板（每5帧，避免每帧更新20+标签触发Qt重排）

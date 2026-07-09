@@ -90,7 +90,7 @@ class SensorManager:
             else:
                 fall_detector.status = "alert"
                 fall_detector.score = self.wristband_fall["score"]
-                return ("alert", fall_detector.score)
+                return ("alert", fall_detector.score, "手环")
         else:
             self.wristband_fall["active"] = False
             self.wristband_fall["score"] = 0.0
@@ -103,7 +103,7 @@ class SensorManager:
                 fall_detector.score = self.phone_data_source.get_fall_score()
                 self.phone_fall["active"] = True
                 self.phone_fall["score"] = fall_detector.score
-                return ("alert", fall_detector.score)
+                return ("alert", fall_detector.score, "手机")
             else:
                 self.phone_fall["active"] = False
                 self.phone_fall["score"] = 0.0
@@ -118,7 +118,7 @@ class SensorManager:
                 self.csi_fall["active"] = True
                 self.csi_fall["score"] = csi_score
                 self._csi_fall_time = now
-                return ("alert", fall_detector.score)
+                return ("alert", fall_detector.score, "CSI")
             else:
                 if now - self._csi_fall_time > self.SENSOR_FALL_TIMEOUT:
                     self.csi_fall["active"] = False
@@ -131,7 +131,7 @@ class SensorManager:
         # 所有传感器均未触发跌倒 — 返回安全状态（视觉检测由调用方按需启用）
         fall_detector.status = "safe"
         fall_detector.score = 0.0
-        return ("safe", 0.0)
+        return ("safe", 0.0, "—")
 
     def close(self):
         """关闭所有传感器连接"""
