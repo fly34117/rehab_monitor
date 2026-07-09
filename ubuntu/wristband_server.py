@@ -130,15 +130,22 @@ document.getElementById('py').style.color=px.style.color;
 # ---------------------------------------------------------------------------
 
 def _get_local_ip():
-    """Return the best-guess LAN IP address."""
+    """Return the best-guess LAN IP address (prefer real WiFi/LAN, skip Docker VPN)."""
+    import subprocess
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.connect(("8.8.8.8", 80))
-        ip = s.getsockname()[0]
-        s.close()
-        return ip
+        out = subprocess.check_output(["hostname", "-I"], text=True).strip()
+        ips = out.split()
+        for ip in ips:
+            if ip.startswith("192.168."):
+                return ip
+        for ip in ips:
+            if ip.startswith("10."):
+                return ip
+        if ips:
+            return ips[0]
     except Exception:
-        return "127.0.0.1"
+        pass
+    return "127.0.0.1"
 
 
 def _now():
