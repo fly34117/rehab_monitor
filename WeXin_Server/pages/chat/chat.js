@@ -112,26 +112,46 @@ Page({
     this.setData({ messages });
     this._scrollToBottom();
 
+    // 节流：最多每 80ms 更新一次 setData，避免竞态 + 提高性能
+    let _lastUpdate = 0;
+    let _pendingText = '▊';
+    let _timer = null;
+    const _flushDisplay = () => {
+      const msgs = [...this.data.messages];
+      const last = msgs[msgs.length - 1];
+      if (last && last.role === 'assistant') {
+        last.content = _pendingText;
+        last.streaming = !!_pendingText.includes('▊');
+      }
+      this.setData({ messages: msgs });
+    };
+
     // 流式请求
     api.sendChatStream(
       msg,
-      // onChunk: 逐字更新助手气泡
+      // onChunk: 收到增量 → 本地累积 + 节流刷新
       (text) => {
-        const msgs = [...this.data.messages];
-        // 更新最后一个助手气泡
-        const last = msgs[msgs.length - 1];
-        if (last && last.role === 'assistant') {
-          last.content = text + '▊';
-          last.streaming = true;
+        _pendingText = text + '▊';
+        const now = Date.now();
+        if (now - _lastUpdate >= 80) {
+          _lastUpdate = now;
+          _flushDisplay();
+        } else if (!_timer) {
+          _timer = setTimeout(() => {
+            _lastUpdate = Date.now();
+            _flushDisplay();
+            _timer = null;
+          }, 80);
         }
-        this.setData({ messages: msgs });
       },
       // onDone: 完成
       (finalText) => {
+        if (_timer) { clearTimeout(_timer); _timer = null; }
+        const displayText = finalText || _pendingText.replace('▊', '');
         const msgs = [...this.data.messages];
         const last = msgs[msgs.length - 1];
         if (last && last.role === 'assistant') {
-          last.content = finalText || last.content.replace('▊', '');
+          last.content = displayText;
           last.streaming = false;
         }
         this.setData({ messages: msgs, sending: false });
@@ -139,6 +159,7 @@ Page({
       },
       // onError
       (errMsg) => {
+        if (_timer) { clearTimeout(_timer); _timer = null; }
         const msgs = [...this.data.messages];
         const last = msgs[msgs.length - 1];
         if (last && last.role === 'assistant') {
