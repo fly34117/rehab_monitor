@@ -42,10 +42,9 @@
         <view class="avatar">
           <text>{{item.role === 'user' ? '我' : 'AI'}}</text>
         </view>
-        <view class="bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-assistant'}} {{item.streaming ? 'bubble-streaming' : ''}}">
+        <view class="bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-assistant'}}">
           <text class="role-label">{{item.role === 'user' ? '你' : '小安'}}</text>
           <text class="content" selectable="true">{{item.content}}</text>
-          <text wx:if="{{item.streaming}}" class="typing-cursor">|</text>
         </view>
       </view>
     </view>

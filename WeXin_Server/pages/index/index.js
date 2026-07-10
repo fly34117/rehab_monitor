@@ -14,10 +14,9 @@ Page({
 
   onLoad() {
     this._refreshLockState();
-    // 保底轮询：1s（正常由 app.js onStatusChange 即时推送，此处置为冗余）
     this._statusTimer = setInterval(() => {
       this.setData({ wsConnected: app.globalData.wsConnected });
-    }, 1000);
+    }, 2000);
   },
 
   onReady() {
@@ -202,13 +201,6 @@ Page({
   },
 
   // ===== 跌倒告警（由 app.js 事件总线触发）=====
-
-  /** 接收 app.js 事件推送（连接状态变化等） */
-  onAppEvent(event) {
-    if (event === 'connectionChange') {
-      this.setData({ wsConnected: app.globalData.wsConnected });
-    }
-  },
 
   onFallAlert(data) {
     wx.showModal({

@@ -242,18 +242,3 @@ button::after {
 }
 .unlock-icon { font-size: 80rpx; margin-bottom: 20rpx; }
 .unlock-text { font-size: 28rpx; color: #7d8a9c; }
-
-/* 流式打字闪烁光标 */
-.typing-cursor {
-  color: #4a90e2;
-  font-weight: bold;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.bubble-streaming {
-  /* 流式时气泡轻微高亮 */
-  box-shadow: 0 0 0 2rpx rgba(74, 144, 226, 0.15);
-}

@@ -94,56 +94,6 @@ function sendChat(message) {
   return request('POST', '/chat/send', { message: message });
 }
 
-/** 流式发送消息 — token-by-token 回调 */
-function sendChatStream(message, onChunk, onDone, onError) {
-  const requestTask = wx.request({
-    url: getApiBase() + '/chat/stream',
-    method: 'POST',
-    data: { message: message },
-    header: {
-      'Content-Type': 'application/json',
-      'X-Session-Id': SESSION_ID
-    },
-    enableChunked: true,
-    success(res) {
-      if (onDone) {
-        // 最终文本 = 最后一行非空非ERROR内容
-        const text = typeof res.data === 'string' ? res.data : '';
-        onDone(text);
-      }
-    },
-    fail(err) {
-      if (onError) onError(err.errMsg || '网络请求失败');
-    }
-  });
-
-  if (requestTask && requestTask.onChunkReceived) {
-    let lastText = '';
-    requestTask.onChunkReceived((chunk) => {
-      // chunk.data 是 ArrayBuffer，转换为字符串
-      const text = String.fromCharCode.apply(null, new Uint8Array(chunk.data));
-      if (text && onChunk) {
-        // 取最后一行作为最新累积文本（跳过ERROR行）
-        const lines = text.split('\n').filter(l => l && !l.startsWith('ERROR:'));
-        if (lines.length > 0) {
-          const latest = lines[lines.length - 1];
-          if (latest !== lastText) {
-            lastText = latest;
-            onChunk(latest);
-          }
-        }
-        // 检查是否有错误
-        if (text.includes('ERROR:')) {
-          const errLine = text.split('\n').find(l => l.startsWith('ERROR:'));
-          if (errLine && onError) onError(errLine.replace('ERROR:', ''));
-        }
-      }
-    });
-  }
-
-  return requestTask;
-}
-
 module.exports = {
   getRealtimeMetrics,
   getHistoryTrend,
@@ -156,5 +106,4 @@ module.exports = {
   getChatHistory,
   clearChat,
   sendChat,
-  sendChatStream,
 };
