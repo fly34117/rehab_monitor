@@ -17,9 +17,16 @@ page {
   padding: 24rpx 28rpx 20rpx;
   border-bottom: 1rpx solid #e7edf5;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 18rpx;
+  flex-wrap: wrap;
   flex-shrink: 0;
+}
+
+.header-main {
+  flex: 1;
+  min-width: 260rpx;
 }
 
 .header-actions {

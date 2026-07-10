@@ -98,6 +98,29 @@ function sendChat(message) {
 function sendChatStream(message, onChunk, onDone, onError) {
   let accumulated = '';
   let done = false;
+  let decoder = null;
+  if (typeof TextDecoder !== 'undefined') {
+    try {
+      decoder = new TextDecoder('utf-8');
+    } catch (e) {
+      decoder = null;
+    }
+  }
+
+  const cleanText = (text) => (text || '').replace(/\n?ERROR:.*$/, '');
+
+  const finish = () => {
+    if (done) return;
+    done = true;
+    if (decoder) {
+      try {
+        const rest = decoder.decode();
+        if (rest) accumulated += rest;
+      } catch (e) {}
+    }
+    if (accumulated && onChunk) onChunk(accumulated);
+    if (onDone) onDone(cleanText(accumulated));
+  };
 
   const requestTask = wx.request({
     url: getApiBase() + '/chat/stream',
@@ -109,20 +132,19 @@ function sendChatStream(message, onChunk, onDone, onError) {
     },
     enableChunked: true,
     success(res) {
-      if (done) return;
-      done = true;
-      // 兜底: 如果还有剩余文本没回调过，补推一次
-      if (accumulated && onChunk) {
-        onChunk(accumulated);
-      }
-      // 最终文本 = 去掉 ERROR 行后的内容
-      const cleaned = accumulated.replace(/\n?ERROR:.*$/, '');
-      if (onDone) onDone(cleaned);
+      finish();
     },
     fail(err) {
+      const msg = err && err.errMsg ? err.errMsg : '网络请求失败';
+      // 微信真机偶发把已经结束的 chunked 文本流标成 incomplete。
+      // 已经收到正文时按正常完成处理，避免先显示错误再被历史记录刷新成正常内容。
+      if (cleanText(accumulated).trim() && msg.indexOf('ERR_INCOMPLETE_CHUNKED_ENCODING') >= 0) {
+        finish();
+        return;
+      }
       if (done) return;
       done = true;
-      if (onError) onError(err.errMsg || '网络请求失败');
+      if (onError) onError(msg);
     }
   });
 
@@ -133,15 +155,18 @@ function sendChatStream(message, onChunk, onDone, onError) {
         // 正确的 UTF-8 解码（避免 apply 参数上限 + 中文断裂）
         const arr = new Uint8Array(chunk.data);
         let text = '';
-        // 逐段拼接避免 call stack overflow
-        for (let i = 0; i < arr.length; i += 4096) {
-          text += String.fromCharCode.apply(null, Array.from(arr.slice(i, i + 4096)));
-        }
-        // 用 TextDecoder 备选（基础库 3.0+ 支持）
-        if (typeof TextDecoder !== 'undefined') {
+        if (decoder) {
           try {
-            text = new TextDecoder('utf-8').decode(arr);
-          } catch (e) { /* 回退到上面的方案 */ }
+            text = decoder.decode(arr, { stream: true });
+          } catch (e) {
+            text = '';
+          }
+        }
+        if (!text) {
+          // 逐段拼接兜底，避免 call stack overflow
+          for (let i = 0; i < arr.length; i += 4096) {
+            text += String.fromCharCode.apply(null, Array.from(arr.slice(i, i + 4096)));
+          }
         }
         if (!text) return;
 

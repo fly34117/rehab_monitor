@@ -13,6 +13,8 @@ App({
   },
 
   socket: null,
+  _healthTimer: null,
+  _healthFailures: 0,
 
   onLaunch() {
     // 先信任本地存储（快速显示），再异步验证后端状态
@@ -31,6 +33,9 @@ App({
         if (this.globalData.patientLocked && !this.globalData.wsConnected) {
           this._initWebSocket();
         }
+        this._startHealthMonitor();
+      } else {
+        this._setWsConnected(false);
       }
     });
 
@@ -58,6 +63,7 @@ App({
             wx.setStorageSync('patientId', backendLocked.name);
             wx.setStorageSync('patientName', backendLocked.name);
             this._initWebSocket();
+            this._startHealthMonitor();
           } else {
             // 后端未锁定 → 清除本地残留状态
             this._clearLockState();
@@ -83,6 +89,8 @@ App({
       this.socket.disconnect();
       this.socket = null;
     }
+    this._stopHealthMonitor();
+    this._setWsConnected(false);
   },
 
   _getApiBase() {
@@ -107,15 +115,15 @@ App({
 
     // 连接状态即时推送（替代 5s 轮询）
     this.socket.onStatusChange((connected) => {
-      this.globalData.wsConnected = connected;
-      this._notifyPages('connectionChange');
+      this._setWsConnected(connected);
     });
 
     const wsUrl = this._getWsUrl();
     this.socket.connect(wsUrl);
 
     // 初始状态（connect 是异步的，onStatusChange 会在 onOpen/onClose 时触发）
-    this.globalData.wsConnected = false;
+    this._setWsConnected(false);
+    this._startHealthMonitor();
   },
 
   _getWsUrl() {
@@ -151,6 +159,7 @@ App({
     wx.setStorageSync('patientId', patientId);
     wx.setStorageSync('patientName', patientName);
     this._initWebSocket();
+    this._startHealthMonitor();
 
     // 轮询后端确认锁定完成（搜索 → 实际锁定，最多等 15 秒）
     let attempts = 0;
@@ -183,6 +192,49 @@ App({
   },
 
   /** 通知所有活跃页面 */
+  _setWsConnected(connected) {
+    if (this.globalData.wsConnected === connected) return;
+    this.globalData.wsConnected = connected;
+    this._notifyPages('connectionChange');
+  },
+
+  _startHealthMonitor() {
+    if (this._healthTimer || !this.globalData.patientLocked) return;
+    const check = () => {
+      wx.request({
+        url: this._getApiBase() + '/api/v1/health',
+        method: 'GET',
+        timeout: 2000,
+        success: (res) => {
+          if (res.statusCode === 200 && res.data && res.data.code === 0) {
+            this._healthFailures = 0;
+            this._setWsConnected(true);
+            return;
+          }
+          this._markHealthFail();
+        },
+        fail: () => this._markHealthFail()
+      });
+    };
+    check();
+    this._healthTimer = setInterval(check, 3000);
+  },
+
+  _markHealthFail() {
+    this._healthFailures += 1;
+    if (this._healthFailures >= 2) {
+      this._setWsConnected(false);
+    }
+  },
+
+  _stopHealthMonitor() {
+    if (this._healthTimer) {
+      clearInterval(this._healthTimer);
+      this._healthTimer = null;
+    }
+    this._healthFailures = 0;
+  },
+
   _notifyPages(event) {
     const pages = getCurrentPages();
     pages.forEach(page => {

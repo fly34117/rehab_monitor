@@ -1,7 +1,7 @@
 /**
  * WebSocket 连接管理
  * - 自动重连 (断线后每5秒重试，最多10次)
- * - 心跳保活 (30秒 ping/pong)
+ * - 心跳保活 (5秒 pong 保活，服务端 ping 时立即回复)
  * - 多消息类型分发 (metrics / fall_alert)
  */
 
@@ -44,11 +44,21 @@ class MetricsSocket {
 
     this.socket.onMessage((res) => {
       try {
-        const msg = JSON.parse(res.data);
-        if (msg.type === 'ping') {
-          if (this.socket) this.socket.send({ data: 'pong' });
+        if (res.data === 'pong') {
+          this._markAlive();
           return;
         }
+        const msg = JSON.parse(res.data);
+        if (msg.type === 'ping') {
+          this._markAlive();
+          if (this.socket) this.socket.send({ data: JSON.stringify({ type: 'pong' }) });
+          return;
+        }
+        if (msg.type === 'pong') {
+          this._markAlive();
+          return;
+        }
+        this._markAlive();
         // 分发给所有订阅者
         this.callbacks.forEach(cb => {
           try { cb(msg); } catch (e) {}
@@ -89,9 +99,13 @@ class MetricsSocket {
     this._stopHeartbeat();
     this.heartbeatTimer = setInterval(() => {
       if (this.socket && this.connected) {
-        this.socket.send({ data: 'ping' });
+        this.socket.send({
+          data: JSON.stringify({ type: 'pong' }),
+          success: () => this._markAlive(),
+          fail: () => this._onClose()
+        });
       }
-    }, 30000);
+    }, 5000);
   }
 
   _stopHeartbeat() {
@@ -101,7 +115,12 @@ class MetricsSocket {
     }
   }
 
+  _markAlive() {
+    this.lastAliveAt = Date.now();
+  }
+
   _onClose() {
+    if (!this.connected && !this.socket && this.reconnectTimer) return;
     this.connected = false;
     this._stopHeartbeat();
     this.socket = null;

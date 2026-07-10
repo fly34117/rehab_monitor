@@ -5,7 +5,7 @@
 
 <view wx:if="{{locked}}" class="chat-page">
   <view class="chat-header">
-    <view>
+    <view class="header-main">
       <text class="header-title">AI 助手</text>
       <text class="header-desc">康复问答与报告生成</text>
     </view>
