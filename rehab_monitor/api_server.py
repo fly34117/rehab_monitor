@@ -687,19 +687,23 @@ def create_app():
             threading.Thread(target=_llm_thread, daemon=True, name="chat-stream").start()
 
             def generate():
-                while True:
-                    try:
-                        token = token_queue.get(timeout=30)
-                    except _queue.Empty:
-                        yield "\n"  # 超时兜底，避免连接挂死
-                        break
-                    if token is None:
-                        break
-                    if isinstance(token, dict) and "error" in token:
-                        yield f"\nERROR:{token['error']}\n"
-                        break
-                    # 只发增量文本（客户端累积拼接），不加换行
-                    yield (token or "")
+                try:
+                    while True:
+                        try:
+                            token = token_queue.get(timeout=30)
+                        except _queue.Empty:
+                            yield "\n"  # 超时兜底，避免连接挂死
+                            break
+                        if token is None:
+                            break
+                        if isinstance(token, dict) and "error" in token:
+                            yield f"\nERROR:{token['error']}\n"
+                            break
+                        # 只发增量文本（客户端累积拼接），不加换行
+                        yield (token or "")
+                finally:
+                    # 确保生成器干净退出，Werkzeug 能正确写入 chunked 结束标记 0\r\n\r\n
+                    pass
 
             return Response(
                 generate(),
@@ -708,6 +712,7 @@ def create_app():
                 headers={
                     'Cache-Control': 'no-cache',
                     'X-Accel-Buffering': 'no',
+                    'Transfer-Encoding': 'chunked',
                 }
             )
         except Exception as e:
