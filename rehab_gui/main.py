@@ -693,7 +693,7 @@ def main():
         LOCK_ENTER_THRESH = 5
         LOCK_INCREMENT = 2
         LOCK_DECREMENT = 1
-        LOCK_MAX = 30
+        LOCK_MAX = 60  # 2s 容错（30帧/s），转头/短暂遮挡不丢锁
         search_mode = [False]  # 搜索模式：人脸丢失后进入
 
         # 在实例化诊断监控器之前，patch 它们：抑制独立窗口 + 捕获 render 输出
@@ -915,7 +915,9 @@ def main():
                                     elif fall_status == "alert":
                                         pass  # 跌倒期间不降置信度
                                     else:
-                                        lock_confidence[0] = max(0, lock_confidence[0] - LOCK_DECREMENT)
+                                        # 外观不匹配：骨架还在则保留至少10分，不因转头/低头而解锁
+                                        _floor = 10 if target_det_idx is not None else 0
+                                        lock_confidence[0] = max(_floor, lock_confidence[0] - LOCK_DECREMENT)
                                         if lock_confidence[0] <= 0:
                                             logger.info("目标丢失（外观验证失败），进入搜索模式")
                                             search_mode[0] = True

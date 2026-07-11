@@ -142,11 +142,14 @@ App({
   },
 
   _emitFallAlert(data) {
-    const pages = getCurrentPages();
-    pages.forEach(page => {
-      if (typeof page.onFallAlert === 'function') {
-        try { page.onFallAlert(data); } catch (e) {}
-      }
+    // 全局弹窗 — 无论用户在哪一页都能看到
+    const loc = (data && data.location) || [0, 0];
+    const score = data && data.score != null ? data.score.toFixed(1) : '?';
+    wx.showModal({
+      title: '⚠️ 跌倒告警',
+      content: `检测到跌倒事件！\n分数: ${score}\n位置: (${loc[0].toFixed(1)}, ${loc[1].toFixed(1)})`,
+      confirmText: '知道了',
+      showCancel: false
     });
   },
 

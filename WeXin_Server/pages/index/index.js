@@ -210,17 +210,6 @@ Page({
     }
   },
 
-  onFallAlert(data) {
-    wx.showModal({
-      title: '跌倒告警',
-      content: '检测到跌倒事件！位置: (' +
-        ((data.location && data.location[0]) || 0).toFixed(1) + ', ' +
-        ((data.location && data.location[1]) || 0).toFixed(1) + ')',
-      confirmText: '知道了',
-      showCancel: false
-    });
-  },
-
   // ===== 导航 =====
 
   goToCamera() { wx.switchTab({ url: '/pages/camera/camera' }); },
