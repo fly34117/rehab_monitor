@@ -781,6 +781,47 @@ def main():
                     return
                 camera_fail_count[0] = 0  # 成功后重置计数
 
+                # 处理 API 待定锁定/解锁请求（小程序拍照锁定 → GUI）
+                from rehab_monitor.api_server import consume_pending_lock, consume_pending_unlock
+                if consume_pending_unlock():
+                    logger.info("GUI 收到 API 解锁请求")
+                    if face_locker is not None:
+                        face_locker._load_db()
+                    target_locked[0] = False
+                    target_name[0] = ""
+                    target_similarity[0] = 0.0
+                    lock_confidence[0] = 0
+                    search_mode[0] = False
+                    pose_detector.target_track_id = None
+                    bridge.push_metrics({"lock_status": False, "lock_name": "", "lock_similarity": 0.0})
+                _api_lock = consume_pending_lock()
+                if _api_lock[0] and not target_locked[0]:
+                    lock_name, lock_emb = _api_lock
+                    logger.info("GUI 收到 API 锁定请求: %s", lock_name)
+                    if face_locker is not None:
+                        face_locker._load_db()
+                    target_locked[0] = True
+                    target_name[0] = lock_name
+                    target_similarity[0] = 1.0
+                    lock_confidence[0] = LOCK_MAX
+                    search_mode[0] = False
+                    # 用 API 提供的人脸嵌入在下一帧搜索匹配
+                    if lock_emb is not None and face_locker is not None:
+                        face_locker.reference_face_emb = lock_emb
+                    bridge.push_metrics({
+                        "lock_status": True, "lock_name": lock_name,
+                        "lock_similarity": 1.0, "lock_searching": False,
+                    })
+                    # 写入锁状态文件（对齐 CLI）
+                    import json as _json
+                    lock_state = {"locked": True, "name": lock_name, "timestamp": time.time()}
+                    _lock_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "model", "lock_state.json")
+                    try:
+                        with open(_lock_path, "w") as f:
+                            _json.dump(lock_state, f)
+                    except Exception:
+                        pass
+
                 # 保存原始帧（无骨架，用于干净人脸提取）
                 latest_raw_frame[0] = frame.copy()
 
@@ -789,9 +830,9 @@ def main():
                 # annotated_frame 已含骨骼绘制，keypoints 为 (N, 17, 3) 或 None
                 annotated_frame, keypoints = pose_detector.process_frame(frame)
                 _tick("yolo")
-                # 人脸操作冷却：距上次 > 200ms 时才触发，防止 MTCNN 积压
+                # 人脸冷却：距上次 > 100ms（每秒最多10次），body 特征无限制
                 _now_ts = time.time()
-                _face_ok = (_now_ts - _last_face_time[0] >= 0.2)
+                _face_ok = (_now_ts - _last_face_time[0] >= 0.1)
 
                 # 步态分析（取锁定目标或第一个人的关键点）
                 gait_keypoints = None
@@ -816,9 +857,9 @@ def main():
                                 lock_confidence[0] = min(LOCK_MAX, lock_confidence[0] + LOCK_INCREMENT)
                                 target_similarity[0] = 1.0
                             else:
-                                # 外观验证：只要距上次 > 200ms 就跑（跑满帧率）
+                                # 外观验证：人脸受100ms冷却保护，body特征每帧都跑（开销极小）
                                 do_face = _face_ok
-                                do_body = _face_ok  # body 验证同频
+                                do_body = True  # body 特征不限制
 
                                 if do_face or do_body:
                                     person_k = kpts_all[target_det_idx]
