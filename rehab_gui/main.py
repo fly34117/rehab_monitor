@@ -789,10 +789,9 @@ def main():
                 # annotated_frame 已含骨骼绘制，keypoints 为 (N, 17, 3) 或 None
                 annotated_frame, keypoints = pose_detector.process_frame(frame)
                 _tick("yolo")
-                _yolo_ms = _timings.get("yolo", 999)  # 本帧 YOLO 耗时
-                # 人脸操作仅在此帧 YOLO < 50ms 且距上次 > 300ms 时执行
+                # 人脸操作冷却：距上次 > 200ms 时才触发，防止 MTCNN 积压
                 _now_ts = time.time()
-                _face_ok = _yolo_ms < 50 and (_now_ts - _last_face_time[0] >= 0.3)
+                _face_ok = (_now_ts - _last_face_time[0] >= 0.2)
 
                 # 步态分析（取锁定目标或第一个人的关键点）
                 gait_keypoints = None
@@ -817,9 +816,9 @@ def main():
                                 lock_confidence[0] = min(LOCK_MAX, lock_confidence[0] + LOCK_INCREMENT)
                                 target_similarity[0] = 1.0
                             else:
-                                # 定期外观验证 — 降低频率到 30 帧一次 + YOLO 不忙时
-                                do_face = _face_ok and frame_count % 30 == 0
-                                do_body = frame_count % 5 == 0  # body 特征提取开销小
+                                # 外观验证：只要距上次 > 200ms 就跑（跑满帧率）
+                                do_face = _face_ok
+                                do_body = _face_ok  # body 验证同频
 
                                 if do_face or do_body:
                                     person_k = kpts_all[target_det_idx]
@@ -908,11 +907,8 @@ def main():
                                     })
 
                     elif search_mode[0]:
-                        # === 搜索模式：每4帧扫全员（无全帧回退），上限2人 ===
-                        # MTCNN 实测 68ms，全帧回退每人多跑一次导致 N× 放大。
-                        # 策略：4帧间隔扫全员（最多2人），去掉全帧回退，兼顾速度与检测率。
-                        # YOLO 慢帧跳过人脸扫描，防止主循环卡顿
-                        if face_locker is not None and _face_ok and frame_count % 4 == 0:
+                        # === 搜索模式：每帧扫全员（受 _face_ok 200ms 冷却保护）===
+                        if face_locker is not None and _face_ok:
                             # 搜索时放宽阈值（匹配 CLI 版行为：face=0.30, body=0.55）
                             _orig_face_th = face_locker.face_threshold
                             _orig_body_th = face_locker.body_threshold
