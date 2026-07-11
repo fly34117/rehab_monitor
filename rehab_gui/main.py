@@ -871,6 +871,7 @@ def main():
                                             x1, y1 = valid_fp.min(axis=0).astype(int)
                                             x2, y2 = valid_fp.max(axis=0).astype(int)
                                             face_emb = face_locker.extract_embedding_from_roi(frame, x1, y1, x2, y2)
+                                        _last_face_time[0] = _now_ts  # 人脸提取后才更新冷却
 
                                     if do_body or face_emb is not None:
                                         is_match, sim, source = face_locker.match_combined(frame, person_k, face_emb)
@@ -896,8 +897,7 @@ def main():
                                                     if name is not None and fs > best_face_sim:
                                                         best_face_sim = fs
                                                         best_face_pid = pid
-
-                                    _last_face_time[0] = _now_ts  # 人脸操作完成，记录时间
+                                        _last_face_time[0] = _now_ts  # 扫描完成也更新冷却
 
                                     # 融合判定
                                     if best_face_pid >= 0 and best_face_sim > sim + 0.05:
@@ -987,6 +987,7 @@ def main():
                             # 恢复原始阈值
                             face_locker.face_threshold = _orig_face_th
                             face_locker.body_threshold = _orig_body_th
+                            _last_face_time[0] = _now_ts  # 搜索扫描完成，更新冷却
 
                             if best_pid >= 0:
                                 lock_confidence[0] = min(LOCK_MAX, lock_confidence[0] + LOCK_INCREMENT)
