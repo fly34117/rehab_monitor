@@ -636,6 +636,86 @@ def create_app():
             logger.error("对话发送失败:\n%s", tb)
             return jsonify({"code": -1, "message": f"{type(e).__name__}: {e}"})
 
+    @app.route(f'/api/{API_VERSION}/chat/stream', methods=['POST'])
+    @rate_limit(per_second=2)
+    def chat_stream():
+        """流式对话 — 逐 token 推送给小程序（增量传输，非累积全文）"""
+        try:
+            data = request.get_json(force=True, silent=True)
+            if not data or "message" not in data:
+                return jsonify({"code": -1, "message": "缺少 message 字段"})
+            msg = data["message"].strip()
+            if not msg:
+                return jsonify({"code": -1, "message": "消息不能为空"})
+
+            from .chat_store import chat_store
+            chat_store.add_message("user", msg)
+
+            system_prompt = (
+                "你是康复助手小安。用中文简洁专业回答康复相关问题。"
+                "非康复问题请礼貌拒绝。回答不超过200字。"
+            )
+
+            from .llm_client import _check_health
+            if not _check_health():
+                return jsonify({"code": -1, "message": "LLM 服务未启动"})
+
+            from .llm_client import _run_llm_stream
+            from flask import Response
+            import queue as _queue
+
+            token_queue = _queue.Queue()
+            _last_text = [""]  # 用 list 让闭包可修改
+
+            def _llm_thread():
+                def on_token(accumulated):
+                    # 只推增量（新出现的字符），不是累积全文
+                    prev = _last_text[0]
+                    delta = accumulated[len(prev):] if accumulated.startswith(prev) else accumulated
+                    _last_text[0] = accumulated
+                    token_queue.put(delta)
+                reply, error = _run_llm_stream(
+                    system_prompt, msg, on_token,
+                    max_tokens=300, temperature=0.3,
+                )
+                if error and not reply:
+                    token_queue.put({"error": error})
+                else:
+                    chat_store.add_message("assistant", reply or "")
+                token_queue.put(None)  # 结束标记
+
+            threading.Thread(target=_llm_thread, daemon=True, name="chat-stream").start()
+
+            def generate():
+                while True:
+                    try:
+                        token = token_queue.get(timeout=30)
+                    except _queue.Empty:
+                        yield "\n"  # 超时兜底，避免连接挂死
+                        break
+                    if token is None:
+                        break
+                    if isinstance(token, dict) and "error" in token:
+                        yield f"\nERROR:{token['error']}\n"
+                        break
+                    # 只发增量文本（客户端累积拼接），不加换行
+                    yield (token or "")
+
+            return Response(
+                generate(),
+                mimetype='text/plain; charset=utf-8',
+                direct_passthrough=True,
+                headers={
+                    'Cache-Control': 'no-cache',
+                    'X-Accel-Buffering': 'no',
+                }
+            )
+        except Exception as e:
+            import traceback
+            tb = traceback.format_exc()
+            logger.error("流式对话失败:\n%s", tb)
+            return jsonify({"code": -1, "message": f"{type(e).__name__}: {e}"})
+
     return app
 
 

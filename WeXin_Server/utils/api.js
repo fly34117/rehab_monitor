@@ -94,6 +94,76 @@ function sendChat(message) {
   return request('POST', '/chat/send', { message: message });
 }
 
+/** 流式发送消息 — token-by-token 回调 */
+function sendChatStream(message, onChunk, onDone, onError) {
+  let accumulated = '';
+  let done = false;
+
+  const requestTask = wx.request({
+    url: getApiBase() + '/chat/stream',
+    method: 'POST',
+    data: { message: message },
+    header: {
+      'Content-Type': 'application/json',
+      'X-Session-Id': SESSION_ID
+    },
+    enableChunked: true,
+    success(res) {
+      if (done) return;
+      done = true;
+      // 兜底: 如果还有剩余文本没回调过，补推一次
+      if (accumulated && onChunk) {
+        onChunk(accumulated);
+      }
+      // 最终文本 = 去掉 ERROR 行后的内容
+      const cleaned = accumulated.replace(/\n?ERROR:.*$/, '');
+      if (onDone) onDone(cleaned);
+    },
+    fail(err) {
+      if (done) return;
+      done = true;
+      if (onError) onError(err.errMsg || '网络请求失败');
+    }
+  });
+
+  if (requestTask && requestTask.onChunkReceived) {
+    requestTask.onChunkReceived((chunk) => {
+      if (done) return;
+      try {
+        // 正确的 UTF-8 解码（避免 apply 参数上限 + 中文断裂）
+        const arr = new Uint8Array(chunk.data);
+        let text = '';
+        // 逐段拼接避免 call stack overflow
+        for (let i = 0; i < arr.length; i += 4096) {
+          text += String.fromCharCode.apply(null, Array.from(arr.slice(i, i + 4096)));
+        }
+        // 用 TextDecoder 备选（基础库 3.0+ 支持）
+        if (typeof TextDecoder !== 'undefined') {
+          try {
+            text = new TextDecoder('utf-8').decode(arr);
+          } catch (e) { /* 回退到上面的方案 */ }
+        }
+        if (!text) return;
+
+        // 检查是否包含错误标记
+        if (text.includes('ERROR:')) {
+          done = true;
+          const errMatch = text.match(/ERROR:(.*)/);
+          if (errMatch && errMatch[1] && onError) {
+            onError(errMatch[1]);
+          }
+          return;
+        }
+
+        accumulated += text;
+        if (onChunk) onChunk(accumulated);
+      } catch (e) {}
+    });
+  }
+
+  return requestTask;
+}
+
 module.exports = {
   getRealtimeMetrics,
   getHistoryTrend,
@@ -106,4 +176,5 @@ module.exports = {
   getChatHistory,
   clearChat,
   sendChat,
+  sendChatStream,
 };
