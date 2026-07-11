@@ -730,6 +730,7 @@ def main():
         frame_stop_event = threading.Event()
         llm_health_state = ["off"]
         last_llm_health_check = [0.0]
+        _last_face_time = [0.0]  # 人脸操作冷却时间戳
 
         def process_frame():
             """处理单帧并更新 GUI"""
@@ -788,6 +789,10 @@ def main():
                 # annotated_frame 已含骨骼绘制，keypoints 为 (N, 17, 3) 或 None
                 annotated_frame, keypoints = pose_detector.process_frame(frame)
                 _tick("yolo")
+                _yolo_ms = _timings.get("yolo", 999)  # 本帧 YOLO 耗时
+                # 人脸操作仅在此帧 YOLO < 50ms 且距上次 > 300ms 时执行
+                _now_ts = time.time()
+                _face_ok = _yolo_ms < 50 and (_now_ts - _last_face_time[0] >= 0.3)
 
                 # 步态分析（取锁定目标或第一个人的关键点）
                 gait_keypoints = None
@@ -812,9 +817,9 @@ def main():
                                 lock_confidence[0] = min(LOCK_MAX, lock_confidence[0] + LOCK_INCREMENT)
                                 target_similarity[0] = 1.0
                             else:
-                                # 定期外观验证（人脸15帧一次，人体5帧一次）
-                                do_face = frame_count % 15 == 0
-                                do_body = frame_count % 5 == 0
+                                # 定期外观验证 — 降低频率到 30 帧一次 + YOLO 不忙时
+                                do_face = _face_ok and frame_count % 30 == 0
+                                do_body = frame_count % 5 == 0  # body 特征提取开销小
 
                                 if do_face or do_body:
                                     person_k = kpts_all[target_det_idx]
@@ -851,6 +856,8 @@ def main():
                                                     if name is not None and fs > best_face_sim:
                                                         best_face_sim = fs
                                                         best_face_pid = pid
+
+                                    _last_face_time[0] = _now_ts  # 人脸操作完成，记录时间
 
                                     # 融合判定
                                     if best_face_pid >= 0 and best_face_sim > sim + 0.05:
@@ -904,7 +911,8 @@ def main():
                         # === 搜索模式：每4帧扫全员（无全帧回退），上限2人 ===
                         # MTCNN 实测 68ms，全帧回退每人多跑一次导致 N× 放大。
                         # 策略：4帧间隔扫全员（最多2人），去掉全帧回退，兼顾速度与检测率。
-                        if face_locker is not None and frame_count % 4 == 0:
+                        # YOLO 慢帧跳过人脸扫描，防止主循环卡顿
+                        if face_locker is not None and _face_ok and frame_count % 4 == 0:
                             # 搜索时放宽阈值（匹配 CLI 版行为：face=0.30, body=0.55）
                             _orig_face_th = face_locker.face_threshold
                             _orig_body_th = face_locker.body_threshold
