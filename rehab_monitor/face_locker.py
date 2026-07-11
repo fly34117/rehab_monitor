@@ -37,7 +37,8 @@ class FaceNetLocker:
             return
         self.device = torch.device("cpu")
         logger.info("设备: %s, 加载 FaceNet...", self.requested_device)
-        self.mtcnn = MTCNN(keep_all=False, device=self.device)
+        self.mtcnn = MTCNN(keep_all=False, device=self.device,
+                           thresholds=[0.5, 0.6, 0.6])
         self._try_load_openvino()
         if not self._ov_ready:
             self.resnet = InceptionResnetV1(pretrained="vggface2").eval().to(self.device)
