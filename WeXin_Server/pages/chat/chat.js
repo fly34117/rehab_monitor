@@ -103,72 +103,19 @@ Page({
 
     this.setData({ inputText: '', sending: true });
 
-    // 用户气泡 + AI 占位气泡
-    const messages = [
-      ...this.data.messages,
-      { role: 'user', content: msg },
-      { role: 'assistant', content: '▊', streaming: true },
-    ];
+    const messages = [...this.data.messages, { role: 'user', content: msg }];
     this.setData({ messages });
     this._scrollToBottom();
 
-    // 节流：最多每 80ms 更新一次 setData，避免竞态 + 提高性能
-    let _lastUpdate = 0;
-    let _pendingText = '▊';
-    let _timer = null;
-    const _flushDisplay = () => {
-      const msgs = [...this.data.messages];
-      const last = msgs[msgs.length - 1];
-      if (last && last.role === 'assistant') {
-        last.content = _pendingText;
-        last.streaming = !!_pendingText.includes('▊');
-      }
-      this.setData({ messages: msgs });
-    };
-
-    // 流式请求
-    api.sendChatStream(
-      msg,
-      // onChunk: 收到增量 → 本地累积 + 节流刷新
-      (text) => {
-        _pendingText = text + '▊';
-        const now = Date.now();
-        if (now - _lastUpdate >= 80) {
-          _lastUpdate = now;
-          _flushDisplay();
-        } else if (!_timer) {
-          _timer = setTimeout(() => {
-            _lastUpdate = Date.now();
-            _flushDisplay();
-            _timer = null;
-          }, 80);
-        }
-      },
-      // onDone: 完成
-      (finalText) => {
-        if (_timer) { clearTimeout(_timer); _timer = null; }
-        const displayText = finalText || _pendingText.replace('▊', '');
-        const msgs = [...this.data.messages];
-        const last = msgs[msgs.length - 1];
-        if (last && last.role === 'assistant') {
-          last.content = displayText;
-          last.streaming = false;
-        }
-        this.setData({ messages: msgs, sending: false });
-        this._scrollToBottom();
-      },
-      // onError
-      (errMsg) => {
-        if (_timer) { clearTimeout(_timer); _timer = null; }
-        const msgs = [...this.data.messages];
-        const last = msgs[msgs.length - 1];
-        if (last && last.role === 'assistant') {
-          last.content = '抱歉，请求失败：' + (errMsg || '未知错误');
-          last.streaming = false;
-        }
-        this.setData({ messages: msgs, sending: false });
-      }
-    );
+    try {
+      const result = await api.sendChat(msg);
+      messages.push({ role: 'assistant', content: result.reply || '' });
+      this.setData({ messages, sending: false });
+      this._scrollToBottom();
+    } catch (e) {
+      wx.showToast({ title: e.message || '发送失败', icon: 'none', duration: 1500 });
+      this.setData({ sending: false });
+    }
   },
 
   async generateReport() {
