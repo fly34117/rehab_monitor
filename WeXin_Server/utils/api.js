@@ -137,10 +137,14 @@ function sendChatStream(message, onChunk, onDone, onError) {
     fail(err) {
       const msg = err && err.errMsg ? err.errMsg : '网络请求失败';
       // 微信真机偶发把已经结束的 chunked 文本流标成 incomplete。
-      // 用 setTimeout 让出当前执行队列，给最后一次 onChunkReceived 执行机会，
-      // 无论 accumulated 是否有内容都按正常完成处理，避免闪现错误消息。
+      // 有内容 → 正常完成；无内容 → 静默结束（不报错），等待轮询恢复
       if (msg.indexOf('ERR_INCOMPLETE_CHUNKED_ENCODING') >= 0) {
-        setTimeout(finish, 0);
+        if (cleanText(accumulated).trim()) {
+          finish();
+        } else if (!done) {
+          done = true;
+          if (onDone) onDone('');  // 空完成，不触发 onError
+        }
         return;
       }
       if (done) return;

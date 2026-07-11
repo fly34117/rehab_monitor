@@ -47,7 +47,8 @@ Page({
     try {
       const result = await api.getChatHistory();
       const msgs = result.messages || [];
-      if (msgs.length !== this.data.messages.length) {
+      // 服务端有新消息或内容不同时更新（>= 保证流式异常结束时占位符不被服务端未完成状态覆盖）
+      if (msgs.length >= this.data.messages.length) {
         this.setData({ messages: msgs });
         this._scrollToBottom();
       }
@@ -147,15 +148,18 @@ Page({
       // onDone: 完成
       (finalText) => {
         if (_timer) { clearTimeout(_timer); _timer = null; }
-        const displayText = finalText || _pendingText.replace('▊', '');
-        const msgs = [...this.data.messages];
-        const last = msgs[msgs.length - 1];
-        if (last && last.role === 'assistant') {
-          last.content = displayText;
-          last.streaming = false;
+        if (finalText) {
+          const msgs = [...this.data.messages];
+          const last = msgs[msgs.length - 1];
+          if (last && last.role === 'assistant') {
+            last.content = finalText;
+            last.streaming = false;
+          }
+          this.setData({ messages: msgs });
+          this._scrollToBottom();
         }
-        this.setData({ messages: msgs, sending: false });
-        this._scrollToBottom();
+        // finalText 为空：流式异常结束，保留占位符，轮询会恢复
+        this.setData({ sending: false });
       },
       // onError
       (errMsg) => {
