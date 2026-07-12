@@ -639,6 +639,7 @@ def main():
         breath_prev_chest_gray = None   # 上一帧胸部区域灰度图
         breath_start_time = 0.0         # 检测开始时刻（秒，用 time.time()）
         breath_result_bpm = 0.0         # 最终 BPM 结果
+        _breath_roi = [None]            # 锁定的呼吸 ROI（首帧锁定，30s 复用）
         BREATH_DURATION_SEC = 30        # 检测时长（秒）
         logger.info("✓ 呼吸检测器已初始化（按钮触发，30秒定时检测）")
 
@@ -736,7 +737,7 @@ def main():
             """处理单帧并更新 GUI"""
             nonlocal frame_count, last_diag_frame
             nonlocal breath_state, breath_prev_chest_gray, breath_signal_buffer
-            nonlocal breath_start_time, breath_result_bpm
+            nonlocal breath_start_time, breath_result_bpm, _breath_roi
             nonlocal prev_target_locked
 
             # 暂停状态 — 跳过所有处理，但保持调度存活
@@ -1109,19 +1110,23 @@ def main():
                 # 只有人脸锁定后才进行信号采集
                 if breath_state == "检测中":
                     if target_locked[0] and gait_keypoints is not None:
-                        chest_roi = BreathingDetector.get_chest_roi_from_keypoints(
-                            gait_keypoints, frame.shape
-                        )
-                        if chest_roi is not None:
+                        # 首帧锁定 ROI，后续 30s 复用同一区域（避免关键点抖动导致信号毛刺）
+                        if _breath_roi[0] is None:
+                            chest_roi = BreathingDetector.get_chest_roi_from_keypoints(
+                                gait_keypoints, frame.shape
+                            )
+                            if chest_roi is not None:
+                                _breath_roi[0] = chest_roi
+                        if _breath_roi[0] is not None:
                             import cv2 as cv2_lib
-                            cx, cy, cw, ch = chest_roi
+                            cx, cy, cw, ch = _breath_roi[0]
                             cx = max(0, min(cx, frame.shape[1] - 1))
                             cy = max(0, min(cy, frame.shape[0] - 1))
                             cw = min(cw, frame.shape[1] - cx)
                             ch = min(ch, frame.shape[0] - cy)
                             if cw > 10 and ch > 10:
                                 gray = cv2_lib.cvtColor(frame[cy:cy+ch, cx:cx+cw], cv2_lib.COLOR_BGR2GRAY)
-                                if breath_prev_chest_gray is not None and gray.shape == breath_prev_chest_gray.shape:
+                                if breath_prev_chest_gray is not None:
                                     diff = cv2_lib.absdiff(gray, breath_prev_chest_gray)
                                     movement = np.mean(diff.astype(np.float64))
                                     breath_signal_buffer.append(movement)
@@ -1146,6 +1151,7 @@ def main():
                         else:
                             breath_result_bpm = 0.0
                         breath_state = "完成"
+                        _breath_roi[0] = None  # 释放锁定的 ROI
                         logger.info(f"呼吸检测完成: BPM={breath_result_bpm:.1f}")
 
                 # 构建显示状态（仅保留 OpenCV overlay 实际使用的字段）
@@ -1580,7 +1586,7 @@ def main():
         # 呼吸检测开始回调
         def on_breath_start():
             nonlocal breath_state, breath_signal_buffer, breath_prev_chest_gray
-            nonlocal breath_start_time
+            nonlocal breath_start_time, breath_result_bpm, _breath_roi
             if not target_locked[0]:
                 logger.warning("呼吸检测需要先锁定人脸")
                 window._status_bar.showMessage("请先锁定人脸再使用呼吸检测", 3000)
@@ -1595,6 +1601,7 @@ def main():
             breath_state = "检测中"
             breath_signal_buffer = []
             breath_prev_chest_gray = None
+            _breath_roi[0] = None  # 新一轮检测，清除旧 ROI
             import time as time_module
             breath_start_time = time_module.time()
             logger.info("呼吸检测开始（30秒定时采集）")
