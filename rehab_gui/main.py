@@ -831,9 +831,9 @@ def main():
                 # annotated_frame 已含骨骼绘制，keypoints 为 (N, 17, 3) 或 None
                 annotated_frame, keypoints = pose_detector.process_frame(frame)
                 _tick("yolo")
-                # 人脸冷却：距上次 > 100ms（每秒最多10次），body 特征无限制
+                # 人脸冷却：距上次 > 50ms（最高~20FPS），body 特征无限制
                 _now_ts = time.time()
-                _face_ok = (_now_ts - _last_face_time[0] >= 0.1)
+                _face_ok = (_now_ts - _last_face_time[0] >= 0.05)
 
                 # 步态分析（取锁定目标或第一个人的关键点）
                 gait_keypoints = None
@@ -872,7 +872,8 @@ def main():
                                             x1, y1 = valid_fp.min(axis=0).astype(int)
                                             x2, y2 = valid_fp.max(axis=0).astype(int)
                                             face_emb = face_locker.extract_embedding_from_roi(frame, x1, y1, x2, y2)
-                                        _last_face_time[0] = _now_ts  # 人脸提取后才更新冷却
+                                            if face_emb is not None:
+                                                _last_face_time[0] = _now_ts  # 真正提到脸才更新冷却
 
                                     if do_body or face_emb is not None:
                                         is_match, sim, source = face_locker.match_combined(frame, person_k, face_emb)
